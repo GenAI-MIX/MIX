@@ -1,0 +1,106 @@
+# 영상 광고 전처리 (파이프라인 A단계 · 영상) 설정
+# V0 정리 → V1 프레임 샘플링 → V2 고지 후보 카드 분할 → V3 카드 OCR·위험고지 분류·측정
+
+paths:
+  repo_root: ../..                 # 이 config 파일 기준 레포 루트. 아래 data 경로는 모두 레포 루트 기준
+  raw_videos: data/raw/videos/영상
+  source_csv: data/raw/videos/영상광고_추가80_위험고지구간.csv
+  processed: data/processed/video
+  meta_csv: data/meta/video_ads.csv  # product·note 수기 입력용 (실행 시 자동 생성·병합)
+  image_code: ../image             # 이 config 파일 기준. image_prep 패키지(측정·분류·OCR)를 import해서 같은 잣대로 씀
+
+source:                            # 원본 CSV 열 이름
+  id_prefix: V                     # ad_id = V + 번호 (V101 ~ V180)
+  id_column: 번호
+  file_column: 영상 파일
+  media_column: 매체
+  brand_column: 브랜드
+  title_column: 영상 제목
+  channel_column: 채널
+  url_column: 링크
+  risk_column: 위험고지 노출        # 있음 / 화면 고지 없음
+  intervals_column: 노출 구간(초)    # "0.0 ~ 15.0; 28.0 ~ 30.0" (자동 분석값 · 0.5초 단위 · 비교용)
+  review_column: 심의·심사필(OCR)
+
+media_map:                         # 원본 CSV 매체 → media
+  TV CF: tv_cf
+  온라인 영상: online_video
+
+exclude:                           # 분석에서 뺄 광고 (파일은 남겨 둠)
+  V168: 유튜브 비공개 전환으로 1080p 원본을 받지 못함 (720p 재인코딩본만 있어 측정 기준이 다름)
+
+detect:                            # V2-a 글자 영역 검출 (인식 없음). 결과는 scan/에 캐시
+  fps: 2                           # 0.5초마다 검출. 카드 경계는 scan_fps로 다시 다듬음
+  paddle:
+    model_name: PP-OCRv5_mobile_det
+    limit_type: max
+    limit_side_len: 1920           # 1080p 원본 그대로 (축소하면 깨알 고지가 검출에서 빠짐)
+    cpu_threads: 10
+
+scan:                              # V1 픽셀 비교용 프레임 (메모리에는 카드 후보 영역만 보관)
+  fps: 10                          # 경계 정밀도 0.1초
+  scale: 0.5                       # 1080p → 960px 폭 회색조. 고지 글자 잉크 높이 약 8px로 줄 모양 비교에는 충분
+  letterbox_thr: 24                # 모든 프레임에서 이 밝기를 넘지 않는 위아래·좌우 띠 = letterbox
+
+cards:
+  # 줄 선택: 작은 글씨이면서 가로로 긴 줄 (헤드라인·대사 자막·장면 속 글자 조각 제외)
+  min_h_ratio: 0.008               # 검출 박스 높이 ≥ 화면 높이 × 이 값 (1080p 약 9px)
+  max_h_ratio: 0.07                # 검출 박스 높이 ≤ 화면 높이 × 이 값 (1080p 약 75px. 고지 줄 22~24px, 흐르는 자막 37~43px, 한 줄짜리 큰 고지 최대 70px(V169). 헤드라인은 대개 90px 이상)
+  min_line_aspect: 2.0             # 줄 폭 ≥ 박스 높이 × 이 값
+  min_width_ratio: 0.15            # 블록에서 가장 긴 줄 ≥ 화면 폭 × 이 값 (화면 끝에 닿은 흐르는 자막은 예외)
+  edge_touch_ratio: 0.005          # 줄이 화면 좌우 끝에서 이 비율 안에 닿으면 흐르는 자막 후보 (고정 고지와 묶지 않음)
+  # 줄 → 블록
+  height_ratio_max: 1.5            # 같은 블록으로 묶을 두 줄의 박스 높이 비율 상한
+  same_line_gap_ratio: 3.0         # 같은 줄 좌우 간격 ≤ 박스 높이 × 이 값
+  line_gap_ratio: 1.0              # 위아래 줄 간격 ≤ 박스 높이 × 이 값
+  # 블록 → 시간 추적
+  max_gap_s: 1.0                   # 검출이 이 시간 이하로 빠져도 같은 track으로 이음
+  match_overlap: 0.5               # 앞뒤 프레임 블록이 작은 쪽 면적 기준 이 비율 이상 겹치면 같은 자리
+  match_height_ratio: 1.5          # 블록 높이 비율 상한 (흐르는 자막 1줄 → 고정 3줄 블록으로 바뀌면 다른 track)
+  absorb_max_frames: 2             # 이 프레임 수 이하로 잠깐 쪼개진 조각 track은
+  absorb_overlap: 0.8              # 더 긴 track 안에 이 비율 이상 들어가면 버림
+  margin_ratio: 0.5                # 픽셀 비교 영역 여백 = 줄 높이 × 이 값
+  # static: 문구 변경 · 경계 다듬기 (edge map NCC)
+  split_ncc: 0.5                   # 이웃 검출 시점의 edge map 상관이 이 미만이면 문구가 바뀐 것 (같은 문구는 0.8~1.0, 바뀌면 0.4 이하)
+  present_ncc: 0.5                 # scan 프레임이 카드 기준 edge map(검출 시점 중앙값)과 이 이상 닮으면 카드가 떠 있음
+  # crawl: 흐르는 자막 판정 (열 방향 edge 프로파일의 가로 이동)
+  crawl_max_shift_ratio: 0.3
+  crawl_min_corr: 0.5
+  crawl_min_frac: 0.6              # 연속 프레임 쌍 중 이 비율 이상이 같은 방향으로 움직이면 흐르는 자막
+  crawl_min_speed: 60              # 원본 px/초. 오른쪽→왼쪽으로 이보다 빨라야 흐르는 자막 (실제 자막 120~380, 카메라 이동·카피 애니메이션 20~30)
+  crawl_min_width_ratio: 0.5       # 블록 폭 중앙값 ≥ 화면 폭 × 이 값 (흐르는 자막은 화면 폭 대부분. 움직이는 로고·카피는 좁음)
+  crawl_min_edge_frac: 0.5         # 이 비율 이상의 프레임에서 화면 좌우 끝에 닿아야 함 (자막은 화면 끝에서 들어오고 나감)
+  presence_energy_ratio: 0.3       # 흐르는 자막 띠의 edge 에너지가 중앙값 × 이 값 이상이면 떠 있음
+  # 화면 묶기
+  screen_iou: 0.7                  # 시간 구간 IoU가 이 이상인 카드 = 한 화면 (대표 프레임 1장 공유)
+
+# V3 카드 OCR·분류·측정. OCR·문단·분류·잉크 높이·대비 기준은 이미지 config(paths.image_code/config.yaml)와
+# 분류 키워드(rules/keywords.yaml)를 그대로 씀 → 이미지와 영상이 같은 잣대
+text:
+  card_overlap: 0.5                # OCR 줄 면적이 카드 bbox(+여백) 안에 이 비율 이상 들어가면 그 카드 글자
+  card_margin_ratio: 0.5           # 카드 bbox 여백 = 줄 높이 × 이 값
+  band_margin_ratio: 1.0           # 확대 OCR 띠 = 카드 bbox 위아래로 줄 높이 × 이 값만큼 넓힌 전체 폭 띠
+  crawl_fps: 2                    # 흐르는 자막 띠를 이어 붙일 프레임 간격 (초당 120~180px → 프레임당 60~90px 이동)
+  crawl_margin_ratio: 0.3          # 띠 위아래 여백 = 줄 높이 × 이 값
+  crawl_min_corr: 0.5              # 이동량 추정 상관이 이 미만인 프레임은 덧붙이지 않음
+  crawl_chunk_width: 1920          # 긴 띠를 이 폭으로 잘라 OCR (OCR 입력 폭 제한)
+  crawl_chunk_overlap: 480         # 조각끼리 겹치는 폭. 경계에 걸린 글자가 한쪽에는 온전히 들어가게
+  merge_min_chars: 4               # 겹친 부분에서 이 글자 수 이상 같으면 한 번만 남김
+  readable_cps: 12                 # 초당 이 글자 수를 넘으면 읽기 어려움으로 셈 (발표 자료 가정값)
+  min_size_chars: 5                # 글자 높이 통계는 이 글자 수 이상인 줄에서만 ('|' 같은 조각 제외)
+  # 같은 위험고지가 여러 카드로 쪼개진 것을 한 노출로 묶는 기준 (초당 글자 수는 노출 단위로 잼)
+  exposure_gap_s: 0.6              # 앞 노출 끝과 이 시간 이내에 이어지고 (카드는 0.5초 간격 검출에서 나오므로 그보다 조금 크게)
+  exposure_text_ratio: 0.5         # 짧은 쪽 문구의 이 비율 이상이 다른 쪽에 그대로 있으면 같은 고지
+
+display_profiles:                  # 표시 폭(pt). 표시 크기 = 잉크 높이 × 표시 폭 / 영상 폭
+  mobile_feed: 390                 # 폰 세로 화면에서 영상이 폭 가득 재생 (이미지 광고 mobile_feed와 같은 기준)
+  mobile_landscape: 844            # 폰을 가로로 돌려 전체 화면 재생
+
+viz:
+  font_path: /System/Library/Fonts/AppleSDGothicNeo.ttc
+  thumb_width: 480
+  colors:
+    static: [150, 185, 230]        # 위험고지가 아닌 후보 카드
+    crawl: [245, 190, 130]
+    risk_notice: [230, 25, 75]     # 위험고지로 분류된 카드
+    csv: [150, 150, 150]
