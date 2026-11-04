@@ -1,0 +1,141 @@
+# 포스터 이미지 광고 전처리 (파이프라인 A단계) 설정
+
+paths:
+  repo_root: ../..                 # 이 config 파일 기준 레포 루트. 아래 data 경로는 모두 레포 루트 기준
+  raw_images: data/raw/images
+  processed: data/processed/image
+  meta_csv: data/meta/image_ads.csv  # media / product 수기 입력용 (실행 시 자동 생성·병합)
+  rules: rules/keywords.yaml       # 이 config 파일 기준
+
+output:
+  save_ocr_strips: false       # 업스케일 띠 PNG 저장 (OCR 디버깅용, 광고당 약 18MB). 평소엔 메모리에서만 처리
+
+# 메타데이터 CSV가 함께 있는 하위 폴더 데이터셋 (raw_images 기준 경로)
+datasets:
+  - dir: "02_광고물 데이터셋(53)"
+    meta_csv: 광고물53_목록.csv
+    id_prefix: AD              # ad_id = AD + 번호 두 자리 (AD01 ~ AD53)
+    id_column: 번호
+    file_column: 데이터셋 파일
+    category_column: 분류       # → product
+    media_column: 용도          # → media (아래 media_map으로 변환)
+    brand_column: 회사          # → brand
+    title_column: 상품명
+    skip_categories: [보험]     # 보험 상품안내장은 문서형이라 별도 규칙을 만든 뒤 처리
+
+media_map:                     # 데이터셋 CSV의 용도 → media 값
+  "지면·포스터(세로)": poster
+  "가로 배너": banner
+  "정사각형": sns_feed
+
+image_extensions: [.jpg, .jpeg, .png, .webp, .bmp, .tif, .tiff, .gif]
+
+# image_ads.csv의 media 열에 넣을 값 후보 (목록 밖 값이면 경고만 출력)
+media_types: [sns_feed, banner, poster, newspaper, outdoor, web]
+
+normalize:
+  alpha_background: [255, 255, 255]  # 투명 배경을 합성할 색
+  near_dup_hamming: 20               # dHash(256bit) 거리가 이 이하이면 근사 중복 경고 (같은 이미지 재저장 수준)
+
+text_dedupe:                   # OCR 텍스트 기준 중복 (크롭·해상도가 달라도 잡힘) → duplicates.csv
+  min_grams: 30                # 글자 3-gram이 이보다 적은 광고는 비교 안 함
+  same_ad_body_sim: 0.5        # 위험고지 제외 본문 유사도가 이 이상이면 문구 거의 동일
+  same_ad_all_sim: 0.65        # 또는 전체 텍스트 유사도가 이 이상이면 문구 거의 동일 (스캔 품질이 달라 본문 OCR이 다른 경우, 예: P087≈AD46)
+  same_campaign_all_sim: 0.4   # 전체 텍스트 유사도가 이 이상이면 같은 캠페인·고지문 공유
+
+ocr_input:
+  upscale_target_width: 4000   # 업스케일 후 목표 폭 = PaddleOCR 검출기 최대 변(4000px)
+  upscale_max: 3.0
+  upscale_min: 1.0
+  # 가로 전체 폭을 쓰는 띠(strip)로 세로 분할 → 긴 위험고지 줄이 가로로 잘리지 않음
+  strip_height: 2000           # 업스케일 좌표 기준 최대 띠 높이
+  strip_overlap: 400           # 띠 사이 최소 겹침. 이보다 낮은 줄은 최소 한 띠에 온전히 들어감
+  edge_margin: 3               # 띠 내부 경계에서 이 px 이내에 닿은 박스는 잘린 것으로 보고 버림
+
+ocr:
+  engine: paddle
+  large_text_width: 1024       # 큰 헤드라인용 축소 패스의 폭 (원본이 이보다 충분히 크면 실행)
+  drop_below_conf: 0.3         # 이 미만은 노이즈로 버림
+  min_text_h_px: 6             # 원본 기준 박스 높이가 이보다 작으면 노이즈(밑줄·점)로 버림
+  small_text_px: 80            # 원본 기준 박스 높이가 이보다 작으면 업스케일 패스 결과 우선
+  merge_overlap: 0.7           # 박스가 이미 받은 박스에 이 비율 이상 포함되면 같은 텍스트의 조각
+  paddle:
+    # 정확도 우선이면 PP-OCRv5_server_det (CPU에서 약 20배 느림)
+    text_detection_model_name: PP-OCRv5_mobile_det
+    text_recognition_model_name: korean_PP-OCRv5_mobile_rec
+    text_det_limit_type: max
+    text_det_limit_side_len: 4000
+    cpu_threads: 10
+
+layout:                        # 같은 문단으로 묶는 기준
+  height_ratio_max: 1.45       # 두 줄 높이 비율 상한
+  line_gap_ratio: 0.9          # 위아래 줄 간격 ≤ 평균 줄높이 × 이 값
+  same_line_gap_ratio: 2.0     # 같은 줄 좌우 간격 ≤ 줄높이 × 이 값
+
+graphic_filter:               # 그림 속 기호·숫자 조각 제외 (JSON에서 빼고 viz에 회색 점선으로 표시)
+  max_core_chars: 2            # 한글·%·원 없이 글자/숫자가 이 개수 이하인 블록이 대상 (1자는 항상 제외)
+  cluster_min: 5               # 2자짜리는 이 개수 이상 모여 있을 때만 제외 (계산기 키패드 등)
+  cluster_dist_ratio: 3.0      # 모여 있다고 볼 중심 거리 ≤ 박스 높이 × 이 값
+
+text_paragraph:                # OCR 줄을 문장·문단으로 다시 잇는 기준 (JSON paragraphs, 문단 단위 분류에 사용)
+  height_ratio_max: 1.5        # 두 줄 글자 높이 비율 상한 (혜택 문구와 그 아래 각주는 다른 문단)
+  short_line_chars: 8          # 이 글자 수 이하의 짧은 마지막 줄은
+  short_line_ratio_max: 2.5    # 높이 비율을 이만큼까지 허용 ("않습니다."처럼 높이가 작게 재지는 경우)
+  pitch_ratio: 2.5             # 위아래 줄 중심 간격 ≤ 글자 높이 × 이 값
+  same_line_gap_ratio: 2.0     # 같은 줄에서 쪼개진 조각의 좌우 간격 ≤ 글자 높이 × 이 값
+  span_ratio: 0.5              # 위아래 줄 폭 겹침 비율 (또는 왼쪽 정렬)
+  indent_ratio: 1.0            # 왼쪽 정렬로 볼 x 차이 ≤ 글자 높이 × 이 값
+
+classify:
+  low_conf: 0.5               # OCR 신뢰도가 이 미만이면 unknown
+  headline_size_ratio: 0.6     # (위험고지·other 제외) 최대 글자 높이 × 이 값 이상 → headline 크기 그룹
+  fuzzy_min_len: 5             # 이 길이 이상인 키워드는 OCR 1글자 오인식 허용
+  sections:                    # 제목 줄 아래 섹션을 통째로 분류 (공백 제거 후 포함 여부로 비교)
+    max_heading_chars: 14      # 제목 줄로 볼 최대 글자 수
+    gap_ratio: 2.5             # 섹션 안 줄 사이 빈 공간이 제목 글자 높이 × 이 값보다 크면 섹션 끝
+    risk_headings: [투자유의사항, 투자자유의사항, 투자위험, 상품유의사항, 유의사항, 알아두실사항, 알아두어야할사항,
+                    꼭알아두, 꼭확인, 고지사항, 위험고지]
+    event_headings: [이벤트유의사항, 이벤트참고사항, 이벤트안내, 경품안내]   # → other (이벤트 내용은 위험고지에서 제외)
+  disclosure:                  # 고지 영역: 작은 글씨가 촘촘히 모인 덩어리 → 안의 모든 줄을 risk_notice로
+    max_height_ratio: 0.3      # 글자 높이 ≤ 가장 큰 글씨 × 이 값이면 작은 글씨
+    height_ratio_max: 1.3      # 같은 영역으로 묶을 두 줄의 글자 높이 비율 상한
+    line_gap_ratio: 1.0        # 위아래 줄 간격 ≤ 글자 높이 × 이 값
+    same_line_gap_ratio: 3.0   # 같은 줄 좌우 간격 ≤ 글자 높이 × 이 값
+    span_ratio: 0.5            # 위아래 줄은 폭이 이 비율 이상 겹치거나 왼쪽 정렬이어야 같은 단
+    min_lines: 4               # 고지 영역으로 볼 최소 줄 수
+    min_median_chars: 40       # 줄당 글자 수(공백 제외) 중앙값이 이 이상이면 문단형 고지문
+    dense_min_lines: 15        # 줄이 짧아도 이만큼 많으면 여러 단 고지문 (상품 조건 표·이벤트 박스는 이보다 적음)
+    long_line_chars: 50        # 줄당 글자 수 중앙값이 이 이상이면 줄 수와 상관없이 고지문 (1~3줄짜리 깨알 고지. 이벤트 박스는 43자 이하)
+
+display_profiles:              # 매체별 표시 폭(pt). 매체를 추가하려면 한 줄 추가
+  mobile_feed: 390
+
+contrast:
+  ink_peak_frac: 0.25          # 글자 높이 = 줄 중앙의 최대 행 밀도 × 이 값 이상인 행 범위 (이웃 줄 조각 제외)
+  ink_outlier_ratio: 1.3       # 같은 문단 중앙값보다 이 배 이상 크게 측정되면(사진 픽셀 혼입) 문단 중앙값 사용
+  fg_extreme_quantile: 0.3     # 글자 픽셀 중 배경과 가장 먼 30%의 중앙값을 글자색으로 사용
+  low_conf_bg_std: 0.06        # 배경 상대휘도 표준편차가 이보다 크면 contrast_conf=low (사진 배경 등)
+  min_fg_pixels: 12
+
+crop:
+  # 위험고지 줄에 이어 붙일 줄의 조건 (키워드 없는 고지문 줄, 짧은 마지막 줄, 심의필 줄)
+  join_height_ratio: 1.25      # 글자 높이 비율 상한
+  join_gap_ratio: 0.6          # 위아래 간격 ≤ 위험고지 줄높이 × 이 값
+  join_span_ratio: 0.5         # 가로 겹침 / 넓은 쪽 폭 ≥ 이 값 (아니면 왼쪽 정렬이어야 함)
+  margin_line_ratio: 0.8       # 여백 = 위험고지 줄높이 중앙값 × 이 값 (이웃 글자 직전에서 멈춤)
+  margin_min_px: 8
+  margin_max_px: 48
+  max_expand_rounds: 5         # crop 경계에 걸친 텍스트 블록을 포함하도록 넓히는 최대 반복 횟수
+  same_line_gap_ratio: 3.0     # 넓힐 때 같은 줄에서 함께 포함할 블록의 좌우 간격 ≤ 줄높이 × 이 값 (표의 값 칸 등)
+  ink_guard_max_ratio: 0.6    # 박스 경계에 글자가 걸려 있으면 줄높이 × 이 값까지 바깥으로 확장
+
+viz:
+  font_path: /System/Library/Fonts/AppleSDGothicNeo.ttc
+  colors:
+    risk_notice: [230, 25, 75]
+    headline: [0, 110, 230]
+    return_claim: [245, 130, 0]
+    other: [120, 120, 120]
+    unknown: [150, 40, 200]
+    graphic: [190, 190, 190]
+    crop: [0, 190, 80]
