@@ -5,7 +5,6 @@
 ```
 preprocessing/image/
 ├─ README.md           
-├─ requirements.txt
 ├─ config.yaml          ← 모든 설정값 (경로·업스케일·분류 기준·매체별 표시 폭 등)
 ├─ preprocess.py        ← 실행 진입점
 ├─ rules/keywords.yaml  ← 분류 키워드 (코드 수정 없이 편집 가능)
