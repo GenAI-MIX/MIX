@@ -1,0 +1,61 @@
+{
+  "ad_id": "V151",
+  "media": "tv_cf",
+  "product": null,
+  "brand": "카카오페이증권",
+  "title": "해외주식? 고민말고 카카오페이증권에게 물어봐! (와앙😼)",
+  "video": "data/raw/videos/영상/151_카카오페이증권_xEAcam8KeJE.mp4",
+  "size": [1920, 1080],
+  "fps": 24.0,
+  "duration": 15.0,
+  "has_audio": true,
+  "content_bbox": [0, 0, 1920, 1080],
+  "review_no": ["심사필제25-02872호"],
+  "csv": {"risk": "있음", "intervals": [[6.5, 15.0]], "review_no": "한국금융투자협회 심사필 제25-02872호"},
+  "screens": [
+    {"id": 0, "t_start": 6.7, "t_end": 15.0, "rep_t": 11.1, "card_ids": [0], "frame": "data/processed/video/frames/V151_s00.png", "headline_h_px": 111.0},
+    {"id": 1, "t_start": 13.9, "t_end": 15.0, "rep_t": 14.2, "card_ids": [1], "frame": "data/processed/video/frames/V151_s01.png", "headline_h_px": 87.0}
+  ],
+  "cards": [
+    {"id": 0, "screen_id": 0, "t_start": 6.7, "t_end": 15.0, "duration": 8.3, "kind": "static", "crawl_px_s": null, "bbox": [79, 989, 1840, 1064], "n_lines": 2, "line_h_px": 24.0, "n_det": 16, "rep_t": 11.1, "type": "risk_notice", "text": "* 투자자 유의사항 -투자 전 설명 청취 및 상품설명서·약관 필독-이 금융투자상품은 예금자보호법에 따라 보호되지 않습니다.-자산가격변동,환율변동 등에 따른 원금손실(0~100%)발생가능 및 투자자 귀속 -주식수수료는 국내 0.015%, NXT 0.014%, 미국 0.1%이며, 자세한 사항 홈페이지 참고 -미국주식 매도 시 SEC FEE, TAF FEE 등 제비용 부과 가능-한국금융투자협회 심사필 제25-02872호 (2025-08-08 ~ 2026-08-07)", "block_ids": [12, 13], "risk_chars": 212, "risk_cps": 25.5, "risk_text_h_px": {"min": 18.0, "median": 18.0}, "risk_display_pt": {"mobile_feed": {"min": 3.66, "median": 3.66}, "mobile_landscape": {"min": 7.91, "median": 7.91}}, "risk_contrast_min": 20.37, "risk_headline_ratio": 0.162},
+    {"id": 1, "screen_id": 1, "t_start": 13.9, "t_end": 15.0, "duration": 1.1, "kind": "static", "crawl_px_s": null, "bbox": [650, 449, 1278, 504], "n_lines": 1, "line_h_px": 51.5, "n_det": 2, "rep_t": 14.2, "type": "unknown", "text": "당신이 돈을 제대로 벌 수 있도록", "block_ids": [0], "risk_chars": 0, "risk_cps": null, "risk_text_h_px": null, "risk_display_pt": null, "risk_contrast_min": null, "risk_headline_ratio": null}
+  ],
+  "risk_exposures": [
+    {"id": 0, "t_start": 6.7, "t_end": 15.0, "duration": 8.3, "kind": "static", "card_ids": [0], "risk_chars": 212, "risk_cps": 25.5, "bbox": [79, 989, 1840, 1064], "text_card_id": 0, "text": "* 투자자 유의사항 -투자 전 설명 청취 및 상품설명서·약관 필독-이 금융투자상품은 예금자보호법에 따라 보호되지 않습니다.-자산가격변동,환율변동 등에 따른 원금손실(0~100%)발생가능 및 투자자 귀속 -주식수수료는 국내 0.015%, NXT 0.014%, 미국 0.1%이며, 자세한 사항 홈페이지 참고 -미국주식 매도 시 SEC FEE, TAF FEE 등 제비용 부과 가능-한국금융투자협회 심사필 제25-02872호 (2025-08-08 ~ 2026-08-07)"}
+  ],
+  "ocr_blocks": [
+    {"screen_id": 0, "id": 0, "text": "라이언상사주가가", "bbox": [1431, 176, 1674, 216], "conf": 0.99, "type": "unknown", "h_px": 28.0, "contrast": 20.6, "card_id": null},
+    {"screen_id": 0, "id": 1, "text": "AI", "bbox": [1247, 206, 1329, 298], "conf": 0.81, "type": "headline", "h_px": 91.9, "contrast": null, "card_id": null},
+    {"screen_id": 0, "id": 2, "text": "최대 -20.5%까지", "bbox": [1427, 216, 1682, 259], "conf": 0.9, "type": "unknown", "h_px": 26.0, "contrast": 20.6, "card_id": null},
+    {"screen_id": 0, "id": 3, "text": "급등했었어요", "bbox": [1431, 257, 1612, 302], "conf": 1.0, "type": "unknown", "h_px": 28.0, "contrast": 20.6, "card_id": null},
+    {"screen_id": 0, "id": 4, "text": "제대로", "bbox": [112, 330, 465, 472], "conf": 1.0, "type": "headline", "h_px": 107.0, "contrast": 13.0, "card_id": null},
+    {"screen_id": 0, "id": 5, "text": "AI 왜 급등했을까요?", "bbox": [1434, 414, 1669, 446], "conf": 0.93, "type": "unknown", "h_px": 25.0, "contrast": 2.9, "card_id": null},
+    {"screen_id": 0, "id": 6, "text": "중요도 높음", "bbox": [1464, 497, 1554, 523], "conf": 0.94, "type": "unknown", "h_px": 15.0, "contrast": 2.4, "card_id": null},
+    {"screen_id": 0, "id": 7, "text": "알려주니까", "bbox": [118, 458, 701, 608], "conf": 1.0, "type": "headline", "h_px": 111.0, "contrast": 13.0, "card_id": null},
+    {"screen_id": 0, "id": 8, "text": "미국 정부의 정책적", "bbox": [1455, 546, 1695, 583], "conf": 0.98, "type": "unknown", "h_px": 26.0, "contrast": 2.8, "card_id": null},
+    {"screen_id": 0, "id": 9, "text": "지원기대감이전반", "bbox": [1453, 585, 1697, 628], "conf": 1.0, "type": "unknown", "h_px": 27.0, "contrast": 2.8, "card_id": null},
+    {"screen_id": 0, "id": 10, "text": "적으로주가 상승에", "bbox": [1453, 628, 1695, 669], "conf": 0.95, "type": "unknown", "h_px": 26.0, "contrast": 2.8, "card_id": null},
+    {"screen_id": 0, "id": 11, "text": "기여하고 있어요", "bbox": [1453, 673, 1669, 711], "conf": 0.94, "type": "unknown", "h_px": 26.0, "contrast": 2.8, "card_id": null},
+    {"screen_id": 0, "id": 12, "text": "* 투자자 유의사항 -투자 전 설명 청취 및 상품설명서·약관 필독-이 금융투자상품은 예금자보호법에 따라 보호되지 않습니다.-자산가격변동,환율변동 등에 따른 원금손실(0~100%)발생가능 및 투자자 귀속 -주식수수료는", "bbox": [83, 1015, 1835, 1039], "conf": 0.96, "type": "risk_notice", "h_px": 18.0, "contrast": 20.4, "card_id": 0},
+    {"screen_id": 0, "id": 13, "text": "국내 0.015%, NXT 0.014%, 미국 0.1%이며, 자세한 사항 홈페이지 참고 -미국주식 매도 시 SEC FEE, TAF FEE 등 제비용 부과 가능-한국금융투자협회 심사필 제25-02872호 (2025-08-08 ~ 2026-08-07)", "bbox": [80, 1040, 1841, 1064], "conf": 0.96, "type": "risk_notice", "h_px": 18.0, "contrast": 20.4, "card_id": 0},
+    {"screen_id": 1, "id": 0, "text": "당신이 돈을 제대로 벌 수 있도록", "bbox": [648, 446, 1281, 509], "conf": 0.97, "type": "unknown", "h_px": 40.0, "contrast": 20.6, "card_id": 1},
+    {"screen_id": 1, "id": 1, "text": "카카오페이증권", "bbox": [643, 519, 1279, 622], "conf": 0.99, "type": "headline", "h_px": 87.0, "contrast": 20.6, "card_id": null},
+    {"screen_id": 1, "id": 2, "text": "©Kakao Corp.", "bbox": [892, 988, 1024, 1016], "conf": 0.93, "type": "unknown", "h_px": 14.0, "contrast": 20.6, "card_id": null},
+    {"screen_id": 1, "id": 3, "text": "*투자자유의사항-투자 전설명 청취 및상품설명서-약관 필독-이 금융투자상품은 예금자보호법에 따라 보호되지 않습니다.-자산가격변동, 환율변동등에 따른원금손실(0~100%)발생가능 및 투자자 귀속-주식수수료는", "bbox": [82, 1012, 1836, 1039], "conf": 0.93, "type": "risk_notice", "h_px": 18.0, "contrast": 20.3, "card_id": null},
+    {"screen_id": 1, "id": 4, "text": "국내 0.015%, NXT 0.014%, 미국 0.1%이며, 자세한 사항 홈페이지참고-미국주식매도 시 SEC FEE, TAF FEE 등제비용 부과 가능-한국금용투자협회 심사필제25-02872호(2025-08-08 ~2026-08-07)", "bbox": [79, 1035, 1841, 1063], "conf": 0.93, "type": "risk_notice", "h_px": 18.0, "contrast": 20.4, "card_id": null}
+  ],
+  "paragraphs": [
+    {"screen_id": 0, "id": 0, "type": "unknown", "text": "라이언상사주가가 AI 최대 -20.5%까지 급등했었어요", "bbox": [1247, 176, 1682, 302], "block_ids": [0, 1, 2, 3]},
+    {"screen_id": 0, "id": 1, "type": "headline", "text": "제대로 알려주니까", "bbox": [112, 330, 701, 608], "block_ids": [4, 7]},
+    {"screen_id": 0, "id": 2, "type": "unknown", "text": "AI 왜 급등했을까요?", "bbox": [1434, 414, 1669, 446], "block_ids": [5]},
+    {"screen_id": 0, "id": 3, "type": "unknown", "text": "중요도 높음", "bbox": [1464, 497, 1554, 523], "block_ids": [6]},
+    {"screen_id": 0, "id": 4, "type": "unknown", "text": "미국 정부의 정책적 지원기대감이전반 적으로주가 상승에 기여하고 있어요", "bbox": [1453, 546, 1697, 711], "block_ids": [8, 9, 10, 11]},
+    {"screen_id": 0, "id": 5, "type": "risk_notice", "text": "* 투자자 유의사항 -투자 전 설명 청취 및 상품설명서·약관 필독-이 금융투자상품은 예금자보호법에 따라 보호되지 않습니다.-자산가격변동,환율변동 등에 따른 원금손실(0~100%)발생가능 및 투자자 귀속 -주식수수료는 국내 0.015%, NXT 0.014%, 미국 0.1%이며, 자세한 사항 홈페이지 참고 -미국주식 매도 시 SEC FEE, TAF FEE 등 제비용 부과 가능-한국금융투자협회 심사필 제25-02872호 (2025-08-08 ~ 2026-08-07)", "bbox": [80, 1015, 1841, 1064], "block_ids": [12, 13]},
+    {"screen_id": 1, "id": 0, "type": "unknown", "text": "당신이 돈을 제대로 벌 수 있도록", "bbox": [648, 446, 1281, 509], "block_ids": [0]},
+    {"screen_id": 1, "id": 1, "type": "headline", "text": "카카오페이증권", "bbox": [643, 519, 1279, 622], "block_ids": [1]},
+    {"screen_id": 1, "id": 2, "type": "unknown", "text": "©Kakao Corp.", "bbox": [892, 988, 1024, 1016], "block_ids": [2]},
+    {"screen_id": 1, "id": 3, "type": "risk_notice", "text": "*투자자유의사항-투자 전설명 청취 및상품설명서-약관 필독-이 금융투자상품은 예금자보호법에 따라 보호되지 않습니다.-자산가격변동, 환율변동등에 따른원금손실(0~100%)발생가능 및 투자자 귀속-주식수수료는 국내 0.015%, NXT 0.014%, 미국 0.1%이며, 자세한 사항 홈페이지참고-미국주식매도 시 SEC FEE, TAF FEE 등제비용 부과 가능-한국금용투자협회 심사필제25-02872호(2025-08-08 ~2026-08-07)", "bbox": [79, 1012, 1841, 1063], "block_ids": [3, 4]}
+  ],
+  "metrics": {"n_cards": 2, "n_static": 2, "n_crawl": 0, "candidate_exposure_s": 8.3, "csv_exposure_s": 8.5, "csv_coverage": 0.976, "min_line_h_px": 24.0, "n_risk_cards": 1, "n_risk_crawl": 0, "n_risk_exposures": 1, "risk_short_exposures": 0, "risk_exposure_s": 8.3, "risk_csv_coverage": 0.976, "risk_chars": 212, "risk_cps_max": 25.5, "risk_unreadable_exposures": 1, "risk_text_h_min_px": 18.0, "risk_display_min_pt": {"mobile_feed": 3.66, "mobile_landscape": 7.91}, "risk_contrast_min": 20.37, "risk_headline_ratio_min": 0.162},
+  "label": null
+}

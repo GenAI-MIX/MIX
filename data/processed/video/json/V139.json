@@ -1,0 +1,44 @@
+{
+  "ad_id": "V139",
+  "media": "tv_cf",
+  "product": null,
+  "brand": "삼성화재",
+  "title": "[삼성화재 TVCF] 운전자 편(15초)",
+  "video": "data/raw/videos/영상/139_삼성화재_R2seUKqGbUo.mp4",
+  "size": [1920, 1080],
+  "fps": 29.97,
+  "duration": 15.015,
+  "has_audio": true,
+  "content_bbox": [0, 0, 1920, 1080],
+  "review_no": [],
+  "csv": {"risk": "화면 고지 없음", "intervals": [], "review_no": null},
+  "screens": [
+    {"id": 0, "t_start": 10.0, "t_end": 12.6, "rep_t": 10.3, "card_ids": [0, 1], "frame": "data/processed/video/frames/V139_s00.png", "headline_h_px": 40.0},
+    {"id": 1, "t_start": 12.7, "t_end": 15.02, "rep_t": 14.0, "card_ids": [2], "frame": "data/processed/video/frames/V139_s01.png", "headline_h_px": 80.7}
+  ],
+  "cards": [
+    {"id": 0, "screen_id": 0, "t_start": 10.0, "t_end": 12.6, "duration": 2.6, "kind": "static", "crawl_px_s": null, "bbox": [432, 949, 1486, 1009], "n_lines": 1, "line_h_px": 52.5, "n_det": 6, "rep_t": 10.3, "type": "headline", "text": "당신의 운전이 즐겁고 안전할 수 있도록 삼성화재가 자신감을 드립니다", "block_ids": [3], "risk_chars": 0, "risk_cps": null, "risk_text_h_px": null, "risk_display_pt": null, "risk_contrast_min": null, "risk_headline_ratio": null},
+    {"id": 1, "screen_id": 0, "t_start": 10.6, "t_end": 12.6, "duration": 2.0, "kind": "static", "crawl_px_s": null, "bbox": [612, 505, 1314, 579], "n_lines": 1, "line_h_px": 74.0, "n_det": 4, "rep_t": 12.0, "type": "unknown", "text": "모험 보험", "block_ids": [1, 2], "risk_chars": 0, "risk_cps": null, "risk_text_h_px": null, "risk_display_pt": null, "risk_contrast_min": null, "risk_headline_ratio": null},
+    {"id": 2, "screen_id": 1, "t_start": 12.7, "t_end": 15.02, "duration": 2.32, "kind": "static", "crawl_px_s": null, "bbox": [1149, 928, 1547, 982], "n_lines": 1, "line_h_px": 51.0, "n_det": 5, "rep_t": 14.0, "type": "unknown", "text": "당신에게 좋은보험 삼성화재", "block_ids": [2, 3], "risk_chars": 0, "risk_cps": null, "risk_text_h_px": null, "risk_display_pt": null, "risk_contrast_min": null, "risk_headline_ratio": null}
+  ],
+  "risk_exposures": [],
+  "ocr_blocks": [
+    {"screen_id": 0, "id": 0, "text": "삼성화재", "bbox": [101, 58, 242, 114], "conf": 1.0, "type": "headline", "h_px": 40.0, "contrast": 1.7, "card_id": null},
+    {"screen_id": 0, "id": 1, "text": "모험", "bbox": [610, 502, 724, 578], "conf": 1.0, "type": "unknown", "h_px": 11.0, "contrast": 7.3, "card_id": 1},
+    {"screen_id": 0, "id": 2, "text": "보험", "bbox": [808, 504, 919, 577], "conf": 1.0, "type": "unknown", "h_px": 11.0, "contrast": 6.5, "card_id": 1},
+    {"screen_id": 0, "id": 3, "text": "당신의 운전이 즐겁고 안전할 수 있도록 삼성화재가 자신감을 드립니다", "bbox": [436, 955, 1486, 1009], "conf": 0.98, "type": "headline", "h_px": 40.0, "contrast": 13.9, "card_id": 0},
+    {"screen_id": 1, "id": 0, "text": "당신의", "bbox": [1136, 446, 1358, 538], "conf": 1.0, "type": "headline", "h_px": 80.7, "contrast": 12.7, "card_id": null},
+    {"screen_id": 1, "id": 1, "text": "본", "bbox": [1372, 424, 1511, 581], "conf": 0.76, "type": "unknown", "h_px": 8.0, "contrast": null, "card_id": null},
+    {"screen_id": 1, "id": 2, "text": "당신에게 좋은보험", "bbox": [1153, 935, 1392, 978], "conf": 0.97, "type": "unknown", "h_px": 18.0, "contrast": 4.9, "card_id": 2},
+    {"screen_id": 1, "id": 3, "text": "삼성화재", "bbox": [1407, 931, 1544, 980], "conf": 1.0, "type": "unknown", "h_px": 39.0, "contrast": 4.5, "card_id": 2}
+  ],
+  "paragraphs": [
+    {"screen_id": 0, "id": 0, "type": "headline", "text": "삼성화재", "bbox": [101, 58, 242, 114], "block_ids": [0]},
+    {"screen_id": 0, "id": 1, "type": "unknown", "text": "모험 보험", "bbox": [610, 502, 919, 578], "block_ids": [1, 2]},
+    {"screen_id": 0, "id": 2, "type": "headline", "text": "당신의 운전이 즐겁고 안전할 수 있도록 삼성화재가 자신감을 드립니다", "bbox": [436, 955, 1486, 1009], "block_ids": [3]},
+    {"screen_id": 1, "id": 0, "type": "headline", "text": "당신의 본", "bbox": [1136, 424, 1511, 581], "block_ids": [0, 1]},
+    {"screen_id": 1, "id": 1, "type": "unknown", "text": "당신에게 좋은보험 삼성화재", "bbox": [1153, 931, 1544, 980], "block_ids": [2, 3]}
+  ],
+  "metrics": {"n_cards": 3, "n_static": 3, "n_crawl": 0, "candidate_exposure_s": 4.92, "csv_exposure_s": 0.0, "csv_coverage": null, "min_line_h_px": 51.0, "n_risk_cards": 0, "n_risk_crawl": 0, "n_risk_exposures": 0, "risk_short_exposures": 0, "risk_exposure_s": 0.0, "risk_csv_coverage": null, "risk_chars": 0, "risk_cps_max": null, "risk_unreadable_exposures": 0, "risk_text_h_min_px": null, "risk_display_min_pt": {"mobile_feed": null, "mobile_landscape": null}, "risk_contrast_min": null, "risk_headline_ratio_min": null},
+  "label": null
+}

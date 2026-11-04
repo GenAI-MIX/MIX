@@ -1,0 +1,57 @@
+{
+  "ad_id": "V120",
+  "media": "tv_cf",
+  "product": null,
+  "brand": "NH투자증권",
+  "title": "[QV하라!] NH투자증권 광고 - 입체적 라이프편",
+  "video": "data/raw/videos/영상/120_NH투자증권_fchbdyzEZQY.mp4",
+  "size": [1920, 1080],
+  "fps": 29.97,
+  "duration": 15.015,
+  "has_audio": true,
+  "content_bbox": [0, 0, 1920, 1080],
+  "review_no": ["심사필제16-03960호"],
+  "csv": {"risk": "있음", "intervals": [[9.5, 15.0]], "review_no": "한국금융투자협회 심사필 제16-03960호"},
+  "screens": [
+    {"id": 0, "t_start": 4.2, "t_end": 5.6, "rep_t": 4.9, "card_ids": [0], "frame": "data/processed/video/frames/V120_s00.png", "headline_h_px": 93.0},
+    {"id": 1, "t_start": 9.3, "t_end": 11.3, "rep_t": 9.9, "card_ids": [1], "frame": "data/processed/video/frames/V120_s01.png", "headline_h_px": 51.0},
+    {"id": 2, "t_start": 9.4, "t_end": 15.02, "rep_t": 11.1, "card_ids": [2], "frame": "data/processed/video/frames/V120_s02.png", "headline_h_px": 51.0},
+    {"id": 3, "t_start": 11.5, "t_end": 11.6, "rep_t": 11.5, "card_ids": [3], "frame": "data/processed/video/frames/V120_s03.png", "headline_h_px": null}
+  ],
+  "cards": [
+    {"id": 0, "screen_id": 0, "t_start": 4.2, "t_end": 5.6, "duration": 1.4, "kind": "static", "crawl_px_s": null, "bbox": [1169, 467, 1484, 554], "n_lines": 1, "line_h_px": 72.5, "n_det": 3, "rep_t": 4.9, "type": "unknown", "text": "QVland", "block_ids": [3], "risk_chars": 0, "risk_cps": null, "risk_text_h_px": null, "risk_display_pt": null, "risk_contrast_min": null, "risk_headline_ratio": null},
+    {"id": 1, "screen_id": 1, "t_start": 9.3, "t_end": 11.3, "duration": 2.0, "kind": "static", "crawl_px_s": null, "bbox": [107, 464, 594, 615], "n_lines": 2, "line_h_px": 71.1, "n_det": 4, "rep_t": 9.9, "type": "headline", "text": "입체적라이프에 맞춘 입체적 자산관리 QV", "block_ids": [0, 1], "risk_chars": 0, "risk_cps": null, "risk_text_h_px": null, "risk_display_pt": null, "risk_contrast_min": null, "risk_headline_ratio": null},
+    {"id": 2, "screen_id": 2, "t_start": 9.4, "t_end": 15.02, "duration": 5.62, "kind": "static", "crawl_px_s": null, "bbox": [110, 983, 1652, 1017], "n_lines": 1, "line_h_px": 30.0, "n_det": 12, "rep_t": 11.1, "type": "risk_notice", "text": "예금자보호법 상 보호상품 아님/원금 손실 발생시 투자자 귀속/투자 전 설명 청취/한국금융투자협회 심사필 제16-03960호(2016-08-03~2017-08-02)", "block_ids": [2], "risk_chars": 79, "risk_cps": 14.1, "risk_text_h_px": {"min": 23.0, "median": 23.0}, "risk_display_pt": {"mobile_feed": {"min": 4.67, "median": 4.67}, "mobile_landscape": {"min": 10.11, "median": 10.11}}, "risk_contrast_min": 4.74, "risk_headline_ratio": 0.451},
+    {"id": 3, "screen_id": 3, "t_start": 11.5, "t_end": 11.6, "duration": 0.1, "kind": "static", "crawl_px_s": null, "bbox": [1043, 21, 1419, 54], "n_lines": 1, "line_h_px": 30.0, "n_det": 1, "rep_t": 11.5, "type": null, "text": null, "block_ids": [], "risk_chars": 0, "risk_cps": null, "risk_text_h_px": null, "risk_display_pt": null, "risk_contrast_min": null, "risk_headline_ratio": null}
+  ],
+  "risk_exposures": [
+    {"id": 0, "t_start": 9.4, "t_end": 15.02, "duration": 5.62, "kind": "static", "card_ids": [2], "risk_chars": 79, "risk_cps": 14.1, "bbox": [110, 983, 1652, 1017], "text_card_id": 2, "text": "예금자보호법 상 보호상품 아님/원금 손실 발생시 투자자 귀속/투자 전 설명 청취/한국금융투자협회 심사필 제16-03960호(2016-08-03~2017-08-02)"}
+  ],
+  "ocr_blocks": [
+    {"screen_id": 0, "id": 0, "text": "QV", "bbox": [1174, 201, 1234, 238], "conf": 1.0, "type": "unknown", "h_px": 29.0, "contrast": 3.5, "card_id": null},
+    {"screen_id": 0, "id": 1, "text": "자녀", "bbox": [480, 459, 711, 598], "conf": 1.0, "type": "headline", "h_px": 93.0, "contrast": 16.8, "card_id": null},
+    {"screen_id": 0, "id": 2, "text": "자H", "bbox": [491, 470, 679, 540], "conf": 0.75, "type": "headline", "h_px": 65.3, "contrast": 18.0, "card_id": null},
+    {"screen_id": 0, "id": 3, "text": "QVland", "bbox": [1226, 474, 1479, 544], "conf": 0.88, "type": "unknown", "h_px": 50.0, "contrast": 5.9, "card_id": 0},
+    {"screen_id": 0, "id": 4, "text": "TERI", "bbox": [1729, 604, 1898, 718], "conf": 0.55, "type": "headline", "h_px": 79.1, "contrast": 4.9, "card_id": null},
+    {"screen_id": 1, "id": 0, "text": "입체적라이프에 맞춘", "bbox": [105, 467, 587, 536], "conf": 0.98, "type": "headline", "h_px": 51.0, "contrast": 8.3, "card_id": 1},
+    {"screen_id": 1, "id": 1, "text": "입체적 자산관리 QV", "bbox": [105, 536, 590, 615], "conf": 0.98, "type": "headline", "h_px": 50.0, "contrast": 14.9, "card_id": 1},
+    {"screen_id": 1, "id": 2, "text": "예금자보호법 상 보호상품 아님/원금 손실 발생시 투자자 귀속/투자 전 설명 청취/한국금융투자협회 심사필 제16-03960호(2016-08-03~2017-08-02)", "bbox": [109, 984, 1650, 1016], "conf": 0.97, "type": "risk_notice", "h_px": 23.0, "contrast": 2.4, "card_id": null},
+    {"screen_id": 2, "id": 0, "text": "입체적라이프에맞춘", "bbox": [105, 467, 587, 536], "conf": 1.0, "type": "headline", "h_px": 51.0, "contrast": 6.1, "card_id": null},
+    {"screen_id": 2, "id": 1, "text": "입체적 자산관리 QV", "bbox": [111, 542, 585, 606], "conf": 0.95, "type": "headline", "h_px": 50.0, "contrast": 12.7, "card_id": null},
+    {"screen_id": 2, "id": 2, "text": "예금자보호법 상 보호상품 아님/원금 손실 발생시 투자자 귀속/투자 전 설명 청취/한국금융투자협회 심사필 제16-03960호(2016-08-03~2017-08-02)", "bbox": [112, 983, 1651, 1018], "conf": 0.98, "type": "risk_notice", "h_px": 23.0, "contrast": 4.7, "card_id": 2},
+    {"screen_id": 3, "id": 0, "text": "예금자보호법 상 보호상품 아님/원금 손실 발생시 투자자 귀속/투자 전 설명 청취/한국금융투자협회 심사필제16-03960호(2016-08-03~2017-08-02)", "bbox": [109, 982, 1650, 1014], "conf": 0.95, "type": "risk_notice", "h_px": 23.0, "contrast": 5.0, "card_id": null}
+  ],
+  "paragraphs": [
+    {"screen_id": 0, "id": 0, "type": "unknown", "text": "QV", "bbox": [1174, 201, 1234, 238], "block_ids": [0]},
+    {"screen_id": 0, "id": 1, "type": "headline", "text": "자녀 자H", "bbox": [480, 459, 711, 598], "block_ids": [1, 2]},
+    {"screen_id": 0, "id": 2, "type": "unknown", "text": "QVland", "bbox": [1226, 474, 1479, 544], "block_ids": [3]},
+    {"screen_id": 0, "id": 3, "type": "headline", "text": "TERI", "bbox": [1729, 604, 1898, 718], "block_ids": [4]},
+    {"screen_id": 1, "id": 0, "type": "headline", "text": "입체적라이프에 맞춘 입체적 자산관리 QV", "bbox": [105, 467, 590, 615], "block_ids": [0, 1]},
+    {"screen_id": 1, "id": 1, "type": "risk_notice", "text": "예금자보호법 상 보호상품 아님/원금 손실 발생시 투자자 귀속/투자 전 설명 청취/한국금융투자협회 심사필 제16-03960호(2016-08-03~2017-08-02)", "bbox": [109, 984, 1650, 1016], "block_ids": [2]},
+    {"screen_id": 2, "id": 0, "type": "headline", "text": "입체적라이프에맞춘 입체적 자산관리 QV", "bbox": [105, 467, 587, 606], "block_ids": [0, 1]},
+    {"screen_id": 2, "id": 1, "type": "risk_notice", "text": "예금자보호법 상 보호상품 아님/원금 손실 발생시 투자자 귀속/투자 전 설명 청취/한국금융투자협회 심사필 제16-03960호(2016-08-03~2017-08-02)", "bbox": [112, 983, 1651, 1018], "block_ids": [2]},
+    {"screen_id": 3, "id": 0, "type": "risk_notice", "text": "예금자보호법 상 보호상품 아님/원금 손실 발생시 투자자 귀속/투자 전 설명 청취/한국금융투자협회 심사필제16-03960호(2016-08-03~2017-08-02)", "bbox": [109, 982, 1650, 1014], "block_ids": [0]}
+  ],
+  "metrics": {"n_cards": 4, "n_static": 4, "n_crawl": 0, "candidate_exposure_s": 7.12, "csv_exposure_s": 5.5, "csv_coverage": 1.0, "min_line_h_px": 30.0, "n_risk_cards": 1, "n_risk_crawl": 0, "n_risk_exposures": 1, "risk_short_exposures": 0, "risk_exposure_s": 5.62, "risk_csv_coverage": 1.0, "risk_chars": 79, "risk_cps_max": 14.1, "risk_unreadable_exposures": 1, "risk_text_h_min_px": 23.0, "risk_display_min_pt": {"mobile_feed": 4.67, "mobile_landscape": 10.11}, "risk_contrast_min": 4.74, "risk_headline_ratio_min": 0.451},
+  "label": null
+}

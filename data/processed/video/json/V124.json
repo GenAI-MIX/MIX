@@ -1,0 +1,65 @@
+{
+  "ad_id": "V124",
+  "media": "tv_cf",
+  "product": null,
+  "brand": "SBI저축은행",
+  "title": "2년 연속 가장 많이 선택 받은 [SBI중금리 TVC 30]",
+  "video": "data/raw/videos/영상/124_SBI저축은행_N-Xa2MAkGqA.mp4",
+  "size": [1920, 1080],
+  "fps": 29.97,
+  "duration": 30.03,
+  "has_audio": true,
+  "content_bbox": [0, 0, 1920, 1080],
+  "review_no": ["심의필2020-01475호"],
+  "csv": {"risk": "있음", "intervals": [[24.5, 27.5]], "review_no": null},
+  "screens": [
+    {"id": 0, "t_start": 14.9, "t_end": 22.3, "rep_t": 15.5, "card_ids": [0], "frame": "data/processed/video/frames/V124_s00.png", "headline_h_px": 25.0},
+    {"id": 1, "t_start": 24.6, "t_end": 27.4, "rep_t": 26.0, "card_ids": [1, 2], "frame": "data/processed/video/frames/V124_s01.png", "headline_h_px": 100.0},
+    {"id": 2, "t_start": 25.5, "t_end": 25.6, "rep_t": 25.5, "card_ids": [3], "frame": "data/processed/video/frames/V124_s02.png", "headline_h_px": 100.0}
+  ],
+  "cards": [
+    {"id": 0, "screen_id": 0, "t_start": 14.9, "t_end": 22.3, "duration": 7.4, "kind": "static", "crawl_px_s": null, "bbox": [1379, 905, 1826, 945], "n_lines": 1, "line_h_px": 34.0, "n_det": 15, "rep_t": 15.5, "type": "headline", "text": "대출은 수입과 지출을 고려해 계획적으로!", "block_ids": [0], "risk_chars": 0, "risk_cps": null, "risk_text_h_px": null, "risk_display_pt": null, "risk_contrast_min": null, "risk_headline_ratio": null},
+    {"id": 1, "screen_id": 1, "t_start": 24.6, "t_end": 27.4, "duration": 2.8, "kind": "static", "crawl_px_s": null, "bbox": [952, 857, 1302, 884], "n_lines": 1, "line_h_px": 26.0, "n_det": 5, "rep_t": 26.0, "type": "unknown", "text": "(2018-2019 저축은행 중앙회 공시 기준)", "block_ids": [4], "risk_chars": 0, "risk_cps": null, "risk_text_h_px": null, "risk_display_pt": null, "risk_contrast_min": null, "risk_headline_ratio": null},
+    {"id": 2, "screen_id": 1, "t_start": 24.6, "t_end": 27.4, "duration": 2.8, "kind": "static", "crawl_px_s": null, "bbox": [50, 1004, 1873, 1037], "n_lines": 2, "line_h_px": 18.0, "n_det": 5, "rep_t": 26.0, "type": "risk_notice", "text": "SBI저축은행 중금리 신용대출브랜드기준/해당 상품명: SB중금리, SBI중금리W,SB중금리(대환),SB중금리(라이트),SBI중금리(추가),SB중금리(라이트추가)/대출금리:연 5.0%~17.0%/대출한도:100만원~1.5억원/상품과 신용도에 따라 대상,한도,금리가 달라질 수 있음/중도상환수수료 2%이내/원리금균등상환, 이자매월 부과(후추)/연체금리:약정금리+연3%(최대연20.0%)/인지세:대출금액5,000만원초과 시인지세법에서정한 금액의50%/대출상품이용시귀하의 신용등급또는 개인신용평점이하락할 수있으며신용등급또는 개인신용평점하락으로금융거래가 제약될수있음/저축은행중앙회 심의필 2020-01475호(2020.12.14)", "block_ids": [5, 6], "risk_chars": 323, "risk_cps": 115.4, "risk_text_h_px": {"min": 13.0, "median": 13.0}, "risk_display_pt": {"mobile_feed": {"min": 2.64, "median": 2.64}, "mobile_landscape": {"min": 5.71, "median": 5.71}}, "risk_contrast_min": 2.55, "risk_headline_ratio": 0.13},
+    {"id": 3, "screen_id": 2, "t_start": 25.5, "t_end": 25.6, "duration": 0.1, "kind": "static", "crawl_px_s": null, "bbox": [816, 430, 1105, 501], "n_lines": 1, "line_h_px": 69.0, "n_det": 1, "rep_t": 25.5, "type": "return_claim", "text": "SBI중금리", "block_ids": [0], "risk_chars": 0, "risk_cps": null, "risk_text_h_px": null, "risk_display_pt": null, "risk_contrast_min": null, "risk_headline_ratio": null}
+  ],
+  "risk_exposures": [
+    {"id": 0, "t_start": 24.6, "t_end": 27.4, "duration": 2.8, "kind": "static", "card_ids": [2], "risk_chars": 323, "risk_cps": 115.4, "bbox": [50, 1004, 1873, 1037], "text_card_id": 2, "text": "SBI저축은행 중금리 신용대출브랜드기준/해당 상품명: SB중금리, SBI중금리W,SB중금리(대환),SB중금리(라이트),SBI중금리(추가),SB중금리(라이트추가)/대출금리:연 5.0%~17.0%/대출한도:100만원~1.5억원/상품과 신용도에 따라 대상,한도,금리가 달라질 수 있음/중도상환수수료 2%이내/원리금균등상환, 이자매월 부과(후추)/연체금리:약정금리+연3%(최대연20.0%)/인지세:대출금액5,000만원초과 시인지세법에서정한 금액의50%/대출상품이용시귀하의 신용등급또는 개인신용평점이하락할 수있으며신용등급또는 개인신용평점하락으로금융거래가 제약될수있음/저축은행중앙회 심의필 2020-01475호(2020.12.14)"}
+  ],
+  "ocr_blocks": [
+    {"screen_id": 0, "id": 0, "text": "대출은 수입과 지출을 고려해 계획적으로!", "bbox": [1380, 907, 1826, 943], "conf": 0.98, "type": "headline", "h_px": 25.0, "contrast": 13.0, "card_id": 0},
+    {"screen_id": 1, "id": 0, "text": "SBI중금리", "bbox": [825, 433, 1097, 493], "conf": 0.92, "type": "return_claim", "h_px": 50.0, "contrast": 8.5, "card_id": null},
+    {"screen_id": 1, "id": 1, "text": "2년연속", "bbox": [409, 534, 613, 654], "conf": 0.99, "type": "headline", "h_px": 93.0, "contrast": 6.7, "card_id": null},
+    {"screen_id": 1, "id": 2, "text": "중금리신용대출", "bbox": [615, 611, 1305, 739], "conf": 1.0, "type": "return_claim", "h_px": 100.0, "contrast": 7.7, "card_id": null},
+    {"screen_id": 1, "id": 3, "text": "이용금액업계1위", "bbox": [615, 739, 1303, 849], "conf": 1.0, "type": "headline", "h_px": 90.0, "contrast": 7.7, "card_id": null},
+    {"screen_id": 1, "id": 4, "text": "(2018-2019 저축은행 중앙회 공시 기준)", "bbox": [954, 857, 1302, 884], "conf": 0.99, "type": "unknown", "h_px": 19.0, "contrast": 2.5, "card_id": 1},
+    {"screen_id": 1, "id": 5, "text": "SBI저축은행 중금리 신용대출브랜드기준/해당 상품명: SB중금리, SBI중금리W,SB중금리(대환),SB중금리(라이트),SBI중금리(추가),SB중금리(라이트추가)/대출금리:연 5.0%~17.0%/대출한도:100만원~1.5억원/상품과 신용도에 따라 대상,한도,금리가 달라질 수 있음/중도상환수수료 2%이내/원리금균등상환,", "bbox": [52, 1005, 1872, 1022], "conf": 0.97, "type": "risk_notice", "h_px": 13.0, "contrast": 2.6, "card_id": 2},
+    {"screen_id": 1, "id": 6, "text": "이자매월 부과(후추)/연체금리:약정금리+연3%(최대연20.0%)/인지세:대출금액5,000만원초과 시인지세법에서정한 금액의50%/대출상품이용시귀하의 신용등급또는 개인신용평점이하락할 수있으며신용등급또는 개인신용평점하락으로금융거래가 제약될수있음/저축은행중앙회 심의필 2020-01475호(2020.12.14)", "bbox": [52, 1020, 1872, 1037], "conf": 0.98, "type": "risk_notice", "h_px": 13.0, "contrast": 2.5, "card_id": 2},
+    {"screen_id": 2, "id": 0, "text": "SBI중금리", "bbox": [812, 428, 1108, 499], "conf": 0.99, "type": "return_claim", "h_px": 50.0, "contrast": 8.4, "card_id": 3},
+    {"screen_id": 2, "id": 1, "text": "2년연속", "bbox": [409, 536, 613, 652], "conf": 0.99, "type": "headline", "h_px": 91.0, "contrast": 6.7, "card_id": null},
+    {"screen_id": 2, "id": 2, "text": "중금리신용대출", "bbox": [615, 611, 1307, 739], "conf": 1.0, "type": "return_claim", "h_px": 100.0, "contrast": 7.7, "card_id": null},
+    {"screen_id": 2, "id": 3, "text": "이용금액업계1위", "bbox": [615, 739, 1303, 849], "conf": 1.0, "type": "headline", "h_px": 90.0, "contrast": 7.7, "card_id": null},
+    {"screen_id": 2, "id": 4, "text": "(2018-2019 저축은행 중앙회 공시 기준)", "bbox": [954, 857, 1301, 883], "conf": 0.98, "type": "unknown", "h_px": 19.0, "contrast": 2.5, "card_id": null},
+    {"screen_id": 2, "id": 5, "text": "S의저증은행 중금리 신용대증 브랜드기준/해당 상풍명: S비중금리,S리중금리W", "bbox": [52, 1005, 504, 1018], "conf": 0.76, "type": "return_claim", "h_px": 12.0, "contrast": 2.6, "card_id": null},
+    {"screen_id": 2, "id": 6, "text": "따라대상,한도", "bbox": [1399, 1005, 1491, 1018], "conf": 0.89, "type": "risk_notice", "h_px": 12.0, "contrast": 2.5, "card_id": null},
+    {"screen_id": 2, "id": 7, "text": "금리가달라질 수있음/중도상환수수료2%이내/원리금균등상환", "bbox": [1494, 1003, 1871, 1022], "conf": 0.94, "type": "risk_notice", "h_px": 13.0, "contrast": 2.5, "card_id": null},
+    {"screen_id": 2, "id": 8, "text": "이자매부과(후취)/연체금리:약정금리+연3%(최대연20.0%)", "bbox": [52, 1018, 420, 1037], "conf": 0.93, "type": "return_claim", "h_px": 13.0, "contrast": 2.5, "card_id": null},
+    {"screen_id": 2, "id": 9, "text": "가제약될수있음/저축은병층앙회심의필2020-01475호(2020.12.14)", "bbox": [1457, 1018, 1871, 1037], "conf": 0.9, "type": "risk_notice", "h_px": 13.0, "contrast": 2.6, "card_id": null}
+  ],
+  "paragraphs": [
+    {"screen_id": 0, "id": 0, "type": "headline", "text": "대출은 수입과 지출을 고려해 계획적으로!", "bbox": [1380, 907, 1826, 943], "block_ids": [0]},
+    {"screen_id": 1, "id": 0, "type": "return_claim", "text": "SBI중금리", "bbox": [825, 433, 1097, 493], "block_ids": [0]},
+    {"screen_id": 1, "id": 1, "type": "headline", "text": "2년연속", "bbox": [409, 534, 613, 654], "block_ids": [1]},
+    {"screen_id": 1, "id": 2, "type": "headline", "text": "중금리신용대출 이용금액업계1위", "bbox": [615, 611, 1305, 849], "block_ids": [2, 3]},
+    {"screen_id": 1, "id": 3, "type": "unknown", "text": "(2018-2019 저축은행 중앙회 공시 기준)", "bbox": [954, 857, 1302, 884], "block_ids": [4]},
+    {"screen_id": 1, "id": 4, "type": "risk_notice", "text": "SBI저축은행 중금리 신용대출브랜드기준/해당 상품명: SB중금리, SBI중금리W,SB중금리(대환),SB중금리(라이트),SBI중금리(추가),SB중금리(라이트추가)/대출금리:연 5.0%~17.0%/대출한도:100만원~1.5억원/상품과 신용도에 따라 대상,한도,금리가 달라질 수 있음/중도상환수수료 2%이내/원리금균등상환, 이자매월 부과(후추)/연체금리:약정금리+연3%(최대연20.0%)/인지세:대출금액5,000만원초과 시인지세법에서정한 금액의50%/대출상품이용시귀하의 신용등급또는 개인신용평점이하락할 수있으며신용등급또는 개인신용평점하락으로금융거래가 제약될수있음/저축은행중앙회 심의필 2020-01475호(2020.12.14)", "bbox": [52, 1005, 1872, 1037], "block_ids": [5, 6]},
+    {"screen_id": 2, "id": 0, "type": "return_claim", "text": "SBI중금리", "bbox": [812, 428, 1108, 499], "block_ids": [0]},
+    {"screen_id": 2, "id": 1, "type": "headline", "text": "2년연속", "bbox": [409, 536, 613, 652], "block_ids": [1]},
+    {"screen_id": 2, "id": 2, "type": "headline", "text": "중금리신용대출 이용금액업계1위", "bbox": [615, 611, 1307, 849], "block_ids": [2, 3]},
+    {"screen_id": 2, "id": 3, "type": "unknown", "text": "(2018-2019 저축은행 중앙회 공시 기준)", "bbox": [954, 857, 1301, 883], "block_ids": [4]},
+    {"screen_id": 2, "id": 4, "type": "return_claim", "text": "S의저증은행 중금리 신용대증 브랜드기준/해당 상풍명: S비중금리,S리중금리W 이자매부과(후취)/연체금리:약정금리+연3%(최대연20.0%)", "bbox": [52, 1005, 504, 1037], "block_ids": [5, 8]},
+    {"screen_id": 2, "id": 5, "type": "risk_notice", "text": "따라대상,한도 금리가달라질 수있음/중도상환수수료2%이내/원리금균등상환 가제약될수있음/저축은병층앙회심의필2020-01475호(2020.12.14)", "bbox": [1399, 1003, 1871, 1037], "block_ids": [6, 7, 9]}
+  ],
+  "metrics": {"n_cards": 4, "n_static": 4, "n_crawl": 0, "candidate_exposure_s": 10.2, "csv_exposure_s": 3.0, "csv_coverage": 0.933, "min_line_h_px": 18.0, "n_risk_cards": 1, "n_risk_crawl": 0, "n_risk_exposures": 1, "risk_short_exposures": 0, "risk_exposure_s": 2.8, "risk_csv_coverage": 0.933, "risk_chars": 323, "risk_cps_max": 115.4, "risk_unreadable_exposures": 1, "risk_text_h_min_px": 13.0, "risk_display_min_pt": {"mobile_feed": 2.64, "mobile_landscape": 5.71}, "risk_contrast_min": 2.55, "risk_headline_ratio_min": 0.13},
+  "label": null
+}

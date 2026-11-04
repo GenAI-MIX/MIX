@@ -1,0 +1,73 @@
+{
+  "ad_id": "V148",
+  "media": "tv_cf",
+  "product": null,
+  "brand": "우리카드",
+  "title": "[우리카드] 프리미엄의 시작 the OPUS",
+  "video": "data/raw/videos/영상/148_우리카드_V73IvuAsbTI.mp4",
+  "size": [1920, 1080],
+  "fps": 24.0,
+  "duration": 15.0,
+  "has_audio": true,
+  "content_bbox": [0, 0, 1920, 1080],
+  "review_no": [],
+  "csv": {"risk": "있음", "intervals": [[10.5, 14.0]], "review_no": "준법 심의필 2025-A02346"},
+  "screens": [
+    {"id": 0, "t_start": 10.3, "t_end": 14.1, "rep_t": 12.5, "card_ids": [0], "frame": "data/processed/video/frames/V148_s00.png", "headline_h_px": 72.0},
+    {"id": 1, "t_start": 12.0, "t_end": 14.1, "rep_t": 13.0, "card_ids": [1], "frame": "data/processed/video/frames/V148_s01.png", "headline_h_px": 44.0}
+  ],
+  "cards": [
+    {"id": 0, "screen_id": 0, "t_start": 10.3, "t_end": 14.1, "duration": 3.8, "kind": "static", "crawl_px_s": null, "bbox": [42, 846, 1870, 1053], "n_lines": 7, "line_h_px": 25.0, "n_det": 8, "rep_t": 12.5, "type": "risk_notice", "text": "* 본 영상은은 생성형 A로 제작된 영상입니다. -상세혜택 및 이용조건은 계약체결 전 홈페이지I[www.wooricard.com],상품설명서 및 약관 등을 통해 확인하시기 바랍니 다.-신용카드 발급이 부적정한 경우[개인신용평점 낮음 등]카드발급이 제한될 수 있습니다.-카드이용대금과 이에 수반되는 모든 수수료를 지정된 대금결제일에 상환합니다.-금융소비자는 금융소비자보호법 제19조제1항에 따라 해당상품 또는 서비스에 대하여 설명을 받을 권리가 있으며, 그 설명을 듣고 내용을 충분히 이해한 후 거래하시기 바랍니다. 상환능력에 비해 신용카드 사용액이 과도할 경우,귀하의 개인신용평점이 하락할 수 있습니다.개인신용평점 하락 시 금융거래와 관련된 불이익이 발생할 수 있습니다.일정기간 원리금을 연체할 경우,모든 원리금을 변제할 의무가 발생할 수 있습니다.연체이율:회원별/이용상품별 정상이자율 +최대 연 3%[법정 최고금리 연 20% 이내] 단, 연체 발생 시점에 정상이자율이 없는 경우는 아래와 같이 적용함-일시불 거래 연체 시:거래발생 시점의 최소기간[2개월]유이자 할부 금리-무이자 할부 거래 연체 시:거래 발생 시점의 동일한 할부 계약기간의 유이자 할부 금리-그 외의 경우:상사법정이율과 상호금융 가계자금대출금리*중 높은 금리 적용*한국은행에서 매월 발표하는 가장 최근의 비은행 금융기관 가중평균대출금리 [신규대출기준] 준법 심의필 2025-A02346[2025.09.22/유효기간:2026.09.18]", "block_ids": [7, 8, 9, 10, 11, 12, 13, 14], "risk_chars": 593, "risk_cps": 156.1, "risk_text_h_px": {"min": 18.0, "median": 19.0}, "risk_display_pt": {"mobile_feed": {"min": 3.66, "median": 3.86}, "mobile_landscape": {"min": 7.91, "median": 8.35}}, "risk_contrast_min": 6.76, "risk_headline_ratio": 0.264},
+    {"id": 1, "screen_id": 1, "t_start": 12.0, "t_end": 14.1, "duration": 2.1, "kind": "static", "crawl_px_s": null, "bbox": [1336, 365, 1705, 426], "n_lines": 1, "line_h_px": 58.0, "n_det": 5, "rep_t": 13.0, "type": "headline", "text": "프리미엄의 시작", "block_ids": [1], "risk_chars": 0, "risk_cps": null, "risk_text_h_px": null, "risk_display_pt": null, "risk_contrast_min": null, "risk_headline_ratio": null}
+  ],
+  "risk_exposures": [
+    {"id": 0, "t_start": 10.3, "t_end": 14.1, "duration": 3.8, "kind": "static", "card_ids": [0], "risk_chars": 593, "risk_cps": 156.1, "bbox": [42, 846, 1870, 1053], "text_card_id": 0, "text": "* 본 영상은은 생성형 A로 제작된 영상입니다. -상세혜택 및 이용조건은 계약체결 전 홈페이지I[www.wooricard.com],상품설명서 및 약관 등을 통해 확인하시기 바랍니 다.-신용카드 발급이 부적정한 경우[개인신용평점 낮음 등]카드발급이 제한될 수 있습니다.-카드이용대금과 이에 수반되는 모든 수수료를 지정된 대금결제일에 상환합니다.-금융소비자는 금융소비자보호법 제19조제1항에 따라 해당상품 또는 서비스에 대하여 설명을 받을 권리가 있으며, 그 설명을 듣고 내용을 충분히 이해한 후 거래하시기 바랍니다. 상환능력에 비해 신용카드 사용액이 과도할 경우,귀하의 개인신용평점이 하락할 수 있습니다.개인신용평점 하락 시 금융거래와 관련된 불이익이 발생할 수 있습니다.일정기간 원리금을 연체할 경우,모든 원리금을 변제할 의무가 발생할 수 있습니다.연체이율:회원별/이용상품별 정상이자율 +최대 연 3%[법정 최고금리 연 20% 이내] 단, 연체 발생 시점에 정상이자율이 없는 경우는 아래와 같이 적용함-일시불 거래 연체 시:거래발생 시점의 최소기간[2개월]유이자 할부 금리-무이자 할부 거래 연체 시:거래 발생 시점의 동일한 할부 계약기간의 유이자 할부 금리-그 외의 경우:상사법정이율과 상호금융 가계자금대출금리*중 높은 금리 적용*한국은행에서 매월 발표하는 가장 최근의 비은행 금융기관 가중평균대출금리 [신규대출기준] 준법 심의필 2025-A02346[2025.09.22/유효기간:2026.09.18]"}
+  ],
+  "ocr_blocks": [
+    {"screen_id": 0, "id": 0, "text": "WOORI CARD", "bbox": [208, 139, 324, 158], "conf": 0.99, "type": "unknown", "h_px": 15.0, "contrast": 12.8, "card_id": null},
+    {"screen_id": 0, "id": 1, "text": "VOORICARP", "bbox": [720, 142, 829, 156], "conf": 0.85, "type": "unknown", "h_px": 13.1, "contrast": null, "card_id": null},
+    {"screen_id": 0, "id": 2, "text": "프리미엄의 시작", "bbox": [1335, 364, 1706, 426], "conf": 0.99, "type": "headline", "h_px": 44.0, "contrast": 20.2, "card_id": null},
+    {"screen_id": 0, "id": 3, "text": "the OPUs", "bbox": [804, 424, 952, 459], "conf": 0.93, "type": "unknown", "h_px": 21.0, "contrast": null, "card_id": null},
+    {"screen_id": 0, "id": 4, "text": "the", "bbox": [1260, 472, 1402, 549], "conf": 1.0, "type": "headline", "h_px": 44.0, "contrast": 20.2, "card_id": null},
+    {"screen_id": 0, "id": 5, "text": "OPUS", "bbox": [1429, 456, 1770, 553], "conf": 0.99, "type": "headline", "h_px": 72.0, "contrast": 20.3, "card_id": null},
+    {"screen_id": 0, "id": 6, "text": "the OPUs", "bbox": [298, 549, 441, 585], "conf": 0.97, "type": "unknown", "h_px": 20.0, "contrast": 13.7, "card_id": null},
+    {"screen_id": 0, "id": 7, "text": "* 본 영상은은 생성형 A로 제작된 영상입니다.", "bbox": [45, 847, 455, 875], "conf": 0.97, "type": "risk_notice", "h_px": 20.0, "contrast": 9.2, "card_id": 0},
+    {"screen_id": 0, "id": 8, "text": "-상세혜택 및 이용조건은 계약체결 전 홈페이지I[www.wooricard.com],상품설명서 및 약관 등을 통해 확인하시기 바랍니 다.-신용카드 발급이 부적정한 경우[개인신용평점 낮음 등]카드발급이 제한될 수", "bbox": [47, 875, 1868, 899], "conf": 0.98, "type": "risk_notice", "h_px": 19.0, "contrast": 8.8, "card_id": 0},
+    {"screen_id": 0, "id": 9, "text": "있습니다.-카드이용대금과 이에 수반되는 모든 수수료를 지정된 대금결제일에 상환합니다.-금융소비자는 금융소비자보호법 제19조제1항에 따라 해당상품 또는 서비스에 대하여 설명을 받을 권리가 있으며,", "bbox": [47, 901, 1867, 924], "conf": 0.98, "type": "risk_notice", "h_px": 19.0, "contrast": 9.0, "card_id": 0},
+    {"screen_id": 0, "id": 10, "text": "그 설명을 듣고 내용을 충분히 이해한 후 거래하시기 바랍니다. 상환능력에 비해 신용카드 사용액이 과도할 경우,귀하의 개인신용평점이 하락할 수 있습니다.개인신용평점 하락 시 금융거래와 관련된", "bbox": [48, 927, 1867, 950], "conf": 0.97, "type": "risk_notice", "h_px": 20.0, "contrast": 7.3, "card_id": 0},
+    {"screen_id": 0, "id": 11, "text": "불이익이 발생할 수 있습니다.일정기간 원리금을 연체할 경우,모든 원리금을 변제할 의무가 발생할 수 있습니다.연체이율:회원별/이용상품별 정상이자율 +최대 연 3%[법정 최고금리 연 20% 이내] 단,", "bbox": [48, 953, 1866, 977], "conf": 0.97, "type": "risk_notice", "h_px": 19.0, "contrast": 7.0, "card_id": 0},
+    {"screen_id": 0, "id": 12, "text": "연체 발생 시점에 정상이자율이 없는 경우는 아래와 같이 적용함-일시불 거래 연체 시:거래발생 시점의 최소기간[2개월]유이자 할부 금리-무이자 할부 거래 연체 시:거래 발생 시점의 동일한 할부", "bbox": [46, 977, 1868, 1003], "conf": 0.98, "type": "risk_notice", "h_px": 19.0, "contrast": 6.8, "card_id": 0},
+    {"screen_id": 0, "id": 13, "text": "계약기간의 유이자 할부 금리-그 외의 경우:상사법정이율과 상호금융 가계자금대출금리*중 높은 금리 적용*한국은행에서 매월 발표하는 가장 최근의 비은행 금융기관 가중평균대출금리 [신규대출기준]", "bbox": [48, 1003, 1853, 1027], "conf": 0.99, "type": "risk_notice", "h_px": 19.0, "contrast": 7.0, "card_id": 0},
+    {"screen_id": 0, "id": 14, "text": "준법 심의필 2025-A02346[2025.09.22/유효기간:2026.09.18]", "bbox": [47, 1029, 595, 1053], "conf": 0.98, "type": "risk_notice", "h_px": 18.0, "contrast": 8.3, "card_id": 0},
+    {"screen_id": 1, "id": 0, "text": "WOORI CARD", "bbox": [208, 139, 324, 158], "conf": 0.99, "type": "unknown", "h_px": 15.0, "contrast": 13.0, "card_id": null},
+    {"screen_id": 1, "id": 1, "text": "프리미엄의 시작", "bbox": [1333, 363, 1710, 429], "conf": 0.99, "type": "headline", "h_px": 44.0, "contrast": 20.2, "card_id": 1},
+    {"screen_id": 1, "id": 2, "text": "the OPUS", "bbox": [809, 426, 952, 459], "conf": 0.88, "type": "unknown", "h_px": 21.0, "contrast": null, "card_id": null},
+    {"screen_id": 1, "id": 3, "text": "the", "bbox": [1260, 474, 1402, 551], "conf": 1.0, "type": "headline", "h_px": 44.0, "contrast": 20.2, "card_id": null},
+    {"screen_id": 1, "id": 4, "text": "OPUS", "bbox": [1431, 458, 1770, 549], "conf": 0.99, "type": "headline", "h_px": 44.0, "contrast": 20.3, "card_id": null},
+    {"screen_id": 1, "id": 5, "text": "the OPUs", "bbox": [298, 549, 441, 585], "conf": 0.97, "type": "unknown", "h_px": 20.0, "contrast": 13.9, "card_id": null},
+    {"screen_id": 1, "id": 6, "text": "* 본 영상은은 생성형 A로 제작된 영상입니다.", "bbox": [45, 848, 456, 872], "conf": 0.96, "type": "risk_notice", "h_px": 20.0, "contrast": 9.2, "card_id": null},
+    {"screen_id": 1, "id": 7, "text": "-상세혜택 및 이용조건은 계약체결 전 홈페이지[www,wooricard,com], 상품설명서 및 약관 등을 통해 확인하시기 바랍니 다.-신용카드 발급이 부적정한 경우(개인신용평점 낮음 등)카드발급이 제한될 수", "bbox": [45, 870, 1868, 898], "conf": 0.92, "type": "risk_notice", "h_px": 19.0, "contrast": 8.8, "card_id": null},
+    {"screen_id": 1, "id": 8, "text": "있습니다.-카드이용대금과 이에 수반되는 모든수수료를 지정된 대금결제일에 상환합니다.-금융소비자는금융소비자보호법 제19조제1항에 따라 해당상품 또는 서비스에 대하여 설명을 받을권리가 있으며", "bbox": [45, 898, 1864, 924], "conf": 0.94, "type": "risk_notice", "h_px": 19.0, "contrast": 9.0, "card_id": null},
+    {"screen_id": 1, "id": 9, "text": "그설명을 듣고 내용을 충분히이해한 후 거래하시기 바랍니다.상환능력에 비해 신용카드사용액이 과도할 경우,귀하의개인신용평점이 하락할 수있습니다.개인신용평점 하락 시 금융거래와관련된", "bbox": [47, 924, 1868, 951], "conf": 0.94, "type": "risk_notice", "h_px": 20.0, "contrast": 7.2, "card_id": null},
+    {"screen_id": 1, "id": 10, "text": "불이익이발생할 수 있습니다.일정기간원리금을 연체할 경우, 모든 원리금을 변제할 의무가발생할 수 있습니다.연체이을:회원별/이용상품별 정상이자을+최대 연3%[법정 최고금리 연20%이내)단", "bbox": [45, 951, 1866, 975], "conf": 0.93, "type": "risk_notice", "h_px": 19.0, "contrast": 7.0, "card_id": null},
+    {"screen_id": 1, "id": 11, "text": "연체 발생 시점에 정상이자율이 없는 경우는 아래와 같이 적용함-일시불 거래 연체 시:거래발생 시점의 최소기간(2개월)유이자 할부 금리-무이자 할부 거래 연체 시:거래 발생 시점의 동일한 할부", "bbox": [47, 977, 1868, 1001], "conf": 0.95, "type": "risk_notice", "h_px": 19.0, "contrast": 6.8, "card_id": null},
+    {"screen_id": 1, "id": 12, "text": "계약기간의 유이자할부 금리-그외의 경우:상사법정이율과 상호금융 가계자금대출금리\"중 놓은 금리 적용*한국은행에서 매월 발표하는 가장 최근의 비은행 금융기관 가중평균대출금리 [신규대출기준]", "bbox": [45, 999, 1866, 1028], "conf": 0.92, "type": "risk_notice", "h_px": 19.0, "contrast": 7.0, "card_id": null},
+    {"screen_id": 1, "id": 13, "text": "준법 심의필 2025-A02346 [2025.09.22/유효기1간:2026.09.18]", "bbox": [45, 1026, 594, 1054], "conf": 0.94, "type": "risk_notice", "h_px": 18.0, "contrast": 8.1, "card_id": null}
+  ],
+  "paragraphs": [
+    {"screen_id": 0, "id": 0, "type": "unknown", "text": "WOORI CARD", "bbox": [208, 139, 324, 158], "block_ids": [0]},
+    {"screen_id": 0, "id": 1, "type": "unknown", "text": "VOORICARP", "bbox": [720, 142, 829, 156], "block_ids": [1]},
+    {"screen_id": 0, "id": 2, "type": "headline", "text": "프리미엄의 시작", "bbox": [1335, 364, 1706, 426], "block_ids": [2]},
+    {"screen_id": 0, "id": 3, "type": "unknown", "text": "the OPUs", "bbox": [804, 424, 952, 459], "block_ids": [3]},
+    {"screen_id": 0, "id": 4, "type": "headline", "text": "the OPUS", "bbox": [1260, 456, 1770, 553], "block_ids": [4, 5]},
+    {"screen_id": 0, "id": 5, "type": "unknown", "text": "the OPUs", "bbox": [298, 549, 441, 585], "block_ids": [6]},
+    {"screen_id": 0, "id": 6, "type": "risk_notice", "text": "* 본 영상은은 생성형 A로 제작된 영상입니다. -상세혜택 및 이용조건은 계약체결 전 홈페이지I[www.wooricard.com],상품설명서 및 약관 등을 통해 확인하시기 바랍니 다.-신용카드 발급이 부적정한 경우[개인신용평점 낮음 등]카드발급이 제한될 수 있습니다.-카드이용대금과 이에 수반되는 모든 수수료를 지정된 대금결제일에 상환합니다.-금융소비자는 금융소비자보호법 제19조제1항에 따라 해당상품 또는 서비스에 대하여 설명을 받을 권리가 있으며, 그 설명을 듣고 내용을 충분히 이해한 후 거래하시기 바랍니다. 상환능력에 비해 신용카드 사용액이 과도할 경우,귀하의 개인신용평점이 하락할 수 있습니다.개인신용평점 하락 시 금융거래와 관련된 불이익이 발생할 수 있습니다.일정기간 원리금을 연체할 경우,모든 원리금을 변제할 의무가 발생할 수 있습니다.연체이율:회원별/이용상품별 정상이자율 +최대 연 3%[법정 최고금리 연 20% 이내] 단, 연체 발생 시점에 정상이자율이 없는 경우는 아래와 같이 적용함-일시불 거래 연체 시:거래발생 시점의 최소기간[2개월]유이자 할부 금리-무이자 할부 거래 연체 시:거래 발생 시점의 동일한 할부 계약기간의 유이자 할부 금리-그 외의 경우:상사법정이율과 상호금융 가계자금대출금리*중 높은 금리 적용*한국은행에서 매월 발표하는 가장 최근의 비은행 금융기관 가중평균대출금리 [신규대출기준] 준법 심의필 2025-A02346[2025.09.22/유효기간:2026.09.18]", "bbox": [45, 847, 1868, 1053], "block_ids": [7, 8, 9, 10, 11, 12, 13, 14]},
+    {"screen_id": 1, "id": 0, "type": "unknown", "text": "WOORI CARD", "bbox": [208, 139, 324, 158], "block_ids": [0]},
+    {"screen_id": 1, "id": 1, "type": "headline", "text": "프리미엄의 시작 the OPUS", "bbox": [1260, 363, 1770, 551], "block_ids": [1, 3, 4]},
+    {"screen_id": 1, "id": 2, "type": "unknown", "text": "the OPUS", "bbox": [809, 426, 952, 459], "block_ids": [2]},
+    {"screen_id": 1, "id": 3, "type": "unknown", "text": "the OPUs", "bbox": [298, 549, 441, 585], "block_ids": [5]},
+    {"screen_id": 1, "id": 4, "type": "risk_notice", "text": "* 본 영상은은 생성형 A로 제작된 영상입니다. -상세혜택 및 이용조건은 계약체결 전 홈페이지[www,wooricard,com], 상품설명서 및 약관 등을 통해 확인하시기 바랍니 다.-신용카드 발급이 부적정한 경우(개인신용평점 낮음 등)카드발급이 제한될 수 있습니다.-카드이용대금과 이에 수반되는 모든수수료를 지정된 대금결제일에 상환합니다.-금융소비자는금융소비자보호법 제19조제1항에 따라 해당상품 또는 서비스에 대하여 설명을 받을권리가 있으며 그설명을 듣고 내용을 충분히이해한 후 거래하시기 바랍니다.상환능력에 비해 신용카드사용액이 과도할 경우,귀하의개인신용평점이 하락할 수있습니다.개인신용평점 하락 시 금융거래와관련된 불이익이발생할 수 있습니다.일정기간원리금을 연체할 경우, 모든 원리금을 변제할 의무가발생할 수 있습니다.연체이을:회원별/이용상품별 정상이자을+최대 연3%[법정 최고금리 연20%이내)단 연체 발생 시점에 정상이자율이 없는 경우는 아래와 같이 적용함-일시불 거래 연체 시:거래발생 시점의 최소기간(2개월)유이자 할부 금리-무이자 할부 거래 연체 시:거래 발생 시점의 동일한 할부 계약기간의 유이자할부 금리-그외의 경우:상사법정이율과 상호금융 가계자금대출금리\"중 놓은 금리 적용*한국은행에서 매월 발표하는 가장 최근의 비은행 금융기관 가중평균대출금리 [신규대출기준] 준법 심의필 2025-A02346 [2025.09.22/유효기1간:2026.09.18]", "bbox": [45, 848, 1868, 1054], "block_ids": [6, 7, 8, 9, 10, 11, 12, 13]}
+  ],
+  "metrics": {"n_cards": 2, "n_static": 2, "n_crawl": 0, "candidate_exposure_s": 3.8, "csv_exposure_s": 3.5, "csv_coverage": 1.0, "min_line_h_px": 25.0, "n_risk_cards": 1, "n_risk_crawl": 0, "n_risk_exposures": 1, "risk_short_exposures": 0, "risk_exposure_s": 3.8, "risk_csv_coverage": 1.0, "risk_chars": 593, "risk_cps_max": 156.1, "risk_unreadable_exposures": 1, "risk_text_h_min_px": 18.0, "risk_display_min_pt": {"mobile_feed": 3.66, "mobile_landscape": 7.91}, "risk_contrast_min": 6.76, "risk_headline_ratio_min": 0.264},
+  "label": null
+}

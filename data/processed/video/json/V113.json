@@ -1,0 +1,62 @@
+{
+  "ad_id": "V113",
+  "media": "tv_cf",
+  "product": null,
+  "brand": "KODEX ETF",
+  "title": "[Semiconductors are always KODEX] The ETF for consistent investing💙",
+  "video": "data/raw/videos/영상/113_KODEXETF_RFtzgC_U1Q0.mp4",
+  "size": [1920, 1080],
+  "fps": 29.97,
+  "duration": 15.015,
+  "has_audio": true,
+  "content_bbox": [0, 0, 1920, 1080],
+  "review_no": ["심사필제2026-947호"],
+  "csv": {"risk": "있음", "intervals": [[0.0, 12.0]], "review_no": "준법감시인 심사필 제 2026-947호"},
+  "screens": [
+    {"id": 0, "t_start": 0.0, "t_end": 15.02, "rep_t": 9.4, "card_ids": [0, 1], "frame": "data/processed/video/frames/V113_s00.png", "headline_h_px": 196.9}
+  ],
+  "cards": [
+    {"id": 0, "screen_id": 0, "t_start": 0.0, "t_end": 15.02, "duration": 15.02, "kind": "static", "crawl_px_s": null, "bbox": [1486, 60, 1807, 113], "n_lines": 1, "line_h_px": 47.0, "n_det": 31, "rep_t": 10.9, "type": "unknown", "text": "L0 삼성 Kodex ETF", "block_ids": [3, 4], "risk_chars": 0, "risk_cps": null, "risk_text_h_px": null, "risk_display_pt": null, "risk_contrast_min": null, "risk_headline_ratio": null},
+    {"id": 1, "screen_id": 0, "t_start": 0.0, "t_end": 12.2, "duration": 12.2, "kind": "static", "crawl_px_s": null, "bbox": [118, 984, 1802, 1050], "n_lines": 2, "line_h_px": 26.5, "n_det": 25, "rep_t": 9.4, "type": "risk_notice", "text": "이 금융상품은 예금자보호법에 따라 보호되지 않습니다.| 자산가격 및 환율변동,신용등급 하락 등에 따른 원금손실(0~100%)발생 가능 및 투자자 귀속| 투자 전 설명 청취,가입전(간이)투자설명서 및 집합투자규약 필독I ETF거래수수료,증권거래비용 및 기타비용 추가 발생 가능 | 삼성자산운용 준법감시인 심사필 제 2026-947호(2026.05.19-2027.05.18)", "block_ids": [17, 18], "risk_chars": 172, "risk_cps": 14.1, "risk_text_h_px": {"min": 20.0, "median": 20.5}, "risk_display_pt": {"mobile_feed": {"min": 4.06, "median": 4.16}, "mobile_landscape": {"min": 8.79, "median": 9.01}}, "risk_contrast_min": null, "risk_headline_ratio": 0.104}
+  ],
+  "risk_exposures": [
+    {"id": 0, "t_start": 0.0, "t_end": 12.2, "duration": 12.2, "kind": "static", "card_ids": [1], "risk_chars": 172, "risk_cps": 14.1, "bbox": [118, 984, 1802, 1050], "text_card_id": 1, "text": "이 금융상품은 예금자보호법에 따라 보호되지 않습니다.| 자산가격 및 환율변동,신용등급 하락 등에 따른 원금손실(0~100%)발생 가능 및 투자자 귀속| 투자 전 설명 청취,가입전(간이)투자설명서 및 집합투자규약 필독I ETF거래수수료,증권거래비용 및 기타비용 추가 발생 가능 | 삼성자산운용 준법감시인 심사필 제 2026-947호(2026.05.19-2027.05.18)"}
+  ],
+  "ocr_blocks": [
+    {"screen_id": 0, "id": 0, "text": "삼성자산운용", "bbox": [103, 58, 338, 118], "conf": 1.0, "type": "unknown", "h_px": 42.0, "contrast": null, "card_id": null},
+    {"screen_id": 0, "id": 1, "text": "14:397", "bbox": [841, 85, 911, 108], "conf": 0.87, "type": "unknown", "h_px": 12.0, "contrast": 14.3, "card_id": null},
+    {"screen_id": 0, "id": 2, "text": " 60 20", "bbox": [1099, 72, 1185, 98], "conf": 0.65, "type": "unknown", "h_px": 14.0, "contrast": null, "card_id": null},
+    {"screen_id": 0, "id": 3, "text": "L0", "bbox": [1453, 73, 1474, 92], "conf": 0.42, "type": "unknown", "h_px": 18.8, "contrast": null, "card_id": 0},
+    {"screen_id": 0, "id": 4, "text": "삼성 Kodex ETF", "bbox": [1484, 57, 1809, 118], "conf": 0.96, "type": "unknown", "h_px": 58.6, "contrast": 3.4, "card_id": 0},
+    {"screen_id": 0, "id": 5, "text": "samsumatund.com", "bbox": [956, 122, 1069, 142], "conf": 0.95, "type": "other", "h_px": 10.0, "contrast": 1.8, "card_id": null},
+    {"screen_id": 0, "id": 6, "text": "•YKodexETE", "bbox": [827, 174, 938, 197], "conf": 0.73, "type": "unknown", "h_px": 12.0, "contrast": 8.6, "card_id": null},
+    {"screen_id": 0, "id": 7, "text": "Kodex ETF", "bbox": [943, 171, 1029, 197], "conf": 0.87, "type": "unknown", "h_px": 12.0, "contrast": null, "card_id": null},
+    {"screen_id": 0, "id": 8, "text": "참", "bbox": [1039, 172, 1082, 188], "conf": 0.37, "type": "unknown", "h_px": 11.0, "contrast": 2.4, "card_id": null},
+    {"screen_id": 0, "id": 9, "text": "삼성 Kodex ETF", "bbox": [904, 480, 1161, 538], "conf": 0.95, "type": "unknown", "h_px": 24.0, "contrast": 13.9, "card_id": null},
+    {"screen_id": 0, "id": 10, "text": "세상의 모든 투자,신뢰의 길을 없다", "bbox": [915, 546, 1149, 579], "conf": 0.86, "type": "unknown", "h_px": 16.0, "contrast": 9.1, "card_id": null},
+    {"screen_id": 0, "id": 11, "text": "엄마도조금씩", "bbox": [77, 624, 885, 793], "conf": 1.0, "type": "headline", "h_px": 168.8, "contrast": null, "card_id": null},
+    {"screen_id": 0, "id": 12, "text": "88", "bbox": [952, 827, 982, 853], "conf": 1.0, "type": "unknown", "h_px": 21.0, "contrast": 3.1, "card_id": null},
+    {"screen_id": 0, "id": 13, "text": "신제상", "bbox": [949, 861, 988, 876], "conf": 0.44, "type": "unknown", "h_px": 10.0, "contrast": 1.9, "card_id": null},
+    {"screen_id": 0, "id": 14, "text": "시전", "bbox": [1106, 855, 1144, 868], "conf": 0.46, "type": "unknown", "h_px": 10.0, "contrast": 2.0, "card_id": null},
+    {"screen_id": 0, "id": 15, "text": "05", "bbox": [1191, 851, 1219, 866], "conf": 0.31, "type": "unknown", "h_px": 9.0, "contrast": 1.9, "card_id": null},
+    {"screen_id": 0, "id": 16, "text": "매달넣고있어", "bbox": [69, 780, 921, 977], "conf": 1.0, "type": "headline", "h_px": 196.9, "contrast": null, "card_id": null},
+    {"screen_id": 0, "id": 17, "text": "이 금융상품은 예금자보호법에 따라 보호되지 않습니다.| 자산가격 및 환율변동,신용등급 하락 등에 따른 원금손실(0~100%)발생 가능 및 투자자 귀속|", "bbox": [331, 990, 1589, 1016], "conf": 0.96, "type": "risk_notice", "h_px": 21.0, "contrast": null, "card_id": 1},
+    {"screen_id": 0, "id": 18, "text": "투자 전 설명 청취,가입전(간이)투자설명서 및 집합투자규약 필독I ETF거래수수료,증권거래비용 및 기타비용 추가 발생 가능 | 삼성자산운용 준법감시인 심사필 제 2026-947호(2026.05.19-2027.05.18)", "bbox": [121, 1022, 1799, 1047], "conf": 0.98, "type": "risk_notice", "h_px": 20.0, "contrast": null, "card_id": 1}
+  ],
+  "paragraphs": [
+    {"screen_id": 0, "id": 0, "type": "unknown", "text": "삼성자산운용", "bbox": [103, 58, 338, 118], "block_ids": [0]},
+    {"screen_id": 0, "id": 1, "type": "unknown", "text": "14:397", "bbox": [841, 85, 911, 108], "block_ids": [1]},
+    {"screen_id": 0, "id": 2, "type": "unknown", "text": "60 20", "bbox": [1099, 72, 1185, 98], "block_ids": [2]},
+    {"screen_id": 0, "id": 3, "type": "unknown", "text": "L0 삼성 Kodex ETF", "bbox": [1453, 57, 1809, 118], "block_ids": [3, 4]},
+    {"screen_id": 0, "id": 4, "type": "other", "text": "samsumatund.com", "bbox": [956, 122, 1069, 142], "block_ids": [5]},
+    {"screen_id": 0, "id": 5, "type": "unknown", "text": "•YKodexETE Kodex ETF 참", "bbox": [827, 171, 1082, 197], "block_ids": [6, 7, 8]},
+    {"screen_id": 0, "id": 6, "type": "unknown", "text": "삼성 Kodex ETF 세상의 모든 투자,신뢰의 길을 없다", "bbox": [904, 480, 1161, 579], "block_ids": [9, 10]},
+    {"screen_id": 0, "id": 7, "type": "headline", "text": "엄마도조금씩 매달넣고있어", "bbox": [69, 624, 921, 977], "block_ids": [11, 16]},
+    {"screen_id": 0, "id": 8, "type": "unknown", "text": "88 신제상", "bbox": [949, 827, 988, 876], "block_ids": [12, 13]},
+    {"screen_id": 0, "id": 9, "type": "unknown", "text": "시전", "bbox": [1106, 855, 1144, 868], "block_ids": [14]},
+    {"screen_id": 0, "id": 10, "type": "unknown", "text": "05", "bbox": [1191, 851, 1219, 866], "block_ids": [15]},
+    {"screen_id": 0, "id": 11, "type": "risk_notice", "text": "이 금융상품은 예금자보호법에 따라 보호되지 않습니다.| 자산가격 및 환율변동,신용등급 하락 등에 따른 원금손실(0~100%)발생 가능 및 투자자 귀속| 투자 전 설명 청취,가입전(간이)투자설명서 및 집합투자규약 필독I ETF거래수수료,증권거래비용 및 기타비용 추가 발생 가능 | 삼성자산운용 준법감시인 심사필 제 2026-947호(2026.05.19-2027.05.18)", "bbox": [121, 990, 1799, 1047], "block_ids": [17, 18]}
+  ],
+  "metrics": {"n_cards": 2, "n_static": 2, "n_crawl": 0, "candidate_exposure_s": 15.02, "csv_exposure_s": 12.0, "csv_coverage": 1.0, "min_line_h_px": 26.5, "n_risk_cards": 1, "n_risk_crawl": 0, "n_risk_exposures": 1, "risk_short_exposures": 0, "risk_exposure_s": 12.2, "risk_csv_coverage": 1.0, "risk_chars": 172, "risk_cps_max": 14.1, "risk_unreadable_exposures": 1, "risk_text_h_min_px": 20.0, "risk_display_min_pt": {"mobile_feed": 4.06, "mobile_landscape": 8.79}, "risk_contrast_min": null, "risk_headline_ratio_min": 0.104},
+  "label": null
+}

@@ -1,0 +1,58 @@
+{
+  "ad_id": "V145",
+  "media": "tv_cf",
+  "product": null,
+  "brand": "신한투자증권",
+  "title": "신한금융투자 리밸런싱편 - 이하늬, 20초",
+  "video": "data/raw/videos/영상/145_신한투자증권_oJ2EGs4ilaY.mp4",
+  "size": [1920, 1080],
+  "fps": 29.97,
+  "duration": 20.02,
+  "has_audio": true,
+  "content_bbox": [0, 0, 1920, 1080],
+  "review_no": ["심사필제15-05378호"],
+  "csv": {"risk": "있음", "intervals": [[10.5, 14.5], [16.0, 20.0]], "review_no": "한국금융투자협회 심사필제 15-05378호"},
+  "screens": [
+    {"id": 0, "t_start": 10.4, "t_end": 14.6, "rep_t": 11.9, "card_ids": [0], "frame": "data/processed/video/frames/V145_s00.png", "headline_h_px": 128.0},
+    {"id": 1, "t_start": 16.1, "t_end": 20.02, "rep_t": 17.5, "card_ids": [1], "frame": "data/processed/video/frames/V145_s01.png", "headline_h_px": 121.0}
+  ],
+  "cards": [
+    {"id": 0, "screen_id": 0, "t_start": 10.4, "t_end": 14.6, "duration": 4.2, "kind": "static", "crawl_px_s": null, "bbox": [209, 886, 1709, 1026], "n_lines": 4, "line_h_px": 36.5, "n_det": 9, "rep_t": 11.9, "type": "risk_notice", "text": "※랩 서비스 및 ETF는 예금자보호법에 따라 예금보험공사가 보호하지 않으며,투자원금의 손실이 발생할 수 있습니다.※당사는 랩서비스에 관하여 충분히 설명할 의무가있으며,투자자는투자에 앞서설명을충분히들으시기바랍니다.※랩 수수료는가입기간별차등 후취적용되며,자세한 사항은 당사 홈페이지를 참조바랍니다.(3년이하 연1.6%,3년초과~5년이하 연1.4%,5년초과시연1.2%)※서비스에 따라 중도해지시 수수료가 발생할 수 있으며,해지관련내용은서비스별상이하니가입상담시 확인하십시오.한국금융투자협회 심사필제15-05378호(2015.8.31~2015.12.31)", "block_ids": [5, 6, 7, 8], "risk_chars": 271, "risk_cps": 64.5, "risk_text_h_px": {"min": 25.0, "median": 25.5}, "risk_display_pt": {"mobile_feed": {"min": 5.08, "median": 5.18}, "mobile_landscape": {"min": 10.99, "median": 11.21}}, "risk_contrast_min": 4.83, "risk_headline_ratio": 0.199},
+    {"id": 1, "screen_id": 1, "t_start": 16.1, "t_end": 20.02, "duration": 3.92, "kind": "static", "crawl_px_s": null, "bbox": [209, 886, 1710, 1024], "n_lines": 4, "line_h_px": 35.0, "n_det": 8, "rep_t": 17.5, "type": "risk_notice", "text": "※랩서비스 및 ETF는 예금자보호법에 따라 예금보험공사가 보호하지 않으며,투자원금의 손실이 발생할 수 있습니다.※당사는 랩서비스에 관하여 충분히 설명할 의무가있으며,투자자는투자에 앞서설명을충분히들으시기바랍니다.※랩 수수료는가입기간별차등 후취적용되며,자세한 사항은 당사홈페이지를 참조바 랍니다.(3년이하 연1.6%,3년초과~5년이하 연1.4%,5년초과시연1.2%)※서비스에 따라 중도해지시 수수료가 발생할 수 있으며,해지관련내용은서비스별상이하니가입상담시 확인하십시오.한국금융투자협회 심사필 제15-05378호(2015.8.31~2015.12.31)", "block_ids": [4, 5, 6, 7, 8], "risk_chars": 271, "risk_cps": 69.1, "risk_text_h_px": {"min": 25.0, "median": 25.0}, "risk_display_pt": {"mobile_feed": {"min": 5.08, "median": 5.08}, "mobile_landscape": {"min": 10.99, "median": 10.99}}, "risk_contrast_min": 5.73, "risk_headline_ratio": 0.207}
+  ],
+  "risk_exposures": [
+    {"id": 0, "t_start": 10.4, "t_end": 14.6, "duration": 4.2, "kind": "static", "card_ids": [0], "risk_chars": 271, "risk_cps": 64.5, "bbox": [209, 886, 1709, 1026], "text_card_id": 0, "text": "※랩 서비스 및 ETF는 예금자보호법에 따라 예금보험공사가 보호하지 않으며,투자원금의 손실이 발생할 수 있습니다.※당사는 랩서비스에 관하여 충분히 설명할 의무가있으며,투자자는투자에 앞서설명을충분히들으시기바랍니다.※랩 수수료는가입기간별차등 후취적용되며,자세한 사항은 당사 홈페이지를 참조바랍니다.(3년이하 연1.6%,3년초과~5년이하 연1.4%,5년초과시연1.2%)※서비스에 따라 중도해지시 수수료가 발생할 수 있으며,해지관련내용은서비스별상이하니가입상담시 확인하십시오.한국금융투자협회 심사필제15-05378호(2015.8.31~2015.12.31)"},
+    {"id": 1, "t_start": 16.1, "t_end": 20.02, "duration": 3.92, "kind": "static", "card_ids": [1], "risk_chars": 271, "risk_cps": 69.1, "bbox": [209, 886, 1710, 1024], "text_card_id": 1, "text": "※랩서비스 및 ETF는 예금자보호법에 따라 예금보험공사가 보호하지 않으며,투자원금의 손실이 발생할 수 있습니다.※당사는 랩서비스에 관하여 충분히 설명할 의무가있으며,투자자는투자에 앞서설명을충분히들으시기바랍니다.※랩 수수료는가입기간별차등 후취적용되며,자세한 사항은 당사홈페이지를 참조바 랍니다.(3년이하 연1.6%,3년초과~5년이하 연1.4%,5년초과시연1.2%)※서비스에 따라 중도해지시 수수료가 발생할 수 있으며,해지관련내용은서비스별상이하니가입상담시 확인하십시오.한국금융투자협회 심사필 제15-05378호(2015.8.31~2015.12.31)"}
+  ],
+  "ocr_blocks": [
+    {"screen_id": 0, "id": 0, "text": "미래를함께 하는", "bbox": [118, 98, 321, 142], "conf": 0.97, "type": "unknown", "h_px": 25.0, "contrast": 6.5, "card_id": null},
+    {"screen_id": 0, "id": 1, "text": "박종", "bbox": [356, 94, 418, 139], "conf": 0.8, "type": "unknown", "h_px": 20.0, "contrast": 6.5, "card_id": null},
+    {"screen_id": 0, "id": 2, "text": "3T", "bbox": [366, 128, 394, 148], "conf": 0.4, "type": "unknown", "h_px": 2.0, "contrast": 6.3, "card_id": null},
+    {"screen_id": 0, "id": 3, "text": "최적의 자산배분과", "bbox": [613, 414, 1307, 518], "conf": 1.0, "type": "unknown", "h_px": 70.0, "contrast": 6.6, "card_id": null},
+    {"screen_id": 0, "id": 4, "text": "리밸런싱을 통한 자산관리", "bbox": [278, 519, 1631, 684], "conf": 0.98, "type": "headline", "h_px": 128.0, "contrast": 3.8, "card_id": null},
+    {"screen_id": 0, "id": 5, "text": "※랩 서비스 및 ETF는 예금자보호법에 따라 예금보험공사가 보호하지 않으며,투자원금의 손실이 발생할 수 있습니다.※당사는 랩서비스에 관하여", "bbox": [212, 886, 1706, 921], "conf": 0.97, "type": "risk_notice", "h_px": 25.0, "contrast": 4.8, "card_id": 0},
+    {"screen_id": 0, "id": 6, "text": "충분히 설명할 의무가있으며,투자자는투자에 앞서설명을충분히들으시기바랍니다.※랩 수수료는가입기간별차등 후취적용되며,자세한 사항은", "bbox": [213, 921, 1708, 956], "conf": 0.99, "type": "risk_notice", "h_px": 26.0, "contrast": 4.8, "card_id": 0},
+    {"screen_id": 0, "id": 7, "text": "당사 홈페이지를 참조바랍니다.(3년이하 연1.6%,3년초과~5년이하 연1.4%,5년초과시연1.2%)※서비스에 따라 중도해지시 수수료가 발생할 수", "bbox": [214, 957, 1708, 987], "conf": 0.98, "type": "risk_notice", "h_px": 26.0, "contrast": 4.8, "card_id": 0},
+    {"screen_id": 0, "id": 8, "text": "있으며,해지관련내용은서비스별상이하니가입상담시 확인하십시오.한국금융투자협회 심사필제15-05378호(2015.8.31~2015.12.31)", "bbox": [208, 984, 1630, 1027], "conf": 0.98, "type": "risk_notice", "h_px": 25.0, "contrast": 4.8, "card_id": 0},
+    {"screen_id": 1, "id": 0, "text": "m.m", "bbox": [1421, 281, 1693, 379], "conf": 0.32, "type": "unknown", "h_px": 71.0, "contrast": 5.8, "card_id": null},
+    {"screen_id": 1, "id": 1, "text": "빠른 시장대응", "bbox": [1183, 441, 1710, 557], "conf": 0.99, "type": "headline", "h_px": 84.0, "contrast": 6.8, "card_id": null},
+    {"screen_id": 1, "id": 2, "text": "신한금융투자", "bbox": [1001, 544, 1723, 699], "conf": 1.0, "type": "headline", "h_px": 120.0, "contrast": 3.9, "card_id": null},
+    {"screen_id": 1, "id": 3, "text": "미래설계1억랩", "bbox": [988, 681, 1708, 838], "conf": 1.0, "type": "headline", "h_px": 121.0, "contrast": 4.1, "card_id": null},
+    {"screen_id": 1, "id": 4, "text": "※랩서비스 및 ETF는 예금자보호법에 따라 예금보험공사가 보호하지 않으며,투자원금의 손실이 발생할 수 있습니다.※당사는 랩서비스에 관하여", "bbox": [212, 887, 1706, 920], "conf": 0.98, "type": "risk_notice", "h_px": 25.0, "contrast": 5.7, "card_id": 1},
+    {"screen_id": 1, "id": 5, "text": "충분히 설명할 의무가있으며,투자자는투자에 앞서설명을충분히들으시기바랍니다.※랩 수수료는가입기간별차등 후취적용되며,자세한 사항은", "bbox": [213, 920, 1708, 955], "conf": 0.98, "type": "risk_notice", "h_px": 26.0, "contrast": 5.8, "card_id": 1},
+    {"screen_id": 1, "id": 6, "text": "당사홈페이지를 참조바", "bbox": [214, 956, 457, 987], "conf": 0.97, "type": "risk_notice", "h_px": 26.0, "contrast": 6.3, "card_id": 1},
+    {"screen_id": 1, "id": 7, "text": "랍니다.(3년이하 연1.6%,3년초과~5년이하 연1.4%,5년초과시연1.2%)※서비스에 따라 중도해지시 수수료가 발생할 수", "bbox": [454, 955, 1708, 987], "conf": 0.98, "type": "risk_notice", "h_px": 25.0, "contrast": 5.8, "card_id": 1},
+    {"screen_id": 1, "id": 8, "text": "있으며,해지관련내용은서비스별상이하니가입상담시 확인하십시오.한국금융투자협회 심사필 제15-05378호(2015.8.31~2015.12.31)", "bbox": [211, 986, 1628, 1024], "conf": 0.98, "type": "risk_notice", "h_px": 25.0, "contrast": 6.1, "card_id": 1}
+  ],
+  "paragraphs": [
+    {"screen_id": 0, "id": 0, "type": "unknown", "text": "미래를함께 하는 박종", "bbox": [118, 94, 418, 142], "block_ids": [0, 1]},
+    {"screen_id": 0, "id": 1, "type": "unknown", "text": "3T", "bbox": [366, 128, 394, 148], "block_ids": [2]},
+    {"screen_id": 0, "id": 2, "type": "unknown", "text": "최적의 자산배분과", "bbox": [613, 414, 1307, 518], "block_ids": [3]},
+    {"screen_id": 0, "id": 3, "type": "headline", "text": "리밸런싱을 통한 자산관리", "bbox": [278, 519, 1631, 684], "block_ids": [4]},
+    {"screen_id": 0, "id": 4, "type": "risk_notice", "text": "※랩 서비스 및 ETF는 예금자보호법에 따라 예금보험공사가 보호하지 않으며,투자원금의 손실이 발생할 수 있습니다.※당사는 랩서비스에 관하여 충분히 설명할 의무가있으며,투자자는투자에 앞서설명을충분히들으시기바랍니다.※랩 수수료는가입기간별차등 후취적용되며,자세한 사항은 당사 홈페이지를 참조바랍니다.(3년이하 연1.6%,3년초과~5년이하 연1.4%,5년초과시연1.2%)※서비스에 따라 중도해지시 수수료가 발생할 수 있으며,해지관련내용은서비스별상이하니가입상담시 확인하십시오.한국금융투자협회 심사필제15-05378호(2015.8.31~2015.12.31)", "bbox": [208, 886, 1708, 1027], "block_ids": [5, 6, 7, 8]},
+    {"screen_id": 1, "id": 0, "type": "headline", "text": "m.m 빠른 시장대응 신한금융투자 미래설계1억랩", "bbox": [988, 281, 1723, 838], "block_ids": [0, 1, 2, 3]},
+    {"screen_id": 1, "id": 1, "type": "risk_notice", "text": "※랩서비스 및 ETF는 예금자보호법에 따라 예금보험공사가 보호하지 않으며,투자원금의 손실이 발생할 수 있습니다.※당사는 랩서비스에 관하여 충분히 설명할 의무가있으며,투자자는투자에 앞서설명을충분히들으시기바랍니다.※랩 수수료는가입기간별차등 후취적용되며,자세한 사항은 당사홈페이지를 참조바 랍니다.(3년이하 연1.6%,3년초과~5년이하 연1.4%,5년초과시연1.2%)※서비스에 따라 중도해지시 수수료가 발생할 수 있으며,해지관련내용은서비스별상이하니가입상담시 확인하십시오.한국금융투자협회 심사필 제15-05378호(2015.8.31~2015.12.31)", "bbox": [211, 887, 1708, 1024], "block_ids": [4, 5, 6, 7, 8]}
+  ],
+  "metrics": {"n_cards": 2, "n_static": 2, "n_crawl": 0, "candidate_exposure_s": 8.12, "csv_exposure_s": 8.0, "csv_coverage": 0.987, "min_line_h_px": 35.0, "n_risk_cards": 2, "n_risk_crawl": 0, "n_risk_exposures": 2, "risk_short_exposures": 0, "risk_exposure_s": 8.12, "risk_csv_coverage": 0.987, "risk_chars": 542, "risk_cps_max": 69.1, "risk_unreadable_exposures": 2, "risk_text_h_min_px": 25.0, "risk_display_min_pt": {"mobile_feed": 5.08, "mobile_landscape": 10.99}, "risk_contrast_min": 4.83, "risk_headline_ratio_min": 0.199},
+  "label": null
+}

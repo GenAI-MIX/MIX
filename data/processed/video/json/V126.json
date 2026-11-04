@@ -1,0 +1,42 @@
+{
+  "ad_id": "V126",
+  "media": "tv_cf",
+  "product": null,
+  "brand": "TIGER ETF",
+  "title": "투자에서 연금까지! 결국은 TIGER ETF🐯✨",
+  "video": "data/raw/videos/영상/126_TIGERETF_QC-_V640Dno.mp4",
+  "size": [1920, 1080],
+  "fps": 29.97,
+  "duration": 15.015,
+  "has_audio": true,
+  "content_bbox": [0, 0, 1920, 1080],
+  "review_no": ["심사필제25-0893호"],
+  "csv": {"risk": "있음", "intervals": [[1.0, 12.0]], "review_no": "준법감시인 심사필 제25-0893호"},
+  "screens": [
+    {"id": 0, "t_start": 0.5, "t_end": 13.1, "rep_t": 7.0, "card_ids": [0], "frame": "data/processed/video/frames/V126_s00.png", "headline_h_px": 34.0},
+    {"id": 1, "t_start": 7.0, "t_end": 8.5, "rep_t": 8.0, "card_ids": [1], "frame": "data/processed/video/frames/V126_s01.png", "headline_h_px": 40.0}
+  ],
+  "cards": [
+    {"id": 0, "screen_id": 0, "t_start": 0.5, "t_end": 13.1, "duration": 12.6, "kind": "crawl", "crawl_px_s": 360.0, "bbox": [0, 1023, 1920, 1059], "n_lines": 1, "line_h_px": 28.5, "n_det": 26, "rep_t": 7.0, "type": "risk_notice", "text": "*투자 전 설명 청취 및 투자설명서,집합투자규약 필독*집합투자상품은 예금자보호법에 따라 보호되지 않습니다*자산가격 변동 등에 따른 원금 손실(0~100%)발생 가능 및 투자자귀속 *증권거래비용, 기타비용, ETF거래수수료등 별도 발생 가능 *미래에셋자산운용 준법감시인 심사필 제25-0893호(2025.12.16~2026.12.15)", "strip_w_px": 5968, "risk_chars": 225, "risk_cps": 17.9, "risk_text_h_px": {"min": 18.0, "median": 21.0}, "risk_display_pt": {"mobile_feed": {"min": 3.66, "median": 4.27}, "mobile_landscape": {"min": 7.91, "median": 9.23}}, "risk_contrast_min": 2.4, "risk_headline_ratio": 0.618, "strip": "data/processed/video/crawl/V126_c00.png"},
+    {"id": 1, "screen_id": 1, "t_start": 7.0, "t_end": 8.5, "duration": 1.5, "kind": "static", "crawl_px_s": null, "bbox": [330, 641, 622, 716], "n_lines": 1, "line_h_px": 73.0, "n_det": 3, "rep_t": 8.0, "type": "headline", "text": "성장 안정", "block_ids": [0, 1], "risk_chars": 0, "risk_cps": null, "risk_text_h_px": null, "risk_display_pt": null, "risk_contrast_min": null, "risk_headline_ratio": null}
+  ],
+  "risk_exposures": [
+    {"id": 0, "t_start": 0.5, "t_end": 13.1, "duration": 12.6, "kind": "crawl", "card_ids": [0], "risk_chars": 225, "risk_cps": 17.9, "bbox": [0, 1023, 1920, 1059], "text_card_id": 0, "text": "*투자 전 설명 청취 및 투자설명서,집합투자규약 필독*집합투자상품은 예금자보호법에 따라 보호되지 않습니다*자산가격 변동 등에 따른 원금 손실(0~100%)발생 가능 및 투자자귀속 *증권거래비용, 기타비용, ETF거래수수료등 별도 발생 가능 *미래에셋자산운용 준법감시인 심사필 제25-0893호(2025.12.16~2026.12.15)"}
+  ],
+  "ocr_blocks": [
+    {"screen_id": 0, "id": 0, "text": "성장", "bbox": [336, 643, 448, 692], "conf": 1.0, "type": "headline", "h_px": 29.0, "contrast": 14.0, "card_id": null},
+    {"screen_id": 0, "id": 1, "text": "안정", "bbox": [510, 643, 615, 701], "conf": 1.0, "type": "headline", "h_px": 34.0, "contrast": 13.3, "card_id": null},
+    {"screen_id": 0, "id": 2, "text": "예금자보호법에 따라 보호되지 않습니다 *자산가격 변동 등에 따른 원금 손실(O~100%)발생 가능 및 투자자귀속 *증권거래비용, 기타비용, ETF거래수수료등 별도 발생 가능 *미래에셋자산운용 준법감시인", "bbox": [10, 1026, 1919, 1055], "conf": 0.97, "type": "risk_notice", "h_px": 21.0, "contrast": 2.4, "card_id": null},
+    {"screen_id": 1, "id": 0, "text": "성장", "bbox": [334, 638, 450, 696], "conf": 1.0, "type": "headline", "h_px": 29.0, "contrast": 14.0, "card_id": 1},
+    {"screen_id": 1, "id": 1, "text": "안정", "bbox": [514, 642, 612, 701], "conf": 1.0, "type": "headline", "h_px": 40.0, "contrast": 13.0, "card_id": 1},
+    {"screen_id": 1, "id": 2, "text": "다 *자산가격 변동 등에 따른 원금 손실(0~100%)발생 가능 및 투자자귀속*증권거래비용,기타비용, ETF거래수수료등 별도 발생 가능 *미래에셋자산운용 준법감시인 심사필 제25-0893호(2025.12.16~’", "bbox": [0, 1028, 1916, 1054], "conf": 0.98, "type": "risk_notice", "h_px": 21.0, "contrast": 2.4, "card_id": null}
+  ],
+  "paragraphs": [
+    {"screen_id": 0, "id": 0, "type": "headline", "text": "성장 안정", "bbox": [336, 643, 615, 701], "block_ids": [0, 1]},
+    {"screen_id": 0, "id": 1, "type": "risk_notice", "text": "예금자보호법에 따라 보호되지 않습니다 *자산가격 변동 등에 따른 원금 손실(O~100%)발생 가능 및 투자자귀속 *증권거래비용, 기타비용, ETF거래수수료등 별도 발생 가능 *미래에셋자산운용 준법감시인", "bbox": [10, 1026, 1919, 1055], "block_ids": [2]},
+    {"screen_id": 1, "id": 0, "type": "headline", "text": "성장 안정", "bbox": [334, 638, 612, 701], "block_ids": [0, 1]},
+    {"screen_id": 1, "id": 1, "type": "risk_notice", "text": "다 *자산가격 변동 등에 따른 원금 손실(0~100%)발생 가능 및 투자자귀속*증권거래비용,기타비용, ETF거래수수료등 별도 발생 가능 *미래에셋자산운용 준법감시인 심사필 제25-0893호(2025.12.16~’", "bbox": [0, 1028, 1916, 1054], "block_ids": [2]}
+  ],
+  "metrics": {"n_cards": 2, "n_static": 1, "n_crawl": 1, "candidate_exposure_s": 12.6, "csv_exposure_s": 11.0, "csv_coverage": 1.0, "min_line_h_px": 28.5, "n_risk_cards": 1, "n_risk_crawl": 1, "n_risk_exposures": 1, "risk_short_exposures": 0, "risk_exposure_s": 12.6, "risk_csv_coverage": 1.0, "risk_chars": 225, "risk_cps_max": 17.9, "risk_unreadable_exposures": 1, "risk_text_h_min_px": 18.0, "risk_display_min_pt": {"mobile_feed": 3.66, "mobile_landscape": 7.91}, "risk_contrast_min": 2.4, "risk_headline_ratio_min": 0.618},
+  "label": null
+}

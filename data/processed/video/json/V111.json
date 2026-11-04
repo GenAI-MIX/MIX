@@ -1,0 +1,42 @@
+{
+  "ad_id": "V111",
+  "media": "tv_cf",
+  "product": null,
+  "brand": "KB국민카드",
+  "title": "[2021] 박서준X윤여정 미친 케미 등장. 이 카드는 미쳤다. [티저]",
+  "video": "data/raw/videos/영상/111_KB국민카드_impzZqajEM0.mp4",
+  "size": [1920, 1080],
+  "fps": 29.97,
+  "duration": 15.015,
+  "has_audio": true,
+  "content_bbox": [0, 0, 1920, 1080],
+  "review_no": ["심의필제2021-C2e-07475호"],
+  "csv": {"risk": "있음", "intervals": [[12.0, 15.0]], "review_no": "여신금융협회 심의필 제2021-C2e-07475호"},
+  "screens": [
+    {"id": 0, "t_start": 11.9, "t_end": 15.02, "rep_t": 12.9, "card_ids": [0, 1], "frame": "data/processed/video/frames/V111_s00.png", "headline_h_px": 31.0}
+  ],
+  "cards": [
+    {"id": 0, "screen_id": 0, "t_start": 11.9, "t_end": 15.02, "duration": 3.12, "kind": "static", "crawl_px_s": null, "bbox": [110, 960, 1778, 1052], "n_lines": 4, "line_h_px": 22.5, "n_det": 7, "rep_t": 12.9, "type": "risk_notice", "text": "·연회비:국내,해외경용 1만 5천원,*모바일 단독카드 국내,해외경용 9천원·연체이자율 :회원별/이용상품별 정상이자율 +3%p,최고 연 20%※단,연체발생시점에 정상이자율이 없는 경우 아래와 같이 적용함-일시불 거래 연체 시:거래발생시점의 최소기간(2개월)유이자-무이자할부 거래 연체 시:거래발생시점의 동일한 할부 계약기간의 유이자 할부 수수료율 적용·카드 신청 전 상품설명서 및 약관을 반드시 확인하시기 바랍니다.·상환능력에 비해 신용카드 사용액이 과도할경우 귀하의 개인신용평점이 하락할 수 있습니다.·개인신용평점 하락 시 금융거래 관련된 불이익이 발생할 수 있습니다.·일정기간 원리금을 연체할 경우,모든 원리금을 변제할 의무가발생할 수 있습니다·신용카드발급이 부적정한 경우(개인신용평점 낮음,연체금보유 등)카드발급이 제한 될 수 있습니다. ·카드이용대금과이에 수반되는 모든 수수료를 지정된 대금 결제일에 상환합니다. ·여신금융협회 심의필 제2021-C2e-07475호(2021.08.23~2022.08.22)", "block_ids": [2, 3, 4, 5, 6], "risk_chars": 334, "risk_cps": 107.1, "risk_text_h_px": {"min": 15.0, "median": 16.0}, "risk_display_pt": {"mobile_feed": {"min": 3.05, "median": 3.25}, "mobile_landscape": {"min": 6.59, "median": 7.03}}, "risk_contrast_min": 5.54, "risk_headline_ratio": 0.516},
+    {"id": 1, "screen_id": 0, "t_start": 12.2, "t_end": 15.02, "duration": 2.82, "kind": "static", "crawl_px_s": null, "bbox": [719, 468, 1194, 521], "n_lines": 1, "line_h_px": 48.5, "n_det": 6, "rep_t": 14.1, "type": "headline", "text": "이건,만드는 사람에게도 도전", "block_ids": [1], "risk_chars": 0, "risk_cps": null, "risk_text_h_px": null, "risk_display_pt": null, "risk_contrast_min": null, "risk_headline_ratio": null}
+  ],
+  "risk_exposures": [
+    {"id": 0, "t_start": 11.9, "t_end": 15.02, "duration": 3.12, "kind": "static", "card_ids": [0], "risk_chars": 334, "risk_cps": 107.1, "bbox": [110, 960, 1778, 1052], "text_card_id": 0, "text": "·연회비:국내,해외경용 1만 5천원,*모바일 단독카드 국내,해외경용 9천원·연체이자율 :회원별/이용상품별 정상이자율 +3%p,최고 연 20%※단,연체발생시점에 정상이자율이 없는 경우 아래와 같이 적용함-일시불 거래 연체 시:거래발생시점의 최소기간(2개월)유이자-무이자할부 거래 연체 시:거래발생시점의 동일한 할부 계약기간의 유이자 할부 수수료율 적용·카드 신청 전 상품설명서 및 약관을 반드시 확인하시기 바랍니다.·상환능력에 비해 신용카드 사용액이 과도할경우 귀하의 개인신용평점이 하락할 수 있습니다.·개인신용평점 하락 시 금융거래 관련된 불이익이 발생할 수 있습니다.·일정기간 원리금을 연체할 경우,모든 원리금을 변제할 의무가발생할 수 있습니다·신용카드발급이 부적정한 경우(개인신용평점 낮음,연체금보유 등)카드발급이 제한 될 수 있습니다. ·카드이용대금과이에 수반되는 모든 수수료를 지정된 대금 결제일에 상환합니다. ·여신금융협회 심의필 제2021-C2e-07475호(2021.08.23~2022.08.22)"}
+  ],
+  "ocr_blocks": [
+    {"screen_id": 0, "id": 0, "text": "세상을 바꾸는 금융", "bbox": [75, 43, 352, 99], "conf": 0.98, "type": "headline", "h_px": 30.0, "contrast": 12.8, "card_id": null},
+    {"screen_id": 0, "id": 1, "text": "이건,만드는 사람에게도 도전", "bbox": [717, 467, 1194, 525], "conf": 1.0, "type": "headline", "h_px": 31.0, "contrast": 21.0, "card_id": 1},
+    {"screen_id": 0, "id": 2, "text": "·연회비:국내,해외경용 1만 5천원,*모바일 단독카드 국내,해외경용 9천원·연체이자율 :회원별/이용상품별 정상이자율 +3%p,최고 연 20%※단,연체발생시점에 정상이자율이 없는 경우 아래와 같이 적용함-일시불 거래 연체 시:거래발생시점의", "bbox": [158, 961, 1757, 982], "conf": 0.97, "type": "risk_notice", "h_px": 16.0, "contrast": 5.5, "card_id": 0},
+    {"screen_id": 0, "id": 3, "text": "최소기간(2개월)유이자-무이자할부 거래 연체 시:거래발생시점의 동일한 할부 계약기간의 유이자 할부 수수료율 적용·카드 신청 전 상품설명서 및 약관을 반드시 확인하시기 바랍니다.·상환능력에 비해 신용카드 사용액이 과도할경우 귀하의 개인신용평점이", "bbox": [111, 984, 1776, 1005], "conf": 0.99, "type": "risk_notice", "h_px": 16.0, "contrast": 8.6, "card_id": 0},
+    {"screen_id": 0, "id": 4, "text": "하락할 수 있습니다.·개인신용평점 하락 시 금융거래 관련된 불이익이 발생할 수 있습니다.·일정기간 원리금을 연체할 경우,모든 원리금을 변제할 의무가발생할 수 있습니다·신용카드발급이 부적정한 경우(개인신용평점 낮음,연체금보유 등)카드발급이", "bbox": [128, 1006, 1763, 1028], "conf": 0.93, "type": "risk_notice", "h_px": 15.0, "contrast": 8.9, "card_id": 0},
+    {"screen_id": 0, "id": 5, "text": "제한 될 수 있습니다. ·카드이용대금과이에 수반되는 모든 수수료를 지정된 대금 결제일에 상환합니다.", "bbox": [376, 1031, 1038, 1050], "conf": 0.94, "type": "unknown", "h_px": 16.0, "contrast": 5.5, "card_id": 0},
+    {"screen_id": 0, "id": 6, "text": "·여신금융협회 심의필 제2021-C2e-07475호(2021.08.23~2022.08.22)", "bbox": [1039, 1031, 1514, 1050], "conf": 0.98, "type": "other", "h_px": 15.0, "contrast": 5.6, "card_id": 0}
+  ],
+  "paragraphs": [
+    {"screen_id": 0, "id": 0, "type": "headline", "text": "세상을 바꾸는 금융", "bbox": [75, 43, 352, 99], "block_ids": [0]},
+    {"screen_id": 0, "id": 1, "type": "headline", "text": "이건,만드는 사람에게도 도전", "bbox": [717, 467, 1194, 525], "block_ids": [1]},
+    {"screen_id": 0, "id": 2, "type": "risk_notice", "text": "·연회비:국내,해외경용 1만 5천원,*모바일 단독카드 국내,해외경용 9천원·연체이자율 :회원별/이용상품별 정상이자율 +3%p,최고 연 20%※단,연체발생시점에 정상이자율이 없는 경우 아래와 같이 적용함-일시불 거래 연체 시:거래발생시점의 최소기간(2개월)유이자-무이자할부 거래 연체 시:거래발생시점의 동일한 할부 계약기간의 유이자 할부 수수료율 적용·카드 신청 전 상품설명서 및 약관을 반드시 확인하시기 바랍니다.·상환능력에 비해 신용카드 사용액이 과도할경우 귀하의 개인신용평점이 하락할 수 있습니다.·개인신용평점 하락 시 금융거래 관련된 불이익이 발생할 수 있습니다.·일정기간 원리금을 연체할 경우,모든 원리금을 변제할 의무가발생할 수 있습니다·신용카드발급이 부적정한 경우(개인신용평점 낮음,연체금보유 등)카드발급이", "bbox": [111, 961, 1776, 1028], "block_ids": [2, 3, 4]},
+    {"screen_id": 0, "id": 3, "type": "unknown", "text": "제한 될 수 있습니다. ·카드이용대금과이에 수반되는 모든 수수료를 지정된 대금 결제일에 상환합니다. ·여신금융협회 심의필 제2021-C2e-07475호(2021.08.23~2022.08.22)", "bbox": [376, 1031, 1514, 1050], "block_ids": [5, 6]}
+  ],
+  "metrics": {"n_cards": 2, "n_static": 2, "n_crawl": 0, "candidate_exposure_s": 3.12, "csv_exposure_s": 3.0, "csv_coverage": 1.0, "min_line_h_px": 22.5, "n_risk_cards": 1, "n_risk_crawl": 0, "n_risk_exposures": 1, "risk_short_exposures": 0, "risk_exposure_s": 3.12, "risk_csv_coverage": 1.0, "risk_chars": 334, "risk_cps_max": 107.1, "risk_unreadable_exposures": 1, "risk_text_h_min_px": 15.0, "risk_display_min_pt": {"mobile_feed": 3.05, "mobile_landscape": 6.59}, "risk_contrast_min": 5.54, "risk_headline_ratio_min": 0.516},
+  "label": null
+}

@@ -1,0 +1,36 @@
+{
+  "ad_id": "V134",
+  "media": "tv_cf",
+  "product": null,
+  "brand": "미래에셋증권",
+  "title": "미래에셋증권 ZERO캠페인_레스토랑편",
+  "video": "data/raw/videos/영상/134_미래에셋증권_9H3b7kDsGCo.mp4",
+  "size": [1920, 1080],
+  "fps": 29.97,
+  "duration": 15.015,
+  "has_audio": true,
+  "content_bbox": [0, 0, 1920, 1080],
+  "review_no": [],
+  "csv": {"risk": "있음", "intervals": [[2.5, 13.0]], "review_no": "한국금융투자협회 심사필 제23-03073호"},
+  "screens": [
+    {"id": 0, "t_start": 5.8, "t_end": 13.2, "rep_t": 7.7, "card_ids": [0], "frame": "data/processed/video/frames/V134_s00.png", "headline_h_px": 131.3}
+  ],
+  "cards": [
+    {"id": 0, "screen_id": 0, "t_start": 5.8, "t_end": 13.2, "duration": 7.4, "kind": "static", "crawl_px_s": null, "bbox": [353, 956, 1566, 1028], "n_lines": 3, "line_h_px": 23.0, "n_det": 15, "rep_t": 7.7, "type": "risk_notice", "text": "※미국주식 매도시 수수료 온라인 0.25%오프라인 0.5%,매도시 제비 용 0.0008%별도 ※23.07.0]~23.12.31까지 미국주식 온라인 매수 수수료에 대해서만 무료이 며 기간 종료 후 기존 수수료[온라인 0.25%, 오프라인 0.5%]조건과 동일하게 적용 ※투자 전 설명청취 및 상품설명서 필독※자산가격,환율변동 등에 따른 원금 손실[0~100%]발생 기능 및 투자자 귀속 ※예금자보호법상 보호상품 아님 ※본 이벤트는 개인 고객에게만 해당,법인 고객 제외 ※한국금융투자협회 심시필 제23-03073호[2023.09.11~2023.12.31]", "block_ids": [1, 2, 3], "risk_chars": 255, "risk_cps": 34.5, "risk_text_h_px": {"min": 17.0, "median": 17.0}, "risk_display_pt": {"mobile_feed": {"min": 3.45, "median": 3.45}, "mobile_landscape": {"min": 7.47, "median": 7.47}}, "risk_contrast_min": 3.02, "risk_headline_ratio": 0.129}
+  ],
+  "risk_exposures": [
+    {"id": 0, "t_start": 5.8, "t_end": 13.2, "duration": 7.4, "kind": "static", "card_ids": [0], "risk_chars": 255, "risk_cps": 34.5, "bbox": [353, 956, 1566, 1028], "text_card_id": 0, "text": "※미국주식 매도시 수수료 온라인 0.25%오프라인 0.5%,매도시 제비 용 0.0008%별도 ※23.07.0]~23.12.31까지 미국주식 온라인 매수 수수료에 대해서만 무료이 며 기간 종료 후 기존 수수료[온라인 0.25%, 오프라인 0.5%]조건과 동일하게 적용 ※투자 전 설명청취 및 상품설명서 필독※자산가격,환율변동 등에 따른 원금 손실[0~100%]발생 기능 및 투자자 귀속 ※예금자보호법상 보호상품 아님 ※본 이벤트는 개인 고객에게만 해당,법인 고객 제외 ※한국금융투자협회 심시필 제23-03073호[2023.09.11~2023.12.31]"}
+  ],
+  "ocr_blocks": [
+    {"screen_id": 0, "id": 0, "text": "미국", "bbox": [531, 343, 752, 482], "conf": 1.0, "type": "headline", "h_px": 131.3, "contrast": 2.6, "card_id": null},
+    {"screen_id": 0, "id": 1, "text": "※미국주식 매도시 수수료 온라인 0.25%오프라인 0.5%,매도시 제비 용 0.0008%별도 ※23.07.0]~23.12.31까지 미국주식 온라인 매수 수수료에 대해서만 무료이 며 기간 종료 후", "bbox": [385, 958, 1535, 980], "conf": 0.94, "type": "risk_notice", "h_px": 17.0, "contrast": 3.0, "card_id": 0},
+    {"screen_id": 0, "id": 2, "text": "기존 수수료[온라인 0.25%, 오프라인 0.5%]조건과 동일하게 적용 ※투자 전 설명청취 및 상품설명서 필독※자산가격,환율변동 등에 따른 원금 손실[0~100%]발생 기능 및 투자자 귀속", "bbox": [351, 979, 1568, 1008], "conf": 0.94, "type": "risk_notice", "h_px": 18.0, "contrast": 3.1, "card_id": 0},
+    {"screen_id": 0, "id": 3, "text": "※예금자보호법상 보호상품 아님 ※본 이벤트는 개인 고객에게만 해당,법인 고객 제외 ※한국금융투자협회 심시필 제23-03073호[2023.09.11~2023.12.31]", "bbox": [454, 1006, 1469, 1028], "conf": 0.97, "type": "risk_notice", "h_px": 17.0, "contrast": 3.1, "card_id": 0}
+  ],
+  "paragraphs": [
+    {"screen_id": 0, "id": 0, "type": "headline", "text": "미국", "bbox": [531, 343, 752, 482], "block_ids": [0]},
+    {"screen_id": 0, "id": 1, "type": "risk_notice", "text": "※미국주식 매도시 수수료 온라인 0.25%오프라인 0.5%,매도시 제비 용 0.0008%별도 ※23.07.0]~23.12.31까지 미국주식 온라인 매수 수수료에 대해서만 무료이 며 기간 종료 후 기존 수수료[온라인 0.25%, 오프라인 0.5%]조건과 동일하게 적용 ※투자 전 설명청취 및 상품설명서 필독※자산가격,환율변동 등에 따른 원금 손실[0~100%]발생 기능 및 투자자 귀속 ※예금자보호법상 보호상품 아님 ※본 이벤트는 개인 고객에게만 해당,법인 고객 제외 ※한국금융투자협회 심시필 제23-03073호[2023.09.11~2023.12.31]", "bbox": [351, 958, 1568, 1028], "block_ids": [1, 2, 3]}
+  ],
+  "metrics": {"n_cards": 1, "n_static": 1, "n_crawl": 0, "candidate_exposure_s": 7.4, "csv_exposure_s": 10.5, "csv_coverage": 0.686, "min_line_h_px": 23.0, "n_risk_cards": 1, "n_risk_crawl": 0, "n_risk_exposures": 1, "risk_short_exposures": 0, "risk_exposure_s": 7.4, "risk_csv_coverage": 0.686, "risk_chars": 255, "risk_cps_max": 34.5, "risk_unreadable_exposures": 1, "risk_text_h_min_px": 17.0, "risk_display_min_pt": {"mobile_feed": 3.45, "mobile_landscape": 7.47}, "risk_contrast_min": 3.02, "risk_headline_ratio_min": 0.129},
+  "label": null
+}

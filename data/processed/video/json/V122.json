@@ -1,0 +1,54 @@
+{
+  "ad_id": "V122",
+  "media": "tv_cf",
+  "product": null,
+  "brand": "RISE ETF",
+  "title": "Ants' Choice, Let's Go Again! | RISE Donghak Ant ETF",
+  "video": "data/raw/videos/영상/122_RISEETF_1yBbCPV8iB4.mp4",
+  "size": [1920, 1080],
+  "fps": 30.0,
+  "duration": 20.0,
+  "has_audio": true,
+  "content_bbox": [0, 0, 1920, 1080],
+  "review_no": ["심사필제25-05262호"],
+  "csv": {"risk": "있음", "intervals": [[1.5, 20.0]], "review_no": null},
+  "screens": [
+    {"id": 0, "t_start": 0.5, "t_end": 19.6, "rep_t": 10.0, "card_ids": [0], "frame": "data/processed/video/frames/V122_s00.png", "headline_h_px": 162.0},
+    {"id": 1, "t_start": 13.6, "t_end": 17.4, "rep_t": 15.8, "card_ids": [1], "frame": "data/processed/video/frames/V122_s01.png", "headline_h_px": 129.0}
+  ],
+  "cards": [
+    {"id": 0, "screen_id": 0, "t_start": 0.5, "t_end": 19.6, "duration": 19.1, "kind": "crawl", "crawl_px_s": 300.0, "bbox": [0, 1025, 1920, 1057], "n_lines": 1, "line_h_px": 25.0, "n_det": 39, "rep_t": 10.0, "type": "risk_notice", "text": "KB RISE동학개미 증권상장지수투자신탁(주식)1 총보수 연0.070%(운용회사: 0.039%, 지정참가: 0.001%, 사무관리보수: 0.010%, 수탁보수: 0.020%)1 위험등급:2등급(높은 위험)1이 금융상품은 예금자보호법에 따라 보호되지 않습니다.1자산가격변동,환율변동, 신용등급 하락 등에 따른원금손실(0~100%)발생 가능및 투자자 귀속|투자 전 설명 청취 및(간이)투자설명서,집합투자규약 필독1ETF 거래수수료는 거래 증권사별 상이하므로,거래사증권사 홈페이지 등 참조|증권거래비용및 기타비용 추가 발생 가능  합성총보수 및 증권거래비용을 함께 고려 1한국금융투자협회 심사필 제25-05262호(2025.12.12~2026.12.11)", "strip_w_px": 7581, "risk_chars": 403, "risk_cps": 21.1, "risk_text_h_px": {"min": 16.0, "median": 18.0}, "risk_display_pt": {"mobile_feed": {"min": 3.25, "median": 3.66}, "mobile_landscape": {"min": 7.03, "median": 7.91}}, "risk_contrast_min": 18.14, "risk_headline_ratio": 0.111, "strip": "data/processed/video/crawl/V122_c00.png"},
+    {"id": 1, "screen_id": 1, "t_start": 13.6, "t_end": 17.4, "duration": 3.8, "kind": "static", "crawl_px_s": null, "bbox": [1371, 294, 1881, 427], "n_lines": 2, "line_h_px": 47.5, "n_det": 6, "rep_t": 15.8, "type": "unknown", "text": "동학개미 ETF 2025.12.16(화) )상장!", "block_ids": [3, 4, 5], "risk_chars": 0, "risk_cps": null, "risk_text_h_px": null, "risk_display_pt": null, "risk_contrast_min": null, "risk_headline_ratio": null}
+  ],
+  "risk_exposures": [
+    {"id": 0, "t_start": 0.5, "t_end": 19.6, "duration": 19.1, "kind": "crawl", "card_ids": [0], "risk_chars": 403, "risk_cps": 21.1, "bbox": [0, 1025, 1920, 1057], "text_card_id": 0, "text": "KB RISE동학개미 증권상장지수투자신탁(주식)1 총보수 연0.070%(운용회사: 0.039%, 지정참가: 0.001%, 사무관리보수: 0.010%, 수탁보수: 0.020%)1 위험등급:2등급(높은 위험)1이 금융상품은 예금자보호법에 따라 보호되지 않습니다.1자산가격변동,환율변동, 신용등급 하락 등에 따른원금손실(0~100%)발생 가능및 투자자 귀속|투자 전 설명 청취 및(간이)투자설명서,집합투자규약 필독1ETF 거래수수료는 거래 증권사별 상이하므로,거래사증권사 홈페이지 등 참조|증권거래비용및 기타비용 추가 발생 가능  합성총보수 및 증권거래비용을 함께 고려 1한국금융투자협회 심사필 제25-05262호(2025.12.12~2026.12.11)"}
+  ],
+  "ocr_blocks": [
+    {"screen_id": 0, "id": 0, "text": "*b KB자산운용", "bbox": [47, 41, 264, 81], "conf": 1.0, "type": "unknown", "h_px": 25.0, "contrast": 17.5, "card_id": null},
+    {"screen_id": 0, "id": 1, "text": "RISCETF", "bbox": [1755, 32, 1888, 84], "conf": 0.88, "type": "unknown", "h_px": 34.0, "contrast": 16.5, "card_id": null},
+    {"screen_id": 0, "id": 2, "text": "다시한번", "bbox": [56, 294, 606, 444], "conf": 0.99, "type": "headline", "h_px": 116.0, "contrast": 18.8, "card_id": null},
+    {"screen_id": 0, "id": 3, "text": "RISE로", "bbox": [45, 420, 718, 626], "conf": 0.99, "type": "headline", "h_px": 143.0, "contrast": 17.7, "card_id": null},
+    {"screen_id": 0, "id": 4, "text": "대동단결!", "bbox": [52, 596, 818, 801], "conf": 1.0, "type": "headline", "h_px": 162.0, "contrast": 18.3, "card_id": null},
+    {"screen_id": 0, "id": 5, "text": "학보수:0.020%)| 위험등급:2등급(높은 위험)| 이 금융상품은 예금자보호법에 따라 보호되지 않습니다.1 자산가격변동,환율변동,신용등급 하락 등에 따른 원금손실(0~100%)발생 가능 및 투자자 귀속1 투자 전 설명 청취 및(간이)투자설", "bbox": [0, 1029, 1918, 1054], "conf": 0.95, "type": "risk_notice", "h_px": 18.0, "contrast": 13.8, "card_id": null},
+    {"screen_id": 1, "id": 0, "text": "*b KB자산운용", "bbox": [45, 41, 264, 79], "conf": 0.98, "type": "unknown", "h_px": 25.0, "contrast": 12.6, "card_id": null},
+    {"screen_id": 1, "id": 1, "text": "RISlETF", "bbox": [1757, 32, 1888, 84], "conf": 0.89, "type": "unknown", "h_px": 34.0, "contrast": 1.8, "card_id": null},
+    {"screen_id": 1, "id": 2, "text": "RISe", "bbox": [1358, 135, 1669, 306], "conf": 0.73, "type": "headline", "h_px": 129.0, "contrast": 11.6, "card_id": null},
+    {"screen_id": 1, "id": 3, "text": "동학개미 ETF", "bbox": [1367, 283, 1886, 369], "conf": 0.95, "type": "unknown", "h_px": 61.0, "contrast": 11.6, "card_id": 1},
+    {"screen_id": 1, "id": 4, "text": "2025.12.16(화)", "bbox": [1371, 374, 1724, 426], "conf": 1.0, "type": "unknown", "h_px": 34.0, "contrast": 11.6, "card_id": 1},
+    {"screen_id": 1, "id": 5, "text": ")상장!", "bbox": [1697, 373, 1846, 427], "conf": 1.0, "type": "unknown", "h_px": 15.0, "contrast": 11.6, "card_id": 1},
+    {"screen_id": 1, "id": 6, "text": "및(간이)투자설명서,집합투자규약필독ETF거래수수료는거래증권사별상이하므로,거래사증권사홈페이지등참조증권거래비용및기타비용추가발생가능합성총보수및증권거래비용을함께고려한국금융투자협회심사필제2", "bbox": [0, 1028, 1916, 1052], "conf": 0.95, "type": "risk_notice", "h_px": 18.0, "contrast": 13.7, "card_id": null}
+  ],
+  "paragraphs": [
+    {"screen_id": 0, "id": 0, "type": "unknown", "text": "*b KB자산운용", "bbox": [47, 41, 264, 81], "block_ids": [0]},
+    {"screen_id": 0, "id": 1, "type": "unknown", "text": "RISCETF", "bbox": [1755, 32, 1888, 84], "block_ids": [1]},
+    {"screen_id": 0, "id": 2, "type": "headline", "text": "다시한번 RISE로 대동단결!", "bbox": [45, 294, 818, 801], "block_ids": [2, 3, 4]},
+    {"screen_id": 0, "id": 3, "type": "risk_notice", "text": "학보수:0.020%)| 위험등급:2등급(높은 위험)| 이 금융상품은 예금자보호법에 따라 보호되지 않습니다.1 자산가격변동,환율변동,신용등급 하락 등에 따른 원금손실(0~100%)발생 가능 및 투자자 귀속1 투자 전 설명 청취 및(간이)투자설", "bbox": [0, 1029, 1918, 1054], "block_ids": [5]},
+    {"screen_id": 1, "id": 0, "type": "unknown", "text": "*b KB자산운용", "bbox": [45, 41, 264, 79], "block_ids": [0]},
+    {"screen_id": 1, "id": 1, "type": "unknown", "text": "RISlETF", "bbox": [1757, 32, 1888, 84], "block_ids": [1]},
+    {"screen_id": 1, "id": 2, "type": "unknown", "text": "RISe 동학개미 ETF", "bbox": [1358, 135, 1886, 369], "block_ids": [2, 3]},
+    {"screen_id": 1, "id": 3, "type": "unknown", "text": "2025.12.16(화) )상장!", "bbox": [1371, 373, 1846, 427], "block_ids": [4, 5]},
+    {"screen_id": 1, "id": 4, "type": "risk_notice", "text": "및(간이)투자설명서,집합투자규약필독ETF거래수수료는거래증권사별상이하므로,거래사증권사홈페이지등참조증권거래비용및기타비용추가발생가능합성총보수및증권거래비용을함께고려한국금융투자협회심사필제2", "bbox": [0, 1028, 1916, 1052], "block_ids": [6]}
+  ],
+  "metrics": {"n_cards": 2, "n_static": 1, "n_crawl": 1, "candidate_exposure_s": 19.1, "csv_exposure_s": 18.5, "csv_coverage": 0.978, "min_line_h_px": 25.0, "n_risk_cards": 1, "n_risk_crawl": 1, "n_risk_exposures": 1, "risk_short_exposures": 0, "risk_exposure_s": 19.1, "risk_csv_coverage": 0.978, "risk_chars": 403, "risk_cps_max": 21.1, "risk_unreadable_exposures": 1, "risk_text_h_min_px": 16.0, "risk_display_min_pt": {"mobile_feed": 3.25, "mobile_landscape": 7.03}, "risk_contrast_min": 18.14, "risk_headline_ratio_min": 0.111},
+  "label": null
+}
