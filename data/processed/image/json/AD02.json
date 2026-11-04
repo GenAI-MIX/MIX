@@ -1,0 +1,37 @@
+{
+  "ad_id": "AD02",
+  "media": "banner",
+  "product": "ETF",
+  "brand": "NH-Amundi자산운용",
+  "size": [1008, 400],
+  "format": "PNG",
+  "image": "data/raw/images/02_광고물 데이터셋(53)/01_ETF_NH-Amundi자산운용 (9)/02_NH-Amundi자산운용_HANARO 유럽방산 ETF.png",
+  "ocr_blocks": [
+    {"id": 0, "text": "NH-Amundi자산운용 준법감시인 심사필 제2025-0767호(2025.07.28~2026.07.27)", "bbox": [470, 21, 989, 40], "conf": 0.99, "type": "risk_notice", "h_px": 14.0, "contrast": 10.6},
+    {"id": 1, "text": "HANARO", "bbox": [138, 84, 384, 145], "conf": 1.0, "type": "headline", "h_px": 42.0, "contrast": 2.5},
+    {"id": 2, "text": "기간", "bbox": [801, 107, 862, 137], "conf": 1.0, "type": "unknown", "h_px": 22.0, "contrast": 5.4},
+    {"id": 3, "text": "2025.07.29(화) ~2025.08.29(금)", "bbox": [692, 147, 970, 174], "conf": 0.99, "type": "unknown", "h_px": 15.0, "contrast": 17.7},
+    {"id": 4, "text": "유럽방산", "bbox": [124, 138, 523, 244], "conf": 1.0, "type": "unknown", "h_px": 37.0, "contrast": 6.8},
+    {"id": 5, "text": "대상", "bbox": [800, 214, 863, 245], "conf": 1.0, "type": "unknown", "h_px": 22.0, "contrast": 5.4},
+    {"id": 6, "text": "거래 이벤트", "bbox": [436, 249, 585, 284], "conf": 0.98, "type": "unknown", "h_px": 24.0, "contrast": 8.2},
+    {"id": 7, "text": "뱅키스 주식(01)계좌 보유 고객 중", "bbox": [698, 255, 966, 280], "conf": 0.99, "type": "unknown", "h_px": 18.0, "contrast": 17.7},
+    {"id": 8, "text": "ETF", "bbox": [225, 241, 408, 326], "conf": 1.0, "type": "headline", "h_px": 70.0, "contrast": 6.7},
+    {"id": 9, "text": "이벤트 신청 고객(영업점계좌 제외)", "bbox": [694, 279, 969, 304], "conf": 0.99, "type": "unknown", "h_px": 17.0, "contrast": 17.7},
+    {"id": 10, "text": "※ 투자 전 설명 청취 및 (간이)투자설명서·집합투자규약 필독 ※ 이 금융상품은 예금자보호법에 따라 보호되지 않습니다.", "bbox": [29, 354, 636, 368], "conf": 0.96, "type": "risk_notice", "h_px": 12.0, "contrast": null},
+    {"id": 11, "text": "※ 자산가격 변동, 환을 변동 등에 따른 원금손실(0~100%) 발생가능 및 투자자 귀속※ ETF거래 수수료는 0.146527% 이며, 홈페이지 참고", "bbox": [28, 369, 732, 385], "conf": 0.96, "type": "risk_notice", "h_px": 12.0, "contrast": null}
+  ],
+  "paragraphs": [
+    {"id": 0, "type": "risk_notice", "text": "NH-Amundi자산운용 준법감시인 심사필 제2025-0767호(2025.07.28~2026.07.27)", "bbox": [470, 21, 989, 40], "block_ids": [0]},
+    {"id": 1, "type": "headline", "text": "HANARO 유럽방산", "bbox": [124, 84, 523, 244], "block_ids": [1, 4]},
+    {"id": 2, "type": "unknown", "text": "기간", "bbox": [801, 107, 862, 137], "block_ids": [2]},
+    {"id": 3, "type": "unknown", "text": "2025.07.29(화) ~2025.08.29(금)", "bbox": [692, 147, 970, 174], "block_ids": [3]},
+    {"id": 4, "type": "unknown", "text": "대상", "bbox": [800, 214, 863, 245], "block_ids": [5]},
+    {"id": 5, "type": "unknown", "text": "거래 이벤트 ETF", "bbox": [225, 241, 585, 326], "block_ids": [6, 8]},
+    {"id": 6, "type": "unknown", "text": "뱅키스 주식(01)계좌 보유 고객 중 이벤트 신청 고객(영업점계좌 제외)", "bbox": [694, 255, 969, 304], "block_ids": [7, 9]},
+    {"id": 7, "type": "risk_notice", "text": "※ 투자 전 설명 청취 및 (간이)투자설명서·집합투자규약 필독 ※ 이 금융상품은 예금자보호법에 따라 보호되지 않습니다. ※ 자산가격 변동, 환을 변동 등에 따른 원금손실(0~100%) 발생가능 및 투자자 귀속※ ETF거래 수수료는 0.146527% 이며, 홈페이지 참고", "bbox": [28, 354, 732, 385], "block_ids": [10, 11]}
+  ],
+  "metrics": {"risk_headline_ratio": 0.171, "risk_contrast_min": 10.64, "mobile_feed": {"width_pt": 390, "risk_min_pt": 4.64, "risk_median_pt": 4.64, "headline_max_pt": 27.08}},
+  "crops": [{"path": "data/processed/image/crops/AD02_risk_00.png", "bbox": [455, 6, 1005, 55]}, {"path": "data/processed/image/crops/AD02_risk_01.png", "bbox": [16, 341, 745, 397]}],
+  "vlm_judgment": null,
+  "label": null
+}

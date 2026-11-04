@@ -1,0 +1,33 @@
+{
+  "ad_id": "AD04",
+  "media": "banner",
+  "product": "ETF",
+  "brand": "NH-Amundi자산운용",
+  "size": [1008, 400],
+  "format": "PNG",
+  "image": "data/raw/images/02_광고물 데이터셋(53)/01_ETF_NH-Amundi자산운용 (9)/04_NH-Amundi자산운용_HANARO 글로벌피지컬AI 액티브 ETF.png",
+  "ocr_blocks": [
+    {"id": 0, "text": "NH-Amundi자산운용준법감시인 심사필 제2025-0375호(2025.04.15~2026.04.14)", "bbox": [448, 21, 988, 39], "conf": 0.98, "type": "risk_notice", "h_px": 14.0, "contrast": 12.6},
+    {"id": 1, "text": "HANARO", "bbox": [77, 39, 357, 110], "conf": 0.99, "type": "headline", "h_px": 48.0, "contrast": 11.6},
+    {"id": 2, "text": "로벌피지컬A", "bbox": [122, 114, 446, 184], "conf": 0.97, "type": "headline", "h_px": 52.0, "contrast": 4.5},
+    {"id": 3, "text": "액티브 ETF", "bbox": [78, 184, 305, 240], "conf": 1.0, "type": "unknown", "h_px": 39.0, "contrast": 9.7},
+    {"id": 4, "text": "거래 이벤트", "bbox": [333, 196, 462, 226], "conf": 1.0, "type": "unknown", "h_px": 22.0, "contrast": 7.0},
+    {"id": 5, "text": "기간", "bbox": [113, 261, 153, 283], "conf": 1.0, "type": "unknown", "h_px": 17.0, "contrast": 5.3},
+    {"id": 6, "text": "2025.04.22(화)~2025.05.30(금)", "bbox": [193, 259, 471, 285], "conf": 1.0, "type": "unknown", "h_px": 15.0, "contrast": 16.1},
+    {"id": 7, "text": "19", "bbox": [593, 229, 683, 316], "conf": 0.64, "type": "headline", "h_px": 75.0, "contrast": null},
+    {"id": 8, "text": "대상", "bbox": [114, 296, 153, 317], "conf": 1.0, "type": "unknown", "h_px": 17.0, "contrast": 5.3},
+    {"id": 9, "text": "뱅키스 주식(01)계좌 보유 고객 중이벤트 신청 고객", "bbox": [194, 295, 592, 319], "conf": 0.99, "type": "unknown", "h_px": 17.0, "contrast": 16.1},
+    {"id": 10, "text": "(영업점계좌 제외)", "bbox": [194, 319, 335, 343], "conf": 0.94, "type": "unknown", "h_px": 17.0, "contrast": 16.1},
+    {"id": 11, "text": "※ 투자 전 설명 청취 및 (간이)투자설명서·집합투자규약 필독 ※ 이 금융상품은 예금자보호법에 따라보호되지 않습니다.※ 자산가격 변동 등에 따른 원금손실(0~100%) 발생가능 및 투자자귀속", "bbox": [23, 370, 985, 384], "conf": 0.97, "type": "risk_notice", "h_px": 12.0, "contrast": 15.9}
+  ],
+  "paragraphs": [
+    {"id": 0, "type": "risk_notice", "text": "NH-Amundi자산운용준법감시인 심사필 제2025-0375호(2025.04.15~2026.04.14)", "bbox": [448, 21, 988, 39], "block_ids": [0]},
+    {"id": 1, "type": "unknown", "text": "HANARO 로벌피지컬A 액티브 ETF 거래 이벤트 기간 2025.04.22(화)~2025.05.30(금) 대상 뱅키스 주식(01)계좌 보유 고객 중이벤트 신청 고객 (영업점계좌 제외)", "bbox": [77, 39, 592, 343], "block_ids": [1, 2, 3, 4, 5, 6, 8, 9, 10]},
+    {"id": 2, "type": "headline", "text": "19", "bbox": [593, 229, 683, 316], "block_ids": [7]},
+    {"id": 3, "type": "risk_notice", "text": "※ 투자 전 설명 청취 및 (간이)투자설명서·집합투자규약 필독 ※ 이 금융상품은 예금자보호법에 따라보호되지 않습니다.※ 자산가격 변동 등에 따른 원금손실(0~100%) 발생가능 및 투자자귀속", "bbox": [23, 370, 985, 384], "block_ids": [11]}
+  ],
+  "metrics": {"risk_headline_ratio": 0.173, "risk_contrast_min": 12.63, "mobile_feed": {"width_pt": 390, "risk_min_pt": 4.64, "risk_median_pt": 5.03, "headline_max_pt": 29.02}},
+  "crops": [{"path": "data/processed/image/crops/AD04_risk_00.png", "bbox": [434, 7, 1003, 53]}, {"path": "data/processed/image/crops/AD04_risk_01.png", "bbox": [12, 358, 996, 395]}],
+  "vlm_judgment": null,
+  "label": null
+}

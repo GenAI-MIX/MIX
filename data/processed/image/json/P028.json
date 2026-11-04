@@ -1,0 +1,33 @@
+{
+  "ad_id": "P028",
+  "media": null,
+  "product": null,
+  "brand": null,
+  "size": [2165, 2993],
+  "format": "JPEG",
+  "image": "data/raw/images/P028.jpg",
+  "ocr_blocks": [
+    {"id": 0, "text": "해외송금도", "bbox": [230, 281, 638, 392], "conf": 1.0, "type": "unknown", "h_px": 78.0, "contrast": 4.3},
+    {"id": 1, "text": "자산관리도", "bbox": [958, 279, 1368, 389], "conf": 1.0, "type": "unknown", "h_px": 81.0, "contrast": 4.2},
+    {"id": 2, "text": "월급통장도", "bbox": [1620, 279, 2025, 389], "conf": 1.0, "type": "unknown", "h_px": 82.0, "contrast": 4.1},
+    {"id": 3, "text": "하나", "bbox": [402, 419, 1057, 848], "conf": 1.0, "type": "headline", "h_px": 299.0, "contrast": 4.7},
+    {"id": 4, "text": "뿐인", "bbox": [992, 539, 1446, 854], "conf": 1.0, "type": "unknown", "h_px": 161.0, "contrast": 5.6},
+    {"id": 5, "text": "내편", "bbox": [985, 717, 1784, 1220], "conf": 0.98, "type": "headline", "h_px": 294.0, "contrast": 4.4},
+    {"id": 6, "text": "※금용상품에 관한계약을체결하기 전에 금용상품설명서 및 약관을읽어보시기 바랍니다.※금용소비자는해당 상품 또는서비스에 대하여 설명 받을권리가있습니다", "bbox": [542, 2832, 2041, 2864], "conf": 0.9, "type": "risk_notice", "h_px": 20.0, "contrast": 4.1},
+    {"id": 7, "text": "흐하나은행", "bbox": [111, 2814, 462, 2935], "conf": 0.98, "type": "risk_notice", "h_px": 60.0, "contrast": 4.1},
+    {"id": 8, "text": "※본홍보물은법령및내부통제기준에따른절차를거쳐제공합니다※본홍보물은2025년03월31일까지유합니다.※준법감시인심의필2024-광고-02911호(2024.04.15)", "bbox": [544, 2858, 2045, 2888], "conf": 0.96, "type": "risk_notice", "h_px": 20.0, "contrast": 4.1},
+    {"id": 9, "text": "/CC브랜드 240411-0134", "bbox": [544, 2882, 793, 2909], "conf": 0.97, "type": "risk_notice", "h_px": 18.0, "contrast": 4.2}
+  ],
+  "paragraphs": [
+    {"id": 0, "type": "unknown", "text": "해외송금도", "bbox": [230, 281, 638, 392], "block_ids": [0]},
+    {"id": 1, "type": "unknown", "text": "자산관리도", "bbox": [958, 279, 1368, 389], "block_ids": [1]},
+    {"id": 2, "type": "unknown", "text": "월급통장도", "bbox": [1620, 279, 2025, 389], "block_ids": [2]},
+    {"id": 3, "type": "headline", "text": "하나 뿐인", "bbox": [402, 419, 1446, 854], "block_ids": [3, 4]},
+    {"id": 4, "type": "headline", "text": "내편", "bbox": [985, 717, 1784, 1220], "block_ids": [5]},
+    {"id": 5, "type": "risk_notice", "text": "※금용상품에 관한계약을체결하기 전에 금용상품설명서 및 약관을읽어보시기 바랍니다.※금용소비자는해당 상품 또는서비스에 대하여 설명 받을권리가있습니다 흐하나은행 ※본홍보물은법령및내부통제기준에따른절차를거쳐제공합니다※본홍보물은2025년03월31일까지유합니다.※준법감시인심의필2024-광고-02911호(2024.04.15) /CC브랜드 240411-0134", "bbox": [111, 2814, 2045, 2935], "block_ids": [6, 7, 8, 9]}
+  ],
+  "metrics": {"risk_headline_ratio": 0.067, "risk_contrast_min": 4.06, "mobile_feed": {"width_pt": 390, "risk_min_pt": 3.24, "risk_median_pt": 3.6, "headline_max_pt": 53.86}},
+  "crops": [{"path": "data/processed/image/crops/P028_risk_00.png", "bbox": [63, 2778, 511, 2984]}, {"path": "data/processed/image/crops/P028_risk_01.png", "bbox": [518, 2809, 2069, 2933]}],
+  "vlm_judgment": null,
+  "label": null
+}

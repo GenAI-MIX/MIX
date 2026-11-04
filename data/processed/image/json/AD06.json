@@ -1,0 +1,40 @@
+{
+  "ad_id": "AD06",
+  "media": "banner",
+  "product": "ETF",
+  "brand": "NH-Amundi자산운용",
+  "size": [1008, 400],
+  "format": "PNG",
+  "image": "data/processed/image/normalized/AD06.png",
+  "ocr_blocks": [
+    {"id": 0, "text": "NH-Amundi자산운용 준법감시인 심사필2026-0208호(2026.02.23~2027.02.22)", "bbox": [517, 30, 971, 44], "conf": 0.99, "type": "risk_notice", "h_px": 11.0, "contrast": 10.4},
+    {"id": 1, "text": "ETF거래이벤트", "bbox": [55, 38, 160, 55], "conf": 1.0, "type": "unknown", "h_px": 14.0, "contrast": 3.5},
+    {"id": 2, "text": "HANARO", "bbox": [34, 83, 296, 141], "conf": 0.99, "type": "headline", "h_px": 41.0, "contrast": 20.1},
+    {"id": 3, "text": "K휴머노이드테마 TOP1OETF", "bbox": [32, 142, 722, 205], "conf": 0.96, "type": "headline", "h_px": 42.0, "contrast": 5.8},
+    {"id": 4, "text": "기간", "bbox": [53, 232, 83, 251], "conf": 1.0, "type": "unknown", "h_px": 14.0, "contrast": 3.5},
+    {"id": 5, "text": "26.02.26(목)- 03.31(화)", "bbox": [109, 228, 359, 258], "conf": 0.99, "type": "unknown", "h_px": 17.0, "contrast": 20.2},
+    {"id": 6, "text": "HANARO", "bbox": [804, 245, 858, 257], "conf": 1.0, "type": "unknown", "h_px": 9.0, "contrast": null},
+    {"id": 7, "text": "대상", "bbox": [53, 270, 83, 289], "conf": 1.0, "type": "unknown", "h_px": 14.0, "contrast": 3.5},
+    {"id": 8, "text": "뱅키스 주식(01)계좌 보유 고객 중 이벤트 신청 고객", "bbox": [110, 268, 522, 293], "conf": 0.93, "type": "unknown", "h_px": 18.0, "contrast": 20.1},
+    {"id": 9, "text": "(영업점계좌 제외)", "bbox": [525, 272, 622, 288], "conf": 0.95, "type": "unknown", "h_px": 12.0, "contrast": 5.8},
+    {"id": 10, "text": "※ 투자전 설명 청취 및 (간이)투자설명서·집합투자규약 필독 ※ 이 금융상품은 예금자보호법에 따라 보호되지 않습니다.※ 자산가격 변동,환율 변동,신용등급 하락 등에 따른 원금손실", "bbox": [40, 338, 759, 350], "conf": 0.98, "type": "risk_notice", "h_px": 9.0, "contrast": 5.8},
+    {"id": 11, "text": "(0~100%) 발생가능 및 투자자 귀속 ※ 증권거래비용 등 추가 발생 가능 ※ EF 거래수수료 별도 발생 가능 ※ 투자성과 부진 및 이익금 초과 분배시 원금감소 가능 ※ E F 거래수수료는", "bbox": [40, 356, 763, 368], "conf": 0.95, "type": "risk_notice", "h_px": 9.0, "contrast": 5.8},
+    {"id": 12, "text": "trueriend", "bbox": [801, 344, 861, 362], "conf": 1.0, "type": "unknown", "h_px": 5.0, "contrast": 9.2},
+    {"id": 13, "text": "한국투자", "bbox": [863, 347, 946, 372], "conf": 1.0, "type": "unknown", "h_px": 15.0, "contrast": 13.6},
+    {"id": 14, "text": "증권", "bbox": [945, 344, 976, 363], "conf": 0.99, "type": "unknown", "h_px": 11.0, "contrast": 13.6},
+    {"id": 15, "text": "0.0146527% 이며,홈페이지 참고", "bbox": [40, 374, 179, 386], "conf": 0.95, "type": "risk_notice", "h_px": 9.0, "contrast": 6.9}
+  ],
+  "paragraphs": [
+    {"id": 0, "type": "risk_notice", "text": "NH-Amundi자산운용 준법감시인 심사필2026-0208호(2026.02.23~2027.02.22)", "bbox": [517, 30, 971, 44], "block_ids": [0]},
+    {"id": 1, "type": "unknown", "text": "ETF거래이벤트", "bbox": [55, 38, 160, 55], "block_ids": [1]},
+    {"id": 2, "type": "headline", "text": "HANARO K휴머노이드테마 TOP1OETF", "bbox": [32, 83, 722, 205], "block_ids": [2, 3]},
+    {"id": 3, "type": "unknown", "text": "기간 26.02.26(목)- 03.31(화) 대상 뱅키스 주식(01)계좌 보유 고객 중 이벤트 신청 고객 (영업점계좌 제외)", "bbox": [53, 228, 622, 293], "block_ids": [4, 5, 7, 8, 9]},
+    {"id": 4, "type": "unknown", "text": "HANARO", "bbox": [804, 245, 858, 257], "block_ids": [6]},
+    {"id": 5, "type": "risk_notice", "text": "※ 투자전 설명 청취 및 (간이)투자설명서·집합투자규약 필독 ※ 이 금융상품은 예금자보호법에 따라 보호되지 않습니다.※ 자산가격 변동,환율 변동,신용등급 하락 등에 따른 원금손실 (0~100%) 발생가능 및 투자자 귀속 ※ 증권거래비용 등 추가 발생 가능 ※ EF 거래수수료 별도 발생 가능 ※ 투자성과 부진 및 이익금 초과 분배시 원금감소 가능 ※ E F 거래수수료는 0.0146527% 이며,홈페이지 참고", "bbox": [40, 338, 763, 386], "block_ids": [10, 11, 15]},
+    {"id": 6, "type": "unknown", "text": "trueriend 한국투자 증권", "bbox": [801, 344, 976, 372], "block_ids": [12, 13, 14]}
+  ],
+  "metrics": {"risk_headline_ratio": 0.214, "risk_contrast_min": 5.78, "mobile_feed": {"width_pt": 390, "risk_min_pt": 3.48, "risk_median_pt": 3.48, "headline_max_pt": 16.25}},
+  "crops": [{"path": "data/processed/image/crops/AD06_risk_00.png", "bbox": [506, 18, 982, 55]}, {"path": "data/processed/image/crops/AD06_risk_01.png", "bbox": [30, 328, 773, 395]}],
+  "vlm_judgment": null,
+  "label": null
+}
