@@ -69,8 +69,18 @@ PRODUCT_OVERRIDE = {
     # 'V112': '투자성',
 }
 
-RULES = [   # (키워드 정규식, 상품유형) — 위에서부터 먼저 맞는 것
-    (r'ETF|펀드|자산운용|ISA|연금|주식|투자|증권|ETN|ELS|채권', '투자성'),
+# '연금' 광고는 함께 나오는 단어로 정합니다 (브랜드·제목·광고 문구 전체에서 찾음)
+#   보험·생명·화재·연금저축보험 → 보장성 / 펀드·ETF·IRP·퇴직연금·TDF → 투자성 / 둘 다 아니면 전체
+PENSION_RE = r'연금'
+# 상품이 아닌 '보험' 문구는 보장성 판단에서 뺍니다 (예금자보호 고지문의 예금보험공사, 세금 안내의 건강·연금보험료)
+NOT_INSURANCE_RE = r'예금보험공사|예금보험|국민건강보험료?|건강보험료?|연금보험료'
+PENSION_RULES = [
+    (r'보험|생명|화재|연금저축보험', '보장성'),
+    (r'펀드|ETF|IRP|퇴직연금|TDF', '투자성'),
+]
+
+RULES = [   # (키워드 정규식, 상품유형) — 위에서부터 먼저 맞는 것 ('연금' 광고는 위 PENSION_RULES가 먼저)
+    (r'ETF|펀드|자산운용|ISA|주식|투자|증권|ETN|ELS|채권', '투자성'),
     (r'보험|생명|화재|해상|손해', '보장성'),
     (r'대출|중금리|신용대출|카드론|담보', '대출성'),
     (r'적금|예금|통장|파킹|정기예', '예금성'),
@@ -92,7 +102,15 @@ def infer_product(ad):
     if p in ('ETF', '증권'):
         return '투자성', 'json'
     head = ' '.join(str(ad.get(k) or '') for k in ('brand', 'title'))
-    for src, text in (('brand/title', head), ('text', ad_text(ad, 3000))):
+    body = ad_text(ad, 3000)
+    both = head + '\n' + body
+    if re.search(PENSION_RE, both):
+        clean = re.sub(NOT_INSURANCE_RE, '', both)
+        for pat, ptype in PENSION_RULES:
+            if re.search(pat, clean):
+                return ptype, 'pension'
+        return '전체', 'pension'
+    for src, text in (('brand/title', head), ('text', body)):
         for pat, ptype in RULES:
             if re.search(pat, text):
                 return ptype, src
