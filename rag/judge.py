@@ -160,6 +160,8 @@ def infer_product_detail(ad):
     base = {'keywords': found, 'pension': pension}
     if ad['ad_id'] in PRODUCT_OVERRIDE:
         return {'product': PRODUCT_OVERRIDE[ad['ad_id']], 'by': 'override', 'reason': 'PRODUCT_OVERRIDE', **base}
+    if ad.get('product_override'):          # 광고 JSON에 고정한 상품유형 (위반 예시는 원본 판정값)
+        return {'product': ad['product_override'], 'by': 'override', 'reason': '광고 JSON product_override', **base}
     if ad.get('product') in ('ETF', '증권'):
         return {'product': '투자성', 'by': 'json', 'reason': f"전처리 JSON product={ad.get('product')}", **base}
     if len(found) == 1 and not pension:
@@ -173,14 +175,24 @@ def infer_product(ad):
     return d['product'], d['by']
 
 
+AD_DIR = REPO_DIR / 'data/processed'   # 광고 JSON 폴더: {AD_DIR}/{image,video}/json/{ad_id}.json
+
+
+def set_ad_dir(path):
+    """광고 JSON을 다른 폴더(예: 위반 예시 rag/eval/variants)에서 읽게 바꿉니다."""
+    global AD_DIR, ALL_IDS
+    AD_DIR = Path(path).expanduser().resolve()
+    ALL_IDS = sorted(list_ids('image') + list_ids('video'))
+
+
 def load_ad(ad_id):
     kind = 'video' if ad_id.startswith('V') else 'image'
-    return json.loads((REPO_DIR / f'data/processed/{kind}/json/{ad_id}.json').read_text(encoding='utf-8'))
+    return json.loads((AD_DIR / f'{kind}/json/{ad_id}.json').read_text(encoding='utf-8'))
 
 
 def list_ids(kind):
     """kind: 'image' 또는 'video'. 해당 폴더의 광고 ID 목록."""
-    return sorted(p.stem for p in (REPO_DIR / f'data/processed/{kind}/json').glob('*.json'))
+    return sorted(p.stem for p in (AD_DIR / f'{kind}/json').glob('*.json'))
 
 
 ALL_IDS = sorted(list_ids('image') + list_ids('video'))

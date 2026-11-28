@@ -38,6 +38,7 @@ def parse_args():
     ap.add_argument('--model', help='모델 이름 (기본: openai=gpt-6-luna, claude=claude-haiku-5-5)')
     ap.add_argument('--skip-existing', action='store_true', help='{ad_id}__{model}.json이 이미 있으면 건너뜀')
     ap.add_argument('--out-dir', default=str(RAG_DIR / 'outputs'), help='결과 폴더 (기본 rag/outputs)')
+    ap.add_argument('--ad-dir', help='광고 JSON 폴더 ({ad-dir}/{image,video}/json). 기본 data/processed. 예: eval/variants')
     ap.add_argument('--workers', type=int, default=1, help='동시에 판정할 광고 수 (기본 1). 검색은 순서대로, LLM 호출만 동시에')
     ap.add_argument('--price-in', type=float, help='입력 1M 토큰당 달러 (PRICES 표 대신)')
     ap.add_argument('--price-out', type=float, help='출력 1M 토큰당 달러 (PRICES 표 대신)')
@@ -53,6 +54,8 @@ def main():
     args = parse_args()
     print('판정 모듈 불러오는 중 (BGE-M3 + 리랭커, 30초~1분)…', flush=True)
     import judge as J
+    if args.ad_dir:
+        J.set_ad_dir(args.ad_dir)
 
     key = J.API_KEY_ENV[args.provider]
     if not os.getenv(key):
