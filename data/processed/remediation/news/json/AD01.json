@@ -2,7 +2,7 @@
   "ad_id": "AD01",
   "situation": "세로 · 단색·그라데이션 배경 위 · 단색 배경",
   "font": "Pretendard SemiBold (모던 고딕)",
-  "decision": "원본 유지",
+  "decision": "수정안 + 표현 검토",
   "checks_before": [
     {
       "id": "A2",
@@ -27,7 +27,390 @@
     }
   ],
   "note": "A2·A3·A4 모두 기준 통과 — 원본 디자인 그대로 진행",
-  "judge_model": null,
-  "content_add": [],
-  "content_flag": []
+  "judge_model": "gpt-6-luna",
+  "content_add": [
+    {
+      "check_id": "B8",
+      "item": "펀드·ETF 보수·수수료, 환매 관련 사항",
+      "verdict": "확인필요",
+      "text": "※ 총보수 연 【 】%, 환매 시 【환매 기준가 적용일·환매수수료】가 적용됩니다.",
+      "placeholder": true,
+      "reason": "연간 총보수와 세부 보수는 표시되어 있지만 기타비용 및 증권거래비용은 미기재라고 되어 있습니다. ETF 거래수수료 별도 발생 가능 문구도 있으나, 증권거래비용의 고지 범위가 충분한지는 확인이 필요합니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "K-2-37-2"
+      ]
+    }
+  ],
+  "content_flag": [
+    {
+      "check_id": "C3",
+      "item": "허위·과장, 최상급, 수익 과도 기대 표현",
+      "verdict": "확인필요",
+      "ad_quote": "현대차를 로보틱스 생태계의 독보적인 존재로 차별화하는 요인입니다.",
+      "suggest": "최상급·단정 표현은 객관적 근거(출처·기준일)를 붙이거나 완화 (예: '최고' → '○○ 기준 1위(출처, 기준일)')",
+      "boxes": [
+        [
+          101,
+          339,
+          545,
+          356
+        ],
+        [
+          101,
+          360,
+          449,
+          376
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "‘독보적인 존재’라는 표현은 최상급·유일성을 암시하지만, 광고에 그 표현을 뒷받침하는 객관적 근거가 충분한지 확인이 필요합니다.",
+      "card_ids": [
+        "K-B10-2"
+      ]
+    },
+    {
+      "check_id": "C5",
+      "item": "혜택·불이익 균형 (전체 인상)",
+      "verdict": "확인필요",
+      "ad_quote": "로봇계의 TSMC,현대자동차의성장성에 집중+휴머노이드핵심밸류체인의완성",
+      "suggest": "혜택 문구와 위험고지의 크기·위치 균형 조정 (표시 방법 수정안 참고)",
+      "boxes": [
+        [
+          434,
+          105,
+          628,
+          122
+        ],
+        [
+          56,
+          147,
+          403,
+          171
+        ],
+        [
+          410,
+          147,
+          602,
+          171
+        ],
+        [
+          99,
+          190,
+          626,
+          212
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "[LLM 종합 의견 · LLM 판정 확인필요] 성장성과 핵심 밸류체인을 강조하는 문구가 있는 반면 위험고지도 포함되어 있습니다. 다만 위험고지 대비 위험 헤드라인 비율이 0.452이고, 측정상 위험 문구가 헤드라인보다 작게 표시되어 전체적인 시각적 균형은 확인이 필요합니다.",
+      "card_ids": [
+        "K-2-38-21"
+      ]
+    }
+  ],
+  "recommended": "B",
+  "brief": null,
+  "candidates": [
+    {
+      "name": "A",
+      "label": "A안 · 고지 영역 안에서 줄 간격 정리",
+      "steps": [
+        {
+          "paragraph": 28,
+          "font": "Pretendard SemiBold (모던 고딕)",
+          "align": "left",
+          "lines": 1,
+          "orig_lines": 2,
+          "size_factor": 1.0,
+          "level": "L2",
+          "pitch_ratio": [
+            1.88,
+            1.28
+          ],
+          "short_px": 7,
+          "contrast_treatment": null,
+          "fg_before": [
+            102,
+            102,
+            102
+          ],
+          "fg_after": [
+            102,
+            102,
+            102
+          ],
+          "ink_delta_e": 0.0,
+          "scrim_lines": 0,
+          "added_lines": 1
+        }
+      ],
+      "passed": false,
+      "checks_after": [
+        {
+          "id": "A2",
+          "name": "명암비",
+          "value": 4.95,
+          "threshold": 3.0,
+          "ok": true
+        },
+        {
+          "id": "A3",
+          "name": "글자 높이(mm)",
+          "value": 4.97,
+          "threshold": 2.36,
+          "ok": true
+        },
+        {
+          "id": "A4",
+          "name": "헤드라인 대비",
+          "value": 0.476,
+          "threshold": 0.075,
+          "ok": true
+        }
+      ],
+      "measured": [
+        {
+          "bbox": [
+            23,
+            889,
+            322,
+            907
+          ],
+          "kind": "added",
+          "ink_h_px": 14,
+          "fg_rgb": [
+            112,
+            112,
+            112
+          ],
+          "bg_rgb": [
+            255,
+            255,
+            255
+          ],
+          "contrast_ratio": 4.95,
+          "contrast_conf": "high"
+        }
+      ],
+      "why": [
+        "고지 영역에 7px 부족"
+      ],
+      "changed_pct": 0.2,
+      "ink_delta_e": 0.0,
+      "size_factor": 1.0,
+      "recommended": false
+    },
+    {
+      "name": "B",
+      "label": "B안 · 배경 여백을 나눠 고지 공간 확보",
+      "steps": [
+        {
+          "paragraph": 28,
+          "font": "Pretendard SemiBold (모던 고딕)",
+          "align": "left",
+          "lines": 1,
+          "orig_lines": 2,
+          "size_factor": 1.0,
+          "level": "L3",
+          "pitch_ratio": [
+            1.88,
+            1.28
+          ],
+          "seam_score": 0.03,
+          "seam_y": 900,
+          "grow_px": 10,
+          "contrast_treatment": null,
+          "fg_before": [
+            102,
+            102,
+            102
+          ],
+          "fg_after": [
+            102,
+            102,
+            102
+          ],
+          "ink_delta_e": 0.0,
+          "scrim_lines": 0,
+          "added_lines": 1
+        }
+      ],
+      "passed": true,
+      "checks_after": [
+        {
+          "id": "A2",
+          "name": "명암비",
+          "value": 4.95,
+          "threshold": 3.0,
+          "ok": true
+        },
+        {
+          "id": "A3",
+          "name": "글자 높이(mm)",
+          "value": 4.97,
+          "threshold": 2.36,
+          "ok": true
+        },
+        {
+          "id": "A4",
+          "name": "헤드라인 대비",
+          "value": 0.476,
+          "threshold": 0.075,
+          "ok": true
+        }
+      ],
+      "measured": [
+        {
+          "bbox": [
+            23,
+            879,
+            322,
+            897
+          ],
+          "kind": "added",
+          "ink_h_px": 14,
+          "fg_rgb": [
+            112,
+            112,
+            112
+          ],
+          "bg_rgb": [
+            255,
+            255,
+            255
+          ],
+          "contrast_ratio": 4.95,
+          "contrast_conf": "high"
+        }
+      ],
+      "why": [],
+      "changed_pct": 23.5,
+      "ink_delta_e": 0.0,
+      "size_factor": 1.0,
+      "rows_removed": 10,
+      "recommended": true
+    },
+    {
+      "name": "C",
+      "label": "C안 · 위쪽 비주얼을 살짝 줄여 공간 확보",
+      "steps": [
+        {
+          "paragraph": 28,
+          "font": "Pretendard SemiBold (모던 고딕)",
+          "align": "left",
+          "lines": 1,
+          "orig_lines": 2,
+          "size_factor": 1.0,
+          "level": "L3",
+          "pitch_ratio": [
+            1.88,
+            1.28
+          ],
+          "seam_score": 0.03,
+          "seam_y": 900,
+          "grow_px": 10,
+          "contrast_treatment": null,
+          "fg_before": [
+            102,
+            102,
+            102
+          ],
+          "fg_after": [
+            102,
+            102,
+            102
+          ],
+          "ink_delta_e": 0.0,
+          "scrim_lines": 0,
+          "added_lines": 1
+        }
+      ],
+      "passed": true,
+      "checks_after": [
+        {
+          "id": "A2",
+          "name": "명암비",
+          "value": 4.95,
+          "threshold": 3.0,
+          "ok": true
+        },
+        {
+          "id": "A3",
+          "name": "글자 높이(mm)",
+          "value": 4.97,
+          "threshold": 2.36,
+          "ok": true
+        },
+        {
+          "id": "A4",
+          "name": "헤드라인 대비",
+          "value": 0.476,
+          "threshold": 0.075,
+          "ok": true
+        }
+      ],
+      "measured": [
+        {
+          "bbox": [
+            23,
+            879,
+            322,
+            897
+          ],
+          "kind": "added",
+          "ink_h_px": 14,
+          "fg_rgb": [
+            112,
+            112,
+            112
+          ],
+          "bg_rgb": [
+            255,
+            255,
+            255
+          ],
+          "contrast_ratio": 4.95,
+          "contrast_conf": "high"
+        }
+      ],
+      "why": [],
+      "changed_pct": 19.4,
+      "ink_delta_e": 0.0,
+      "size_factor": 1.0,
+      "visual_scale": 0.989,
+      "recommended": false
+    },
+    {
+      "name": "T",
+      "label": "T안 · 사진 아래쪽을 조금 다듬어 공간 확보",
+      "passed": false,
+      "why": [
+        "고지 바로 위 글자 없는 구간 3px < 필요 10px"
+      ],
+      "recommended": false
+    }
+  ],
+  "checks_after": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 4.95,
+      "threshold": 3.0,
+      "ok": true
+    },
+    {
+      "id": "A3",
+      "name": "글자 높이(mm)",
+      "value": 4.97,
+      "threshold": 2.36,
+      "ok": true
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.476,
+      "threshold": 0.075,
+      "ok": true
+    }
+  ]
 }

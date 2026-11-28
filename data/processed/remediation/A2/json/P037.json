@@ -27,8 +27,22 @@
     }
   ],
   "note": null,
-  "judge_model": null,
-  "content_add": [],
+  "judge_model": "gpt-6-luna",
+  "content_add": [
+    {
+      "check_id": "B11",
+      "item": "대출조건",
+      "verdict": "위반",
+      "text": "※ 대출금리 연 【 】~【 】%, 상환방법 【 】, 중도상환수수료 【 】",
+      "placeholder": true,
+      "reason": "광고는 한도와 금리가 가심사 결과이며 확정되지 않았다고만 안내하고, 실제 대출금리·한도 등 구체적인 대출조건은 제시하지 않습니다. 대출성 상품 광고에 대출조건을 포함해야 하는 기준을 충족하지 못한 것으로 판단합니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "L-22-3-3라",
+        "F-IV-2"
+      ]
+    }
+  ],
   "content_flag": [],
   "recommended": "A",
   "brief": null,
@@ -39,131 +53,26 @@
       "steps": [
         {
           "paragraph": 15,
-          "level": "L1",
-          "block": 36,
-          "fg_before": [
-            186,
-            206,
-            205
-          ],
-          "fg_after": [
-            234,
-            251,
-            250
-          ],
-          "ink_delta_e": 16.1
-        },
-        {
-          "paragraph": 15,
-          "level": "L1",
-          "block": 37,
-          "fg_before": [
-            181,
-            202,
-            200
-          ],
-          "fg_after": [
-            230,
-            252,
-            250
-          ],
-          "ink_delta_e": 17.6
-        },
-        {
-          "paragraph": 15,
-          "level": "L1",
-          "block": 38,
+          "font": "Pretendard Bold (모던 고딕)",
+          "align": "left",
+          "lines": 1,
+          "orig_lines": 8,
+          "size_factor": 1.0,
+          "level": "L2",
+          "contrast_treatment": "글자색 명도만 조정 (색상 유지)",
           "fg_before": [
             181,
             201,
             200
-          ],
-          "fg_after": [
-            230,
-            251,
-            250
-          ],
-          "ink_delta_e": 17.6
-        },
-        {
-          "paragraph": 15,
-          "level": "L1",
-          "block": 39,
-          "fg_before": [
-            181,
-            201,
-            200
-          ],
-          "fg_after": [
-            230,
-            251,
-            250
-          ],
-          "ink_delta_e": 17.6
-        },
-        {
-          "paragraph": 15,
-          "level": "L1",
-          "block": 40,
-          "fg_before": [
-            181,
-            200,
-            199
           ],
           "fg_after": [
             228,
-            248,
-            247
+            249,
+            248
           ],
-          "ink_delta_e": 17.0
-        },
-        {
-          "paragraph": 15,
-          "level": "L1",
-          "block": 41,
-          "fg_before": [
-            180,
-            200,
-            198
-          ],
-          "fg_after": [
-            227,
-            248,
-            246
-          ],
-          "ink_delta_e": 17.0
-        },
-        {
-          "paragraph": 15,
-          "level": "L1",
-          "block": 42,
-          "fg_before": [
-            180,
-            200,
-            198
-          ],
-          "fg_after": [
-            227,
-            248,
-            246
-          ],
-          "ink_delta_e": 17.0
-        },
-        {
-          "paragraph": 15,
-          "level": "L1",
-          "block": 43,
-          "fg_before": [
-            178,
-            200,
-            198
-          ],
-          "fg_after": [
-            227,
-            250,
-            247
-          ],
-          "ink_delta_e": 17.6
+          "ink_delta_e": 16.9,
+          "scrim_lines": 0,
+          "added_lines": 1
         }
       ],
       "passed": true,
@@ -171,7 +80,7 @@
         {
           "id": "A2",
           "name": "명암비",
-          "value": 3.33,
+          "value": 3.23,
           "threshold": 3.0,
           "ok": true
         },
@@ -193,184 +102,30 @@
       "measured": [
         {
           "bbox": [
-            135,
-            2564,
-            2045,
-            2583
+            133,
+            2706,
+            470,
+            2729
           ],
-          "kind": "recolor",
-          "ink_h_px": 12,
-          "fg_rgb": [
-            233,
-            250,
-            249
-          ],
-          "bg_rgb": [
-            110,
-            141,
-            138
-          ],
-          "contrast_ratio": 3.34,
-          "contrast_conf": "high"
-        },
-        {
-          "bbox": [
-            137,
-            2585,
-            2045,
-            2601
-          ],
-          "kind": "recolor",
+          "kind": "added",
           "ink_h_px": 13,
           "fg_rgb": [
-            229,
-            251,
-            249
-          ],
-          "bg_rgb": [
-            109,
-            141,
-            138
-          ],
-          "contrast_ratio": 3.35,
-          "contrast_conf": "high"
-        },
-        {
-          "bbox": [
-            136,
-            2601,
-            2045,
-            2619
-          ],
-          "kind": "recolor",
-          "ink_h_px": 13,
-          "fg_rgb": [
-            229,
-            250,
-            249
-          ],
-          "bg_rgb": [
-            108,
-            141,
-            137
-          ],
-          "contrast_ratio": 3.34,
-          "contrast_conf": "high"
-        },
-        {
-          "bbox": [
-            136,
-            2620,
-            2044,
-            2638
-          ],
-          "kind": "recolor",
-          "ink_h_px": 13,
-          "fg_rgb": [
-            229,
-            250,
-            249
-          ],
-          "bg_rgb": [
-            108,
-            140,
-            137
-          ],
-          "contrast_ratio": 3.37,
-          "contrast_conf": "high"
-        },
-        {
-          "bbox": [
-            136,
-            2637,
-            2044,
-            2656
-          ],
-          "kind": "recolor",
-          "ink_h_px": 13,
-          "fg_rgb": [
-            227,
-            248,
-            246
-          ],
-          "bg_rgb": [
-            106,
-            139,
-            137
-          ],
-          "contrast_ratio": 3.36,
-          "contrast_conf": "high"
-        },
-        {
-          "bbox": [
-            136,
-            2656,
-            2044,
-            2674
-          ],
-          "kind": "recolor",
-          "ink_h_px": 12,
-          "fg_rgb": [
-            226,
-            247,
-            245
-          ],
-          "bg_rgb": [
-            106,
-            139,
-            136
-          ],
-          "contrast_ratio": 3.33,
-          "contrast_conf": "high"
-        },
-        {
-          "bbox": [
-            135,
-            2674,
-            2045,
-            2693
-          ],
-          "kind": "recolor",
-          "ink_h_px": 13,
-          "fg_rgb": [
-            226,
-            247,
-            246
-          ],
-          "bg_rgb": [
-            106,
-            139,
-            136
-          ],
-          "contrast_ratio": 3.33,
-          "contrast_conf": "high"
-        },
-        {
-          "bbox": [
-            135,
-            2692,
-            676,
-            2711
-          ],
-          "kind": "recolor",
-          "ink_h_px": 13,
-          "fg_rgb": [
-            226,
+            228,
             249,
-            247
+            248
           ],
           "bg_rgb": [
-            106,
-            139,
-            136
+            108,
+            143,
+            140
           ],
-          "contrast_ratio": 3.38,
+          "contrast_ratio": 3.23,
           "contrast_conf": "high"
         }
       ],
       "why": [],
-      "changed_pct": 1.4,
-      "ink_delta_e": 17.6,
+      "changed_pct": 0.0,
+      "ink_delta_e": 16.9,
       "size_factor": 1.0,
       "recommended": true
     }
@@ -379,7 +134,7 @@
     {
       "id": "A2",
       "name": "명암비",
-      "value": 3.33,
+      "value": 3.23,
       "threshold": 3.0,
       "ok": true
     },

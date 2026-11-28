@@ -2,7 +2,7 @@
   "ad_id": "AD50",
   "situation": "세로 · 단색·그라데이션 배경 위 · 단색 배경",
   "font": "나눔고딕 Bold (클래식 고딕)",
-  "decision": "수정안",
+  "decision": "수정안 + 표현 검토",
   "checks_before": [
     {
       "id": "A2",
@@ -27,9 +27,148 @@
     }
   ],
   "note": null,
-  "judge_model": null,
-  "content_add": [],
-  "content_flag": [],
+  "judge_model": "gpt-6-luna",
+  "content_add": [
+    {
+      "check_id": "B3",
+      "item": "투자 위험 (원금손실 가능, 손실은 투자자 귀속)",
+      "verdict": "위반",
+      "text": "※ 이 금융투자상품은 원금 손실이 발생할 수 있으며, 그 손실은 투자자에게 귀속됩니다.",
+      "placeholder": false,
+      "reason": "광고에는 투자원금 손실 가능성과 손실이 투자자에게 귀속된다는 안내가 확인되지 않습니다. 투자성 상품에 요구되는 투자 위험 고지가 누락되었습니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "K-B9-1"
+      ]
+    },
+    {
+      "check_id": "B7",
+      "item": "손실 상황 및 손실 추정액",
+      "verdict": "확인필요",
+      "text": "※ 【손실이 발생할 수 있는 상황】 시 최대 【손실 추정액】의 손실이 발생할 수 있습니다.",
+      "placeholder": true,
+      "reason": "광고에는 자산가격 변동 등 손실이 발생할 수 있는 상황이나 그에 따른 손실 추정액이 확인되지 않습니다. 손실 상황과 추정액을 확인할 필요가 있습니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "K-B9-1"
+      ]
+    }
+  ],
+  "content_flag": [
+    {
+      "check_id": "C1",
+      "item": "우대 수익률 조건·운용실적 기준일 글자 크기",
+      "verdict": "확인필요",
+      "ad_quote": "[unknown] EUROMONEY 유로머니 선정 SECURITIES HOUSES 2024대한민국 AWARDS2O24 / [unknown] 최우수 증권사 / 퇴직연금 증권업계 적립금 1위 (2023년말 기준) 금융감독원 통합연금포털 원리금보장 및 비보장형 합계금액 공시기준 현재시점 및 미래에는 이와 다를수있음",
+      "suggest": "수익률을 강조할 때 조건·기준일·산출기간을 수익률 바로 옆에 비슷한 크기로 표시",
+      "boxes": [
+        [
+          779,
+          27,
+          1003,
+          90
+        ],
+        [
+          1024,
+          68,
+          1206,
+          103
+        ],
+        [
+          782,
+          81,
+          1000,
+          115
+        ],
+        [
+          784,
+          110,
+          940,
+          141
+        ],
+        [
+          353,
+          1368,
+          476,
+          1391
+        ],
+        [
+          86,
+          1397,
+          248,
+          1415
+        ],
+        [
+          400,
+          1397,
+          520,
+          1416
+        ],
+        [
+          162,
+          1417,
+          258,
+          1438
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "‘최우수 증권사’ 수상실적과 ‘적립금 1위’ 통계수치가 강조되어 있습니다. 출처·기준일 문구는 있으나 글자 크기 측정값이 없어 강조 문구 대비 3분의 1 이상인지 확인이 필요합니다.",
+      "card_ids": [
+        "K-2-38-12"
+      ]
+    },
+    {
+      "check_id": "C3",
+      "item": "허위·과장, 최상급, 수익 과도 기대 표현",
+      "verdict": "확인필요",
+      "ad_quote": "[unknown] 최우수 증권사 / 퇴직연금 증권업계 적립금 1위 (2023년말 기준) 금융감독원 통합연금포털 원리금보장 및 비보장형 합계금액 공시기준 현재시점 및 미래에는 이와 다를수있음",
+      "suggest": "최상급·단정 표현은 객관적 근거(출처·기준일)를 붙이거나 완화 (예: '최고' → '○○ 기준 1위(출처, 기준일)')",
+      "boxes": [
+        [
+          353,
+          1368,
+          476,
+          1391
+        ],
+        [
+          86,
+          1397,
+          248,
+          1415
+        ],
+        [
+          400,
+          1397,
+          520,
+          1416
+        ],
+        [
+          162,
+          1417,
+          258,
+          1438
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "‘최우수 증권사’와 ‘적립금 1위’라는 최상급 표현이 있습니다. 광고에 수상 선정 및 통계 출처·기준일이 기재되어 있으나, OCR 문구만으로 수상 부문과 순위 근거의 범위를 확인하기 어려워 확인이 필요합니다.",
+      "card_ids": [
+        "K-B10-2"
+      ]
+    },
+    {
+      "check_id": "C5",
+      "item": "혜택·불이익 균형 (전체 인상)",
+      "verdict": "확인필요",
+      "ad_quote": "risk_min_pt: 0.31 / headline_max_pt: 26.1 / risk_headline_ratio: 0.217",
+      "suggest": "혜택 문구와 위험고지의 크기·위치 균형 조정 (표시 방법 수정안 참고)",
+      "boxes": [],
+      "evidence_issue": "광고 문구 인용이 광고에 없음",
+      "reason": "[LLM 종합 의견 · LLM 판정 확인필요] 혜택 문구가 강조된 가운데 측정값상 위험고지 최소 글자 크기가 0.31pt로 나타나 혜택과 불이익이 균형 있게 전달되는지 확인이 필요합니다. 위험고지 대비 제목 크기와 실제 포스터의 배치·가독성을 함께 확인해야 합니다.",
+      "card_ids": [
+        "K-2-38-21"
+      ]
+    }
+  ],
   "recommended": "D",
   "brief": null,
   "candidates": [
@@ -41,7 +180,7 @@
           "paragraph": 10,
           "font": "나눔고딕 Bold (클래식 고딕)",
           "align": "left",
-          "lines": 18,
+          "lines": 20,
           "orig_lines": 10,
           "size_factor": 1.14,
           "level": "L2",
@@ -49,7 +188,7 @@
             1.43,
             1.28
           ],
-          "short_px": 215,
+          "short_px": 266,
           "contrast_treatment": null,
           "fg_before": [
             0,
@@ -63,7 +202,7 @@
           ],
           "ink_delta_e": 0.0,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 2
         }
       ],
       "passed": false,
@@ -430,10 +569,38 @@
           "bg_rgb": null,
           "contrast_ratio": null,
           "contrast_conf": "low"
+        },
+        {
+          "bbox": [
+            17,
+            1942,
+            836,
+            1970
+          ],
+          "kind": "added",
+          "ink_h_px": null,
+          "fg_rgb": null,
+          "bg_rgb": null,
+          "contrast_ratio": null,
+          "contrast_conf": "low"
+        },
+        {
+          "bbox": [
+            17,
+            1968,
+            810,
+            1996
+          ],
+          "kind": "added",
+          "ink_h_px": null,
+          "fg_rgb": null,
+          "bg_rgb": null,
+          "contrast_ratio": null,
+          "contrast_conf": "low"
         }
       ],
       "why": [
-        "고지 영역에 215px 부족"
+        "고지 영역에 266px 부족"
       ],
       "changed_pct": 12.4,
       "ink_delta_e": 0.0,
@@ -445,7 +612,7 @@
       "label": "B안 · 배경 여백을 나눠 고지 공간 확보",
       "passed": false,
       "why": [
-        "평평한 배경 줄이 52px 모자람"
+        "평평한 배경 줄이 103px 모자람"
       ],
       "recommended": false
     },
@@ -454,7 +621,7 @@
       "label": "C안 · 위쪽 비주얼을 살짝 줄여 공간 확보",
       "passed": false,
       "why": [
-        "비주얼을 85%까지 줄여야 함 (한도 90%)"
+        "비주얼을 82%까지 줄여야 함 (한도 90%)"
       ],
       "recommended": false
     },
@@ -463,7 +630,7 @@
       "label": "T안 · 사진 아래쪽을 조금 다듬어 공간 확보",
       "passed": false,
       "why": [
-        "고지 바로 위 글자 없는 구간 26px < 필요 220px"
+        "고지 바로 위 글자 없는 구간 26px < 필요 271px"
       ],
       "recommended": false
     },
@@ -475,7 +642,7 @@
           "paragraph": 10,
           "font": "나눔고딕 Bold (클래식 고딕)",
           "align": "left",
-          "lines": 18,
+          "lines": 20,
           "orig_lines": 10,
           "size_factor": 1.14,
           "level": "L3",
@@ -485,7 +652,7 @@
           ],
           "seam_score": 0.49,
           "seam_y": 1698,
-          "grow_px": 220,
+          "grow_px": 271,
           "contrast_treatment": null,
           "fg_before": [
             0,
@@ -499,7 +666,7 @@
           ],
           "ink_delta_e": 0.0,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 2
         }
       ],
       "passed": true,
@@ -530,9 +697,9 @@
         {
           "bbox": [
             17,
-            1268,
+            1217,
             769,
-            1296
+            1245
           ],
           "kind": "retypeset",
           "ink_h_px": 20,
@@ -552,9 +719,9 @@
         {
           "bbox": [
             17,
-            1293,
+            1242,
             1186,
-            1321
+            1270
           ],
           "kind": "retypeset",
           "ink_h_px": 20,
@@ -574,9 +741,9 @@
         {
           "bbox": [
             17,
-            1318,
+            1267,
             105,
-            1346
+            1295
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -596,9 +763,9 @@
         {
           "bbox": [
             17,
-            1344,
+            1293,
             1188,
-            1372
+            1321
           ],
           "kind": "retypeset",
           "ink_h_px": 20,
@@ -618,9 +785,9 @@
         {
           "bbox": [
             17,
-            1369,
+            1318,
             126,
-            1396
+            1345
           ],
           "kind": "retypeset",
           "ink_h_px": 20,
@@ -640,9 +807,9 @@
         {
           "bbox": [
             17,
-            1395,
+            1344,
             997,
-            1423
+            1372
           ],
           "kind": "retypeset",
           "ink_h_px": 20,
@@ -662,9 +829,9 @@
         {
           "bbox": [
             17,
-            1420,
+            1369,
             446,
-            1448
+            1397
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -684,9 +851,9 @@
         {
           "bbox": [
             17,
-            1446,
+            1395,
             1160,
-            1474
+            1423
           ],
           "kind": "retypeset",
           "ink_h_px": 20,
@@ -706,9 +873,9 @@
         {
           "bbox": [
             17,
-            1471,
+            1420,
             272,
-            1499
+            1448
           ],
           "kind": "retypeset",
           "ink_h_px": 18,
@@ -728,8 +895,52 @@
         {
           "bbox": [
             17,
-            1496,
+            1445,
             1140,
+            1473
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 20,
+          "fg_rgb": [
+            0,
+            0,
+            0
+          ],
+          "bg_rgb": [
+            238,
+            242,
+            246
+          ],
+          "contrast_ratio": 18.67,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            17,
+            1471,
+            161,
+            1499
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 21,
+          "fg_rgb": [
+            0,
+            0,
+            0
+          ],
+          "bg_rgb": [
+            238,
+            242,
+            246
+          ],
+          "contrast_ratio": 18.67,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            17,
+            1496,
+            1156,
             1524
           ],
           "kind": "retypeset",
@@ -751,11 +962,11 @@
           "bbox": [
             17,
             1522,
-            161,
-            1550
+            112,
+            1549
           ],
           "kind": "retypeset",
-          "ink_h_px": 21,
+          "ink_h_px": 19,
           "fg_rgb": [
             0,
             0,
@@ -773,7 +984,7 @@
           "bbox": [
             17,
             1547,
-            1156,
+            1186,
             1575
           ],
           "kind": "retypeset",
@@ -795,11 +1006,11 @@
           "bbox": [
             17,
             1573,
-            112,
-            1600
+            111,
+            1601
           ],
           "kind": "retypeset",
-          "ink_h_px": 19,
+          "ink_h_px": 16,
           "fg_rgb": [
             0,
             0,
@@ -817,7 +1028,7 @@
           "bbox": [
             17,
             1598,
-            1186,
+            1110,
             1626
           ],
           "kind": "retypeset",
@@ -839,30 +1050,8 @@
           "bbox": [
             17,
             1624,
-            111,
+            1006,
             1652
-          ],
-          "kind": "retypeset",
-          "ink_h_px": 16,
-          "fg_rgb": [
-            0,
-            0,
-            0
-          ],
-          "bg_rgb": [
-            238,
-            242,
-            246
-          ],
-          "contrast_ratio": 18.67,
-          "contrast_conf": "high"
-        },
-        {
-          "bbox": [
-            17,
-            1649,
-            1110,
-            1677
           ],
           "kind": "retypeset",
           "ink_h_px": 20,
@@ -882,11 +1071,33 @@
         {
           "bbox": [
             17,
-            1675,
-            1006,
-            1703
+            1649,
+            287,
+            1677
           ],
           "kind": "retypeset",
+          "ink_h_px": 17,
+          "fg_rgb": [
+            0,
+            0,
+            0
+          ],
+          "bg_rgb": [
+            238,
+            242,
+            246
+          ],
+          "contrast_ratio": 18.67,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            17,
+            1674,
+            836,
+            1702
+          ],
+          "kind": "added",
           "ink_h_px": 20,
           "fg_rgb": [
             0,
@@ -905,32 +1116,32 @@
           "bbox": [
             17,
             1700,
-            287,
+            810,
             1728
           ],
-          "kind": "retypeset",
-          "ink_h_px": 17,
+          "kind": "added",
+          "ink_h_px": 20,
           "fg_rgb": [
             0,
             0,
             0
           ],
           "bg_rgb": [
-            242,
-            245,
-            248
+            243,
+            246,
+            249
           ],
-          "contrast_ratio": 19.19,
+          "contrast_ratio": 19.36,
           "contrast_conf": "high"
         }
       ],
       "why": [],
-      "changed_pct": 62.1,
+      "changed_pct": 65.0,
       "ink_delta_e": 0.0,
       "size_factor": 1.14,
       "rows_removed": 114,
       "rows_trimmed": 10,
-      "visual_scale": 0.929,
+      "visual_scale": 0.891,
       "recommended": true
     }
   ],

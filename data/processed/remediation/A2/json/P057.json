@@ -27,7 +27,7 @@
     }
   ],
   "note": "A2·A3·A4 모두 기준 통과 — 원본 디자인 그대로 진행",
-  "judge_model": null,
+  "judge_model": "gpt-6-luna",
   "content_add": [],
   "content_flag": []
 }

@@ -2,7 +2,7 @@
   "ad_id": "P005",
   "situation": "세로 · 브랜드 푸터 패널 · 단색 배경",
   "font": "IBM Plex Sans KR Bold (기업형 고딕 (좁은 폭))",
-  "decision": "수정안",
+  "decision": "수정안 + 표현 검토",
   "checks_before": [
     {
       "id": "A2",
@@ -27,9 +27,112 @@
     }
   ],
   "note": null,
-  "judge_model": null,
-  "content_add": [],
-  "content_flag": [],
+  "judge_model": "gpt-6-luna",
+  "content_add": [
+    {
+      "check_id": "B8",
+      "item": "펀드·ETF 보수·수수료, 환매 관련 사항",
+      "verdict": "확인필요",
+      "text": "※ 총보수 연 【 】%, 환매 시 【환매 기준가 적용일·환매수수료】가 적용됩니다.",
+      "placeholder": true,
+      "reason": "광고에 집합투자증권과 상품별 보수·수수료에 관한 문구는 있으나, 환매수수료나 환매 신청 후 금액을 받는 시기는 확인되지 않습니다. 광고가 여러 상품을 다루고 있어 구체적인 펀드·ETF 적용 여부 및 환매사항은 확인이 필요합니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "K-2-37-2"
+      ]
+    }
+  ],
+  "content_flag": [
+    {
+      "check_id": "C3",
+      "item": "허위·과장, 최상급, 수익 과도 기대 표현",
+      "verdict": "확인필요",
+      "ad_quote": "1,400여개 금융상품으로 수익률도 탄탄하게!",
+      "suggest": "최상급·단정 표현은 객관적 근거(출처·기준일)를 붙이거나 완화 (예: '최고' → '○○ 기준 1위(출처, 기준일)')",
+      "boxes": [
+        [
+          411,
+          543,
+          729,
+          569
+        ],
+        [
+          329,
+          567,
+          813,
+          594
+        ],
+        [
+          767,
+          704,
+          1019,
+          743
+        ],
+        [
+          763,
+          736,
+          1025,
+          780
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "“수익률도 탄탄하게!”가 구체적인 근거 없이 수익에 대한 기대를 높이는 표현인지 확인이 필요합니다. 제공된 문구만으로는 과도한 기대를 유발한다고 단정하기 어렵습니다.",
+      "card_ids": [
+        "K-B10-2"
+      ]
+    },
+    {
+      "check_id": "C5",
+      "item": "혜택·불이익 균형 (전체 인상)",
+      "verdict": "확인필요",
+      "ad_quote": "같은 연금 다른 내일 투자를 넘어 안정성까지 KB국민은행 퇴직연금 IRP",
+      "suggest": "혜택 문구와 위험고지의 크기·위치 균형 조정 (표시 방법 수정안 참고)",
+      "boxes": [
+        [
+          31,
+          78,
+          158,
+          105
+        ],
+        [
+          182,
+          82,
+          266,
+          115
+        ],
+        [
+          337,
+          189,
+          806,
+          249
+        ],
+        [
+          150,
+          241,
+          986,
+          375
+        ],
+        [
+          238,
+          368,
+          901,
+          441
+        ],
+        [
+          268,
+          464,
+          873,
+          522
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "[LLM 종합 의견 · LLM 판정 확인필요] 혜택을 강조하는 문구와 함께 위험고지가 있지만, 모바일 측정값에서 위험고지 최소 글자 크기는 4.89pt이고 헤드라인 최대 글자 크기는 31.36pt입니다. 전체 광고의 인상에서 혜택과 불이익이 균형 있게 전달되는지 확인이 필요합니다.",
+      "card_ids": [
+        "K-2-38-21",
+        "R-18"
+      ]
+    }
+  ],
   "recommended": "D",
   "brief": null,
   "candidates": [
@@ -41,7 +144,7 @@
           "paragraph": 12,
           "font": "IBM Plex Sans KR Bold (기업형 고딕 (좁은 폭))",
           "align": "left",
-          "lines": 15,
+          "lines": 16,
           "orig_lines": 5,
           "size_factor": 1.19,
           "level": "L2",
@@ -49,7 +152,7 @@
             1.3,
             1.25
           ],
-          "short_px": 257,
+          "short_px": 280,
           "contrast_treatment": null,
           "fg_before": [
             112,
@@ -63,7 +166,7 @@
           ],
           "ink_delta_e": 0.0,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 1
         }
       ],
       "passed": false,
@@ -372,10 +475,24 @@
           "bg_rgb": null,
           "contrast_ratio": null,
           "contrast_conf": "low"
+        },
+        {
+          "bbox": [
+            23,
+            1797,
+            718,
+            1822
+          ],
+          "kind": "added",
+          "ink_h_px": null,
+          "fg_rgb": null,
+          "bg_rgb": null,
+          "contrast_ratio": null,
+          "contrast_conf": "low"
         }
       ],
       "why": [
-        "고지 영역에 257px 부족"
+        "고지 영역에 280px 부족"
       ],
       "changed_pct": 5.4,
       "ink_delta_e": 0.0,
@@ -387,7 +504,7 @@
       "label": "B안 · 배경 여백을 나눠 고지 공간 확보",
       "passed": false,
       "why": [
-        "평평한 배경 줄이 145px 모자람"
+        "평평한 배경 줄이 168px 모자람"
       ],
       "recommended": false
     },
@@ -396,7 +513,7 @@
       "label": "C안 · 위쪽 비주얼을 살짝 줄여 공간 확보",
       "passed": false,
       "why": [
-        "비주얼을 82%까지 줄여야 함 (한도 90%)"
+        "비주얼을 80%까지 줄여야 함 (한도 90%)"
       ],
       "recommended": false
     },
@@ -405,7 +522,7 @@
       "label": "T안 · 사진 아래쪽을 조금 다듬어 공간 확보",
       "passed": false,
       "why": [
-        "고지 바로 위 글자 없는 구간 231px < 필요 262px"
+        "고지 바로 위 글자 없는 구간 231px < 필요 285px"
       ],
       "recommended": false
     },
@@ -417,7 +534,7 @@
           "paragraph": 12,
           "font": "IBM Plex Sans KR Bold (기업형 고딕 (좁은 폭))",
           "align": "left",
-          "lines": 15,
+          "lines": 16,
           "orig_lines": 5,
           "size_factor": 1.19,
           "level": "L3",
@@ -427,7 +544,7 @@
           ],
           "seam_score": 0.66,
           "seam_y": 1482,
-          "grow_px": 262,
+          "grow_px": 285,
           "contrast_treatment": null,
           "fg_before": [
             112,
@@ -441,7 +558,7 @@
           ],
           "ink_delta_e": 0.0,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 1
         }
       ],
       "passed": true,
@@ -449,7 +566,7 @@
         {
           "id": "A2",
           "name": "명암비",
-          "value": 4.65,
+          "value": 4.61,
           "threshold": 3.0,
           "ok": true
         },
@@ -472,9 +589,9 @@
         {
           "bbox": [
             23,
-            1206,
+            1183,
             1059,
-            1231
+            1208
           ],
           "kind": "retypeset",
           "ink_h_px": null,
@@ -494,9 +611,9 @@
         {
           "bbox": [
             23,
-            1229,
+            1206,
             1119,
-            1254
+            1231
           ],
           "kind": "retypeset",
           "ink_h_px": 19,
@@ -516,9 +633,9 @@
         {
           "bbox": [
             23,
-            1252,
+            1229,
             261,
-            1277
+            1254
           ],
           "kind": "retypeset",
           "ink_h_px": 19,
@@ -538,9 +655,9 @@
         {
           "bbox": [
             23,
-            1276,
+            1253,
             1041,
-            1301
+            1278
           ],
           "kind": "retypeset",
           "ink_h_px": 19,
@@ -560,9 +677,9 @@
         {
           "bbox": [
             23,
-            1299,
+            1276,
             1051,
-            1324
+            1301
           ],
           "kind": "retypeset",
           "ink_h_px": 19,
@@ -582,9 +699,9 @@
         {
           "bbox": [
             23,
-            1322,
+            1299,
             365,
-            1347
+            1324
           ],
           "kind": "retypeset",
           "ink_h_px": 19,
@@ -604,9 +721,9 @@
         {
           "bbox": [
             23,
-            1346,
+            1323,
             1119,
-            1371
+            1348
           ],
           "kind": "retypeset",
           "ink_h_px": 19,
@@ -626,9 +743,9 @@
         {
           "bbox": [
             23,
-            1369,
+            1346,
             1078,
-            1394
+            1371
           ],
           "kind": "retypeset",
           "ink_h_px": 19,
@@ -648,9 +765,9 @@
         {
           "bbox": [
             23,
-            1393,
+            1370,
             165,
-            1418
+            1395
           ],
           "kind": "retypeset",
           "ink_h_px": 16,
@@ -670,9 +787,9 @@
         {
           "bbox": [
             23,
-            1416,
+            1393,
             1122,
-            1441
+            1418
           ],
           "kind": "retypeset",
           "ink_h_px": 19,
@@ -692,9 +809,9 @@
         {
           "bbox": [
             23,
-            1439,
+            1416,
             967,
-            1464
+            1441
           ],
           "kind": "retypeset",
           "ink_h_px": 19,
@@ -714,9 +831,9 @@
         {
           "bbox": [
             23,
-            1463,
+            1440,
             300,
-            1488
+            1465
           ],
           "kind": "retypeset",
           "ink_h_px": 18,
@@ -736,9 +853,9 @@
         {
           "bbox": [
             23,
-            1486,
+            1463,
             962,
-            1511
+            1488
           ],
           "kind": "retypeset",
           "ink_h_px": 19,
@@ -758,9 +875,9 @@
         {
           "bbox": [
             23,
-            1509,
+            1486,
             1060,
-            1534
+            1511
           ],
           "kind": "retypeset",
           "ink_h_px": 16,
@@ -771,18 +888,18 @@
           ],
           "bg_rgb": [
             250,
-            241,
-            217
+            243,
+            213
           ],
-          "contrast_ratio": 4.85,
+          "contrast_ratio": 4.9,
           "contrast_conf": "low"
         },
         {
           "bbox": [
             23,
-            1533,
+            1510,
             409,
-            1558
+            1535
           ],
           "kind": "retypeset",
           "ink_h_px": 15,
@@ -794,19 +911,41 @@
           "bg_rgb": [
             250,
             240,
-            224
+            225
           ],
           "contrast_ratio": 4.84,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            23,
+            1533,
+            718,
+            1558
+          ],
+          "kind": "added",
+          "ink_h_px": 19,
+          "fg_rgb": [
+            112,
+            104,
+            98
+          ],
+          "bg_rgb": [
+            247,
+            234,
+            216
+          ],
+          "contrast_ratio": 4.61,
           "contrast_conf": "low"
         }
       ],
       "why": [],
-      "changed_pct": 55.0,
+      "changed_pct": 56.6,
       "ink_delta_e": 0.0,
       "size_factor": 1.19,
       "rows_removed": 78,
       "rows_trimmed": 98,
-      "visual_scale": 0.933,
+      "visual_scale": 0.915,
       "recommended": true
     }
   ],
@@ -814,7 +953,7 @@
     {
       "id": "A2",
       "name": "명암비",
-      "value": 4.65,
+      "value": 4.61,
       "threshold": 3.0,
       "ok": true
     },

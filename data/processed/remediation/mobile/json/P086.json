@@ -2,7 +2,7 @@
   "ad_id": "P086",
   "situation": "세로 · 박스·카드 안 · 단색 배경",
   "font": "IBM Plex Sans KR Medium (기업형 고딕 (좁은 폭))",
-  "decision": "수정안",
+  "decision": "수정안 + 표현 검토",
   "checks_before": [
     {
       "id": "A2",
@@ -27,9 +27,137 @@
     }
   ],
   "note": null,
-  "judge_model": null,
-  "content_add": [],
-  "content_flag": [],
+  "judge_model": "gpt-6-luna",
+  "content_add": [
+    {
+      "check_id": "B7",
+      "item": "손실 상황 및 손실 추정액",
+      "verdict": "확인필요",
+      "text": "※ 【손실이 발생할 수 있는 상황】 시 최대 【손실 추정액】의 손실이 발생할 수 있습니다.",
+      "placeholder": true,
+      "reason": "광고에는 원금 손실 가능성만 표시되어 있고, 손실이 발생할 수 있는 구체적 상황과 손실 추정액은 확인되지 않습니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "K-B9-1"
+      ]
+    }
+  ],
+  "content_flag": [
+    {
+      "check_id": "C1",
+      "item": "우대 수익률 조건·운용실적 기준일 글자 크기",
+      "verdict": "확인필요",
+      "ad_quote": "수수료 ZERO까지! ZERO수수료 / *단,펀드보수등추가발생가능",
+      "suggest": "수익률을 강조할 때 조건·기준일·산출기간을 수익률 바로 옆에 비슷한 크기로 표시",
+      "boxes": [
+        [
+          96,
+          94,
+          363,
+          168
+        ],
+        [
+          1741,
+          119,
+          2084,
+          235
+        ],
+        [
+          105,
+          164,
+          324,
+          196
+        ],
+        [
+          558,
+          254,
+          1642,
+          686
+        ],
+        [
+          1113,
+          1835,
+          1613,
+          1986
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "광고는 ‘수수료 ZERO’를 강조하면서 펀드보수 등 추가 발생 가능성을 조건으로 표시합니다. 해당 문구의 글자 크기 측정값이 없어 우대조건 표시 기준 충족 여부를 확인할 필요가 있습니다.",
+      "card_ids": [
+        "K-2-38-12"
+      ]
+    },
+    {
+      "check_id": "C3",
+      "item": "허위·과장, 최상급, 수익 과도 기대 표현",
+      "verdict": "확인필요",
+      "ad_quote": "안전성,전문성,수익성에 수수료 ZERO까지! ZERO수수료,삼성생명 IRP로 싹!바꾸세요!",
+      "suggest": "최상급·단정 표현은 객관적 근거(출처·기준일)를 붙이거나 완화 (예: '최고' → '○○ 기준 1위(출처, 기준일)')",
+      "boxes": [
+        [
+          1344,
+          2265,
+          2084,
+          2465
+        ],
+        [
+          1343,
+          2440,
+          2076,
+          2636
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "‘안전성, 전문성, 수익성’ 및 ‘수수료 ZERO’를 뒷받침하는 객관적 근거가 광고 문구에 나타나지 않습니다. 다만 광고 정보만으로 해당 주장의 근거 유무를 단정하기 어려워 확인이 필요합니다.",
+      "card_ids": [
+        "K-B10-2"
+      ]
+    },
+    {
+      "check_id": "C5",
+      "item": "혜택·불이익 균형 (전체 인상)",
+      "verdict": "확인필요",
+      "ad_quote": "안전성,전문성,수익성에 수수료 ZERO까지! ZERO수수료,삼성생명 IRP로 싹!바꾸세요! / 금융투자상품은 투자원금의 손실이 발생할 수 있으며, 그 손실은 투자자에게 귀속됩니다.",
+      "suggest": "혜택 문구와 위험고지의 크기·위치 균형 조정 (표시 방법 수정안 참고)",
+      "boxes": [
+        [
+          1344,
+          2265,
+          2084,
+          2465
+        ],
+        [
+          1343,
+          2440,
+          2076,
+          2636
+        ],
+        [
+          1756,
+          2741,
+          2076,
+          2781
+        ],
+        [
+          294,
+          2743,
+          1725,
+          2772
+        ],
+        [
+          291,
+          2782,
+          1725,
+          2811
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "[LLM 종합 의견 · LLM 판정 확인필요] ‘수수료 ZERO’ 등 혜택 표현이 강조된 반면 원금손실 고지의 risk_headline_ratio는 0.059, 모바일 risk_min_pt는 1.97pt로 측정되었습니다. 전체 인상에서 혜택과 불이익이 균형 있게 전달되는지 확인이 필요합니다.",
+      "card_ids": [
+        "K-2-38-21"
+      ]
+    }
+  ],
   "recommended": "C",
   "brief": null,
   "candidates": [
@@ -41,7 +169,7 @@
           "paragraph": 8,
           "font": "IBM Plex Sans KR Medium (기업형 고딕 (좁은 폭))",
           "align": "left",
-          "lines": 8,
+          "lines": 9,
           "orig_lines": 4,
           "size_factor": 1.67,
           "level": "L2",
@@ -49,7 +177,7 @@
             1.86,
             1.26
           ],
-          "short_px": 218,
+          "short_px": 262,
           "contrast_treatment": "글자색 명도만 조정 (색상 유지)",
           "fg_before": [
             177,
@@ -63,7 +191,7 @@
           ],
           "ink_delta_e": 22.0,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 1
         }
       ],
       "passed": false,
@@ -250,10 +378,24 @@
           "bg_rgb": null,
           "contrast_ratio": null,
           "contrast_conf": "low"
+        },
+        {
+          "bbox": [
+            288,
+            3090,
+            1700,
+            3132
+          ],
+          "kind": "added",
+          "ink_h_px": null,
+          "fg_rgb": null,
+          "bg_rgb": null,
+          "contrast_ratio": null,
+          "contrast_conf": "low"
         }
       ],
       "why": [
-        "고지 영역에 218px 부족"
+        "고지 영역에 262px 부족"
       ],
       "changed_pct": 2.7,
       "ink_delta_e": 22.0,
@@ -265,7 +407,7 @@
       "label": "B안 · 배경 여백을 나눠 고지 공간 확보",
       "passed": false,
       "why": [
-        "평평한 배경 줄이 164px 모자람"
+        "평평한 배경 줄이 208px 모자람"
       ],
       "recommended": false
     },
@@ -277,7 +419,7 @@
           "paragraph": 8,
           "font": "IBM Plex Sans KR Medium (기업형 고딕 (좁은 폭))",
           "align": "left",
-          "lines": 8,
+          "lines": 9,
           "orig_lines": 4,
           "size_factor": 1.67,
           "level": "L3",
@@ -287,7 +429,7 @@
           ],
           "seam_score": 2.78,
           "seam_y": 2761,
-          "grow_px": 225,
+          "grow_px": 269,
           "contrast_treatment": null,
           "fg_before": [
             177,
@@ -301,7 +443,7 @@
           ],
           "ink_delta_e": 0.0,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 1
         }
       ],
       "passed": true,
@@ -332,8 +474,30 @@
         {
           "bbox": [
             288,
-            2513,
+            2469,
             1891,
+            2511
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 36,
+          "fg_rgb": [
+            177,
+            199,
+            246
+          ],
+          "bg_rgb": [
+            32,
+            88,
+            161
+          ],
+          "contrast_ratio": 4.16,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            288,
+            2513,
+            1504,
             2555
           ],
           "kind": "retypeset",
@@ -355,7 +519,7 @@
           "bbox": [
             288,
             2557,
-            1504,
+            2029,
             2599
           ],
           "kind": "retypeset",
@@ -366,18 +530,18 @@
             246
           ],
           "bg_rgb": [
-            32,
-            88,
+            31,
+            87,
             161
           ],
-          "contrast_ratio": 4.16,
+          "contrast_ratio": 4.21,
           "contrast_conf": "high"
         },
         {
           "bbox": [
             288,
             2601,
-            2029,
+            949,
             2643
           ],
           "kind": "retypeset",
@@ -388,18 +552,18 @@
             246
           ],
           "bg_rgb": [
-            31,
-            87,
+            32,
+            88,
             161
           ],
-          "contrast_ratio": 4.21,
+          "contrast_ratio": 4.16,
           "contrast_conf": "high"
         },
         {
           "bbox": [
             288,
             2645,
-            949,
+            1999,
             2687
           ],
           "kind": "retypeset",
@@ -410,28 +574,6 @@
             246
           ],
           "bg_rgb": [
-            32,
-            88,
-            161
-          ],
-          "contrast_ratio": 4.16,
-          "contrast_conf": "high"
-        },
-        {
-          "bbox": [
-            288,
-            2689,
-            1999,
-            2731
-          ],
-          "kind": "retypeset",
-          "ink_h_px": 36,
-          "fg_rgb": [
-            177,
-            199,
-            246
-          ],
-          "bg_rgb": [
             31,
             87,
             161
@@ -442,9 +584,9 @@
         {
           "bbox": [
             288,
-            2733,
+            2689,
             883,
-            2775
+            2731
           ],
           "kind": "retypeset",
           "ink_h_px": 36,
@@ -464,9 +606,9 @@
         {
           "bbox": [
             288,
-            2777,
+            2733,
             1867,
-            2820
+            2776
           ],
           "kind": "retypeset",
           "ink_h_px": 36,
@@ -476,9 +618,9 @@
             246
           ],
           "bg_rgb": [
-            32,
+            31,
             88,
-            160
+            161
           ],
           "contrast_ratio": 4.17,
           "contrast_conf": "high"
@@ -486,12 +628,34 @@
         {
           "bbox": [
             288,
-            2821,
+            2777,
             1066,
-            2862
+            2818
           ],
           "kind": "retypeset",
           "ink_h_px": 27,
+          "fg_rgb": [
+            177,
+            199,
+            246
+          ],
+          "bg_rgb": [
+            32,
+            88,
+            161
+          ],
+          "contrast_ratio": 4.16,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            288,
+            2821,
+            1700,
+            2863
+          ],
+          "kind": "added",
+          "ink_h_px": 36,
           "fg_rgb": [
             177,
             199,
@@ -507,10 +671,10 @@
         }
       ],
       "why": [],
-      "changed_pct": 56.3,
+      "changed_pct": 57.4,
       "ink_delta_e": 0.0,
       "size_factor": 1.67,
-      "visual_scale": 0.917,
+      "visual_scale": 0.901,
       "recommended": true
     },
     {
@@ -518,7 +682,7 @@
       "label": "T안 · 사진 아래쪽을 조금 다듬어 공간 확보",
       "passed": false,
       "why": [
-        "고지 바로 위 글자 없는 구간 65px < 필요 225px"
+        "고지 바로 위 글자 없는 구간 65px < 필요 269px"
       ],
       "recommended": false
     }

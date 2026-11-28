@@ -27,8 +27,21 @@
     }
   ],
   "note": null,
-  "judge_model": null,
-  "content_add": [],
+  "judge_model": "gpt-6-luna",
+  "content_add": [
+    {
+      "check_id": "B5",
+      "item": "충분한 설명을 받을 권리",
+      "verdict": "확인필요",
+      "text": "※ 금융소비자는 해당 상품에 대하여 금융회사로부터 충분한 설명을 받을 권리가 있습니다.",
+      "placeholder": false,
+      "reason": "광고에는 설명받을 권리가 있다고 기재되어 있지만, 서비스 기준에서 적합으로 보는 ‘충분한 설명을 받을 권리’ 또는 ‘투자 전 설명 청취’ 문구는 확인되지 않습니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "E-18-3"
+      ]
+    }
+  ],
   "content_flag": [],
   "recommended": "T",
   "brief": null,
@@ -41,7 +54,7 @@
           "paragraph": 4,
           "font": "Pretendard SemiBold (모던 고딕)",
           "align": "left",
-          "lines": 4,
+          "lines": 5,
           "orig_lines": 2,
           "size_factor": 1.79,
           "level": "L2",
@@ -49,7 +62,7 @@
             1.6,
             1.25
           ],
-          "short_px": 100,
+          "short_px": 134,
           "contrast_treatment": "글자색 명도만 조정 (색상 유지)",
           "fg_before": [
             169,
@@ -63,7 +76,7 @@
           ],
           "ink_delta_e": 79.2,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 1
         }
       ],
       "passed": false,
@@ -178,12 +191,34 @@
           ],
           "contrast_ratio": 3.77,
           "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            538,
+            2954,
+            1662,
+            2989
+          ],
+          "kind": "added",
+          "ink_h_px": 13,
+          "fg_rgb": [
+            87,
+            151,
+            142
+          ],
+          "bg_rgb": [
+            255,
+            255,
+            255
+          ],
+          "contrast_ratio": 3.37,
+          "contrast_conf": "high"
         }
       ],
       "why": [
-        "고지 영역에 100px 부족"
+        "고지 영역에 134px 부족"
       ],
-      "changed_pct": 1.3,
+      "changed_pct": 1.4,
       "ink_delta_e": 79.2,
       "size_factor": 1.79,
       "recommended": false
@@ -193,7 +228,7 @@
       "label": "B안 · 배경 여백을 나눠 고지 공간 확보",
       "passed": false,
       "why": [
-        "평평한 배경 줄이 66px 모자람"
+        "평평한 배경 줄이 100px 모자람"
       ],
       "recommended": false
     },
@@ -205,7 +240,7 @@
           "paragraph": 4,
           "font": "Pretendard SemiBold (모던 고딕)",
           "align": "left",
-          "lines": 4,
+          "lines": 5,
           "orig_lines": 2,
           "size_factor": 1.79,
           "level": "L3",
@@ -215,7 +250,7 @@
           ],
           "seam_score": 2.3,
           "seam_y": 2866,
-          "grow_px": 105,
+          "grow_px": 139,
           "contrast_treatment": "글자색 명도만 조정 (색상 유지)",
           "fg_before": [
             169,
@@ -229,7 +264,7 @@
           ],
           "ink_delta_e": 6.6,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 1
         }
       ],
       "passed": true,
@@ -244,14 +279,14 @@
         {
           "id": "A3",
           "name": "글자 높이(mm)",
-          "value": 2.35,
+          "value": 2.31,
           "threshold": 2.13,
           "ok": true
         },
         {
           "id": "A4",
           "name": "헤드라인 대비",
-          "value": 0.147,
+          "value": 0.145,
           "threshold": 0.075,
           "ok": true
         }
@@ -260,9 +295,9 @@
         {
           "bbox": [
             538,
-            2715,
+            2681,
             2029,
-            2750
+            2716
           ],
           "kind": "retypeset",
           "ink_h_px": 28,
@@ -282,9 +317,9 @@
         {
           "bbox": [
             538,
-            2748,
+            2714,
             2023,
-            2787
+            2753
           ],
           "kind": "retypeset",
           "ink_h_px": 27,
@@ -304,9 +339,9 @@
         {
           "bbox": [
             538,
-            2782,
+            2748,
             2007,
-            2817
+            2783
           ],
           "kind": "retypeset",
           "ink_h_px": 28,
@@ -326,9 +361,9 @@
         {
           "bbox": [
             538,
-            2815,
+            2781,
             1655,
-            2854
+            2820
           ],
           "kind": "retypeset",
           "ink_h_px": 26,
@@ -344,13 +379,35 @@
           ],
           "contrast_ratio": 3.3,
           "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            538,
+            2815,
+            1662,
+            2850
+          ],
+          "kind": "added",
+          "ink_h_px": 27,
+          "fg_rgb": [
+            187,
+            254,
+            244
+          ],
+          "bg_rgb": [
+            2,
+            150,
+            121
+          ],
+          "contrast_ratio": 3.3,
+          "contrast_conf": "high"
         }
       ],
       "why": [],
-      "changed_pct": 48.9,
+      "changed_pct": 52.1,
       "ink_delta_e": 6.6,
       "size_factor": 1.79,
-      "visual_scale": 0.963,
+      "visual_scale": 0.95,
       "recommended": false
     },
     {
@@ -361,7 +418,7 @@
           "paragraph": 4,
           "font": "Pretendard SemiBold (모던 고딕)",
           "align": "left",
-          "lines": 4,
+          "lines": 5,
           "orig_lines": 2,
           "size_factor": 1.79,
           "level": "L3",
@@ -371,7 +428,7 @@
           ],
           "seam_score": 2.3,
           "seam_y": 2866,
-          "grow_px": 105,
+          "grow_px": 139,
           "contrast_treatment": "글자색 명도만 조정 (색상 유지)",
           "fg_before": [
             169,
@@ -385,7 +442,7 @@
           ],
           "ink_delta_e": 6.6,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 1
         }
       ],
       "passed": true,
@@ -400,14 +457,14 @@
         {
           "id": "A3",
           "name": "글자 높이(mm)",
-          "value": 2.35,
+          "value": 2.31,
           "threshold": 2.13,
           "ok": true
         },
         {
           "id": "A4",
           "name": "헤드라인 대비",
-          "value": 0.147,
+          "value": 0.145,
           "threshold": 0.075,
           "ok": true
         }
@@ -416,9 +473,9 @@
         {
           "bbox": [
             538,
-            2715,
+            2681,
             2029,
-            2750
+            2716
           ],
           "kind": "retypeset",
           "ink_h_px": 28,
@@ -438,9 +495,9 @@
         {
           "bbox": [
             538,
-            2748,
+            2714,
             2023,
-            2787
+            2753
           ],
           "kind": "retypeset",
           "ink_h_px": 27,
@@ -460,9 +517,9 @@
         {
           "bbox": [
             538,
-            2782,
+            2748,
             2007,
-            2817
+            2783
           ],
           "kind": "retypeset",
           "ink_h_px": 28,
@@ -482,9 +539,9 @@
         {
           "bbox": [
             538,
-            2815,
+            2781,
             1655,
-            2854
+            2820
           ],
           "kind": "retypeset",
           "ink_h_px": 26,
@@ -500,13 +557,35 @@
           ],
           "contrast_ratio": 3.3,
           "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            538,
+            2815,
+            1662,
+            2850
+          ],
+          "kind": "added",
+          "ink_h_px": 27,
+          "fg_rgb": [
+            187,
+            254,
+            244
+          ],
+          "bg_rgb": [
+            2,
+            150,
+            121
+          ],
+          "contrast_ratio": 3.3,
+          "contrast_conf": "high"
         }
       ],
       "why": [],
-      "changed_pct": 3.9,
+      "changed_pct": 4.9,
       "ink_delta_e": 6.6,
       "size_factor": 1.79,
-      "rows_trimmed": 105,
+      "rows_trimmed": 139,
       "recommended": true
     }
   ],
@@ -521,14 +600,14 @@
     {
       "id": "A3",
       "name": "글자 높이(mm)",
-      "value": 2.35,
+      "value": 2.31,
       "threshold": 2.13,
       "ok": true
     },
     {
       "id": "A4",
       "name": "헤드라인 대비",
-      "value": 0.147,
+      "value": 0.145,
       "threshold": 0.075,
       "ok": true
     }

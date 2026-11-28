@@ -2,7 +2,7 @@
   "ad_id": "P089",
   "situation": "세로 · 브랜드 푸터 패널 · 그라데이션 배경",
   "font": "나눔고딕 Bold (클래식 고딕)",
-  "decision": "원본 유지",
+  "decision": "수정안 + 표현 검토",
   "checks_before": [
     {
       "id": "A2",
@@ -27,7 +27,206 @@
     }
   ],
   "note": "A2·A3·A4 모두 기준 통과 — 원본 디자인 그대로 진행",
-  "judge_model": null,
-  "content_add": [],
-  "content_flag": []
+  "judge_model": "gpt-6-luna",
+  "content_add": [
+    {
+      "check_id": "B7",
+      "item": "손실 상황 및 손실 추정액",
+      "verdict": "확인필요",
+      "text": "※ 【손실이 발생할 수 있는 상황】 시 최대 【손실 추정액】의 손실이 발생할 수 있습니다.",
+      "placeholder": true,
+      "reason": "위험고지 문구에는 투자원금 손실 가능성이 있다고 되어 있지만, 손실이 발생할 수 있는 구체적 상황과 손실 추정액은 표시되지 않았습니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "R-B5-3"
+      ]
+    }
+  ],
+  "content_flag": [
+    {
+      "check_id": "C3",
+      "item": "허위·과장, 최상급, 수익 과도 기대 표현",
+      "verdict": "확인필요",
+      "ad_quote": "신한 Premier Hall 차별화된 경험을 선사하는문화체험 공간",
+      "suggest": "최상급·단정 표현은 객관적 근거(출처·기준일)를 붙이거나 완화 (예: '최고' → '○○ 기준 1위(출처, 기준일)')",
+      "boxes": [
+        [
+          77,
+          905,
+          370,
+          938
+        ],
+        [
+          78,
+          943,
+          339,
+          967
+        ],
+        [
+          79,
+          973,
+          391,
+          997
+        ],
+        [
+          77,
+          1041,
+          290,
+          1076
+        ],
+        [
+          77,
+          1079,
+          391,
+          1104
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "‘차별화된 경험’이라는 표현은 주관적 우월성을 암시할 수 있으나, 광고 문구만으로 객관적 근거의 유무를 확정하기 어려워 확인이 필요합니다.",
+      "card_ids": [
+        "K-B10-2"
+      ]
+    },
+    {
+      "check_id": "C5",
+      "item": "혜택·불이익 균형 (전체 인상)",
+      "verdict": "확인필요",
+      "ad_quote": "고객중심 자산관리",
+      "suggest": "혜택 문구와 위험고지의 크기·위치 균형 조정 (표시 방법 수정안 참고)",
+      "boxes": [
+        [
+          66,
+          68,
+          240,
+          100
+        ],
+        [
+          1063,
+          102,
+          1154,
+          128
+        ],
+        [
+          70,
+          219,
+          524,
+          298
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "[LLM 종합 의견 · LLM 판정 확인필요] 광고에는 ‘고객중심 자산관리’ 등 서비스 홍보 문구가 있고 원금손실 고지도 포함되어 있습니다. 다만 측정값상 위험고지 최소 글자 크기는 5.07pt, 헤드라인 최대 글자 크기는 15.84pt여서 전체적인 균형을 확인할 필요가 있습니다.",
+      "card_ids": [
+        "K-2-38-21"
+      ]
+    }
+  ],
+  "recommended": "A",
+  "brief": null,
+  "candidates": [
+    {
+      "name": "A",
+      "label": "제자리 수정 (규격·배치 그대로)",
+      "steps": [
+        {
+          "paragraph": 15,
+          "font": "나눔고딕 Bold (클래식 고딕)",
+          "align": "left",
+          "lines": 1,
+          "orig_lines": 6,
+          "size_factor": 1.0,
+          "level": "L2",
+          "contrast_treatment": null,
+          "fg_before": [
+            252,
+            252,
+            251
+          ],
+          "fg_after": [
+            252,
+            252,
+            251
+          ],
+          "ink_delta_e": 0.0,
+          "scrim_lines": 0,
+          "added_lines": 1
+        }
+      ],
+      "passed": true,
+      "checks_after": [
+        {
+          "id": "A2",
+          "name": "명암비",
+          "value": 18.25,
+          "threshold": 3.0,
+          "ok": true
+        },
+        {
+          "id": "A3",
+          "name": "글자 높이(mm)",
+          "value": 3.76,
+          "threshold": 2.13,
+          "ok": true
+        },
+        {
+          "id": "A4",
+          "name": "헤드라인 대비",
+          "value": 0.36,
+          "threshold": 0.075,
+          "ok": true
+        }
+      ],
+      "measured": [
+        {
+          "bbox": [
+            77,
+            1614,
+            756,
+            1640
+          ],
+          "kind": "added",
+          "ink_h_px": 18,
+          "fg_rgb": [
+            252,
+            252,
+            251
+          ],
+          "bg_rgb": [
+            18,
+            18,
+            18
+          ],
+          "contrast_ratio": 18.25,
+          "contrast_conf": "high"
+        }
+      ],
+      "why": [],
+      "changed_pct": 0.2,
+      "ink_delta_e": 0.0,
+      "size_factor": 1.0,
+      "recommended": true
+    }
+  ],
+  "checks_after": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 18.25,
+      "threshold": 3.0,
+      "ok": true
+    },
+    {
+      "id": "A3",
+      "name": "글자 높이(mm)",
+      "value": 3.76,
+      "threshold": 2.13,
+      "ok": true
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.36,
+      "threshold": 0.075,
+      "ok": true
+    }
+  ]
 }

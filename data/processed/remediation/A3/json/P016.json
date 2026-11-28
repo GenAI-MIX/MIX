@@ -27,8 +27,22 @@
     }
   ],
   "note": null,
-  "judge_model": null,
-  "content_add": [],
+  "judge_model": "gpt-6-luna",
+  "content_add": [
+    {
+      "check_id": "B5",
+      "item": "충분한 설명을 받을 권리",
+      "verdict": "확인필요",
+      "text": "※ 금융소비자는 해당 상품에 대하여 금융회사로부터 충분한 설명을 받을 권리가 있습니다.",
+      "placeholder": false,
+      "reason": "광고에는 약관 및 상품설명서를 읽으라는 문구는 있지만, 충분한 설명을 받을 권리 또는 투자 전 설명 청취를 안내하는 문구는 확인되지 않습니다. 해당 내용은 매체 특성 등에 따라 일부 생략될 수 있어 확인필요로 판정합니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "E-18-3",
+        "E-18-4"
+      ]
+    }
+  ],
   "content_flag": [],
   "recommended": "T",
   "brief": null,
@@ -41,7 +55,7 @@
           "paragraph": 12,
           "font": "Pretendard SemiBold (모던 고딕)",
           "align": "left",
-          "lines": 16,
+          "lines": 17,
           "orig_lines": 10,
           "size_factor": 1.22,
           "level": "L2",
@@ -49,7 +63,7 @@
             1.38,
             1.28
           ],
-          "short_px": 139,
+          "short_px": 160,
           "contrast_treatment": null,
           "fg_before": [
             49,
@@ -63,7 +77,7 @@
           ],
           "ink_delta_e": 0.0,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 1
         }
       ],
       "passed": false,
@@ -410,10 +424,24 @@
           "bg_rgb": null,
           "contrast_ratio": null,
           "contrast_conf": "low"
+        },
+        {
+          "bbox": [
+            288,
+            3097,
+            937,
+            3121
+          ],
+          "kind": "added",
+          "ink_h_px": null,
+          "fg_rgb": null,
+          "bg_rgb": null,
+          "contrast_ratio": null,
+          "contrast_conf": "low"
         }
       ],
       "why": [
-        "고지 영역에 139px 부족"
+        "고지 영역에 160px 부족"
       ],
       "changed_pct": 2.8,
       "ink_delta_e": 0.0,
@@ -425,7 +453,7 @@
       "label": "B안 · 배경 여백을 나눠 고지 공간 확보",
       "passed": false,
       "why": [
-        "평평한 배경 줄이 92px 모자람"
+        "평평한 배경 줄이 113px 모자람"
       ],
       "recommended": false
     },
@@ -437,7 +465,7 @@
           "paragraph": 12,
           "font": "Pretendard SemiBold (모던 고딕)",
           "align": "left",
-          "lines": 16,
+          "lines": 17,
           "orig_lines": 10,
           "size_factor": 1.22,
           "level": "L3",
@@ -447,7 +475,7 @@
           ],
           "seam_score": 1.28,
           "seam_y": 2965,
-          "grow_px": 143,
+          "grow_px": 164,
           "contrast_treatment": null,
           "fg_before": [
             49,
@@ -461,7 +489,7 @@
           ],
           "ink_delta_e": 0.0,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 1
         }
       ],
       "passed": true,
@@ -492,9 +520,9 @@
         {
           "bbox": [
             288,
-            2628,
+            2607,
             1696,
-            2654
+            2633
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -514,9 +542,9 @@
         {
           "bbox": [
             288,
-            2648,
+            2627,
             702,
-            2672
+            2651
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -536,9 +564,9 @@
         {
           "bbox": [
             288,
-            2668,
+            2647,
             1712,
-            2694
+            2673
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -558,9 +586,9 @@
         {
           "bbox": [
             288,
-            2689,
+            2668,
             727,
-            2715
+            2694
           ],
           "kind": "retypeset",
           "ink_h_px": 15,
@@ -580,9 +608,9 @@
         {
           "bbox": [
             288,
-            2709,
+            2688,
             1600,
-            2735
+            2714
           ],
           "kind": "retypeset",
           "ink_h_px": 16,
@@ -602,9 +630,9 @@
         {
           "bbox": [
             288,
-            2730,
+            2709,
             842,
-            2756
+            2735
           ],
           "kind": "retypeset",
           "ink_h_px": 15,
@@ -624,9 +652,9 @@
         {
           "bbox": [
             288,
-            2750,
+            2729,
             436,
-            2774
+            2753
           ],
           "kind": "retypeset",
           "ink_h_px": 15,
@@ -646,9 +674,9 @@
         {
           "bbox": [
             288,
-            2770,
+            2749,
             1695,
-            2796
+            2775
           ],
           "kind": "retypeset",
           "ink_h_px": 16,
@@ -668,9 +696,9 @@
         {
           "bbox": [
             288,
-            2791,
+            2770,
             599,
-            2815
+            2794
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -690,9 +718,9 @@
         {
           "bbox": [
             288,
-            2811,
+            2790,
             1515,
-            2835
+            2814
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -712,9 +740,9 @@
         {
           "bbox": [
             288,
-            2832,
+            2811,
             776,
-            2858
+            2837
           ],
           "kind": "retypeset",
           "ink_h_px": 16,
@@ -734,9 +762,9 @@
         {
           "bbox": [
             288,
-            2852,
+            2831,
             1468,
-            2878
+            2857
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -756,9 +784,9 @@
         {
           "bbox": [
             288,
-            2873,
+            2852,
             807,
-            2898
+            2877
           ],
           "kind": "retypeset",
           "ink_h_px": 16,
@@ -778,9 +806,9 @@
         {
           "bbox": [
             288,
-            2893,
+            2872,
             1370,
-            2917
+            2896
           ],
           "kind": "retypeset",
           "ink_h_px": 16,
@@ -800,9 +828,9 @@
         {
           "bbox": [
             288,
-            2913,
+            2892,
             876,
-            2939
+            2918
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -822,9 +850,9 @@
         {
           "bbox": [
             288,
-            2934,
+            2913,
             1528,
-            2959
+            2938
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -840,13 +868,35 @@
           ],
           "contrast_ratio": 11.21,
           "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            288,
+            2933,
+            937,
+            2957
+          ],
+          "kind": "added",
+          "ink_h_px": 17,
+          "fg_rgb": [
+            49,
+            51,
+            46
+          ],
+          "bg_rgb": [
+            235,
+            243,
+            244
+          ],
+          "contrast_ratio": 11.35,
+          "contrast_conf": "high"
         }
       ],
       "why": [],
-      "changed_pct": 54.0,
+      "changed_pct": 55.8,
       "ink_delta_e": 0.0,
       "size_factor": 1.22,
-      "visual_scale": 0.948,
+      "visual_scale": 0.941,
       "recommended": false
     },
     {
@@ -857,7 +907,7 @@
           "paragraph": 12,
           "font": "Pretendard SemiBold (모던 고딕)",
           "align": "left",
-          "lines": 16,
+          "lines": 17,
           "orig_lines": 10,
           "size_factor": 1.22,
           "level": "L3",
@@ -867,7 +917,7 @@
           ],
           "seam_score": 1.28,
           "seam_y": 2965,
-          "grow_px": 143,
+          "grow_px": 164,
           "contrast_treatment": null,
           "fg_before": [
             49,
@@ -881,7 +931,7 @@
           ],
           "ink_delta_e": 0.0,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 1
         }
       ],
       "passed": true,
@@ -912,9 +962,9 @@
         {
           "bbox": [
             288,
-            2628,
+            2607,
             1696,
-            2654
+            2633
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -934,9 +984,9 @@
         {
           "bbox": [
             288,
-            2648,
+            2627,
             702,
-            2672
+            2651
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -956,9 +1006,9 @@
         {
           "bbox": [
             288,
-            2668,
+            2647,
             1712,
-            2694
+            2673
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -978,9 +1028,9 @@
         {
           "bbox": [
             288,
-            2689,
+            2668,
             727,
-            2715
+            2694
           ],
           "kind": "retypeset",
           "ink_h_px": 15,
@@ -1000,9 +1050,9 @@
         {
           "bbox": [
             288,
-            2709,
+            2688,
             1600,
-            2735
+            2714
           ],
           "kind": "retypeset",
           "ink_h_px": 16,
@@ -1022,9 +1072,9 @@
         {
           "bbox": [
             288,
-            2730,
+            2709,
             842,
-            2756
+            2735
           ],
           "kind": "retypeset",
           "ink_h_px": 15,
@@ -1044,9 +1094,9 @@
         {
           "bbox": [
             288,
-            2750,
+            2729,
             436,
-            2774
+            2753
           ],
           "kind": "retypeset",
           "ink_h_px": 15,
@@ -1066,9 +1116,9 @@
         {
           "bbox": [
             288,
-            2770,
+            2749,
             1695,
-            2796
+            2775
           ],
           "kind": "retypeset",
           "ink_h_px": 16,
@@ -1088,9 +1138,9 @@
         {
           "bbox": [
             288,
-            2791,
+            2770,
             599,
-            2815
+            2794
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -1110,9 +1160,9 @@
         {
           "bbox": [
             288,
-            2811,
+            2790,
             1515,
-            2835
+            2814
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -1132,9 +1182,9 @@
         {
           "bbox": [
             288,
-            2832,
+            2811,
             776,
-            2858
+            2837
           ],
           "kind": "retypeset",
           "ink_h_px": 16,
@@ -1154,9 +1204,9 @@
         {
           "bbox": [
             288,
-            2852,
+            2831,
             1468,
-            2878
+            2857
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -1176,9 +1226,9 @@
         {
           "bbox": [
             288,
-            2873,
+            2852,
             807,
-            2898
+            2877
           ],
           "kind": "retypeset",
           "ink_h_px": 16,
@@ -1198,9 +1248,9 @@
         {
           "bbox": [
             288,
-            2893,
+            2872,
             1370,
-            2917
+            2896
           ],
           "kind": "retypeset",
           "ink_h_px": 16,
@@ -1220,9 +1270,9 @@
         {
           "bbox": [
             288,
-            2913,
+            2892,
             876,
-            2939
+            2918
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -1242,9 +1292,9 @@
         {
           "bbox": [
             288,
-            2934,
+            2913,
             1528,
-            2959
+            2938
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -1260,13 +1310,35 @@
           ],
           "contrast_ratio": 11.21,
           "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            288,
+            2933,
+            937,
+            2957
+          ],
+          "kind": "added",
+          "ink_h_px": 17,
+          "fg_rgb": [
+            49,
+            51,
+            46
+          ],
+          "bg_rgb": [
+            235,
+            243,
+            244
+          ],
+          "contrast_ratio": 11.35,
+          "contrast_conf": "high"
         }
       ],
       "why": [],
-      "changed_pct": 13.1,
+      "changed_pct": 13.8,
       "ink_delta_e": 0.0,
       "size_factor": 1.22,
-      "rows_trimmed": 143,
+      "rows_trimmed": 164,
       "recommended": true
     }
   ],

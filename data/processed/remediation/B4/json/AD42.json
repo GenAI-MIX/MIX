@@ -27,11 +27,139 @@
     }
   ],
   "note": null,
-  "judge_model": null,
-  "content_add": [],
-  "content_flag": [],
+  "judge_model": "gpt-6-luna",
+  "content_add": [
+    {
+      "check_id": "B3",
+      "item": "투자 위험 (원금손실 가능, 손실은 투자자 귀속)",
+      "verdict": "위반",
+      "text": "※ 이 금융투자상품은 원금 손실이 발생할 수 있으며, 그 손실은 투자자에게 귀속됩니다.",
+      "placeholder": false,
+      "reason": "위험고지 문구에 투자원금 손실 가능성과 손실이 투자자에게 귀속된다는 안내가 없습니다. 예금자보호 관련 내용은 투자 위험 고지를 대신하지 않습니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "K-B9-1"
+      ]
+    },
+    {
+      "check_id": "B7",
+      "item": "손실 상황 및 손실 추정액",
+      "verdict": "확인필요",
+      "text": "※ 【손실이 발생할 수 있는 상황】 시 최대 【손실 추정액】의 손실이 발생할 수 있습니다.",
+      "placeholder": true,
+      "reason": "광고에서 자산가격 변동 등 손실이 발생할 수 있는 상황과 손실 추정액을 확인할 수 없습니다. 해당 내용의 생략 가능 여부 등을 확인할 필요가 있습니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "K-B9-1"
+      ]
+    }
+  ],
+  "content_flag": [
+    {
+      "check_id": "C1",
+      "item": "우대 수익률 조건·운용실적 기준일 글자 크기",
+      "verdict": "확인필요",
+      "ad_quote": "퇴직연금 증권업계 적립금 1위 (2022년 말 기준) 2년연속 퇴직연금 우수사업자 MP구독 무료 서비스",
+      "suggest": "수익률을 강조할 때 조건·기준일·산출기간을 수익률 바로 옆에 비슷한 크기로 표시",
+      "boxes": [
+        [
+          161,
+          2700,
+          838,
+          2770
+        ],
+        [
+          1130,
+          2701,
+          1782,
+          2770
+        ],
+        [
+          1814,
+          2703,
+          2295,
+          2766
+        ],
+        [
+          833,
+          2714,
+          1047,
+          2765
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "‘적립금 1위’와 ‘2년연속 우수사업자’라는 통계·수상 실적 표현이 있습니다. 기준과 출처 문구는 있으나 강조 문구와 비교한 글자 크기 측정값이 없어 확인이 필요합니다.",
+      "card_ids": [
+        "K-2-38-12"
+      ]
+    },
+    {
+      "check_id": "C3",
+      "item": "허위·과장, 최상급, 수익 과도 기대 표현",
+      "verdict": "확인필요",
+      "ad_quote": "퇴직연금 증권업계 적립금 1위 (2022년 말 기준)",
+      "suggest": "최상급·단정 표현은 객관적 근거(출처·기준일)를 붙이거나 완화 (예: '최고' → '○○ 기준 1위(출처, 기준일)')",
+      "boxes": [
+        [
+          161,
+          2700,
+          838,
+          2770
+        ],
+        [
+          833,
+          2714,
+          1047,
+          2765
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "‘증권업계 적립금 1위’라는 최상급 표현이 있으나, 광고에는 공시 기준과 기준 시점이 함께 제시되어 있습니다. 해당 순위의 객관적 근거와 표시된 기준의 정확성을 이 정보만으로 확인하기 어려워 확인이 필요합니다.",
+      "card_ids": [
+        "K-B10-2"
+      ]
+    },
+    {
+      "check_id": "C5",
+      "item": "혜택·불이익 균형 (전체 인상)",
+      "verdict": "확인필요",
+      "ad_quote": "미래에셋증권은 전문가 상담과 포트폴리오가 무료!",
+      "suggest": "혜택 문구와 위험고지의 크기·위치 균형 조정 (표시 방법 수정안 참고)",
+      "boxes": [
+        [
+          88,
+          409,
+          1162,
+          982
+        ],
+        [
+          213,
+          554,
+          1736,
+          1274
+        ],
+        [
+          341,
+          1238,
+          712,
+          1822
+        ],
+        [
+          417,
+          2231,
+          2069,
+          2325
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "[LLM 종합 의견 · LLM 판정 확인필요] 광고는 무료 상담·포트폴리오와 적립금 1위 등을 강조하고, 위험고지와 수수료·과세 안내도 포함합니다. 다만 위험고지 최소 글자 크기 4.56pt, 헤드라인 최대 95.93pt로 측정되어 혜택과 불이익이 균형 있게 전달되는지 확인이 필요합니다.",
+      "card_ids": [
+        "K-2-38-21"
+      ]
+    }
+  ],
   "recommended": null,
-  "brief": "디자이너 브리프: 규격 유지 시 고지 영역에 약 818px(원본 높이의 23%) 추가 공간 필요. A: 고지 영역에 808px 부족 / B: 평평한 배경 줄이 336px 모자람 / C: 비주얼을 72%까지 줄여야 함 (한도 90%) / T: 고지 바로 위 글자 없는 구간 20px < 필요 818px / D: 여백 335px·다듬기 4px 후에도 비주얼을 81%까지 줄여야 함",
+  "brief": "디자이너 브리프: 규격 유지 시 고지 영역에 약 1066px(원본 높이의 30%) 추가 공간 필요. A: 고지 영역에 1056px 부족 / B: 평평한 배경 줄이 584px 모자람 / C: 비주얼을 63%까지 줄여야 함 (한도 90%) / T: 고지 바로 위 글자 없는 구간 20px < 필요 1066px / D: 여백 335px·다듬기 4px 후에도 비주얼을 71%까지 줄여야 함",
   "candidates": [
     {
       "name": "A",
@@ -41,7 +169,7 @@
           "paragraph": 8,
           "font": "Gothic A1 Regular (정갈한 고딕)",
           "align": "left",
-          "lines": 22,
+          "lines": 26,
           "orig_lines": 11,
           "size_factor": 1.47,
           "level": "L2",
@@ -49,7 +177,7 @@
             1.58,
             1.28
           ],
-          "short_px": 808,
+          "short_px": 1056,
           "contrast_treatment": null,
           "fg_before": [
             0,
@@ -63,7 +191,7 @@
           ],
           "ink_delta_e": 0.0,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 4
         }
       ],
       "passed": false,
@@ -478,10 +606,66 @@
           "bg_rgb": null,
           "contrast_ratio": null,
           "contrast_conf": "low"
+        },
+        {
+          "bbox": [
+            76,
+            4258,
+            1628,
+            4322
+          ],
+          "kind": "added",
+          "ink_h_px": null,
+          "fg_rgb": null,
+          "bg_rgb": null,
+          "contrast_ratio": null,
+          "contrast_conf": "low"
+        },
+        {
+          "bbox": [
+            76,
+            4321,
+            674,
+            4380
+          ],
+          "kind": "added",
+          "ink_h_px": null,
+          "fg_rgb": null,
+          "bg_rgb": null,
+          "contrast_ratio": null,
+          "contrast_conf": "low"
+        },
+        {
+          "bbox": [
+            76,
+            4381,
+            1880,
+            4442
+          ],
+          "kind": "added",
+          "ink_h_px": null,
+          "fg_rgb": null,
+          "bg_rgb": null,
+          "contrast_ratio": null,
+          "contrast_conf": "low"
+        },
+        {
+          "bbox": [
+            76,
+            4444,
+            394,
+            4503
+          ],
+          "kind": "added",
+          "ink_h_px": null,
+          "fg_rgb": null,
+          "bg_rgb": null,
+          "contrast_ratio": null,
+          "contrast_conf": "low"
         }
       ],
       "why": [
-        "고지 영역에 808px 부족"
+        "고지 영역에 1056px 부족"
       ],
       "changed_pct": 4.1,
       "ink_delta_e": 0.0,
@@ -493,7 +677,7 @@
       "label": "B안 · 배경 여백을 나눠 고지 공간 확보",
       "passed": false,
       "why": [
-        "평평한 배경 줄이 336px 모자람"
+        "평평한 배경 줄이 584px 모자람"
       ],
       "recommended": false
     },
@@ -502,7 +686,7 @@
       "label": "C안 · 위쪽 비주얼을 살짝 줄여 공간 확보",
       "passed": false,
       "why": [
-        "비주얼을 72%까지 줄여야 함 (한도 90%)"
+        "비주얼을 63%까지 줄여야 함 (한도 90%)"
       ],
       "recommended": false
     },
@@ -511,7 +695,7 @@
       "label": "T안 · 사진 아래쪽을 조금 다듬어 공간 확보",
       "passed": false,
       "why": [
-        "고지 바로 위 글자 없는 구간 20px < 필요 818px"
+        "고지 바로 위 글자 없는 구간 20px < 필요 1066px"
       ],
       "recommended": false
     },
@@ -520,7 +704,7 @@
       "label": "조합안 · 여백 회수 + 사진 다듬기 + 비주얼 살짝 축소",
       "passed": false,
       "why": [
-        "여백 335px·다듬기 4px 후에도 비주얼을 81%까지 줄여야 함"
+        "여백 335px·다듬기 4px 후에도 비주얼을 71%까지 줄여야 함"
       ],
       "recommended": false
     }

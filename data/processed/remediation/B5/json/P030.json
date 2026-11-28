@@ -27,11 +27,36 @@
     }
   ],
   "note": null,
-  "judge_model": null,
-  "content_add": [],
+  "judge_model": "gpt-6-luna",
+  "content_add": [
+    {
+      "check_id": "B1",
+      "item": "설명서·약관을 읽어볼 것 권유",
+      "verdict": "위반",
+      "text": "※ 계약 체결 전 금융상품설명서 및 약관을 반드시 읽어보시기 바랍니다.",
+      "placeholder": false,
+      "reason": "광고에는 설명서 및 약관을 읽어볼 것을 권유하는 문구가 없습니다. 법률상 광고에 반드시 포함해야 하는 사항이므로 위반입니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "L-22-3"
+      ]
+    },
+    {
+      "check_id": "B5",
+      "item": "충분한 설명을 받을 권리",
+      "verdict": "확인필요",
+      "text": "※ 금융소비자는 해당 상품에 대하여 금융회사로부터 충분한 설명을 받을 권리가 있습니다.",
+      "placeholder": false,
+      "reason": "‘충분한 설명을 받을 권리’ 또는 ‘투자 전 설명 청취’ 문구는 확인되지 않습니다. 다만 이 사항은 시행령 사항으로 일부 매체에서 생략될 수 있어 확인이 필요합니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "E-18-3"
+      ]
+    }
+  ],
   "content_flag": [],
   "recommended": null,
-  "brief": "디자이너 브리프: 규격 유지 시 고지 영역에 약 105px(원본 높이의 14%) 추가 공간 필요. A: 고지 영역에 103px 부족, 글자 ×3.2 확대 필요, A2 미달 / B: 평평한 배경 줄이 94px 모자람 / C: 비주얼을 84%까지 줄여야 함 (한도 90%) / T: 고지 바로 위 글자 없는 구간 27px < 필요 105px / D: 여백 7px·다듬기 0px 후에도 비주얼을 85%까지 줄여야 함",
+  "brief": "디자이너 브리프: 규격 유지 시 고지 영역에 약 202px(원본 높이의 26%) 추가 공간 필요. A: 고지 영역에 199px 부족, 글자 ×3.2 확대 필요, A2 미달 / B: 평평한 배경 줄이 191px 모자람 / C: 비주얼을 69%까지 줄여야 함 (한도 90%) / T: 고지 바로 위 글자 없는 구간 27px < 필요 202px / D: 여백 7px·다듬기 0px 후에도 비주얼을 70%까지 줄여야 함",
   "candidates": [
     {
       "name": "A",
@@ -41,7 +66,7 @@
           "paragraph": 9,
           "font": "Pretendard SemiBold (모던 고딕)",
           "align": "left",
-          "lines": 5,
+          "lines": 8,
           "orig_lines": 3,
           "size_factor": 3.21,
           "level": "L4",
@@ -49,7 +74,7 @@
             1.5,
             1.25
           ],
-          "short_px": 103,
+          "short_px": 199,
           "contrast_treatment": "글자색 명도만 조정 (색상 유지)",
           "fg_before": [
             200,
@@ -63,7 +88,7 @@
           ],
           "ink_delta_e": 66.5,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 3
         }
       ],
       "passed": false,
@@ -192,10 +217,52 @@
           "bg_rgb": null,
           "contrast_ratio": null,
           "contrast_conf": "low"
+        },
+        {
+          "bbox": [
+            328,
+            826,
+            1182,
+            860
+          ],
+          "kind": "added",
+          "ink_h_px": null,
+          "fg_rgb": null,
+          "bg_rgb": null,
+          "contrast_ratio": null,
+          "contrast_conf": "low"
+        },
+        {
+          "bbox": [
+            328,
+            858,
+            1282,
+            892
+          ],
+          "kind": "added",
+          "ink_h_px": null,
+          "fg_rgb": null,
+          "bg_rgb": null,
+          "contrast_ratio": null,
+          "contrast_conf": "low"
+        },
+        {
+          "bbox": [
+            328,
+            890,
+            448,
+            924
+          ],
+          "kind": "added",
+          "ink_h_px": null,
+          "fg_rgb": null,
+          "bg_rgb": null,
+          "contrast_ratio": null,
+          "contrast_conf": "low"
         }
       ],
       "why": [
-        "고지 영역에 103px 부족",
+        "고지 영역에 199px 부족",
         "글자 ×3.2 확대 필요",
         "A2 미달"
       ],
@@ -209,7 +276,7 @@
       "label": "B안 · 배경 여백을 나눠 고지 공간 확보",
       "passed": false,
       "why": [
-        "평평한 배경 줄이 94px 모자람"
+        "평평한 배경 줄이 191px 모자람"
       ],
       "recommended": false
     },
@@ -218,7 +285,7 @@
       "label": "C안 · 위쪽 비주얼을 살짝 줄여 공간 확보",
       "passed": false,
       "why": [
-        "비주얼을 84%까지 줄여야 함 (한도 90%)"
+        "비주얼을 69%까지 줄여야 함 (한도 90%)"
       ],
       "recommended": false
     },
@@ -227,7 +294,7 @@
       "label": "T안 · 사진 아래쪽을 조금 다듬어 공간 확보",
       "passed": false,
       "why": [
-        "고지 바로 위 글자 없는 구간 27px < 필요 105px"
+        "고지 바로 위 글자 없는 구간 27px < 필요 202px"
       ],
       "recommended": false
     },
@@ -236,7 +303,7 @@
       "label": "조합안 · 여백 회수 + 사진 다듬기 + 비주얼 살짝 축소",
       "passed": false,
       "why": [
-        "여백 7px·다듬기 0px 후에도 비주얼을 85%까지 줄여야 함"
+        "여백 7px·다듬기 0px 후에도 비주얼을 70%까지 줄여야 함"
       ],
       "recommended": false
     }

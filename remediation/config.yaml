@@ -6,6 +6,7 @@ paths:
   video_json: data/processed/video/json        # 주연 영상 전처리 결과
   video_out: data/processed/remediation/video
   judge_dir: ../rag/outputs                  # 05 LLM 판정 결과 (가윤). remediation/ 기준 상대경로
+  judge_model: gpt-6-luna                    # {ad_id}__{judge_model}.json만 읽음 (모델이 섞이지 않게)
 
 # 05 판정 노트북(rag/05)의 코드 판정 기준과 같은 값
 thresholds:

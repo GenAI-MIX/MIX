@@ -303,7 +303,7 @@ def retypeset(img, target, blocks, obstacles, fonts, th, ladder, mcfg, extra=(),
         ux0, uy0 = max(0, min(b[0] for b in inside)), max(0, min(b[1] for b in inside))
         ux1, uy1 = min(arr.shape[1], max(b[2] for b in inside)), min(arr.shape[0], max(b[3] for b in inside))
         reg = arr[uy0:uy1, ux0:ux1].reshape(-1, 3)
-        lum = reg @ [0.299, 0.587, 0.114]
+        lum = reg.astype(np.float64) @ np.array([0.299, 0.587, 0.114])
         worst = reg[lum >= np.percentile(lum, 90)].mean(0) if luminance(fg) < 0.35 else reg[lum <= np.percentile(lum, 10)].mean(0)
         bgm = np.median(reg, axis=0)
         if contrast(fg, worst) < target_c:
@@ -342,7 +342,8 @@ def retypeset(img, target, blocks, obstacles, fonts, th, ladder, mcfg, extra=(),
         if len(reg) == 0:            # 캔버스 밖으로 넘친 줄 (A안 공간 부족)
             inks.append(fg)
             continue
-        lum = reg @ [0.299, 0.587, 0.114]
+        reg = reg.astype(np.float64)
+        lum = reg @ np.array([0.299, 0.587, 0.114])
         lo, hi = reg[lum <= np.percentile(lum, 10)].mean(0), reg[lum >= np.percentile(lum, 90)].mean(0)
         # 남은 차이는 글자색 밝기만 조정 (색상 유지)
         inks.append(fit_ink(fg, lo if luminance(fg) > luminance(lo) else hi, target_c))
@@ -371,7 +372,7 @@ def retypeset(img, target, blocks, obstacles, fonts, th, ladder, mcfg, extra=(),
             reg = base_img[max(0, drawn[k][1]):drawn[k][3], max(0, drawn[k][0]):drawn[k][2]].reshape(-1, 3).astype(float)
             if len(reg) == 0:
                 continue
-            lum = reg @ [0.299, 0.587, 0.114]
+            lum = reg.astype(np.float64) @ np.array([0.299, 0.587, 0.114])
             lo, hi = reg[lum <= np.percentile(lum, 10)].mean(0), reg[lum >= np.percentile(lum, 90)].mean(0)
             ref = lo if luminance(inks[k]) > luminance(lo) else hi
             inks[k] = fit_ink(inks[k], ref, target_c * (1.25 + 0.25 * it))

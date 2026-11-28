@@ -27,8 +27,33 @@
     }
   ],
   "note": null,
-  "judge_model": null,
-  "content_add": [],
+  "judge_model": "gpt-6-luna",
+  "content_add": [
+    {
+      "check_id": "B1",
+      "item": "설명서·약관을 읽어볼 것 권유",
+      "verdict": "위반",
+      "text": "※ 계약 체결 전 금융상품설명서 및 약관을 반드시 읽어보시기 바랍니다.",
+      "placeholder": false,
+      "reason": "광고 문구에 금융상품 설명서 및 약관을 읽어 볼 것을 권유하는 내용이 없습니다. 해당 권유는 광고에 포함되어야 하는 사항입니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "L-22-3"
+      ]
+    },
+    {
+      "check_id": "B5",
+      "item": "충분한 설명을 받을 권리",
+      "verdict": "확인필요",
+      "text": "※ 금융소비자는 해당 상품에 대하여 금융회사로부터 충분한 설명을 받을 권리가 있습니다.",
+      "placeholder": false,
+      "reason": "광고 문구에 충분한 설명을 받을 권리 또는 투자 전 설명 청취를 안내하는 내용이 없습니다. 시행령 사항으로 매체에 따라 생략될 수 있어 확인이 필요합니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "E-18-3"
+      ]
+    }
+  ],
   "content_flag": [],
   "recommended": "C",
   "brief": null,
@@ -41,7 +66,7 @@
           "paragraph": 17,
           "font": "IBM Plex Sans KR Bold (기업형 고딕 (좁은 폭))",
           "align": "left",
-          "lines": 3,
+          "lines": 5,
           "orig_lines": 2,
           "size_factor": 1.64,
           "level": "L2",
@@ -49,7 +74,7 @@
             1.51,
             1.26
           ],
-          "short_px": 80,
+          "short_px": 165,
           "contrast_treatment": null,
           "fg_before": [
             120,
@@ -63,7 +88,7 @@
           ],
           "ink_delta_e": 0.0,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 2
         }
       ],
       "passed": false,
@@ -156,10 +181,38 @@
           ],
           "contrast_ratio": 9.29,
           "contrast_conf": "low"
+        },
+        {
+          "bbox": [
+            114,
+            2968,
+            1171,
+            3009
+          ],
+          "kind": "added",
+          "ink_h_px": null,
+          "fg_rgb": null,
+          "bg_rgb": null,
+          "contrast_ratio": null,
+          "contrast_conf": "low"
+        },
+        {
+          "bbox": [
+            114,
+            3010,
+            1444,
+            3051
+          ],
+          "kind": "added",
+          "ink_h_px": null,
+          "fg_rgb": null,
+          "bg_rgb": null,
+          "contrast_ratio": null,
+          "contrast_conf": "low"
         }
       ],
       "why": [
-        "고지 영역에 80px 부족"
+        "고지 영역에 165px 부족"
       ],
       "changed_pct": 1.9,
       "ink_delta_e": 0.0,
@@ -171,7 +224,7 @@
       "label": "B안 · 배경 여백을 나눠 고지 공간 확보",
       "passed": false,
       "why": [
-        "평평한 배경 줄이 44px 모자람"
+        "평평한 배경 줄이 129px 모자람"
       ],
       "recommended": false
     },
@@ -183,7 +236,7 @@
           "paragraph": 17,
           "font": "IBM Plex Sans KR Bold (기업형 고딕 (좁은 폭))",
           "align": "left",
-          "lines": 3,
+          "lines": 5,
           "orig_lines": 2,
           "size_factor": 1.64,
           "level": "L3",
@@ -193,7 +246,7 @@
           ],
           "seam_score": 1.94,
           "seam_y": 2884,
-          "grow_px": 86,
+          "grow_px": 171,
           "contrast_treatment": "띠·박스 색 명도 조정 ΔE 0 (글자색 유지)",
           "fg_before": [
             120,
@@ -207,7 +260,7 @@
           ],
           "ink_delta_e": 7.8,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 2
         }
       ],
       "passed": true,
@@ -238,9 +291,9 @@
         {
           "bbox": [
             114,
-            2755,
+            2670,
             1992,
-            2796
+            2711
           ],
           "kind": "retypeset",
           "ink_h_px": 34,
@@ -260,9 +313,9 @@
         {
           "bbox": [
             114,
-            2797,
+            2712,
             1592,
-            2838
+            2753
           ],
           "kind": "retypeset",
           "ink_h_px": 34,
@@ -282,9 +335,9 @@
         {
           "bbox": [
             114,
-            2839,
+            2754,
             544,
-            2880
+            2795
           ],
           "kind": "retypeset",
           "ink_h_px": 35,
@@ -300,13 +353,57 @@
           ],
           "contrast_ratio": 3.81,
           "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            114,
+            2797,
+            1171,
+            2838
+          ],
+          "kind": "added",
+          "ink_h_px": 34,
+          "fg_rgb": [
+            120,
+            121,
+            152
+          ],
+          "bg_rgb": [
+            26,
+            35,
+            65
+          ],
+          "contrast_ratio": 3.67,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            114,
+            2839,
+            1444,
+            2880
+          ],
+          "kind": "added",
+          "ink_h_px": 34,
+          "fg_rgb": [
+            120,
+            121,
+            152
+          ],
+          "bg_rgb": [
+            24,
+            32,
+            59
+          ],
+          "contrast_ratio": 3.81,
+          "contrast_conf": "high"
         }
       ],
       "why": [],
-      "changed_pct": 49.5,
+      "changed_pct": 55.3,
       "ink_delta_e": 7.8,
       "size_factor": 1.64,
-      "visual_scale": 0.97,
+      "visual_scale": 0.939,
       "recommended": true
     },
     {
@@ -314,7 +411,7 @@
       "label": "T안 · 사진 아래쪽을 조금 다듬어 공간 확보",
       "passed": false,
       "why": [
-        "고지 바로 위 글자 없는 구간 12px < 필요 86px"
+        "고지 바로 위 글자 없는 구간 12px < 필요 171px"
       ],
       "recommended": false
     }

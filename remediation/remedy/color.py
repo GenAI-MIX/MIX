@@ -78,7 +78,7 @@ def palette(img, k=10, min_share=0.008):
 def pick_ink(fg, bg_pixels, pal, target):
     """글자색 고르기: 원래 색 → 광고 팔레트 색 → 원래 색의 밝기만 조정. 반환 (색, 방법) 또는 (None, 이유)."""
     px = np.asarray(bg_pixels, float).reshape(-1, 3)
-    lum = px @ [0.299, 0.587, 0.114]
+    lum = px.astype(np.float64) @ np.array([0.299, 0.587, 0.114])
     lo = px[lum <= np.percentile(lum, 10)].mean(0)
     hi = px[lum >= np.percentile(lum, 90)].mean(0)
     ok = lambda c: min(contrast(c, lo), contrast(c, hi)) >= target

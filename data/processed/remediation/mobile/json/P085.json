@@ -27,8 +27,21 @@
     }
   ],
   "note": null,
-  "judge_model": null,
-  "content_add": [],
+  "judge_model": "gpt-6-luna",
+  "content_add": [
+    {
+      "check_id": "B6",
+      "item": "예금자보호 여부",
+      "verdict": "확인필요",
+      "text": "※ 이 상품은 예금자보호법에 따라 보호되지 않습니다.",
+      "placeholder": false,
+      "reason": "투자성 상품에는 예금자보호 등 보호 여부를 알리는 내용이 필요합니다. 해당 문구는 OCR상 ‘KB증권 보호되지 않습니다’로 읽혀 예금자보호법에 따른 보호 여부를 명확히 확인하기 어렵습니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "E-18-3"
+      ]
+    }
+  ],
   "content_flag": [],
   "recommended": "A",
   "brief": null,
@@ -39,19 +52,26 @@
       "steps": [
         {
           "paragraph": 12,
-          "level": "L1",
-          "block": 16,
+          "font": "IBM Plex Sans KR Bold (기업형 고딕 (좁은 폭))",
+          "align": "left",
+          "lines": 1,
+          "orig_lines": 5,
+          "size_factor": 1.0,
+          "level": "L2",
+          "contrast_treatment": null,
           "fg_before": [
-            250,
-            223,
-            184
+            224,
+            206,
+            178
           ],
           "fg_after": [
-            251,
-            251,
-            251
+            224,
+            206,
+            178
           ],
-          "ink_delta_e": 24.3
+          "ink_delta_e": 0.0,
+          "scrim_lines": 0,
+          "added_lines": 1
         }
       ],
       "passed": true,
@@ -59,21 +79,21 @@
         {
           "id": "A2",
           "name": "명암비",
-          "value": 3.1,
+          "value": 4.07,
           "threshold": 3.0,
           "ok": true
         },
         {
           "id": "A3",
           "name": "글자 크기(pt)",
-          "value": 6.22,
+          "value": 14.75,
           "threshold": 5.9,
           "ok": true
         },
         {
           "id": "A4",
           "name": "헤드라인 대비",
-          "value": 0.121,
+          "value": 0.286,
           "threshold": 0.075,
           "ok": true
         }
@@ -81,30 +101,30 @@
       "measured": [
         {
           "bbox": [
-            20,
-            1148,
-            319,
-            1165
+            8,
+            1228,
+            329,
+            1248
           ],
-          "kind": "recolor",
-          "ink_h_px": null,
+          "kind": "added",
+          "ink_h_px": 14,
           "fg_rgb": [
-            250,
-            250,
-            250
+            224,
+            206,
+            178
           ],
           "bg_rgb": [
-            176,
-            128,
-            77
+            119,
+            91,
+            61
           ],
-          "contrast_ratio": 3.33,
+          "contrast_ratio": 4.07,
           "contrast_conf": "high"
         }
       ],
       "why": [],
-      "changed_pct": 0.3,
-      "ink_delta_e": 24.3,
+      "changed_pct": 0.2,
+      "ink_delta_e": 0.0,
       "size_factor": 1.0,
       "recommended": true
     }
@@ -113,21 +133,21 @@
     {
       "id": "A2",
       "name": "명암비",
-      "value": 3.1,
+      "value": 4.07,
       "threshold": 3.0,
       "ok": true
     },
     {
       "id": "A3",
       "name": "글자 크기(pt)",
-      "value": 6.22,
+      "value": 14.75,
       "threshold": 5.9,
       "ok": true
     },
     {
       "id": "A4",
       "name": "헤드라인 대비",
-      "value": 0.121,
+      "value": 0.286,
       "threshold": 0.075,
       "ok": true
     }

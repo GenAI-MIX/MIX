@@ -2,7 +2,7 @@
   "ad_id": "P099",
   "situation": "세로 · 사진 위 직접 · 사진 배경",
   "font": "Gothic A1 Bold (정갈한 고딕)",
-  "decision": "수정안",
+  "decision": "수정안 + 표현 검토",
   "checks_before": [
     {
       "id": "A2",
@@ -27,9 +27,119 @@
     }
   ],
   "note": null,
-  "judge_model": null,
-  "content_add": [],
-  "content_flag": [],
+  "judge_model": "gpt-6-luna",
+  "content_add": [
+    {
+      "check_id": "B7",
+      "item": "손실 상황 및 손실 추정액",
+      "verdict": "확인필요",
+      "text": "※ 【손실이 발생할 수 있는 상황】 시 최대 【손실 추정액】의 손실이 발생할 수 있습니다.",
+      "placeholder": true,
+      "reason": "광고에는 원금 손실 가능성은 고지되어 있지만, 손실이 발생할 수 있는 구체적 상황과 손실 추정액은 확인되지 않습니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "K-B9-1"
+      ]
+    }
+  ],
+  "content_flag": [
+    {
+      "check_id": "C2",
+      "item": "예상·목표수익률 등 미실현 수익률",
+      "verdict": "확인필요",
+      "ad_quote": "4600",
+      "suggest": "예상·목표 수익률 표시 삭제 (상환목표수익률 등 예외라면 근거를 함께 표시)",
+      "boxes": [
+        [
+          1315,
+          1288,
+          1994,
+          1347
+        ],
+        [
+          1317,
+          1348,
+          1777,
+          1405
+        ],
+        [
+          1319,
+          1431,
+          1741,
+          1490
+        ],
+        [
+          1048,
+          1757,
+          1173,
+          1808
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "광고에 단독 숫자 “4600”이 있으나 의미와 단위가 OCR 정보만으로 확인되지 않습니다. 예상·목표수익률인지 여부를 판단하려면 이미지에서 해당 숫자가 쓰인 맥락을 확인해야 합니다.",
+      "card_ids": [
+        "K-2-38-3"
+      ]
+    },
+    {
+      "check_id": "C3",
+      "item": "허위·과장, 최상급, 수익 과도 기대 표현",
+      "verdict": "확인필요",
+      "ad_quote": "[퇴직연금 전체 적립금 전금융권 1위]",
+      "suggest": "최상급·단정 표현은 객관적 근거(출처·기준일)를 붙이거나 완화 (예: '최고' → '○○ 기준 1위(출처, 기준일)')",
+      "boxes": [
+        [
+          1048,
+          1757,
+          1173,
+          1808
+        ],
+        [
+          281,
+          2304,
+          1875,
+          2424
+        ],
+        [
+          70,
+          2407,
+          2086,
+          2617
+        ],
+        [
+          122,
+          2657,
+          648,
+          2716
+        ],
+        [
+          727,
+          2657,
+          1435,
+          2716
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "‘전금융권 1위’라는 최상급·순위 표현이 있습니다. 광고에 2024년 3분기 금융감독원 통합연금포털 기준이라고 출처와 시기는 표시했으나, 해당 순위의 객관적 근거와 일치하는지는 확인이 필요합니다.",
+      "card_ids": [
+        "K-B10-2"
+      ]
+    },
+    {
+      "check_id": "C5",
+      "item": "혜택·불이익 균형 (전체 인상)",
+      "verdict": "확인필요",
+      "ad_quote": "금융투자상품은 투자원금의 손실이 발생할 수 있으며,그 손실은 투자자에게 귀속됩니다.",
+      "suggest": "혜택 문구와 위험고지의 크기·위치 균형 조정 (표시 방법 수정안 참고)",
+      "boxes": [],
+      "evidence_issue": null,
+      "reason": "[LLM 종합 의견 · LLM 판정 확인필요] 원금손실 고지는 있으나 위험고지 글자 크기는 모바일 기준 3.45pt이고, 헤드라인 최대 크기는 25.95pt입니다. 대비값은 8.64로 확인되지만 혜택 문구와 비교한 전체 인상의 균형은 이미지에서 추가 확인이 필요합니다.",
+      "card_ids": [
+        "K-2-38-21",
+        "R-18"
+      ]
+    }
+  ],
   "recommended": "C",
   "brief": null,
   "candidates": [
@@ -41,7 +151,7 @@
           "paragraph": 8,
           "font": "Gothic A1 Bold (정갈한 고딕)",
           "align": "left",
-          "lines": 5,
+          "lines": 6,
           "orig_lines": 3,
           "size_factor": 1.82,
           "level": "L2",
@@ -49,7 +159,7 @@
             2.13,
             1.28
           ],
-          "short_px": 121,
+          "short_px": 165,
           "contrast_treatment": "글자색 명도만 조정 (색상 유지)",
           "fg_before": [
             233,
@@ -63,7 +173,7 @@
           ],
           "ink_delta_e": 35.1,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 1
         }
       ],
       "passed": false,
@@ -200,10 +310,24 @@
           ],
           "contrast_ratio": 3.41,
           "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            69,
+            3017,
+            1557,
+            3062
+          ],
+          "kind": "added",
+          "ink_h_px": null,
+          "fg_rgb": null,
+          "bg_rgb": null,
+          "contrast_ratio": null,
+          "contrast_conf": "low"
         }
       ],
       "why": [
-        "고지 영역에 121px 부족"
+        "고지 영역에 165px 부족"
       ],
       "changed_pct": 3.2,
       "ink_delta_e": 35.1,
@@ -215,7 +339,7 @@
       "label": "B안 · 배경 여백을 나눠 고지 공간 확보",
       "passed": false,
       "why": [
-        "평평한 배경 줄이 79px 모자람"
+        "평평한 배경 줄이 123px 모자람"
       ],
       "recommended": false
     },
@@ -227,7 +351,7 @@
           "paragraph": 8,
           "font": "Gothic A1 Bold (정갈한 고딕)",
           "align": "left",
-          "lines": 5,
+          "lines": 6,
           "orig_lines": 3,
           "size_factor": 1.82,
           "level": "L3",
@@ -237,7 +361,7 @@
           ],
           "seam_score": 0.74,
           "seam_y": 2811,
-          "grow_px": 126,
+          "grow_px": 170,
           "contrast_treatment": null,
           "fg_before": [
             233,
@@ -251,7 +375,7 @@
           ],
           "ink_delta_e": 0.0,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 1
         }
       ],
       "passed": true,
@@ -259,7 +383,7 @@
         {
           "id": "A2",
           "name": "명암비",
-          "value": 6.98,
+          "value": 7.66,
           "threshold": 3.0,
           "ok": true
         },
@@ -282,9 +406,9 @@
         {
           "bbox": [
             69,
-            2670,
+            2626,
             1991,
-            2716
+            2672
           ],
           "kind": "retypeset",
           "ink_h_px": 35,
@@ -304,9 +428,9 @@
         {
           "bbox": [
             69,
-            2714,
+            2670,
             1536,
-            2760
+            2716
           ],
           "kind": "retypeset",
           "ink_h_px": 36,
@@ -326,9 +450,9 @@
         {
           "bbox": [
             69,
-            2758,
+            2714,
             2065,
-            2803
+            2759
           ],
           "kind": "retypeset",
           "ink_h_px": 35,
@@ -348,9 +472,9 @@
         {
           "bbox": [
             69,
-            2801,
+            2757,
             1452,
-            2848
+            2804
           ],
           "kind": "retypeset",
           "ink_h_px": 35,
@@ -361,18 +485,18 @@
           ],
           "bg_rgb": [
             64,
-            65,
+            66,
             70
           ],
-          "contrast_ratio": 8.52,
+          "contrast_ratio": 8.43,
           "contrast_conf": "high"
         },
         {
           "bbox": [
             69,
-            2845,
+            2801,
             2065,
-            2892
+            2848
           ],
           "kind": "retypeset",
           "ink_h_px": 35,
@@ -382,19 +506,41 @@
             238
           ],
           "bg_rgb": [
-            76,
-            78,
-            82
+            70,
+            72,
+            77
           ],
-          "contrast_ratio": 6.98,
+          "contrast_ratio": 7.66,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            69,
+            2847,
+            1557,
+            2892
+          ],
+          "kind": "added",
+          "ink_h_px": 36,
+          "fg_rgb": [
+            233,
+            235,
+            238
+          ],
+          "bg_rgb": [
+            66,
+            67,
+            71
+          ],
+          "contrast_ratio": 8.27,
           "contrast_conf": "high"
         }
       ],
       "why": [],
-      "changed_pct": 41.9,
+      "changed_pct": 46.2,
       "ink_delta_e": 0.0,
       "size_factor": 1.82,
-      "visual_scale": 0.955,
+      "visual_scale": 0.939,
       "recommended": true
     },
     {
@@ -402,7 +548,7 @@
       "label": "T안 · 사진 아래쪽을 조금 다듬어 공간 확보",
       "passed": false,
       "why": [
-        "고지 바로 위 글자 없는 구간 11px < 필요 126px"
+        "고지 바로 위 글자 없는 구간 11px < 필요 170px"
       ],
       "recommended": false
     }
@@ -411,7 +557,7 @@
     {
       "id": "A2",
       "name": "명암비",
-      "value": 6.98,
+      "value": 7.66,
       "threshold": 3.0,
       "ok": true
     },

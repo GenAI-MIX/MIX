@@ -31,7 +31,7 @@ VIDEO_PICK = [
     ("V101", "원본 유지"), ("V112", "원본 유지"), ("V109", "고지 없음"), ("V117", "고지 없음"),
 ]
 
-COLOR = {"수정안": BLUE, "수정안 + 표현 검토": BLUE, "원본 유지": GREEN, "디자이너 검토": PURPLE, "고지 없음": ORANGE}
+COLOR = {"수정안": BLUE, "수정안 + 표현 검토": BLUE, "표현 검토": ORANGE, "원본 유지": GREEN, "디자이너 검토": PURPLE, "고지 없음": ORANGE}
 
 
 def pick_images(n=20):
@@ -42,7 +42,7 @@ def pick_images(n=20):
         best = next((c for c in r.get("candidates", []) if c.get("recommended")), {})
         tr = next((s.get("contrast_treatment") for s in best.get("steps", []) if s.get("contrast_treatment")), None)
         return (r.get("situation"), r["decision"], best.get("name"), (tr or "")[:6])
-    quota = {"수정안": 11, "원본 유지": 3, "디자이너 검토": 5, "고지 없음": 1}
+    quota = {"수정안": 11, "원본 유지": 2, "표현 검토": 2, "디자이너 검토": 4, "고지 없음": 1}
     got, seen_key, seen_method, seen_sit = [], set(), collections.Counter(), collections.Counter()
     # 1차: 방법·상황이 새로운 것부터
     for r in sorted(recs, key=lambda r: (seen_sit[r.get("situation")], r["ad_id"])):
@@ -62,7 +62,7 @@ def pick_images(n=20):
             break
         if r not in got:
             got.append(r)
-    order = {"원본 유지": 0, "수정안": 1, "수정안 + 표현 검토": 1, "디자이너 검토": 2, "고지 없음": 3}
+    order = {"원본 유지": 0, "수정안": 1, "수정안 + 표현 검토": 1, "표현 검토": 2, "디자이너 검토": 3, "고지 없음": 4}
     return sorted(got, key=lambda r: (order.get(r["decision"], 9), r.get("recommended") or "", r["ad_id"]))
 
 

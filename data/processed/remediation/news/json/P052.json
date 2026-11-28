@@ -2,7 +2,7 @@
   "ad_id": "P052",
   "situation": "세로 · 브랜드 푸터 패널 · 그라데이션 배경",
   "font": "Pretendard Bold (모던 고딕)",
-  "decision": "원본 유지",
+  "decision": "수정안 + 표현 검토",
   "checks_before": [
     {
       "id": "A2",
@@ -27,7 +27,207 @@
     }
   ],
   "note": "A2·A3·A4 모두 기준 통과 — 원본 디자인 그대로 진행",
-  "judge_model": null,
-  "content_add": [],
-  "content_flag": []
+  "judge_model": "gpt-6-luna",
+  "content_add": [
+    {
+      "check_id": "D1",
+      "item": "심사필 번호·유효기간 표시",
+      "verdict": "확인필요",
+      "text": "【준법감시인 심의필 / 금융투자협회 심사필 제 - 호 (유효기간: ~ )】",
+      "placeholder": true,
+      "reason": "코드 판정은 심사필 번호 미검출로 확인필요입니다. OCR 누락 가능성이 있어 이미지에서 번호와 유효기간 표시 여부를 재확인해야 합니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "K-2-47-1"
+      ]
+    }
+  ],
+  "content_flag": [
+    {
+      "check_id": "C3",
+      "item": "허위·과장, 최상급, 수익 과도 기대 표현",
+      "verdict": "확인필요",
+      "ad_quote": "NH농협은행 대표 신탁 \"가입금액:금전 5천만 원 이상/금전 외 신탁재산 합산1억 원 이상",
+      "suggest": "최상급·단정 표현은 객관적 근거(출처·기준일)를 붙이거나 완화 (예: '최고' → '○○ 기준 1위(출처, 기준일)')",
+      "boxes": [
+        [
+          456,
+          1976,
+          705,
+          2013
+        ],
+        [
+          345,
+          2011,
+          818,
+          2041
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "“대표 신탁”이라는 표현이 객관적 우월성이나 최상급을 의미하는지 확인이 필요합니다. “온전히 행복으로만 이어지도록” 및 “당신의 뜻을 지키겠습니다”라는 표현도 소비자가 결과를 확신하도록 받아들일 수 있는지 확인이 필요합니다.",
+      "card_ids": [
+        "K-B10-2"
+      ]
+    },
+    {
+      "check_id": "C5",
+      "item": "혜택·불이익 균형 (전체 인상)",
+      "verdict": "확인필요",
+      "ad_quote": "당신의 소중한 유산이 갈등으로 변하지 않고 온전히 행복으로만 이어지도록 NH사랑THE유언대용신탁이 당신의 뜻을 지키겠습니다",
+      "suggest": "혜택 문구와 위험고지의 크기·위치 균형 조정 (표시 방법 수정안 참고)",
+      "boxes": [
+        [
+          286,
+          1174,
+          1460,
+          1590
+        ],
+        [
+          492,
+          1606,
+          1240,
+          1677
+        ],
+        [
+          611,
+          1689,
+          1117,
+          1733
+        ],
+        [
+          686,
+          1727,
+          1040,
+          1766
+        ],
+        [
+          665,
+          1763,
+          1059,
+          1810
+        ],
+        [
+          696,
+          1808,
+          1031,
+          1848
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "[LLM 종합 의견 · LLM 판정 확인필요] 혜택을 강조하는 문구와 함께 손실 가능성 및 보수 등 위험고지가 있으나, 측정값상 위험고지 문구 비율은 0.076이고 명암비 최솟값은 3.49입니다. 전체적으로 혜택과 불이익이 균형 있게 전달되는지는 실제 화면의 표시 상태를 확인할 필요가 있습니다.",
+      "card_ids": [
+        "K-2-38-21",
+        "R-18"
+      ]
+    }
+  ],
+  "recommended": "A",
+  "brief": null,
+  "candidates": [
+    {
+      "name": "A",
+      "label": "제자리 수정 (규격·배치 그대로)",
+      "steps": [
+        {
+          "paragraph": 9,
+          "font": "Pretendard Bold (모던 고딕)",
+          "align": "left",
+          "lines": 1,
+          "orig_lines": 6,
+          "size_factor": 1.0,
+          "level": "L2",
+          "contrast_treatment": null,
+          "fg_before": [
+            207,
+            213,
+            172
+          ],
+          "fg_after": [
+            207,
+            213,
+            172
+          ],
+          "ink_delta_e": 0.0,
+          "scrim_lines": 0,
+          "added_lines": 1
+        }
+      ],
+      "passed": true,
+      "checks_after": [
+        {
+          "id": "A2",
+          "name": "명암비",
+          "value": 3.35,
+          "threshold": 3.0,
+          "ok": true
+        },
+        {
+          "id": "A3",
+          "name": "글자 높이(mm)",
+          "value": 3.35,
+          "threshold": 2.36,
+          "ok": true
+        },
+        {
+          "id": "A4",
+          "name": "헤드라인 대비",
+          "value": 0.076,
+          "threshold": 0.075,
+          "ok": true
+        }
+      ],
+      "measured": [
+        {
+          "bbox": [
+            49,
+            2333,
+            588,
+            2362
+          ],
+          "kind": "added",
+          "ink_h_px": 18,
+          "fg_rgb": [
+            207,
+            213,
+            172
+          ],
+          "bg_rgb": [
+            105,
+            115,
+            57
+          ],
+          "contrast_ratio": 3.35,
+          "contrast_conf": "high"
+        }
+      ],
+      "why": [],
+      "changed_pct": 0.1,
+      "ink_delta_e": 0.0,
+      "size_factor": 1.0,
+      "recommended": true
+    }
+  ],
+  "checks_after": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 3.35,
+      "threshold": 3.0,
+      "ok": true
+    },
+    {
+      "id": "A3",
+      "name": "글자 높이(mm)",
+      "value": 3.35,
+      "threshold": 2.36,
+      "ok": true
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.076,
+      "threshold": 0.075,
+      "ok": true
+    }
+  ]
 }

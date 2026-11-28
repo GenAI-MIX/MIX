@@ -27,11 +27,24 @@
     }
   ],
   "note": null,
-  "judge_model": null,
-  "content_add": [],
+  "judge_model": "gpt-6-luna",
+  "content_add": [
+    {
+      "check_id": "B12",
+      "item": "예시 지급금이 미래 수익을 보장하지 않음",
+      "verdict": "확인필요",
+      "text": "※ 예시된 지급금은 미래의 수익을 보장하지 않습니다.",
+      "placeholder": false,
+      "reason": "월 납입액·계약기간·금리를 가정한 지급금 예시가 있습니다. 다만 해당 의무는 만기 지급금이 변동하는 등 특정 예금성 상품에 한정되므로, 이 상품이 그 대상인지 확인이 필요하며 광고에서 미래 수익 비보장 문구는 확인되지 않습니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "L-22-3-3다"
+      ]
+    }
+  ],
   "content_flag": [],
   "recommended": null,
-  "brief": "디자이너 브리프: 규격 유지 시 고지 영역에 약 727px(원본 높이의 25%) 추가 공간 필요. A: 고지 영역에 721px 부족 / B: 평평한 배경 줄이 528px 모자람 / C: 비주얼을 72%까지 줄여야 함 (한도 90%) / T: 고지 바로 위 글자 없는 구간 34px < 필요 727px / D: 여백 136px·다듬기 8px 후에도 비주얼을 76%까지 줄여야 함",
+  "brief": "디자이너 브리프: 규격 유지 시 고지 영역에 약 770px(원본 높이의 26%) 추가 공간 필요. A: 고지 영역에 764px 부족 / B: 평평한 배경 줄이 571px 모자람 / C: 비주얼을 70%까지 줄여야 함 (한도 90%) / T: 고지 바로 위 글자 없는 구간 34px < 필요 770px / D: 여백 136px·다듬기 8px 후에도 비주얼을 74%까지 줄여야 함",
   "candidates": [
     {
       "name": "A",
@@ -41,7 +54,7 @@
           "paragraph": 22,
           "font": "Noto Sans KR Medium (표준 고딕)",
           "align": "left",
-          "lines": 23,
+          "lines": 24,
           "orig_lines": 9,
           "size_factor": 1.69,
           "level": "L2",
@@ -49,7 +62,7 @@
             1.57,
             1.27
           ],
-          "short_px": 721,
+          "short_px": 764,
           "contrast_treatment": "글자색 명도만 조정 (색상 유지)",
           "fg_before": [
             109,
@@ -63,7 +76,7 @@
           ],
           "ink_delta_e": 20.6,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 1
         }
       ],
       "passed": false,
@@ -484,10 +497,24 @@
           "bg_rgb": null,
           "contrast_ratio": null,
           "contrast_conf": "low"
+        },
+        {
+          "bbox": [
+            94,
+            3581,
+            958,
+            3623
+          ],
+          "kind": "added",
+          "ink_h_px": null,
+          "fg_rgb": null,
+          "bg_rgb": null,
+          "contrast_ratio": null,
+          "contrast_conf": "low"
         }
       ],
       "why": [
-        "고지 영역에 721px 부족"
+        "고지 영역에 764px 부족"
       ],
       "changed_pct": 4.1,
       "ink_delta_e": 20.6,
@@ -499,7 +526,7 @@
       "label": "B안 · 배경 여백을 나눠 고지 공간 확보",
       "passed": false,
       "why": [
-        "평평한 배경 줄이 528px 모자람"
+        "평평한 배경 줄이 571px 모자람"
       ],
       "recommended": false
     },
@@ -508,7 +535,7 @@
       "label": "C안 · 위쪽 비주얼을 살짝 줄여 공간 확보",
       "passed": false,
       "why": [
-        "비주얼을 72%까지 줄여야 함 (한도 90%)"
+        "비주얼을 70%까지 줄여야 함 (한도 90%)"
       ],
       "recommended": false
     },
@@ -517,7 +544,7 @@
       "label": "T안 · 사진 아래쪽을 조금 다듬어 공간 확보",
       "passed": false,
       "why": [
-        "고지 바로 위 글자 없는 구간 34px < 필요 727px"
+        "고지 바로 위 글자 없는 구간 34px < 필요 770px"
       ],
       "recommended": false
     },
@@ -526,7 +553,7 @@
       "label": "조합안 · 여백 회수 + 사진 다듬기 + 비주얼 살짝 축소",
       "passed": false,
       "why": [
-        "여백 136px·다듬기 8px 후에도 비주얼을 76%까지 줄여야 함"
+        "여백 136px·다듬기 8px 후에도 비주얼을 74%까지 줄여야 함"
       ],
       "recommended": false
     }

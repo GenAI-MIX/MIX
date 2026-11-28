@@ -2,7 +2,7 @@
   "ad_id": "P036",
   "situation": "세로 · 브랜드 푸터 패널 · 그라데이션 배경",
   "font": "나눔고딕 Bold (클래식 고딕)",
-  "decision": "원본 유지",
+  "decision": "수정안",
   "checks_before": [
     {
       "id": "A2",
@@ -27,7 +27,129 @@
     }
   ],
   "note": "A2·A3·A4 모두 기준 통과 — 원본 디자인 그대로 진행",
-  "judge_model": null,
-  "content_add": [],
-  "content_flag": []
+  "judge_model": "gpt-6-luna",
+  "content_add": [
+    {
+      "check_id": "B5",
+      "item": "충분한 설명을 받을 권리",
+      "verdict": "확인필요",
+      "text": "※ 금융소비자는 해당 상품에 대하여 금융회사로부터 충분한 설명을 받을 권리가 있습니다.",
+      "placeholder": false,
+      "reason": "광고에는 상품에 대해 설명받을 권리가 있다고 표시되어 있습니다. 다만 ‘충분한 설명을 받을 권리’라는 표현은 확인되지 않아 서비스 기준 충족 여부를 확인할 필요가 있습니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "E-18-3"
+      ]
+    }
+  ],
+  "content_flag": [],
+  "recommended": "A",
+  "brief": null,
+  "candidates": [
+    {
+      "name": "A",
+      "label": "제자리 수정 (규격·배치 그대로)",
+      "steps": [
+        {
+          "paragraph": 15,
+          "font": "나눔고딕 Bold (클래식 고딕)",
+          "align": "left",
+          "lines": 1,
+          "orig_lines": 17,
+          "size_factor": 1.0,
+          "level": "L2",
+          "contrast_treatment": null,
+          "fg_before": [
+            240,
+            245,
+            255
+          ],
+          "fg_after": [
+            240,
+            245,
+            255
+          ],
+          "ink_delta_e": 0.0,
+          "scrim_lines": 0,
+          "added_lines": 1
+        }
+      ],
+      "passed": true,
+      "checks_after": [
+        {
+          "id": "A2",
+          "name": "명암비",
+          "value": 17.32,
+          "threshold": 3.0,
+          "ok": true
+        },
+        {
+          "id": "A3",
+          "name": "글자 높이(mm)",
+          "value": 3.39,
+          "threshold": 2.13,
+          "ok": true
+        },
+        {
+          "id": "A4",
+          "name": "헤드라인 대비",
+          "value": 0.136,
+          "threshold": 0.075,
+          "ok": true
+        }
+      ],
+      "measured": [
+        {
+          "bbox": [
+            116,
+            2703,
+            804,
+            2728
+          ],
+          "kind": "added",
+          "ink_h_px": 17,
+          "fg_rgb": [
+            240,
+            245,
+            255
+          ],
+          "bg_rgb": [
+            16,
+            15,
+            30
+          ],
+          "contrast_ratio": 17.32,
+          "contrast_conf": "high"
+        }
+      ],
+      "why": [],
+      "changed_pct": 0.1,
+      "ink_delta_e": 0.0,
+      "size_factor": 1.0,
+      "recommended": true
+    }
+  ],
+  "checks_after": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 17.32,
+      "threshold": 3.0,
+      "ok": true
+    },
+    {
+      "id": "A3",
+      "name": "글자 높이(mm)",
+      "value": 3.39,
+      "threshold": 2.13,
+      "ok": true
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.136,
+      "threshold": 0.075,
+      "ok": true
+    }
+  ]
 }

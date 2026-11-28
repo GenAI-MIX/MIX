@@ -2,7 +2,7 @@
   "ad_id": "AD44",
   "situation": "세로 · 브랜드 푸터 패널 · 단색 배경",
   "font": "IBM Plex Sans KR Bold (기업형 고딕 (좁은 폭))",
-  "decision": "원본 유지",
+  "decision": "수정안 + 표현 검토",
   "checks_before": [
     {
       "id": "A2",
@@ -27,7 +27,521 @@
     }
   ],
   "note": "A2·A3·A4 모두 기준 통과 — 원본 디자인 그대로 진행",
-  "judge_model": null,
-  "content_add": [],
-  "content_flag": []
+  "judge_model": "gpt-6-luna",
+  "content_add": [
+    {
+      "check_id": "B7",
+      "item": "손실 상황 및 손실 추정액",
+      "verdict": "확인필요",
+      "text": "※ 【손실이 발생할 수 있는 상황】 시 최대 【손실 추정액】의 손실이 발생할 수 있습니다.",
+      "placeholder": true,
+      "reason": "광고에는 손실 범위로 “0~100%”가 표시되어 있으나, 손실이 발생할 수 있는 상황이나 원인에 대한 설명은 확인되지 않습니다.",
+      "evidence_issue": "인용 문장이 카드 원문에 없음",
+      "card_ids": [
+        "K-B9-1"
+      ]
+    }
+  ],
+  "content_flag": [
+    {
+      "check_id": "C1",
+      "item": "우대 수익률 조건·운용실적 기준일 글자 크기",
+      "verdict": "확인필요",
+      "ad_quote": "대한민국 최초 4년 연속 퇴직연금 우수사업자 선정!",
+      "suggest": "수익률을 강조할 때 조건·기준일·산출기간을 수익률 바로 옆에 비슷한 크기로 표시",
+      "boxes": [
+        [
+          285,
+          1024,
+          353,
+          1033
+        ],
+        [
+          485,
+          1024,
+          553,
+          1033
+        ],
+        [
+          685,
+          1024,
+          752,
+          1033
+        ],
+        [
+          884,
+          1024,
+          951,
+          1033
+        ],
+        [
+          323,
+          1133,
+          915,
+          1210
+        ],
+        [
+          352,
+          1204,
+          888,
+          1262
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "‘4년 연속 퇴직연금 우수사업자 선정’이라는 실적이 강조되어 있고 연도와 출처가 표시되어 있습니다. 다만 해당 문구와 출처·연도의 글자 크기 측정값이 없어 표시 크기 요건 충족 여부를 확인해야 합니다.",
+      "card_ids": [
+        "K-2-38-12"
+      ]
+    },
+    {
+      "check_id": "C3",
+      "item": "허위·과장, 최상급, 수익 과도 기대 표현",
+      "verdict": "확인필요",
+      "ad_quote": "대한민국 최초 4년 연속 퇴직연금 우수사업자 선정!",
+      "suggest": "최상급·단정 표현은 객관적 근거(출처·기준일)를 붙이거나 완화 (예: '최고' → '○○ 기준 1위(출처, 기준일)')",
+      "boxes": [
+        [
+          285,
+          1024,
+          353,
+          1033
+        ],
+        [
+          485,
+          1024,
+          553,
+          1033
+        ],
+        [
+          685,
+          1024,
+          752,
+          1033
+        ],
+        [
+          884,
+          1024,
+          951,
+          1033
+        ],
+        [
+          323,
+          1133,
+          915,
+          1210
+        ],
+        [
+          352,
+          1204,
+          888,
+          1262
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "‘대한민국 최초’는 객관적 근거 확인이 필요한 최상급 표현입니다. ‘출처:고용노동부’와 연도가 표시되어 있으나, 해당 자료가 ‘최초 4년 연속’ 선정 주장을 뒷받침하는지는 확인이 필요합니다.",
+      "card_ids": [
+        "K-B10-2"
+      ]
+    },
+    {
+      "check_id": "C5",
+      "item": "혜택·불이익 균형 (전체 인상)",
+      "verdict": "확인필요",
+      "ad_quote": "risk_min_pt=0.63, headline_max_pt=16.04",
+      "suggest": "혜택 문구와 위험고지의 크기·위치 균형 조정 (표시 방법 수정안 참고)",
+      "boxes": [],
+      "evidence_issue": "광고 문구 인용이 광고에 없음",
+      "reason": "[LLM 종합 의견 · LLM 판정 확인필요] 측정값상 모바일 피드에서 위험고지 최소 글자 크기는 0.63pt, 헤드라인 최대 글자 크기는 16.04pt입니다. 크기 차이가 커 혜택과 불이익이 균형 있게 전달되는지 전체적인 화면 확인이 필요합니다.",
+      "card_ids": [
+        "K-2-38-21",
+        "R-18"
+      ]
+    }
+  ],
+  "recommended": "B",
+  "brief": null,
+  "candidates": [
+    {
+      "name": "A",
+      "label": "A안 · 고지 영역 안에서 줄 간격 정리",
+      "steps": [
+        {
+          "paragraph": 13,
+          "font": "IBM Plex Sans KR Bold (기업형 고딕 (좁은 폭))",
+          "align": "left",
+          "lines": 1,
+          "orig_lines": 11,
+          "size_factor": 1.0,
+          "level": "L2",
+          "pitch_ratio": [
+            1.47,
+            1.27
+          ],
+          "short_px": 29,
+          "contrast_treatment": null,
+          "fg_before": [
+            0,
+            0,
+            0
+          ],
+          "fg_after": [
+            0,
+            0,
+            0
+          ],
+          "ink_delta_e": 0.0,
+          "scrim_lines": 0,
+          "added_lines": 1
+        }
+      ],
+      "passed": false,
+      "checks_after": [
+        {
+          "id": "A2",
+          "name": "명암비",
+          "value": 10.6,
+          "threshold": 3.0,
+          "ok": true
+        },
+        {
+          "id": "A3",
+          "name": "글자 높이(mm)",
+          "value": 3.22,
+          "threshold": 2.13,
+          "ok": true
+        },
+        {
+          "id": "A4",
+          "name": "헤드라인 대비",
+          "value": 0.373,
+          "threshold": 0.075,
+          "ok": true
+        }
+      ],
+      "measured": [
+        {
+          "bbox": [
+            20,
+            1733,
+            790,
+            1758
+          ],
+          "kind": "added",
+          "ink_h_px": null,
+          "fg_rgb": [
+            0,
+            0,
+            0
+          ],
+          "bg_rgb": [
+            255,
+            255,
+            255
+          ],
+          "contrast_ratio": 21.0,
+          "contrast_conf": "high"
+        }
+      ],
+      "why": [
+        "고지 영역에 29px 부족"
+      ],
+      "changed_pct": 0.3,
+      "ink_delta_e": 0.0,
+      "size_factor": 1.0,
+      "recommended": false
+    },
+    {
+      "name": "B",
+      "label": "B안 · 배경 여백을 나눠 고지 공간 확보",
+      "steps": [
+        {
+          "paragraph": 13,
+          "font": "IBM Plex Sans KR Bold (기업형 고딕 (좁은 폭))",
+          "align": "left",
+          "lines": 1,
+          "orig_lines": 11,
+          "size_factor": 1.0,
+          "level": "L3",
+          "pitch_ratio": [
+            1.47,
+            1.27
+          ],
+          "seam_score": 0.0,
+          "seam_y": 1748,
+          "grow_px": 35,
+          "contrast_treatment": null,
+          "fg_before": [
+            0,
+            0,
+            0
+          ],
+          "fg_after": [
+            0,
+            0,
+            0
+          ],
+          "ink_delta_e": 0.0,
+          "scrim_lines": 0,
+          "added_lines": 1
+        }
+      ],
+      "passed": true,
+      "checks_after": [
+        {
+          "id": "A2",
+          "name": "명암비",
+          "value": 10.6,
+          "threshold": 3.0,
+          "ok": true
+        },
+        {
+          "id": "A3",
+          "name": "글자 높이(mm)",
+          "value": 3.47,
+          "threshold": 2.13,
+          "ok": true
+        },
+        {
+          "id": "A4",
+          "name": "헤드라인 대비",
+          "value": 0.402,
+          "threshold": 0.075,
+          "ok": true
+        }
+      ],
+      "measured": [
+        {
+          "bbox": [
+            20,
+            1714,
+            790,
+            1739
+          ],
+          "kind": "added",
+          "ink_h_px": 22,
+          "fg_rgb": [
+            0,
+            0,
+            0
+          ],
+          "bg_rgb": [
+            255,
+            255,
+            255
+          ],
+          "contrast_ratio": 21.0,
+          "contrast_conf": "high"
+        }
+      ],
+      "why": [],
+      "changed_pct": 18.3,
+      "ink_delta_e": 0.0,
+      "size_factor": 1.0,
+      "rows_removed": 35,
+      "recommended": true
+    },
+    {
+      "name": "C",
+      "label": "C안 · 위쪽 비주얼을 살짝 줄여 공간 확보",
+      "steps": [
+        {
+          "paragraph": 13,
+          "font": "IBM Plex Sans KR Bold (기업형 고딕 (좁은 폭))",
+          "align": "left",
+          "lines": 1,
+          "orig_lines": 11,
+          "size_factor": 1.0,
+          "level": "L3",
+          "pitch_ratio": [
+            1.47,
+            1.27
+          ],
+          "seam_score": 0.0,
+          "seam_y": 1748,
+          "grow_px": 35,
+          "contrast_treatment": null,
+          "fg_before": [
+            0,
+            0,
+            0
+          ],
+          "fg_after": [
+            0,
+            0,
+            0
+          ],
+          "ink_delta_e": 0.0,
+          "scrim_lines": 0,
+          "added_lines": 1
+        }
+      ],
+      "passed": true,
+      "checks_after": [
+        {
+          "id": "A2",
+          "name": "명암비",
+          "value": 10.6,
+          "threshold": 3.0,
+          "ok": true
+        },
+        {
+          "id": "A3",
+          "name": "글자 높이(mm)",
+          "value": 3.47,
+          "threshold": 2.13,
+          "ok": true
+        },
+        {
+          "id": "A4",
+          "name": "헤드라인 대비",
+          "value": 0.402,
+          "threshold": 0.075,
+          "ok": true
+        }
+      ],
+      "measured": [
+        {
+          "bbox": [
+            20,
+            1698,
+            790,
+            1723
+          ],
+          "kind": "added",
+          "ink_h_px": 22,
+          "fg_rgb": [
+            0,
+            0,
+            0
+          ],
+          "bg_rgb": [
+            255,
+            255,
+            255
+          ],
+          "contrast_ratio": 21.0,
+          "contrast_conf": "high"
+        }
+      ],
+      "why": [],
+      "changed_pct": 24.5,
+      "ink_delta_e": 0.0,
+      "size_factor": 1.0,
+      "visual_scale": 0.98,
+      "recommended": false
+    },
+    {
+      "name": "T",
+      "label": "T안 · 사진 아래쪽을 조금 다듬어 공간 확보",
+      "steps": [
+        {
+          "paragraph": 13,
+          "font": "IBM Plex Sans KR Bold (기업형 고딕 (좁은 폭))",
+          "align": "left",
+          "lines": 1,
+          "orig_lines": 11,
+          "size_factor": 1.0,
+          "level": "L3",
+          "pitch_ratio": [
+            1.47,
+            1.27
+          ],
+          "seam_score": 0.0,
+          "seam_y": 1748,
+          "grow_px": 35,
+          "contrast_treatment": null,
+          "fg_before": [
+            0,
+            0,
+            0
+          ],
+          "fg_after": [
+            0,
+            0,
+            0
+          ],
+          "ink_delta_e": 0.0,
+          "scrim_lines": 0,
+          "added_lines": 1
+        }
+      ],
+      "passed": true,
+      "checks_after": [
+        {
+          "id": "A2",
+          "name": "명암비",
+          "value": 10.6,
+          "threshold": 3.0,
+          "ok": true
+        },
+        {
+          "id": "A3",
+          "name": "글자 높이(mm)",
+          "value": 3.47,
+          "threshold": 2.13,
+          "ok": true
+        },
+        {
+          "id": "A4",
+          "name": "헤드라인 대비",
+          "value": 0.402,
+          "threshold": 0.075,
+          "ok": true
+        }
+      ],
+      "measured": [
+        {
+          "bbox": [
+            20,
+            1698,
+            790,
+            1723
+          ],
+          "kind": "added",
+          "ink_h_px": 22,
+          "fg_rgb": [
+            0,
+            0,
+            0
+          ],
+          "bg_rgb": [
+            255,
+            255,
+            255
+          ],
+          "contrast_ratio": 21.0,
+          "contrast_conf": "high"
+        }
+      ],
+      "why": [],
+      "changed_pct": 9.1,
+      "ink_delta_e": 0.0,
+      "size_factor": 1.0,
+      "rows_trimmed": 35,
+      "recommended": false
+    }
+  ],
+  "checks_after": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 10.6,
+      "threshold": 3.0,
+      "ok": true
+    },
+    {
+      "id": "A3",
+      "name": "글자 높이(mm)",
+      "value": 3.47,
+      "threshold": 2.13,
+      "ok": true
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.402,
+      "threshold": 0.075,
+      "ok": true
+    }
+  ]
 }

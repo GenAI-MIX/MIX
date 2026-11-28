@@ -2,7 +2,7 @@
   "ad_id": "P009",
   "situation": "세로 · 브랜드 푸터 패널 · 단색 배경",
   "font": "IBM Plex Sans KR Bold (기업형 고딕 (좁은 폭))",
-  "decision": "수정안",
+  "decision": "수정안 + 표현 검토",
   "checks_before": [
     {
       "id": "A2",
@@ -27,9 +27,105 @@
     }
   ],
   "note": null,
-  "judge_model": null,
-  "content_add": [],
-  "content_flag": [],
+  "judge_model": "gpt-6-luna",
+  "content_add": [
+    {
+      "check_id": "B7",
+      "item": "손실 상황 및 손실 추정액",
+      "verdict": "확인필요",
+      "text": "※ 【손실이 발생할 수 있는 상황】 시 최대 【손실 추정액】의 손실이 발생할 수 있습니다.",
+      "placeholder": true,
+      "reason": "광고는 환율·이자율 변동에 따른 초과손실 가능성을 알리고 있지만 손실 추정액은 표시하지 않았습니다. 손실 범위와 추정 근거를 확인할 필요가 있습니다.",
+      "evidence_issue": "인용 문장이 카드 원문에 없음",
+      "card_ids": [
+        "K-B9-1"
+      ]
+    }
+  ],
+  "content_flag": [
+    {
+      "check_id": "C3",
+      "item": "허위·과장, 최상급, 수익 과도 기대 표현",
+      "verdict": "확인필요",
+      "ad_quote": "실시간환율시세를최적의U/UX로한눈에!",
+      "suggest": "최상급·단정 표현은 객관적 근거(출처·기준일)를 붙이거나 완화 (예: '최고' → '○○ 기준 1위(출처, 기준일)')",
+      "boxes": [
+        [
+          1864,
+          2227,
+          2076,
+          2268
+        ],
+        [
+          813,
+          2311,
+          1171,
+          2376
+        ],
+        [
+          1487,
+          2312,
+          1757,
+          2374
+        ],
+        [
+          206,
+          2313,
+          475,
+          2373
+        ],
+        [
+          756,
+          2365,
+          783,
+          2386
+        ],
+        [
+          816,
+          2369,
+          1361,
+          2416
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "‘최적의 U/UX’라는 표현은 객관적 근거가 제시되지 않은 최상급 표현으로 볼 여지가 있어 확인이 필요합니다.",
+      "card_ids": [
+        "K-B10-2"
+      ]
+    },
+    {
+      "check_id": "C5",
+      "item": "혜택·불이익 균형 (전체 인상)",
+      "verdict": "확인필요",
+      "ad_quote": "* 금융 투자상품은 환율의 변동 이자율의 변동 등에 따라 투자원금의 초과손실이 발생할 수 있으며 그 손실은 투자자에게 귀속됩니다.",
+      "suggest": "혜택 문구와 위험고지의 크기·위치 균형 조정 (표시 방법 수정안 참고)",
+      "boxes": [
+        [
+          103,
+          2481,
+          2014,
+          2527
+        ],
+        [
+          2007,
+          2482,
+          2072,
+          2528
+        ],
+        [
+          101,
+          2516,
+          2074,
+          2567
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "[LLM 종합 의견 · LLM 판정 확인필요] 초과손실 가능성과 손실 귀속에 관한 고지는 포함되어 있습니다. 다만 모바일 위험고지 최소 글자 크기가 3.24pt이고 제목 최대 글자 크기는 28.59pt로 측정되어, 광고 전체에서 불이익 정보가 혜택 정보와 균형 있게 전달되는지 확인이 필요합니다.",
+      "card_ids": [
+        "K-2-38-21"
+      ]
+    }
+  ],
   "recommended": "D",
   "brief": null,
   "candidates": [
@@ -41,7 +137,7 @@
           "paragraph": 15,
           "font": "IBM Plex Sans KR Bold (기업형 고딕 (좁은 폭))",
           "align": "left",
-          "lines": 13,
+          "lines": 14,
           "orig_lines": 7,
           "size_factor": 1.12,
           "level": "L2",
@@ -49,7 +145,7 @@
             1.3,
             1.25
           ],
-          "short_px": 242,
+          "short_px": 285,
           "contrast_treatment": null,
           "fg_before": [
             7,
@@ -63,7 +159,7 @@
           ],
           "ink_delta_e": 0.0,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 1
         }
       ],
       "passed": false,
@@ -376,10 +472,24 @@
           ],
           "contrast_ratio": 20.11,
           "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            99,
+            3005,
+            1476,
+            3047
+          ],
+          "kind": "added",
+          "ink_h_px": null,
+          "fg_rgb": null,
+          "bg_rgb": null,
+          "contrast_ratio": null,
+          "contrast_conf": "low"
         }
       ],
       "why": [
-        "고지 영역에 242px 부족"
+        "고지 영역에 285px 부족"
       ],
       "changed_pct": 5.3,
       "ink_delta_e": 0.0,
@@ -391,7 +501,7 @@
       "label": "B안 · 배경 여백을 나눠 고지 공간 확보",
       "passed": false,
       "why": [
-        "평평한 배경 줄이 123px 모자람"
+        "평평한 배경 줄이 166px 모자람"
       ],
       "recommended": false
     },
@@ -400,7 +510,7 @@
       "label": "C안 · 위쪽 비주얼을 살짝 줄여 공간 확보",
       "passed": false,
       "why": [
-        "비주얼을 90%까지 줄여야 함 (한도 90%)"
+        "비주얼을 88%까지 줄여야 함 (한도 90%)"
       ],
       "recommended": false
     },
@@ -409,7 +519,7 @@
       "label": "T안 · 사진 아래쪽을 조금 다듬어 공간 확보",
       "passed": false,
       "why": [
-        "고지 바로 위 글자 없는 구간 9px < 필요 251px"
+        "고지 바로 위 글자 없는 구간 9px < 필요 295px"
       ],
       "recommended": false
     },
@@ -421,7 +531,7 @@
           "paragraph": 15,
           "font": "IBM Plex Sans KR Bold (기업형 고딕 (좁은 폭))",
           "align": "left",
-          "lines": 13,
+          "lines": 14,
           "orig_lines": 7,
           "size_factor": 1.12,
           "level": "L3",
@@ -431,7 +541,7 @@
           ],
           "seam_score": 0.05,
           "seam_y": 2609,
-          "grow_px": 251,
+          "grow_px": 295,
           "contrast_treatment": null,
           "fg_before": [
             7,
@@ -445,7 +555,7 @@
           ],
           "ink_delta_e": 0.0,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 1
         }
       ],
       "passed": true,
@@ -460,14 +570,14 @@
         {
           "id": "A3",
           "name": "글자 크기(pt)",
-          "value": 6.11,
+          "value": 6.2,
           "threshold": 5.9,
           "ok": true
         },
         {
           "id": "A4",
           "name": "헤드라인 대비",
-          "value": 0.214,
+          "value": 0.217,
           "threshold": 0.075,
           "ok": true
         }
@@ -476,9 +586,9 @@
         {
           "bbox": [
             99,
-            2243,
+            2200,
             2076,
-            2285
+            2242
           ],
           "kind": "retypeset",
           "ink_h_px": 35,
@@ -498,9 +608,9 @@
         {
           "bbox": [
             99,
-            2286,
+            2243,
             407,
-            2328
+            2285
           ],
           "kind": "retypeset",
           "ink_h_px": 28,
@@ -520,8 +630,30 @@
         {
           "bbox": [
             99,
-            2330,
+            2287,
             1999,
+            2329
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 35,
+          "fg_rgb": [
+            7,
+            7,
+            11
+          ],
+          "bg_rgb": [
+            255,
+            255,
+            255
+          ],
+          "contrast_ratio": 20.11,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            99,
+            2330,
+            484,
             2372
           ],
           "kind": "retypeset",
@@ -542,9 +674,9 @@
         {
           "bbox": [
             99,
-            2373,
-            484,
-            2415
+            2374,
+            2007,
+            2416
           ],
           "kind": "retypeset",
           "ink_h_px": 35,
@@ -565,30 +697,8 @@
           "bbox": [
             99,
             2417,
-            2007,
-            2459
-          ],
-          "kind": "retypeset",
-          "ink_h_px": 35,
-          "fg_rgb": [
-            7,
-            7,
-            11
-          ],
-          "bg_rgb": [
-            255,
-            255,
-            255
-          ],
-          "contrast_ratio": 20.11,
-          "contrast_conf": "high"
-        },
-        {
-          "bbox": [
-            99,
-            2460,
             572,
-            2502
+            2459
           ],
           "kind": "retypeset",
           "ink_h_px": 34,
@@ -608,9 +718,9 @@
         {
           "bbox": [
             99,
-            2504,
+            2461,
             2060,
-            2546
+            2503
           ],
           "kind": "retypeset",
           "ink_h_px": 35,
@@ -630,9 +740,31 @@
         {
           "bbox": [
             99,
-            2547,
+            2504,
             521,
-            2589
+            2546
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 34,
+          "fg_rgb": [
+            7,
+            7,
+            11
+          ],
+          "bg_rgb": [
+            255,
+            255,
+            255
+          ],
+          "contrast_ratio": 20.11,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            99,
+            2548,
+            1805,
+            2590
           ],
           "kind": "retypeset",
           "ink_h_px": 34,
@@ -653,30 +785,8 @@
           "bbox": [
             99,
             2591,
-            1805,
-            2633
-          ],
-          "kind": "retypeset",
-          "ink_h_px": 34,
-          "fg_rgb": [
-            7,
-            7,
-            11
-          ],
-          "bg_rgb": [
-            255,
-            255,
-            255
-          ],
-          "contrast_ratio": 20.11,
-          "contrast_conf": "high"
-        },
-        {
-          "bbox": [
-            99,
-            2634,
             828,
-            2676
+            2633
           ],
           "kind": "retypeset",
           "ink_h_px": 36,
@@ -696,9 +806,9 @@
         {
           "bbox": [
             99,
-            2678,
+            2635,
             2000,
-            2720
+            2677
           ],
           "kind": "retypeset",
           "ink_h_px": 30,
@@ -718,9 +828,9 @@
         {
           "bbox": [
             99,
-            2721,
+            2678,
             673,
-            2763
+            2720
           ],
           "kind": "retypeset",
           "ink_h_px": 28,
@@ -740,12 +850,34 @@
         {
           "bbox": [
             99,
-            2765,
+            2722,
             770,
-            2807
+            2764
           ],
           "kind": "retypeset",
           "ink_h_px": 27,
+          "fg_rgb": [
+            7,
+            7,
+            11
+          ],
+          "bg_rgb": [
+            255,
+            255,
+            255
+          ],
+          "contrast_ratio": 20.11,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            99,
+            2765,
+            1476,
+            2807
+          ],
+          "kind": "added",
+          "ink_h_px": 36,
           "fg_rgb": [
             7,
             7,
@@ -761,12 +893,12 @@
         }
       ],
       "why": [],
-      "changed_pct": 46.8,
+      "changed_pct": 49.7,
       "ink_delta_e": 0.0,
       "size_factor": 1.12,
-      "rows_removed": 86,
+      "rows_removed": 87,
       "rows_trimmed": 0,
-      "visual_scale": 0.931,
+      "visual_scale": 0.913,
       "recommended": true
     }
   ],
@@ -781,14 +913,14 @@
     {
       "id": "A3",
       "name": "글자 크기(pt)",
-      "value": 6.11,
+      "value": 6.2,
       "threshold": 5.9,
       "ok": true
     },
     {
       "id": "A4",
       "name": "헤드라인 대비",
-      "value": 0.214,
+      "value": 0.217,
       "threshold": 0.075,
       "ok": true
     }

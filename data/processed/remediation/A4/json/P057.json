@@ -27,7 +27,7 @@
     }
   ],
   "note": null,
-  "judge_model": null,
+  "judge_model": "gpt-6-luna",
   "content_add": [],
   "content_flag": [],
   "recommended": "B",

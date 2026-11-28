@@ -2,7 +2,7 @@
   "ad_id": "P047",
   "situation": "세로 · 브랜드 푸터 패널 · 그라데이션 배경",
   "font": "Noto Sans KR Bold (표준 고딕)",
-  "decision": "원본 유지",
+  "decision": "수정안",
   "checks_before": [
     {
       "id": "A2",
@@ -27,7 +27,164 @@
     }
   ],
   "note": "A2·A3·A4 모두 기준 통과 — 원본 디자인 그대로 진행",
-  "judge_model": null,
-  "content_add": [],
-  "content_flag": []
+  "judge_model": "gpt-6-luna",
+  "content_add": [
+    {
+      "check_id": "B1",
+      "item": "설명서·약관을 읽어볼 것 권유",
+      "verdict": "확인필요",
+      "text": "※ 계약 체결 전 금융상품설명서 및 약관을 반드시 읽어보시기 바랍니다.",
+      "placeholder": false,
+      "reason": "광고 문구에서 금융상품 설명서 및 약관을 읽어 볼 것을 권유하는 내용을 확인할 수 없습니다. 해당 내용은 필수 포함사항입니다.",
+      "evidence_issue": "재확인 불일치(1차 위반→2차 해당없음)",
+      "card_ids": [
+        "L-22-3"
+      ]
+    },
+    {
+      "check_id": "B5",
+      "item": "충분한 설명을 받을 권리",
+      "verdict": "확인필요",
+      "text": "※ 금융소비자는 해당 상품에 대하여 금융회사로부터 충분한 설명을 받을 권리가 있습니다.",
+      "placeholder": false,
+      "reason": "광고에 ‘충분한 설명을 받을 권리’ 또는 ‘투자 전 설명 청취’에 해당하는 문구가 없습니다. 이 항목은 시행령 사항으로 광고매체에 따라 생략될 수 있어 확인이 필요합니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "E-18-3",
+        "F-IV-2"
+      ]
+    }
+  ],
+  "content_flag": [],
+  "recommended": "A",
+  "brief": null,
+  "candidates": [
+    {
+      "name": "A",
+      "label": "제자리 수정 (규격·배치 그대로)",
+      "steps": [
+        {
+          "paragraph": 11,
+          "font": "Noto Sans KR Bold (표준 고딕)",
+          "align": "left",
+          "lines": 2,
+          "orig_lines": 7,
+          "size_factor": 1.0,
+          "level": "L2",
+          "contrast_treatment": null,
+          "fg_before": [
+            57,
+            58,
+            66
+          ],
+          "fg_after": [
+            57,
+            58,
+            66
+          ],
+          "ink_delta_e": 0.0,
+          "scrim_lines": 0,
+          "added_lines": 2
+        }
+      ],
+      "passed": true,
+      "checks_after": [
+        {
+          "id": "A2",
+          "name": "명암비",
+          "value": 8.22,
+          "threshold": 3.0,
+          "ok": true
+        },
+        {
+          "id": "A3",
+          "name": "글자 높이(mm)",
+          "value": 2.37,
+          "threshold": 2.13,
+          "ok": true
+        },
+        {
+          "id": "A4",
+          "name": "헤드라인 대비",
+          "value": 0.182,
+          "threshold": 0.075,
+          "ok": true
+        }
+      ],
+      "measured": [
+        {
+          "bbox": [
+            113,
+            3123,
+            936,
+            3156
+          ],
+          "kind": "added",
+          "ink_h_px": 28,
+          "fg_rgb": [
+            57,
+            58,
+            66
+          ],
+          "bg_rgb": [
+            236,
+            239,
+            239
+          ],
+          "contrast_ratio": 9.77,
+          "contrast_conf": "low"
+        },
+        {
+          "bbox": [
+            113,
+            3155,
+            1150,
+            3188
+          ],
+          "kind": "added",
+          "ink_h_px": 16,
+          "fg_rgb": [
+            238,
+            240,
+            241
+          ],
+          "bg_rgb": [
+            57,
+            64,
+            131
+          ],
+          "contrast_ratio": 8.22,
+          "contrast_conf": "high"
+        }
+      ],
+      "why": [],
+      "changed_pct": 0.2,
+      "ink_delta_e": 0.0,
+      "size_factor": 1.0,
+      "recommended": true
+    }
+  ],
+  "checks_after": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 8.22,
+      "threshold": 3.0,
+      "ok": true
+    },
+    {
+      "id": "A3",
+      "name": "글자 높이(mm)",
+      "value": 2.37,
+      "threshold": 2.13,
+      "ok": true
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.182,
+      "threshold": 0.075,
+      "ok": true
+    }
+  ]
 }

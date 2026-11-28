@@ -2,7 +2,7 @@
   "ad_id": "P042",
   "situation": "세로 · 단색·그라데이션 배경 위 · 단색 배경",
   "font": "IBM Plex Sans KR Bold (기업형 고딕 (좁은 폭))",
-  "decision": "수정안",
+  "decision": "수정안 + 표현 검토",
   "checks_before": [
     {
       "id": "A2",
@@ -27,9 +27,61 @@
     }
   ],
   "note": null,
-  "judge_model": null,
-  "content_add": [],
-  "content_flag": [],
+  "judge_model": "gpt-6-luna",
+  "content_add": [
+    {
+      "check_id": "B3",
+      "item": "투자 위험 (원금손실 가능, 손실은 투자자 귀속)",
+      "verdict": "위반",
+      "text": "※ 이 금융투자상품은 원금 손실이 발생할 수 있으며, 그 손실은 투자자에게 귀속됩니다.",
+      "placeholder": false,
+      "reason": "퇴직연금 광고임에도 원금 손실 가능성과 손실이 투자자에게 귀속된다는 위험 문구가 확인되지 않습니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "E-18-1-2"
+      ]
+    },
+    {
+      "check_id": "B7",
+      "item": "손실 상황 및 손실 추정액",
+      "verdict": "확인필요",
+      "text": "※ 【손실이 발생할 수 있는 상황】 시 최대 【손실 추정액】의 손실이 발생할 수 있습니다.",
+      "placeholder": true,
+      "reason": "광고에 자산가격 변동 등 손실이 발생할 수 있는 상황과 손실 추정액이 표시되어 있지 않습니다. 손실 관련 고지의 생략 가능성이나 추가 설명 여부를 확인할 필요가 있습니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "R-B5-3"
+      ]
+    }
+  ],
+  "content_flag": [
+    {
+      "check_id": "C3",
+      "item": "허위·과장, 최상급, 수익 과도 기대 표현",
+      "verdict": "확인필요",
+      "ad_quote": "\"연말정산 최대혜택은 퇴직연금이죠~\"",
+      "suggest": "최상급·단정 표현은 객관적 근거(출처·기준일)를 붙이거나 완화 (예: '최고' → '○○ 기준 1위(출처, 기준일)')",
+      "boxes": [],
+      "evidence_issue": null,
+      "reason": "‘연말정산 최대혜택’이라는 최상급 표현이 있으나, 광고에 그 비교·우위의 객관적 근거가 제시되지 않아 사실 여부 확인이 필요합니다.",
+      "card_ids": [
+        "K-B10-2"
+      ]
+    },
+    {
+      "check_id": "C5",
+      "item": "혜택·불이익 균형 (전체 인상)",
+      "verdict": "확인필요",
+      "ad_quote": "\"연말정산 최대혜택은 퇴직연금이죠~\"",
+      "suggest": "혜택 문구와 위험고지의 크기·위치 균형 조정 (표시 방법 수정안 참고)",
+      "boxes": [],
+      "evidence_issue": null,
+      "reason": "[LLM 종합 의견 · LLM 판정 확인필요] 혜택 문구가 강조된 가운데 위험고지의 최소 글자 크기는 3.6pt, 최소 대비값은 2.56으로 측정되었습니다. 고지의 실제 가독성과 광고 전체에서 혜택·불이익이 균형 있게 전달되는지 확인이 필요합니다.",
+      "card_ids": [
+        "K-2-38-21"
+      ]
+    }
+  ],
   "recommended": "A",
   "brief": null,
   "candidates": [
@@ -39,99 +91,26 @@
       "steps": [
         {
           "paragraph": 13,
-          "level": "L1",
-          "block": 22,
-          "fg_before": [
-            124,
-            140,
-            150
-          ],
-          "fg_after": [
-            108,
-            120,
-            128
-          ],
-          "ink_delta_e": 7.8
-        },
-        {
-          "paragraph": 13,
-          "level": "L1",
-          "block": 23,
-          "fg_before": [
-            124,
-            140,
-            150
-          ],
-          "fg_after": [
-            108,
-            120,
-            128
-          ],
-          "ink_delta_e": 7.8
-        },
-        {
-          "paragraph": 13,
-          "level": "L1",
-          "block": 24,
-          "fg_before": [
-            125,
-            140,
-            150
-          ],
-          "fg_after": [
-            105,
-            120,
-            129
-          ],
-          "ink_delta_e": 7.9
-        },
-        {
-          "paragraph": 13,
-          "level": "L1",
-          "block": 25,
-          "fg_before": [
-            125,
-            140,
-            150
-          ],
-          "fg_after": [
-            105,
-            120,
-            129
-          ],
-          "ink_delta_e": 7.9
-        },
-        {
-          "paragraph": 13,
-          "level": "L1",
-          "block": 26,
-          "fg_before": [
-            124,
-            140,
-            151
-          ],
-          "fg_after": [
-            113,
-            119,
-            124
-          ],
-          "ink_delta_e": 9.0
-        },
-        {
-          "paragraph": 13,
-          "level": "L1",
-          "block": 27,
+          "font": "IBM Plex Sans KR Bold (기업형 고딕 (좁은 폭))",
+          "align": "left",
+          "lines": 2,
+          "orig_lines": 6,
+          "size_factor": 1.0,
+          "level": "L2",
+          "contrast_treatment": "글자색 명도만 조정 (색상 유지)",
           "fg_before": [
             123,
             140,
             150
           ],
           "fg_after": [
-            107,
-            120,
-            128
+            173,
+            191,
+            201
           ],
-          "ink_delta_e": 7.8
+          "ink_delta_e": 19.1,
+          "scrim_lines": 0,
+          "added_lines": 2
         }
       ],
       "passed": true,
@@ -139,21 +118,21 @@
         {
           "id": "A2",
           "name": "명암비",
-          "value": 3.36,
+          "value": 3.16,
           "threshold": 3.0,
           "ok": true
         },
         {
           "id": "A3",
           "name": "글자 높이(mm)",
-          "value": 2.88,
+          "value": 3.01,
           "threshold": 2.13,
           "ok": true
         },
         {
           "id": "A4",
           "name": "헤드라인 대비",
-          "value": 0.141,
+          "value": 0.148,
           "threshold": 0.075,
           "ok": true
         }
@@ -161,140 +140,52 @@
       "measured": [
         {
           "bbox": [
-            131,
-            2530,
-            2043,
-            2559
+            128,
+            2697,
+            938,
+            2725
           ],
-          "kind": "recolor",
-          "ink_h_px": 21,
+          "kind": "added",
+          "ink_h_px": 22,
           "fg_rgb": [
-            108,
-            120,
-            128
+            112,
+            125,
+            133
           ],
           "bg_rgb": [
             199,
-            226,
-            241
+            227,
+            242
           ],
-          "contrast_ratio": 3.36,
+          "contrast_ratio": 3.16,
           "contrast_conf": "high"
         },
         {
           "bbox": [
-            131,
-            2558,
-            2042,
-            2588
+            128,
+            2725,
+            970,
+            2753
           ],
-          "kind": "recolor",
+          "kind": "added",
           "ink_h_px": 21,
           "fg_rgb": [
-            108,
-            120,
-            128
+            173,
+            203,
+            236
           ],
           "bg_rgb": [
-            199,
-            226,
-            241
+            19,
+            99,
+            172
           ],
-          "contrast_ratio": 3.36,
-          "contrast_conf": "high"
-        },
-        {
-          "bbox": [
-            131,
-            2587,
-            2042,
-            2615
-          ],
-          "kind": "recolor",
-          "ink_h_px": 21,
-          "fg_rgb": [
-            105,
-            120,
-            129
-          ],
-          "bg_rgb": [
-            198,
-            226,
-            241
-          ],
-          "contrast_ratio": 3.38,
-          "contrast_conf": "high"
-        },
-        {
-          "bbox": [
-            130,
-            2614,
-            2043,
-            2645
-          ],
-          "kind": "recolor",
-          "ink_h_px": 21,
-          "fg_rgb": [
-            105,
-            120,
-            129
-          ],
-          "bg_rgb": [
-            199,
-            226,
-            241
-          ],
-          "contrast_ratio": 3.38,
-          "contrast_conf": "high"
-        },
-        {
-          "bbox": [
-            130,
-            2641,
-            2044,
-            2674
-          ],
-          "kind": "recolor",
-          "ink_h_px": 21,
-          "fg_rgb": [
-            113,
-            119,
-            124
-          ],
-          "bg_rgb": [
-            198,
-            226,
-            241
-          ],
-          "contrast_ratio": 3.36,
-          "contrast_conf": "high"
-        },
-        {
-          "bbox": [
-            131,
-            2672,
-            2043,
-            2700
-          ],
-          "kind": "recolor",
-          "ink_h_px": 21,
-          "fg_rgb": [
-            107,
-            120,
-            128
-          ],
-          "bg_rgb": [
-            199,
-            226,
-            241
-          ],
-          "contrast_ratio": 3.37,
+          "contrast_ratio": 3.68,
           "contrast_conf": "high"
         }
       ],
       "why": [],
-      "changed_pct": 0.8,
-      "ink_delta_e": 9.0,
+      "changed_pct": 0.2,
+      "ink_delta_e": 19.1,
       "size_factor": 1.0,
       "recommended": true
     }
@@ -303,21 +194,21 @@
     {
       "id": "A2",
       "name": "명암비",
-      "value": 3.36,
+      "value": 3.16,
       "threshold": 3.0,
       "ok": true
     },
     {
       "id": "A3",
       "name": "글자 높이(mm)",
-      "value": 2.88,
+      "value": 3.01,
       "threshold": 2.13,
       "ok": true
     },
     {
       "id": "A4",
       "name": "헤드라인 대비",
-      "value": 0.141,
+      "value": 0.148,
       "threshold": 0.075,
       "ok": true
     }

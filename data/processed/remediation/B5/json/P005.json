@@ -2,7 +2,7 @@
   "ad_id": "P005",
   "situation": "세로 · 브랜드 푸터 패널 · 단색 배경",
   "font": "IBM Plex Sans KR Bold (기업형 고딕 (좁은 폭))",
-  "decision": "원본 유지",
+  "decision": "디자이너 검토",
   "checks_before": [
     {
       "id": "A2",
@@ -27,7 +27,221 @@
     }
   ],
   "note": "A2·A3·A4 모두 기준 통과 — 원본 디자인 그대로 진행",
-  "judge_model": null,
-  "content_add": [],
-  "content_flag": []
+  "judge_model": "gpt-6-luna",
+  "content_add": [
+    {
+      "check_id": "B8",
+      "item": "펀드·ETF 보수·수수료, 환매 관련 사항",
+      "verdict": "확인필요",
+      "text": "※ 총보수 연 【 】%, 환매 시 【환매 기준가 적용일·환매수수료】가 적용됩니다.",
+      "placeholder": true,
+      "reason": "광고에 집합투자증권과 상품별 보수·수수료에 관한 문구는 있으나, 환매수수료나 환매 신청 후 금액을 받는 시기는 확인되지 않습니다. 광고가 여러 상품을 다루고 있어 구체적인 펀드·ETF 적용 여부 및 환매사항은 확인이 필요합니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "K-2-37-2"
+      ]
+    }
+  ],
+  "content_flag": [
+    {
+      "check_id": "C3",
+      "item": "허위·과장, 최상급, 수익 과도 기대 표현",
+      "verdict": "확인필요",
+      "ad_quote": "1,400여개 금융상품으로 수익률도 탄탄하게!",
+      "suggest": "최상급·단정 표현은 객관적 근거(출처·기준일)를 붙이거나 완화 (예: '최고' → '○○ 기준 1위(출처, 기준일)')",
+      "boxes": [
+        [
+          411,
+          543,
+          729,
+          569
+        ],
+        [
+          329,
+          567,
+          813,
+          594
+        ],
+        [
+          767,
+          704,
+          1019,
+          743
+        ],
+        [
+          763,
+          736,
+          1025,
+          780
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "“수익률도 탄탄하게!”가 구체적인 근거 없이 수익에 대한 기대를 높이는 표현인지 확인이 필요합니다. 제공된 문구만으로는 과도한 기대를 유발한다고 단정하기 어렵습니다.",
+      "card_ids": [
+        "K-B10-2"
+      ]
+    },
+    {
+      "check_id": "C5",
+      "item": "혜택·불이익 균형 (전체 인상)",
+      "verdict": "확인필요",
+      "ad_quote": "같은 연금 다른 내일 투자를 넘어 안정성까지 KB국민은행 퇴직연금 IRP",
+      "suggest": "혜택 문구와 위험고지의 크기·위치 균형 조정 (표시 방법 수정안 참고)",
+      "boxes": [
+        [
+          31,
+          78,
+          158,
+          105
+        ],
+        [
+          182,
+          82,
+          266,
+          115
+        ],
+        [
+          337,
+          189,
+          806,
+          249
+        ],
+        [
+          150,
+          241,
+          986,
+          375
+        ],
+        [
+          238,
+          368,
+          901,
+          441
+        ],
+        [
+          268,
+          464,
+          873,
+          522
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "[LLM 종합 의견 · LLM 판정 확인필요] 혜택을 강조하는 문구와 함께 위험고지가 있지만, 모바일 측정값에서 위험고지 최소 글자 크기는 4.89pt이고 헤드라인 최대 글자 크기는 31.36pt입니다. 전체 광고의 인상에서 혜택과 불이익이 균형 있게 전달되는지 확인이 필요합니다.",
+      "card_ids": [
+        "K-2-38-21",
+        "R-18"
+      ]
+    }
+  ],
+  "recommended": null,
+  "brief": null,
+  "candidates": [
+    {
+      "name": "A",
+      "label": "제자리 수정 (규격·배치 그대로)",
+      "steps": [
+        {
+          "paragraph": 12,
+          "font": "IBM Plex Sans KR Bold (기업형 고딕 (좁은 폭))",
+          "align": "left",
+          "lines": 1,
+          "orig_lines": 5,
+          "size_factor": 1.0,
+          "level": "L2",
+          "contrast_treatment": null,
+          "fg_before": [
+            112,
+            104,
+            98
+          ],
+          "fg_after": [
+            112,
+            104,
+            98
+          ],
+          "ink_delta_e": 0.0,
+          "scrim_lines": 0,
+          "added_lines": 1
+        }
+      ],
+      "passed": false,
+      "checks_after": [
+        {
+          "id": "A2",
+          "name": "명암비",
+          "value": 5.46,
+          "threshold": 3.0,
+          "ok": true
+        },
+        {
+          "id": "A3",
+          "name": "글자 높이(mm)",
+          "value": 2.02,
+          "threshold": 2.13,
+          "ok": false
+        },
+        {
+          "id": "A4",
+          "name": "헤드라인 대비",
+          "value": 0.138,
+          "threshold": 0.075,
+          "ok": true
+        }
+      ],
+      "measured": [
+        {
+          "bbox": [
+            23,
+            1522,
+            575,
+            1544
+          ],
+          "kind": "added",
+          "ink_h_px": 13,
+          "fg_rgb": [
+            112,
+            104,
+            98
+          ],
+          "bg_rgb": [
+            255,
+            255,
+            255
+          ],
+          "contrast_ratio": 5.46,
+          "contrast_conf": "high"
+        }
+      ],
+      "why": [
+        "A3 미달"
+      ],
+      "changed_pct": 0.2,
+      "ink_delta_e": 0.0,
+      "size_factor": 1.0,
+      "recommended": false
+    }
+  ],
+  "checks_after": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 5.46,
+      "threshold": 3.0,
+      "ok": true
+    },
+    {
+      "id": "A3",
+      "name": "글자 높이(mm)",
+      "value": 2.02,
+      "threshold": 2.13,
+      "ok": false
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.138,
+      "threshold": 0.075,
+      "ok": true
+    }
+  ]
 }

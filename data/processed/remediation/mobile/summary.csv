@@ -1,127 +1,127 @@
 ﻿ad_id,decision,A2_before,A3_before,A4_before,A2_after,A3_after,A4_after,recommended,passing,added,flagged
-AD01,수정안,True,False,True,True,True,True,B,B+C,,
+AD01,수정안 + 표현 검토,True,False,True,True,True,True,B,B+C,B8,C3+C5
 AD02,디자이너 검토,True,False,True,True,False,True,,,,
 AD03,원본 유지,True,True,True,,,,,,,
-AD04,디자이너 검토,True,False,True,True,True,True,,,,
+AD04,디자이너 검토,True,False,True,True,True,True,,,B8,
 AD05,원본 유지,True,True,True,,,,,,,
-AD06,디자이너 검토,True,False,True,True,True,True,,,,
-AD07,원본 유지,True,True,True,,,,,,,
-AD08,디자이너 검토,True,False,True,True,True,True,,,,
-AD09,원본 유지,True,True,True,,,,,,,
-AD34,원본 유지,True,True,True,,,,,,,
-AD35,원본 유지,True,True,True,,,,,,,
-AD36,원본 유지,True,True,True,,,,,,,
-AD37,수정안,True,False,True,True,True,True,B,B,,
-AD38,원본 유지,True,True,True,,,,,,,
-AD39,원본 유지,True,True,True,,,,,,,
-AD40,원본 유지,True,True,True,,,,,,,
-AD41,수정안,True,False,True,True,True,True,B,B+C,,
-AD42,디자이너 검토,True,False,False,True,True,True,,,,
-AD43,원본 유지,True,True,True,,,,,,,
-AD44,원본 유지,True,True,True,,,,,,,
-AD45,원본 유지,True,True,True,,,,,,,
+AD06,디자이너 검토,True,False,True,True,True,True,,,,C3+C5
+AD07,표현 검토,True,True,True,,,,,,,C3+C5
+AD08,디자이너 검토,True,False,True,True,True,True,,,,C3+C5
+AD09,표현 검토,True,True,True,,,,,,,C3+C5
+AD34,수정안,True,True,True,True,True,True,B,B+C,B7,
+AD35,표현 검토,True,True,True,,,,,,,C1+C3+C5
+AD36,수정안 + 표현 검토,True,True,True,True,True,True,B,B+C+T,B7,C1+C3+C5
+AD37,수정안,True,False,True,True,True,True,D,D,B3+B7,
+AD38,수정안 + 표현 검토,True,True,True,True,True,True,C,C,D1+B3+B7,C1+C2+C3+C5
+AD39,표현 검토,True,True,True,,,,,,,C1+C3+C5
+AD40,수정안 + 표현 검토,True,True,True,True,True,True,B,B+C+T,B3+B7,C2+C3+C5
+AD41,수정안 + 표현 검토,True,False,True,True,True,True,B,B+C,D1+B3+B7,C1+C3+C5
+AD42,디자이너 검토,True,False,False,True,True,True,,,B3+B7,C1+C3+C5
+AD43,표현 검토,True,True,True,,,,,,,C1+C3+C5
+AD44,수정안 + 표현 검토,True,True,True,True,True,True,B,B+C+T,B7,C1+C3+C5
+AD45,수정안 + 표현 검토,True,True,True,True,True,True,B,B+C+T,B3+B7,C2+C3+C5
 AD46,원본 유지,True,True,True,,,,,,,
-AD47,수정안,True,False,True,True,True,True,B,B+C,,
-AD48,원본 유지,True,True,True,,,,,,,
-AD49,원본 유지,True,True,True,,,,,,,
-AD50,수정안,True,False,True,True,True,True,D,D,,
-P001,수정안,True,False,True,True,True,True,C,C,,
-P002,원본 유지,True,True,True,,,,,,,
-P003,수정안,True,False,True,True,True,True,D,D,,
-P004,디자이너 검토,True,False,True,True,True,True,,,,
-P005,수정안,,False,True,True,True,True,D,D,,
-P006,디자이너 검토,True,False,True,True,True,True,,,,
+AD47,수정안 + 표현 검토,True,False,True,True,True,True,B,B+C,B7,C1+C3+C5
+AD48,표현 검토,True,True,True,,,,,,,C3+C5
+AD49,수정안 + 표현 검토,True,True,True,True,True,True,B,B+C+T,B3+B7,C1+C3+C5
+AD50,수정안 + 표현 검토,True,False,True,True,True,True,D,D,B3+B7,C1+C3+C5
+P001,수정안 + 표현 검토,True,False,True,True,True,True,D,D,D1+B3+B7,C1+C3+C5
+P002,수정안 + 표현 검토,True,True,True,True,True,True,B,B+C+T,B3+B7,C1+C3+C5
+P003,수정안 + 표현 검토,True,False,True,True,True,True,D,D,B7+B8,C3+C5
+P004,디자이너 검토,True,False,True,True,True,True,,,,C3+C5
+P005,수정안 + 표현 검토,,False,True,True,True,True,D,D,B8,C3+C5
+P006,디자이너 검토,True,False,True,True,True,True,,,B5,
 P007,수정안,True,False,True,True,True,True,C,C,,
-P008,디자이너 검토,,False,True,True,True,True,,,,
-P009,수정안,True,False,True,True,True,True,D,D,,
-P010,디자이너 검토,True,False,True,True,True,True,,,,
-P011,수정안,False,False,True,True,True,True,D,D,,
-P012,수정안,True,False,True,True,True,True,D,D,,
-P013,디자이너 검토,False,False,True,False,True,True,,,,
+P008,디자이너 검토,,False,True,True,True,True,,,B5,
+P009,수정안 + 표현 검토,True,False,True,True,True,True,D,D,B7,C3+C5
+P010,디자이너 검토,True,False,True,True,True,True,,,B12,
+P011,디자이너 검토,False,False,True,True,True,True,,,D1+B7,C1+C3+C5
+P012,디자이너 검토,True,False,True,True,True,True,,,B3+B7,
+P013,디자이너 검토,False,False,True,False,True,True,,,B7+B8,C1+C3+C5
 P014,디자이너 검토,True,False,True,True,True,True,,,,
-P015,수정안,True,False,False,True,True,True,D,D,,
-P016,디자이너 검토,True,False,True,True,False,True,,,,
-P017,디자이너 검토,True,False,False,True,True,True,,,,
-P018,디자이너 검토,True,False,True,True,True,True,,,,
-P019,디자이너 검토,True,False,True,True,False,True,,,,
-P020,수정안,True,False,True,True,True,True,C,C,,
-P021,디자이너 검토,False,False,True,True,True,True,,,,
-P022,디자이너 검토,True,False,False,True,True,True,,,,
-P023,디자이너 검토,,False,True,True,True,True,,,,
-P024,디자이너 검토,True,False,False,True,True,True,,,,
-P025,디자이너 검토,False,False,True,False,True,True,,,,
-P026,디자이너 검토,False,False,True,True,True,True,,,,
-P027,디자이너 검토,True,False,True,True,True,True,,,,
-P028,수정안,True,False,False,True,True,True,T,C+T,,
-P029,수정안,False,False,True,True,True,True,C,C,,
-P030,디자이너 검토,False,False,False,True,True,True,,,,
-P031,디자이너 검토,False,False,True,True,True,True,,,,
+P015,디자이너 검토,True,False,False,True,True,True,,,B1+B5,
+P016,디자이너 검토,True,False,True,True,False,True,,,B5,
+P017,디자이너 검토,True,False,False,True,True,True,,,B5,
+P018,디자이너 검토,True,False,True,True,True,True,,,B7+B8,C1+C3+C5
+P019,디자이너 검토,True,False,True,True,False,True,,,B7+B8,C1+C3+C5
+P020,수정안 + 표현 검토,True,False,True,True,True,True,D,D,B3+B7+B8,C1+C3+C5
+P021,디자이너 검토,False,False,True,True,True,True,,,B3+B7,C1+C3+C5
+P022,디자이너 검토,True,False,False,True,True,True,,,B3+B7,C3+C5
+P023,디자이너 검토,,False,True,True,True,True,,,B5,
+P024,디자이너 검토,True,False,False,True,True,True,,,B5,
+P025,디자이너 검토,False,False,True,False,True,True,,,B5+B6,
+P026,디자이너 검토,False,False,True,True,True,True,,,B5+B12,
+P027,디자이너 검토,True,False,True,True,True,True,,,B5,
+P028,수정안,True,False,False,True,True,True,C,C,B5+B6,
+P029,수정안,False,False,True,True,True,True,C,C,B5,
+P030,디자이너 검토,False,False,False,True,True,True,,,B1+B5,
+P031,디자이너 검토,False,False,True,True,True,True,,,B5,
 P032,수정안,True,False,False,True,True,True,D,D,,
-P033,디자이너 검토,False,False,True,True,True,True,,,,
-P034,디자이너 검토,False,False,True,True,True,True,,,,
-P035,수정안,False,False,True,True,True,True,D,D,,
-P036,디자이너 검토,True,False,True,True,True,True,,,,
-P037,디자이너 검토,False,False,True,True,True,True,,,,
+P033,디자이너 검토,False,False,True,True,True,True,,,B5+B12,
+P034,디자이너 검토,False,False,True,True,True,True,,,B7,C2+C3+C5
+P035,수정안,False,False,True,True,True,True,D,D,B5,
+P036,디자이너 검토,True,False,True,True,True,True,,,B5,
+P037,디자이너 검토,False,False,True,True,True,True,,,B11,
 P038,수정안,False,False,True,True,True,True,D,D,,
-P039,원본 유지,True,True,True,,,,,,,
-P040,수정안,False,False,True,True,True,True,C,C,,
-P041,수정안,True,False,True,True,True,True,B,B+C,,
-P042,디자이너 검토,False,False,True,True,True,True,,,,
+P039,디자이너 검토,True,True,True,True,False,True,,,B7,C1
+P040,디자이너 검토,False,False,True,True,True,True,,,B1+B5+B6+B9+B10,
+P041,수정안,True,False,True,True,True,True,B,B,B5,
+P042,디자이너 검토,False,False,True,True,True,True,,,B3+B7,C3+C5
 P043,디자이너 검토,True,False,True,True,True,True,,,,
-P044,수정안,True,False,True,True,True,,T,C+T,,
-P045,수정안,False,False,True,True,True,True,D,D,,
-P046,고지 없음,False,False,True,,,,,,,
-P047,수정안,,False,True,True,True,True,D,D,,
+P044,수정안,True,False,True,True,True,,C,C,B1+B5,
+P045,수정안 + 표현 검토,False,False,True,True,True,True,D,D,D1+B7,C3+C5
+P046,디자이너 검토,False,False,True,False,False,True,,,B5+B6+B12,
+P047,수정안,,False,True,True,True,True,D,D,B1+B5,
 P048,수정안,False,False,True,True,True,True,D,D,,
-P049,디자이너 검토,True,False,True,True,True,True,,,,
-P050,수정안,True,False,True,True,True,True,D,D,,
-P051,수정안,True,False,True,True,True,True,D,D,,
-P052,수정안,True,False,True,True,True,True,C,C,,
-P053,수정안,True,False,False,True,True,True,D,D,,
+P049,디자이너 검토,True,False,True,True,True,True,,,D1,C1+C3+C4+C5
+P050,디자이너 검토,True,False,True,True,True,True,,,B5,
+P051,수정안,True,False,True,True,True,True,D,D,B1+B5,
+P052,수정안 + 표현 검토,True,False,True,True,True,True,D,D,D1,C3+C5
+P053,디자이너 검토,True,False,False,True,True,True,,,B5,
 P054,수정안,False,False,True,True,True,True,D,D,,
-P055,수정안,True,False,True,True,True,True,D,D,,
-P056,수정안,True,False,False,True,True,True,D,D,,
+P055,수정안,True,False,True,True,True,True,D,D,B5,
+P056,디자이너 검토,True,False,False,False,True,True,,,B5,
 P057,수정안,,False,True,True,True,True,D,D,,
 P058,수정안,True,False,True,True,True,True,T,C+T,,
-P059,수정안,True,False,True,True,True,True,C,C,,
-P060,디자이너 검토,True,False,True,True,True,True,,,,
-P061,디자이너 검토,True,False,True,True,True,True,,,,
+P059,수정안 + 표현 검토,True,False,True,True,True,True,C,C,B3+B7,C1+C2+C3+C5
+P060,디자이너 검토,True,False,True,True,True,True,,,B12,
+P061,디자이너 검토,True,False,True,True,True,True,,,B12,
 P062,디자이너 검토,True,False,True,True,True,True,,,,
-P063,수정안,True,False,True,True,True,True,C,C,,
-P064,수정안,True,False,True,True,True,True,B,B+C,,
+P063,수정안,True,False,True,True,True,True,C,C,B1+B5,
+P064,수정안 + 표현 검토,True,False,True,True,True,True,B,B,B3+B7,C2+C3+C5
 P065,디자이너 검토,False,False,True,False,True,True,,,,
 P066,디자이너 검토,True,False,True,True,True,True,,,,
 P067,디자이너 검토,False,False,True,False,True,True,,,,
 P068,디자이너 검토,True,False,True,False,True,True,,,,
-P069,디자이너 검토,True,False,True,True,True,True,,,,
-P070,수정안,False,False,True,True,True,True,D,D,,
-P071,디자이너 검토,True,False,True,True,True,True,,,,
-P072,수정안,,False,True,True,True,True,D,D,,
-P073,수정안,False,False,False,True,True,True,C,C,,
-P074,수정안,,False,True,True,True,True,D,D,,
-P075,수정안,False,False,True,True,True,True,D,D,,
-P076,디자이너 검토,True,False,True,True,True,True,,,,
-P077,원본 유지,True,True,True,,,,,,,
-P078,수정안,True,False,True,True,True,True,C,C,,
-P079,원본 유지,True,True,True,,,,,,,
-P080,원본 유지,True,True,True,,,,,,,
-P081,디자이너 검토,True,False,True,True,True,True,,,,
+P069,디자이너 검토,True,False,True,True,True,True,,,B12,
+P070,수정안,False,False,True,True,True,True,D,D,B5,
+P071,디자이너 검토,True,False,True,True,True,True,,,B5,
+P072,수정안,,False,True,True,True,True,D,D,B5,
+P073,수정안,False,False,False,True,True,True,C,C,B5,
+P074,디자이너 검토,,False,True,True,True,True,,,B5,
+P075,수정안 + 표현 검토,False,False,True,True,True,True,D,D,,C1+C3+C5
+P076,디자이너 검토,True,False,True,True,True,True,,,B12,
+P077,수정안 + 표현 검토,True,True,True,True,True,True,B,B+C,B7,C1+C2+C3+C5
+P078,수정안 + 표현 검토,True,False,True,True,True,True,C,C,,C1+C2+C3+C5
+P079,표현 검토,True,True,True,,,,,,,C3+C5
+P080,표현 검토,True,True,True,,,,,,,C3+C5
+P081,디자이너 검토,True,False,True,True,True,True,,,,C2+C3+C5
 P082,원본 유지,True,True,True,,,,,,,
-P083,디자이너 검토,True,False,True,True,True,True,,,,
+P083,디자이너 검토,True,False,True,True,True,True,,,,C3+C5
 P084,디자이너 검토,False,False,True,False,True,True,,,,
-P085,수정안,False,True,True,True,True,True,A,A,,
-P086,수정안,True,False,False,True,True,True,C,C,,
+P085,수정안,False,True,True,True,True,True,A,A,B6,
+P086,수정안 + 표현 검토,True,False,False,True,True,True,C,C,B7,C1+C3+C5
 P087,원본 유지,True,True,True,,,,,,,
-P088,디자이너 검토,,False,True,True,True,True,,,,
-P089,수정안,True,False,True,True,True,True,B,B+C,,
-P090,수정안,False,False,True,True,True,True,D,D,,
+P088,디자이너 검토,,False,True,True,True,True,,,B8,C3+C5
+P089,수정안 + 표현 검토,True,False,True,True,True,True,C,C,B7,C3+C5
+P090,디자이너 검토,False,False,True,True,True,True,,,B1+B5,
 P091,디자이너 검토,True,False,True,True,True,True,,,,
-P092,수정안,True,False,True,True,True,True,D,D,,
-P093,디자이너 검토,True,False,True,True,True,True,,,,
-P094,원본 유지,True,True,True,,,,,,,
-P095,디자이너 검토,True,False,True,True,True,True,,,,
-P096,수정안,True,False,True,True,True,True,C,C,,
+P092,수정안 + 표현 검토,True,False,True,True,True,True,D,D,,C3+C5
+P093,디자이너 검토,True,False,True,True,True,True,,,B5,
+P094,수정안 + 표현 검토,True,True,True,True,True,True,B,B+C+T,B7,C3+C5
+P095,디자이너 검토,True,False,True,True,True,True,,,B5,
+P096,수정안 + 표현 검토,True,False,True,True,True,True,C,C,,C1
 P097,디자이너 검토,True,False,False,True,True,True,,,,
-P098,디자이너 검토,,False,True,True,True,True,,,,
-P099,수정안,True,False,True,True,True,True,C,C,,
+P098,디자이너 검토,,False,True,True,True,True,,,D1,C1+C3+C5
+P099,수정안 + 표현 검토,True,False,True,True,True,True,C,C,B7,C2+C3+C5
 P100,디자이너 검토,False,False,True,True,True,True,,,,

@@ -22,7 +22,6 @@ remediation/
 ├─ export_summary.py       ← 리포트 요약용 통합 결과 파일 (report_input.json)
 ├─ rules/phrases.yaml      ← ① 내용: 항목별 추가 문구(B·D1)·표현 수정 방향(C·E)
 ├─ fonts/                  ← 글꼴 11종 (모두 OFL, OFL.txt) — 개발 환경과 상관없이 같은 결과
-├─ examples/judge_sample/  ← 05 결과 형식의 테스트용 샘플 (실제 판정 아님)
 ├─ report/                 ← 팀 내부 확인용 PDF와 생성 스크립트
 └─ remedy/
    ├─ situation.py  ← 상황 분류 (매체·컨테이너·배경·고지 구조)
@@ -91,7 +90,7 @@ python remediate.py --ids P021 --profiles A4,A3    # 일부
 python remediate_video.py --all                   # 영상 전체 (ffmpeg 필요)
 python export_summary.py                          # 리포트 요약용 report_input.json
 python report/make_report.py                      # 팀 내부 확인용 PDF
-python remediate.py --ids P021,AD07 --judge-dir examples/judge_sample --profiles A4 --out ../data/processed/remediation/content_sample   # ① 내용 수정 시험
+python remediate.py --all --judge-dir none        # 05 판정 없이 ② 표시 방법만
 ```
 
 필요 패키지: `numpy`, `pillow`, `pyyaml` (requirements.txt에 있음), 영상은 `ffmpeg`.
@@ -143,6 +142,18 @@ python remediate.py --ids P021,AD07 --judge-dir examples/judge_sample --profiles
   }]
 }
 ```
+
+## 05 판정 연동
+
+`config.yaml`의 `judge_dir`(기본 `../rag/outputs`)와 `judge_model`(기본 `gpt-6-luna`)로 `{ad_id}__{judge_model}.json`만 읽는다.
+
+| 항목 | 처리 |
+|---|---|
+| B1~B12·D1 위반/확인필요 | `rules/phrases.yaml` 표준 문구를 본 고지 문단에 추가 (상품유형 `product`에 맞는 것만, 비슷한 문장이 이미 있으면 생략) |
+| C1~C4·E 위반/확인필요 | 카피는 바꾸지 않고 `ad_quote` 위치를 주황 상자로 표시 + 고칠 방향 제안 |
+| C5 (혜택·불이익 균형) | 05에서 코드로 정하는 항목. `measure`에 **C3가 있을 때만** 표현 검토로 올림 — 원인이 A 항목(표시 방법)뿐이면 ② 표시 수정이 이미 고치므로 뺌 |
+| `ad_quote` 찾기 | ` / `로 나뉜 문구는 조각마다, 여러 OCR 블록에 걸친 문구는 이어진 블록을 합쳐서 찾음. 측정값을 옮긴 인용(예: `"risk_headline_ratio": 0.173`)은 위치 표시 안 함 |
+| `issues`(05 근거 검증 실패) | 추가·표시는 하되 **'근거 확인 필요'**로 따로 표시 (`content_add[].evidence_issue`, `content_flag[].evidence_issue`) |
 
 ## 한계
 

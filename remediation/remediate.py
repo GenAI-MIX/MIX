@@ -51,7 +51,7 @@ def fix_ad(ad, root, cfg, fonts, mcfg, out, phrases, judge_dir):
         t["situation"] = situation
         t["font_key"] = font_key
     blocks = {b["id"]: b for b in ad["ocr_blocks"]}
-    judge = load_judge(judge_dir, ad["ad_id"]) if judge_dir else None
+    judge = load_judge(judge_dir, ad["ad_id"], cfg["paths"].get("judge_model")) if judge_dir else None
     cp = plan(ad, judge, phrases)                       # ① 내용: 추가할 문구·표시할 표현
     rec = {"ad_id": ad["ad_id"], "situation": ad["_situation"], "font": rec_font, "decision": dg["decision"], "checks_before": dg["checks"], "note": dg.get("note"),
            "judge_model": cp["model"], "content_add": cp["add"], "content_flag": cp["flag"]}
@@ -283,10 +283,12 @@ def content_lines(cp):
     out = []
     for a in cp["add"]:
         tag = "채울 값 있음 " if a["placeholder"] else ""
-        out.append(f"[추가 {a['check_id']} {a['verdict']}] {tag}{a['text']}")
+        chk = "근거 확인 필요 " if a.get("evidence_issue") else ""
+        out.append(f"[추가 {a['check_id']} {a['verdict']}] {chk}{tag}{a['text']}")
     for f in cp["flag"]:
         q = f"'{f['ad_quote'][:24]}' " if f["ad_quote"] else ""
-        out.append(f"[표현 {f['check_id']} {f['verdict']}] {q}→ {f['suggest']}")
+        chk = "근거 확인 필요 · " if f.get("evidence_issue") else ""
+        out.append(f"[표현 {f['check_id']} {f['verdict']}] {chk}{q}→ {f['suggest']}")
     return out
 
 

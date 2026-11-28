@@ -27,10 +27,35 @@
     }
   ],
   "note": null,
-  "judge_model": null,
-  "content_add": [],
+  "judge_model": "gpt-6-luna",
+  "content_add": [
+    {
+      "check_id": "B1",
+      "item": "설명서·약관을 읽어볼 것 권유",
+      "verdict": "위반",
+      "text": "※ 계약 체결 전 금융상품설명서 및 약관을 반드시 읽어보시기 바랍니다.",
+      "placeholder": false,
+      "reason": "광고에는 설명서 및 약관을 읽어볼 것을 권유하는 문구가 없습니다. 법률상 광고에 반드시 포함해야 하는 사항이므로 위반입니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "L-22-3"
+      ]
+    },
+    {
+      "check_id": "B5",
+      "item": "충분한 설명을 받을 권리",
+      "verdict": "확인필요",
+      "text": "※ 금융소비자는 해당 상품에 대하여 금융회사로부터 충분한 설명을 받을 권리가 있습니다.",
+      "placeholder": false,
+      "reason": "‘충분한 설명을 받을 권리’ 또는 ‘투자 전 설명 청취’ 문구는 확인되지 않습니다. 다만 이 사항은 시행령 사항으로 일부 매체에서 생략될 수 있어 확인이 필요합니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "E-18-3"
+      ]
+    }
+  ],
   "content_flag": [],
-  "recommended": "T",
+  "recommended": "D",
   "brief": null,
   "candidates": [
     {
@@ -41,7 +66,7 @@
           "paragraph": 9,
           "font": "Pretendard SemiBold (모던 고딕)",
           "align": "left",
-          "lines": 4,
+          "lines": 6,
           "orig_lines": 3,
           "size_factor": 2.27,
           "level": "L2",
@@ -49,7 +74,7 @@
             1.5,
             1.25
           ],
-          "short_px": 31,
+          "short_px": 76,
           "contrast_treatment": "글자색 명도만 조정 (색상 유지)",
           "fg_before": [
             200,
@@ -63,7 +88,7 @@
           ],
           "ink_delta_e": 64.1,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 2
         }
       ],
       "passed": false,
@@ -71,21 +96,21 @@
         {
           "id": "A2",
           "name": "명암비",
-          "value": 2.53,
+          "value": 2.54,
           "threshold": 3.0,
           "ok": false
         },
         {
           "id": "A3",
           "name": "글자 높이(mm)",
-          "value": 2.17,
+          "value": 1.98,
           "threshold": 2.13,
-          "ok": true
+          "ok": false
         },
         {
           "id": "A4",
           "name": "헤드라인 대비",
-          "value": 0.15,
+          "value": 0.137,
           "threshold": 0.075,
           "ok": true
         }
@@ -167,7 +192,7 @@
           "kind": "retypeset",
           "ink_h_px": 10,
           "fg_rgb": [
-            254,
+            255,
             255,
             255
           ],
@@ -176,15 +201,52 @@
             170,
             214
           ],
-          "contrast_ratio": 2.53,
+          "contrast_ratio": 2.54,
+          "contrast_conf": "low"
+        },
+        {
+          "bbox": [
+            328,
+            757,
+            931,
+            783
+          ],
+          "kind": "added",
+          "ink_h_px": 6,
+          "fg_rgb": [
+            104,
+            146,
+            156
+          ],
+          "bg_rgb": [
+            254,
+            255,
+            255
+          ],
+          "contrast_ratio": 3.39,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            328,
+            779,
+            1088,
+            805
+          ],
+          "kind": "added",
+          "ink_h_px": null,
+          "fg_rgb": null,
+          "bg_rgb": null,
+          "contrast_ratio": null,
           "contrast_conf": "low"
         }
       ],
       "why": [
-        "고지 영역에 31px 부족",
-        "A2 미달"
+        "고지 영역에 76px 부족",
+        "A2 미달",
+        "A3 미달"
       ],
-      "changed_pct": 2.1,
+      "changed_pct": 2.2,
       "ink_delta_e": 64.1,
       "size_factor": 2.27,
       "recommended": false
@@ -194,176 +256,37 @@
       "label": "B안 · 배경 여백을 나눠 고지 공간 확보",
       "passed": false,
       "why": [
-        "평평한 배경 줄이 22px 모자람"
+        "평평한 배경 줄이 67px 모자람"
       ],
       "recommended": false
     },
     {
       "name": "C",
       "label": "C안 · 위쪽 비주얼을 살짝 줄여 공간 확보",
-      "steps": [
-        {
-          "paragraph": 9,
-          "font": "Pretendard SemiBold (모던 고딕)",
-          "align": "left",
-          "lines": 4,
-          "orig_lines": 3,
-          "size_factor": 2.27,
-          "level": "L4",
-          "pitch_ratio": [
-            1.5,
-            1.25
-          ],
-          "seam_score": 9.06,
-          "note": "옆 단/사진 때문에 깔끔하게 늘릴 줄이 없음",
-          "seam_y": 692,
-          "grow_px": 33,
-          "contrast_treatment": "띠·박스 색 명도 조정 ΔE 15 (글자색 유지)",
-          "fg_before": [
-            200,
-            244,
-            255
-          ],
-          "fg_after": [
-            200,
-            244,
-            255
-          ],
-          "ink_delta_e": 0.0,
-          "scrim_lines": 0,
-          "added_lines": 0
-        }
+      "passed": false,
+      "why": [
+        "비주얼을 88%까지 줄여야 함 (한도 90%)"
       ],
-      "passed": true,
-      "checks_after": [
-        {
-          "id": "A2",
-          "name": "명암비",
-          "value": 3.42,
-          "threshold": 3.0,
-          "ok": true
-        },
-        {
-          "id": "A3",
-          "name": "글자 높이(mm)",
-          "value": 2.23,
-          "threshold": 2.13,
-          "ok": true
-        },
-        {
-          "id": "A4",
-          "name": "헤드라인 대비",
-          "value": 0.154,
-          "threshold": 0.075,
-          "ok": true
-        }
-      ],
-      "measured": [
-        {
-          "bbox": [
-            328,
-            633,
-            1192,
-            662
-          ],
-          "kind": "retypeset",
-          "ink_h_px": 20,
-          "fg_rgb": [
-            200,
-            244,
-            255
-          ],
-          "bg_rgb": [
-            61,
-            134,
-            174
-          ],
-          "contrast_ratio": 3.42,
-          "contrast_conf": "high"
-        },
-        {
-          "bbox": [
-            328,
-            655,
-            799,
-            684
-          ],
-          "kind": "retypeset",
-          "ink_h_px": 16,
-          "fg_rgb": [
-            200,
-            244,
-            255
-          ],
-          "bg_rgb": [
-            59,
-            133,
-            173
-          ],
-          "contrast_ratio": 3.47,
-          "contrast_conf": "high"
-        },
-        {
-          "bbox": [
-            328,
-            678,
-            1314,
-            704
-          ],
-          "kind": "retypeset",
-          "ink_h_px": null,
-          "fg_rgb": [
-            200,
-            244,
-            255
-          ],
-          "bg_rgb": [
-            60,
-            134,
-            174
-          ],
-          "contrast_ratio": 3.42,
-          "contrast_conf": "low"
-        },
-        {
-          "bbox": [
-            328,
-            701,
-            1079,
-            730
-          ],
-          "kind": "retypeset",
-          "ink_h_px": 18,
-          "fg_rgb": [
-            200,
-            244,
-            255
-          ],
-          "bg_rgb": [
-            60,
-            134,
-            174
-          ],
-          "contrast_ratio": 3.42,
-          "contrast_conf": "high"
-        }
-      ],
-      "why": [],
-      "changed_pct": 44.0,
-      "ink_delta_e": 0.0,
-      "size_factor": 2.27,
-      "visual_scale": 0.95,
       "recommended": false
     },
     {
       "name": "T",
       "label": "T안 · 사진 아래쪽을 조금 다듬어 공간 확보",
+      "passed": false,
+      "why": [
+        "고지 바로 위 글자 없는 구간 33px < 필요 78px"
+      ],
+      "recommended": false
+    },
+    {
+      "name": "D",
+      "label": "조합안 · 여백 회수 + 사진 다듬기 + 비주얼 살짝 축소",
       "steps": [
         {
           "paragraph": 9,
           "font": "Pretendard SemiBold (모던 고딕)",
           "align": "left",
-          "lines": 4,
+          "lines": 6,
           "orig_lines": 3,
           "size_factor": 2.27,
           "level": "L4",
@@ -374,7 +297,7 @@
           "seam_score": 9.06,
           "note": "옆 단/사진 때문에 깔끔하게 늘릴 줄이 없음",
           "seam_y": 692,
-          "grow_px": 33,
+          "grow_px": 78,
           "contrast_treatment": "띠·박스 색 명도 조정 ΔE 15 (글자색 유지)",
           "fg_before": [
             200,
@@ -388,7 +311,7 @@
           ],
           "ink_delta_e": 0.0,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 2
         }
       ],
       "passed": true,
@@ -403,14 +326,14 @@
         {
           "id": "A3",
           "name": "글자 높이(mm)",
-          "value": 2.23,
+          "value": 2.36,
           "threshold": 2.13,
           "ok": true
         },
         {
           "id": "A4",
           "name": "헤드라인 대비",
-          "value": 0.154,
+          "value": 0.162,
           "threshold": 0.075,
           "ok": true
         }
@@ -419,9 +342,9 @@
         {
           "bbox": [
             328,
-            633,
+            595,
             1192,
-            662
+            624
           ],
           "kind": "retypeset",
           "ink_h_px": 20,
@@ -441,9 +364,9 @@
         {
           "bbox": [
             328,
-            655,
+            617,
             799,
-            684
+            646
           ],
           "kind": "retypeset",
           "ink_h_px": 16,
@@ -463,9 +386,9 @@
         {
           "bbox": [
             328,
-            678,
+            640,
             1314,
-            704
+            666
           ],
           "kind": "retypeset",
           "ink_h_px": null,
@@ -485,9 +408,9 @@
         {
           "bbox": [
             328,
-            701,
+            663,
             1079,
-            730
+            692
           ],
           "kind": "retypeset",
           "ink_h_px": 18,
@@ -503,13 +426,59 @@
           ],
           "contrast_ratio": 3.42,
           "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            328,
+            686,
+            931,
+            712
+          ],
+          "kind": "added",
+          "ink_h_px": 19,
+          "fg_rgb": [
+            200,
+            244,
+            255
+          ],
+          "bg_rgb": [
+            59,
+            134,
+            173
+          ],
+          "contrast_ratio": 3.43,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            328,
+            708,
+            1088,
+            734
+          ],
+          "kind": "added",
+          "ink_h_px": 19,
+          "fg_rgb": [
+            200,
+            244,
+            255
+          ],
+          "bg_rgb": [
+            61,
+            134,
+            174
+          ],
+          "contrast_ratio": 3.42,
+          "contrast_conf": "high"
         }
       ],
       "why": [],
-      "changed_pct": 15.1,
+      "changed_pct": 51.7,
       "ink_delta_e": 0.0,
       "size_factor": 2.27,
-      "rows_trimmed": 33,
+      "rows_removed": 7,
+      "rows_trimmed": 0,
+      "visual_scale": 0.892,
       "recommended": true
     }
   ],
@@ -524,14 +493,14 @@
     {
       "id": "A3",
       "name": "글자 높이(mm)",
-      "value": 2.23,
+      "value": 2.36,
       "threshold": 2.13,
       "ok": true
     },
     {
       "id": "A4",
       "name": "헤드라인 대비",
-      "value": 0.154,
+      "value": 0.162,
       "threshold": 0.075,
       "ok": true
     }

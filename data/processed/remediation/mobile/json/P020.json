@@ -2,7 +2,7 @@
   "ad_id": "P020",
   "situation": "세로 · 브랜드 푸터 패널 · 단색 배경",
   "font": "나눔고딕 Bold (클래식 고딕)",
-  "decision": "수정안",
+  "decision": "수정안 + 표현 검토",
   "checks_before": [
     {
       "id": "A2",
@@ -27,10 +27,181 @@
     }
   ],
   "note": null,
-  "judge_model": null,
-  "content_add": [],
-  "content_flag": [],
-  "recommended": "C",
+  "judge_model": "gpt-6-luna",
+  "content_add": [
+    {
+      "check_id": "B3",
+      "item": "투자 위험 (원금손실 가능, 손실은 투자자 귀속)",
+      "verdict": "위반",
+      "text": "※ 이 금융투자상품은 원금 손실이 발생할 수 있으며, 그 손실은 투자자에게 귀속됩니다.",
+      "placeholder": false,
+      "reason": "광고에는 원금손실 가능성과 그 손실이 투자자에게 귀속된다는 고지가 확인되지 않습니다. 예금자보호 문구만으로는 해당 투자위험 고지를 충족하지 않습니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "K-B9-1"
+      ]
+    },
+    {
+      "check_id": "B7",
+      "item": "손실 상황 및 손실 추정액",
+      "verdict": "확인필요",
+      "text": "※ 【손실이 발생할 수 있는 상황】 시 최대 【손실 추정액】의 손실이 발생할 수 있습니다.",
+      "placeholder": true,
+      "reason": "광고에는 손실이 발생할 수 있는 상황과 그에 따른 손실 추정액이 표시되어 있지 않습니다. 손실 범위 등이 생략된 경우를 고려해 확인이 필요합니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "K-B9-1"
+      ]
+    },
+    {
+      "check_id": "B8",
+      "item": "펀드·ETF 보수·수수료, 환매 관련 사항",
+      "verdict": "확인필요",
+      "text": "※ 총보수 연 【 】%, 환매 시 【환매 기준가 적용일·환매수수료】가 적용됩니다.",
+      "placeholder": true,
+      "reason": "보수·수수료의 범위는 표시되어 있으나, 광고에 펀드와 ETF가 함께 언급된 반면 일반 펀드의 환매수수료 및 환매 신청 후 수령 시기는 확인되지 않습니다.",
+      "evidence_issue": null,
+      "card_ids": [
+        "K-2-37-2"
+      ]
+    }
+  ],
+  "content_flag": [
+    {
+      "check_id": "C1",
+      "item": "우대 수익률 조건·운용실적 기준일 글자 크기",
+      "verdict": "확인필요",
+      "ad_quote": "23년~25년 고용노동부 주관 퇴직연금사업자평가 3년 연속 우수사업자 선정",
+      "suggest": "수익률을 강조할 때 조건·기준일·산출기간을 수익률 바로 옆에 비슷한 크기로 표시",
+      "boxes": [
+        [
+          75,
+          442,
+          455,
+          555
+        ],
+        [
+          146,
+          613,
+          349,
+          662
+        ],
+        [
+          187,
+          657,
+          307,
+          699
+        ],
+        [
+          162,
+          751,
+          331,
+          772
+        ],
+        [
+          183,
+          771,
+          309,
+          792
+        ],
+        [
+          172,
+          791,
+          321,
+          813
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "퇴직연금사업자 평가 수상실적을 표시하고 있으나, 해당 문구와 출처·기간 등의 글자 크기 및 분리 여부를 확인할 측정값이 없습니다.",
+      "card_ids": [
+        "K-2-38-12"
+      ]
+    },
+    {
+      "check_id": "C3",
+      "item": "허위·과장, 최상급, 수익 과도 기대 표현",
+      "verdict": "확인필요",
+      "ad_quote": "수익률을바꾸는 투자관리",
+      "suggest": "최상급·단정 표현은 객관적 근거(출처·기준일)를 붙이거나 완화 (예: '최고' → '○○ 기준 1위(출처, 기준일)')",
+      "boxes": [
+        [
+          31,
+          43,
+          251,
+          109
+        ],
+        [
+          76,
+          272,
+          498,
+          328
+        ],
+        [
+          70,
+          324,
+          509,
+          450
+        ],
+        [
+          75,
+          442,
+          455,
+          555
+        ],
+        [
+          146,
+          613,
+          349,
+          662
+        ],
+        [
+          187,
+          657,
+          307,
+          699
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "‘수익률을 바꾸는 투자관리’가 수익 개선을 암시하는 표현으로 받아들여질 수 있으나, 문구만으로 과도한 기대를 유발한다고 단정하기는 어렵습니다.",
+      "card_ids": [
+        "K-B10-2"
+      ]
+    },
+    {
+      "check_id": "C5",
+      "item": "혜택·불이익 균형 (전체 인상)",
+      "verdict": "확인필요",
+      "ad_quote": "※연금 외 수령 시세액공제 받은 납입 원금 및 수익에 대해 기타소득세(16.5%) 부과",
+      "suggest": "혜택 문구와 위험고지의 크기·위치 균형 조정 (표시 방법 수정안 참고)",
+      "boxes": [
+        [
+          259,
+          1630,
+          999,
+          1651
+        ],
+        [
+          51,
+          1636,
+          218,
+          1687
+        ],
+        [
+          260,
+          1650,
+          998,
+          1671
+        ]
+      ],
+      "evidence_issue": null,
+      "reason": "[LLM 종합 의견 · LLM 판정 확인필요] 세금·수수료 등 불이익 고지는 있으나, 위험고지 글자 크기 최소 4.8pt와 대비도 3.89로 혜택 문구와의 시각적 균형을 추가로 확인할 필요가 있습니다.",
+      "card_ids": [
+        "K-2-38-21",
+        "R-18"
+      ]
+    }
+  ],
+  "recommended": "D",
   "brief": null,
   "candidates": [
     {
@@ -41,7 +212,7 @@
           "paragraph": 12,
           "font": "나눔고딕 Bold (클래식 고딕)",
           "align": "left",
-          "lines": 10,
+          "lines": 13,
           "orig_lines": 5,
           "size_factor": 1.21,
           "level": "L2",
@@ -49,7 +220,7 @@
             1.43,
             1.28
           ],
-          "short_px": 120,
+          "short_px": 185,
           "contrast_treatment": "글자색 명도만 조정 (색상 유지)",
           "fg_before": [
             172,
@@ -63,7 +234,7 @@
           ],
           "ink_delta_e": 36.1,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 3
         }
       ],
       "passed": false,
@@ -286,10 +457,52 @@
           "bg_rgb": null,
           "contrast_ratio": null,
           "contrast_conf": "low"
+        },
+        {
+          "bbox": [
+            257,
+            1822,
+            921,
+            1847
+          ],
+          "kind": "added",
+          "ink_h_px": null,
+          "fg_rgb": null,
+          "bg_rgb": null,
+          "contrast_ratio": null,
+          "contrast_conf": "low"
+        },
+        {
+          "bbox": [
+            257,
+            1843,
+            903,
+            1868
+          ],
+          "kind": "added",
+          "ink_h_px": null,
+          "fg_rgb": null,
+          "bg_rgb": null,
+          "contrast_ratio": null,
+          "contrast_conf": "low"
+        },
+        {
+          "bbox": [
+            257,
+            1865,
+            833,
+            1890
+          ],
+          "kind": "added",
+          "ink_h_px": null,
+          "fg_rgb": null,
+          "bg_rgb": null,
+          "contrast_ratio": null,
+          "contrast_conf": "low"
         }
       ],
       "why": [
-        "고지 영역에 120px 부족"
+        "고지 영역에 185px 부족"
       ],
       "changed_pct": 2.5,
       "ink_delta_e": 36.1,
@@ -301,19 +514,37 @@
       "label": "B안 · 배경 여백을 나눠 고지 공간 확보",
       "passed": false,
       "why": [
-        "평평한 배경 줄이 98px 모자람"
+        "평평한 배경 줄이 163px 모자람"
       ],
       "recommended": false
     },
     {
       "name": "C",
       "label": "C안 · 위쪽 비주얼을 살짝 줄여 공간 확보",
+      "passed": false,
+      "why": [
+        "비주얼을 88%까지 줄여야 함 (한도 90%)"
+      ],
+      "recommended": false
+    },
+    {
+      "name": "T",
+      "label": "T안 · 사진 아래쪽을 조금 다듬어 공간 확보",
+      "passed": false,
+      "why": [
+        "고지 바로 위 글자 없는 구간 47px < 필요 189px"
+      ],
+      "recommended": false
+    },
+    {
+      "name": "D",
+      "label": "조합안 · 여백 회수 + 사진 다듬기 + 비주얼 살짝 축소",
       "steps": [
         {
           "paragraph": 12,
           "font": "나눔고딕 Bold (클래식 고딕)",
           "align": "left",
-          "lines": 10,
+          "lines": 13,
           "orig_lines": 5,
           "size_factor": 1.21,
           "level": "L3",
@@ -323,7 +554,7 @@
           ],
           "seam_score": 2.06,
           "seam_y": 1710,
-          "grow_px": 124,
+          "grow_px": 189,
           "contrast_treatment": null,
           "fg_before": [
             172,
@@ -337,7 +568,7 @@
           ],
           "ink_delta_e": 0.0,
           "scrim_lines": 0,
-          "added_lines": 0
+          "added_lines": 3
         }
       ],
       "passed": true,
@@ -368,9 +599,9 @@
         {
           "bbox": [
             257,
-            1482,
+            1432,
             961,
-            1507
+            1457
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -390,9 +621,9 @@
         {
           "bbox": [
             257,
-            1503,
+            1453,
             475,
-            1527
+            1477
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -412,9 +643,9 @@
         {
           "bbox": [
             257,
-            1525,
+            1475,
             953,
-            1550
+            1500
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -434,9 +665,9 @@
         {
           "bbox": [
             257,
-            1546,
+            1496,
             470,
-            1571
+            1521
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -456,9 +687,9 @@
         {
           "bbox": [
             257,
-            1568,
+            1518,
             982,
-            1593
+            1543
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -478,9 +709,9 @@
         {
           "bbox": [
             257,
-            1590,
+            1540,
             496,
-            1615
+            1565
           ],
           "kind": "retypeset",
           "ink_h_px": 16,
@@ -500,9 +731,9 @@
         {
           "bbox": [
             257,
-            1611,
+            1561,
             853,
-            1636
+            1586
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -522,9 +753,9 @@
         {
           "bbox": [
             257,
-            1633,
+            1583,
             623,
-            1658
+            1608
           ],
           "kind": "retypeset",
           "ink_h_px": 14,
@@ -544,9 +775,9 @@
         {
           "bbox": [
             257,
-            1654,
+            1604,
             475,
-            1678
+            1628
           ],
           "kind": "retypeset",
           "ink_h_px": 17,
@@ -566,12 +797,78 @@
         {
           "bbox": [
             257,
-            1676,
+            1626,
             852,
-            1701
+            1651
           ],
           "kind": "retypeset",
           "ink_h_px": 14,
+          "fg_rgb": [
+            172,
+            254,
+            237
+          ],
+          "bg_rgb": [
+            3,
+            135,
+            107
+          ],
+          "contrast_ratio": 3.88,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            257,
+            1648,
+            921,
+            1673
+          ],
+          "kind": "added",
+          "ink_h_px": 17,
+          "fg_rgb": [
+            172,
+            254,
+            237
+          ],
+          "bg_rgb": [
+            3,
+            135,
+            107
+          ],
+          "contrast_ratio": 3.88,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            257,
+            1669,
+            903,
+            1694
+          ],
+          "kind": "added",
+          "ink_h_px": 17,
+          "fg_rgb": [
+            172,
+            254,
+            237
+          ],
+          "bg_rgb": [
+            3,
+            135,
+            107
+          ],
+          "contrast_ratio": 3.88,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            257,
+            1691,
+            833,
+            1716
+          ],
+          "kind": "added",
+          "ink_h_px": 17,
           "fg_rgb": [
             172,
             254,
@@ -587,20 +884,13 @@
         }
       ],
       "why": [],
-      "changed_pct": 52.5,
+      "changed_pct": 55.3,
       "ink_delta_e": 0.0,
       "size_factor": 1.21,
-      "visual_scale": 0.922,
+      "rows_removed": 17,
+      "rows_trimmed": 47,
+      "visual_scale": 0.919,
       "recommended": true
-    },
-    {
-      "name": "T",
-      "label": "T안 · 사진 아래쪽을 조금 다듬어 공간 확보",
-      "passed": false,
-      "why": [
-        "고지 바로 위 글자 없는 구간 47px < 필요 124px"
-      ],
-      "recommended": false
     }
   ],
   "checks_after": [
