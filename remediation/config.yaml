@@ -1,0 +1,27 @@
+paths:
+  repo_root: ..
+  ad_json: data/processed/image/json          # 주연 전처리 결과 (광고별 JSON)
+  prep_config: preprocessing/image/config.yaml # 재측정 시 같은 계산식·설정을 쓰기 위해 읽음
+  out: data/processed/remediation
+  judge_dir: ../rag/outputs                  # 05 LLM 판정 결과 (가윤). remediation/ 기준 상대경로
+
+# 05 판정 노트북(rag/05)의 코드 판정 기준과 같은 값
+thresholds:
+  contrast: 3.0        # A2 WCAG 명암비
+  image_pt: 5.9        # A3 모바일 표시 크기(pt, 표시 폭 390pt)
+  ratio_image: 0.075   # A4 위험고지/헤드라인 글자 높이비
+  display_width_pt: 390
+
+# 최소 개입 단계 — 위에서부터 시도하고, 기준을 넘는 순간 멈춘다
+ladder:
+  margin: 1.06              # 목표값 = 기준 × 이 값 (기준을 '살짝' 넘기는 만큼만)
+  contrast_margin: 1.12
+  max_size_factor: 3.0      # 글자를 이 배 이상 키워야 하면 L4
+  redistribute_max_diff: 2.5  # B안: 위아래 줄과 평균 색 차이가 이 이하인 '평평한 배경 줄'만 뺌
+  min_visual_scale: 0.9     # C안: 위쪽 비주얼은 이 배율까지만 줄임
+  seam_max_diff: 5          # 늘릴 줄과 위아래 줄의 평균 색 차이가 이보다 크면(옆 단 글자가 걸림) L4
+
+fonts:                      # 원본 굵기에 가장 가까운 것을 고름
+  dir: ~/Library/Fonts
+  weights: [Pretendard-Regular.otf, Pretendard-Medium.otf, Pretendard-SemiBold.otf, Pretendard-Bold.otf]
+  fallback: /System/Library/Fonts/AppleSDGothicNeo.ttc
