@@ -101,6 +101,57 @@ def search_ids(query, product_type='전체', k=8, mode='rerank', rrf_k=60, n_can
     return [(cards['id'].iloc[i], round(score[i], 4)) for i in ordered[:k]]
 
 
+# ---------- 검색 캐시 ----------
+# search_ids 결과를 메모리와 cache/search_cache.json에 저장해 다음 실행에서도 재사용합니다.
+# 키: cards.csv 내용 해시 + (질문, 상품유형, k, mode, rrf_k, n_candidates) + 모델 이름
+# → 카드가 바뀌면 해시가 달라져 예전 결과는 쓰이지 않고, 불러올 때 지워집니다.
+import hashlib
+import os
+import threading
+
+CARDS_HASH = hashlib.sha256((DATA_DIR / 'cards.csv').read_bytes()).hexdigest()[:16]
+SEARCH_CACHE_PATH = CACHE_DIR / 'search_cache.json'
+_MODEL_TAG = 'bge-m3+bge-reranker-v2-m3'
+_cache_lock = threading.Lock()
+cache_stats = {'hit': 0, 'miss': 0}
+
+
+def _load_search_cache():
+    try:
+        data = json.loads(SEARCH_CACHE_PATH.read_text(encoding='utf-8'))
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+    return {k: v for k, v in data.items() if json.loads(k)[0] == CARDS_HASH}   # 다른 카드 버전의 결과는 버림
+
+
+_search_cache = _load_search_cache()
+
+
+def _cache_key(query, product_type, k, mode, rrf_k, n_candidates):
+    return json.dumps([CARDS_HASH, query, product_type, k, mode, rrf_k, n_candidates, _MODEL_TAG], ensure_ascii=False)
+
+
+def _save_search_cache():
+    tmp = SEARCH_CACHE_PATH.with_suffix(f'.tmp{os.getpid()}')
+    tmp.write_text(json.dumps(_search_cache, ensure_ascii=False, indent=0), encoding='utf-8')
+    os.replace(tmp, SEARCH_CACHE_PATH)      # 쓰는 도중 멈춰도 파일이 깨지지 않게
+
+
+def search_ids_cached(query, product_type='전체', k=8, mode='rerank', rrf_k=60, n_candidates=20):
+    """search_ids와 같은 결과를 캐시에서 돌려줍니다. 없으면 검색 후 저장."""
+    key = _cache_key(query, product_type, k, mode, rrf_k, n_candidates)
+    with _cache_lock:
+        if key in _search_cache:
+            cache_stats['hit'] += 1
+            return [tuple(x) for x in _search_cache[key]]
+    res = search_ids(query, product_type, k=k, mode=mode, rrf_k=rrf_k, n_candidates=n_candidates)
+    with _cache_lock:
+        cache_stats['miss'] += 1
+        _search_cache[key] = [list(x) for x in res]
+        _save_search_cache()
+    return res
+
+
 def search(query, product_type='전체', k=5, mode='rerank'):
     """보기 좋은 표로 돌려줍니다."""
     hits = search_ids(query, product_type, k=k, mode=mode)
