@@ -1,0 +1,176 @@
+{
+  "ad_id": "V135",
+  "checks_before": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 2.44,
+      "threshold": 3.0,
+      "op": ">=",
+      "ok": false
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.356,
+      "threshold": 0.1,
+      "op": ">=",
+      "ok": true
+    },
+    {
+      "id": "A5",
+      "name": "노출 비율",
+      "value": 0.4,
+      "threshold": 0.333,
+      "op": ">=",
+      "ok": true
+    },
+    {
+      "id": "A6",
+      "name": "초당 글자 수",
+      "value": 17.5,
+      "threshold": 197,
+      "op": "<=",
+      "ok": true
+    },
+    {
+      "id": "A7",
+      "name": "글자 크기(pt)",
+      "value": 9.23,
+      "threshold": 5.06,
+      "op": ">=",
+      "ok": true
+    }
+  ],
+  "decision": "수정안",
+  "checks_after": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 3.27,
+      "threshold": 3.0,
+      "op": ">=",
+      "ok": true
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.439,
+      "threshold": 0.1,
+      "op": ">=",
+      "ok": true
+    },
+    {
+      "id": "A5",
+      "name": "노출 비율",
+      "value": 0.4,
+      "threshold": 0.333,
+      "op": ">=",
+      "ok": true
+    },
+    {
+      "id": "A6",
+      "name": "초당 글자 수",
+      "value": 17.5,
+      "threshold": 197,
+      "op": "<=",
+      "ok": true
+    },
+    {
+      "id": "A7",
+      "name": "글자 크기(pt)",
+      "value": 9.23,
+      "threshold": 5.06,
+      "op": ">=",
+      "ok": true
+    }
+  ],
+  "steps": [
+    {
+      "card": 3,
+      "font": "Pretendard-Medium",
+      "h_before_px": 23.5,
+      "h_after_px": 23.5,
+      "size_factor": 1.0,
+      "lines": 1,
+      "fg": [
+        255,
+        251,
+        220
+      ],
+      "bg": [
+        241,
+        172,
+        108
+      ],
+      "band": [
+        185,
+        122,
+        61
+      ],
+      "center": true,
+      "static_bg": false,
+      "window_before": [
+        7.3,
+        9.6
+      ],
+      "window_after": [
+        7.3,
+        9.6
+      ],
+      "frame_fix": true,
+      "fail": []
+    }
+  ],
+  "edit_sheet": [
+    "자막 3: 글자 24→24px(×1.0) Pretendard-Medium, 글자색 그대로, 배경 같은 색조 띠 RGB(185, 122, 61)"
+  ],
+  "fails": [],
+  "measured": [
+    {
+      "card": 3,
+      "t": 8.4,
+      "where": "원래 구간",
+      "bbox": [
+        526,
+        917,
+        1398,
+        954
+      ],
+      "ink_h_px": 29,
+      "fg_rgb": [
+        255,
+        250,
+        215
+      ],
+      "bg_rgb": [
+        188,
+        124,
+        63
+      ],
+      "contrast_ratio": 3.27,
+      "contrast_conf": "high"
+    }
+  ],
+  "windows_before": {
+    "0": [
+      7.3,
+      9.6
+    ],
+    "1": [
+      7.3,
+      13.3
+    ]
+  },
+  "windows_after": {
+    "0": [
+      7.3,
+      9.6
+    ],
+    "1": [
+      7.3,
+      13.3
+    ]
+  },
+  "fixed_video": "data/processed/remediation/video/fixed/V135.mp4"
+}

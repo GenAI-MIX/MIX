@@ -1,0 +1,47 @@
+{
+  "ad_id": "V113",
+  "checks_before": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": null,
+      "threshold": 3.0,
+      "op": ">=",
+      "ok": null
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.104,
+      "threshold": 0.1,
+      "op": ">=",
+      "ok": true
+    },
+    {
+      "id": "A5",
+      "name": "노출 비율",
+      "value": 0.813,
+      "threshold": 0.333,
+      "op": ">=",
+      "ok": true
+    },
+    {
+      "id": "A6",
+      "name": "초당 글자 수",
+      "value": 14.1,
+      "threshold": 197,
+      "op": "<=",
+      "ok": true
+    },
+    {
+      "id": "A7",
+      "name": "글자 크기(pt)",
+      "value": 8.79,
+      "threshold": 5.06,
+      "op": ">=",
+      "ok": true
+    }
+  ],
+  "decision": "원본 유지",
+  "note": "A2·A4·A5·A6·A7 모두 기준 통과 — 원본 영상 그대로 진행"
+}

@@ -1,0 +1,266 @@
+{
+  "ad_id": "V157",
+  "checks_before": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 6.8,
+      "threshold": 3.0,
+      "op": ">=",
+      "ok": true
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.25,
+      "threshold": 0.1,
+      "op": ">=",
+      "ok": true
+    },
+    {
+      "id": "A5",
+      "name": "노출 비율",
+      "value": 0.803,
+      "threshold": 0.333,
+      "op": ">=",
+      "ok": true
+    },
+    {
+      "id": "A6",
+      "name": "초당 글자 수",
+      "value": 14.6,
+      "threshold": 197,
+      "op": "<=",
+      "ok": true
+    },
+    {
+      "id": "A7",
+      "name": "글자 크기(pt)",
+      "value": 1.76,
+      "threshold": 5.06,
+      "op": ">=",
+      "ok": false
+    }
+  ],
+  "decision": "디자이너 검토",
+  "checks_after": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 10.55,
+      "threshold": 3.0,
+      "op": ">=",
+      "ok": true
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.25,
+      "threshold": 0.1,
+      "op": ">=",
+      "ok": true
+    },
+    {
+      "id": "A5",
+      "name": "노출 비율",
+      "value": 0.803,
+      "threshold": 0.333,
+      "op": ">=",
+      "ok": true
+    },
+    {
+      "id": "A6",
+      "name": "초당 글자 수",
+      "value": 14.6,
+      "threshold": 197,
+      "op": "<=",
+      "ok": true
+    },
+    {
+      "id": "A7",
+      "name": "글자 크기(pt)",
+      "value": 8.79,
+      "threshold": 5.06,
+      "op": ">=",
+      "ok": true
+    }
+  ],
+  "steps": [
+    {
+      "card": 1,
+      "font": "Pretendard-SemiBold",
+      "h_before_px": 21.0,
+      "h_after_px": 64.0,
+      "size_factor": 3.05,
+      "lines": 5,
+      "fg": [
+        248,
+        233,
+        228
+      ],
+      "bg": [
+        57,
+        50,
+        47
+      ],
+      "band": null,
+      "center": true,
+      "static_bg": false,
+      "window_before": [
+        10.6,
+        12.0
+      ],
+      "window_after": [
+        10.6,
+        12.0
+      ],
+      "frame_fix": true,
+      "fail": [
+        "위쪽 다른 글자와 겹침",
+        "글자를 ×3.0 키워야 함"
+      ]
+    }
+  ],
+  "edit_sheet": [
+    "자막 1: 글자 21→64px(×3.05) Pretendard-SemiBold, 글자색 그대로"
+  ],
+  "fails": [
+    "자막 1: 위쪽 다른 글자와 겹침",
+    "자막 1: 글자를 ×3.0 키워야 함"
+  ],
+  "measured": [
+    {
+      "card": 1,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        108,
+        512,
+        1822,
+        586
+      ],
+      "ink_h_px": 64,
+      "fg_rgb": [
+        249,
+        234,
+        231
+      ],
+      "bg_rgb": [
+        59,
+        51,
+        48
+      ],
+      "contrast_ratio": 10.55,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 1,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        99,
+        617,
+        1831,
+        693
+      ],
+      "ink_h_px": 64,
+      "fg_rgb": [
+        249,
+        235,
+        231
+      ],
+      "bg_rgb": [
+        59,
+        50,
+        48
+      ],
+      "contrast_ratio": 10.72,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 1,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        139,
+        722,
+        1790,
+        796
+      ],
+      "ink_h_px": 64,
+      "fg_rgb": [
+        249,
+        234,
+        231
+      ],
+      "bg_rgb": [
+        57,
+        50,
+        47
+      ],
+      "contrast_ratio": 10.74,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 1,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        453,
+        828,
+        1477,
+        911
+      ],
+      "ink_h_px": 65,
+      "fg_rgb": [
+        248,
+        234,
+        231
+      ],
+      "bg_rgb": [
+        56,
+        49,
+        46
+      ],
+      "contrast_ratio": 10.88,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 1,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        46,
+        933,
+        1884,
+        1016
+      ],
+      "ink_h_px": 64,
+      "fg_rgb": [
+        249,
+        234,
+        231
+      ],
+      "bg_rgb": [
+        57,
+        49,
+        47
+      ],
+      "contrast_ratio": 10.85,
+      "contrast_conf": "high"
+    }
+  ],
+  "windows_before": {
+    "0": [
+      5.5,
+      29.6
+    ]
+  },
+  "windows_after": {
+    "0": [
+      5.5,
+      29.6
+    ]
+  },
+  "fixed_video": "data/processed/remediation/video/fixed/V157.mp4"
+}

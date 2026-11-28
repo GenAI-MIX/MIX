@@ -1,0 +1,337 @@
+{
+  "ad_id": "V105",
+  "checks_before": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 2.83,
+      "threshold": 3.0,
+      "op": ">=",
+      "ok": false
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": null,
+      "threshold": 0.1,
+      "op": ">=",
+      "ok": null
+    },
+    {
+      "id": "A5",
+      "name": "노출 비율",
+      "value": 0.24,
+      "threshold": 0.333,
+      "op": ">=",
+      "ok": false
+    },
+    {
+      "id": "A6",
+      "name": "초당 글자 수",
+      "value": 11.9,
+      "threshold": 197,
+      "op": "<=",
+      "ok": true
+    },
+    {
+      "id": "A7",
+      "name": "글자 크기(pt)",
+      "value": 15.82,
+      "threshold": 5.06,
+      "op": ">=",
+      "ok": true
+    }
+  ],
+  "decision": "수정안",
+  "checks_after": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 3.1,
+      "threshold": 3.0,
+      "op": ">=",
+      "ok": true
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": null,
+      "threshold": 0.1,
+      "op": ">=",
+      "ok": null
+    },
+    {
+      "id": "A5",
+      "name": "노출 비율",
+      "value": 0.353,
+      "threshold": 0.333,
+      "op": ">=",
+      "ok": true
+    },
+    {
+      "id": "A6",
+      "name": "초당 글자 수",
+      "value": 8.1,
+      "threshold": 197,
+      "op": "<=",
+      "ok": true
+    },
+    {
+      "id": "A7",
+      "name": "글자 크기(pt)",
+      "value": 18.46,
+      "threshold": 5.06,
+      "op": ">=",
+      "ok": true
+    }
+  ],
+  "steps": [
+    {
+      "card": 8,
+      "font": "Pretendard-Regular",
+      "h_before_px": 12.0,
+      "h_after_px": 12.0,
+      "size_factor": 1.0,
+      "lines": 4,
+      "fg": [
+        163,
+        168,
+        169
+      ],
+      "bg": [
+        79,
+        90,
+        97
+      ],
+      "band": [
+        73,
+        81,
+        87
+      ],
+      "center": false,
+      "static_bg": false,
+      "window_before": [
+        9.0,
+        13.8
+      ],
+      "window_after": [
+        6.74,
+        13.8
+      ],
+      "frame_fix": true,
+      "fail": []
+    }
+  ],
+  "edit_sheet": [
+    "A5: 노출 4.8초 → 영상 20.0초의 1/3(6.7초) 이상이 되도록 고지 자막을 6.7~13.8초로 유지 (원래 9.0~13.8초)",
+    "자막 8: 글자 12→12px(×1.0) Pretendard-Regular, 글자색 그대로, 배경 같은 색조 띠 RGB(73, 81, 87) · 표시 9.0~13.8초 → 6.7~13.8초"
+  ],
+  "fails": [],
+  "measured": [
+    {
+      "card": 8,
+      "t": 13.1,
+      "where": "원래 구간",
+      "bbox": [
+        38,
+        372,
+        284,
+        395
+      ],
+      "ink_h_px": 15,
+      "fg_rgb": [
+        158,
+        165,
+        170
+      ],
+      "bg_rgb": [
+        74,
+        81,
+        86
+      ],
+      "contrast_ratio": 3.23,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 8,
+      "t": 13.1,
+      "where": "원래 구간",
+      "bbox": [
+        38,
+        388,
+        305,
+        413
+      ],
+      "ink_h_px": 15,
+      "fg_rgb": [
+        158,
+        165,
+        170
+      ],
+      "bg_rgb": [
+        74,
+        81,
+        86
+      ],
+      "contrast_ratio": 3.23,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 8,
+      "t": 13.1,
+      "where": "원래 구간",
+      "bbox": [
+        38,
+        404,
+        244,
+        427
+      ],
+      "ink_h_px": 15,
+      "fg_rgb": [
+        158,
+        165,
+        170
+      ],
+      "bg_rgb": [
+        75,
+        82,
+        88
+      ],
+      "contrast_ratio": 3.18,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 8,
+      "t": 13.1,
+      "where": "원래 구간",
+      "bbox": [
+        38,
+        420,
+        244,
+        443
+      ],
+      "ink_h_px": 15,
+      "fg_rgb": [
+        156,
+        163,
+        168
+      ],
+      "bg_rgb": [
+        75,
+        82,
+        88
+      ],
+      "contrast_ratio": 3.1,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 8,
+      "t": 7.87,
+      "where": "늘린 구간",
+      "bbox": [
+        38,
+        372,
+        284,
+        395
+      ],
+      "ink_h_px": 15,
+      "fg_rgb": [
+        157,
+        165,
+        168
+      ],
+      "bg_rgb": [
+        69,
+        78,
+        84
+      ],
+      "contrast_ratio": 3.39,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 8,
+      "t": 7.87,
+      "where": "늘린 구간",
+      "bbox": [
+        38,
+        388,
+        305,
+        413
+      ],
+      "ink_h_px": 15,
+      "fg_rgb": [
+        158,
+        165,
+        170
+      ],
+      "bg_rgb": [
+        70,
+        77,
+        83
+      ],
+      "contrast_ratio": 3.44,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 8,
+      "t": 7.87,
+      "where": "늘린 구간",
+      "bbox": [
+        38,
+        404,
+        244,
+        427
+      ],
+      "ink_h_px": 15,
+      "fg_rgb": [
+        158,
+        165,
+        170
+      ],
+      "bg_rgb": [
+        71,
+        79,
+        84
+      ],
+      "contrast_ratio": 3.35,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 8,
+      "t": 7.87,
+      "where": "늘린 구간",
+      "bbox": [
+        38,
+        420,
+        244,
+        443
+      ],
+      "ink_h_px": 14,
+      "fg_rgb": [
+        156,
+        163,
+        168
+      ],
+      "bg_rgb": [
+        72,
+        80,
+        85
+      ],
+      "contrast_ratio": 3.22,
+      "contrast_conf": "high"
+    }
+  ],
+  "windows_before": {
+    "0": [
+      9.0,
+      13.8
+    ]
+  },
+  "windows_after": {
+    "0": [
+      6.738632874000001,
+      13.8
+    ]
+  },
+  "fixed_video": "data/processed/remediation/video/fixed/V105.mp4"
+}

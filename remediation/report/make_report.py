@@ -55,6 +55,38 @@ CASES = [
 ]
 
 
+VOUT = OUT / "video"
+# 영상 사례: (제목, ad_id, 색, 설명)
+VIDEO_CASES = [
+    ("영상 사례 1 · 수정안 (명암비·크기·노출 시간)", "V110", BLUE,
+     ["주황 배경 위 흰 고지 자막: 명암비 1.57, 노출 2.6초(영상의 17%), 헤드라인 대비 0.093으로 미달.",
+      "글자색(흰색)은 그대로 두고, 배경과 같은 주황 색조로 어둡게 한 띠를 깔아 명암비 3.1 확보함.",
+      "원래 자리(전화번호와 로고 사이)·아래 기준선 유지, 글자 14→16px.",
+      "자막을 앞 장면까지 이어서 7.7~13.0초 표시 → 노출 35%. 영상 길이 15초 그대로."]),
+    ("영상 사례 2 · 통과 못 함 → 디자이너 검토", "V108", PURPLE,
+     ["화면 맨 아래 깨알 자막: 명암비 1.80, 헤드라인 대비 0.065로 미달.",
+      "기준 크기로 키우면 위쪽 손글씨 그래픽·카피와 겹침 → 자동안은 참고용으로 두고 디자이너 검토로 넘김.",
+      "배경이 계속 움직이는 장면이라 원래 글자를 지울 수 없어 원래 톤의 띠로 덮는 방식으로 시험함."]),
+]
+
+
+def video_page(im, d, ad_id, color, lines):
+    rec = json.loads((VOUT / "json" / f"{ad_id}.json").read_text(encoding="utf-8"))
+    pan = Image.open(VOUT / "viz" / f"{ad_id}.jpg").convert("RGB")
+    s = min((W - 110 - 700) / pan.width, (H - 230) / pan.height)
+    pan = pan.resize((int(pan.width * s), int(pan.height * s)), Image.LANCZOS)
+    x = W - 110 - pan.width
+    im.paste(pan, (x, 190))
+    left_w = x - 140 - 50
+    d.rectangle((110, 200, 122, 200 + 52 * 9), fill=color)
+    y = bullets(d, 140, 200, lines, size=28, width=left_w)
+    y += 20
+    d.text((140, y), "편집 지시", font=F("SemiBold", 30), fill=INK)
+    bullets(d, 140, y + 50, rec.get("edit_sheet", [])[:4] + ["불가: " + x_ for x_ in rec.get("fails", [])][:2],
+            size=24, width=left_w, color=SUB)
+    d.rectangle((x - 2, 188, x + pan.width + 1, 190 + pan.height + 1), outline=LINE, width=2)
+
+
 def page():
     im = Image.new("RGB", (W, H), BG)
     return im, ImageDraw.Draw(im)
@@ -239,7 +271,7 @@ def main():
     d.rectangle((0, 0, 30, H), fill=BLUE)
     d.text((200, 520), "금융광고 위험고지 수정안 생성", font=F("Bold", 92), fill=INK)
     d.text((200, 650), "06 수정안 생성 · 시각화 결과 보고", font=F("Medium", 52), fill=BLUE)
-    d.text((200, 780), f"이미지 광고 {len(rows)}개 · 광고 규격(px)은 그대로 두고 고지만 고친 후보안 비교", font=F("Regular", 36), fill=SUB)
+    d.text((200, 780), f"이미지 광고 {len(rows)}개 · 영상 광고 · 규격과 길이는 그대로 두고 위험고지만 고친 수정안", font=F("Regular", 36), fill=SUB)
     d.text((200, 1380), "MIX 팀 · 06 수정안 파트", font=F("Regular", 30), fill=SUB)
     pages.append(im)
 
@@ -297,8 +329,35 @@ def main():
         case_page(im, d, base, color, lines)
         pages.append(im)
 
+    # 영상
+    if (VOUT / "summary.csv").exists():
+        vrows = list(csv.DictReader(open(VOUT / "summary.csv", encoding="utf-8-sig")))
+        vdec = collections.Counter(r["decision"] for r in vrows)
+        im, d = page(); header(d, "영상 광고 · 작동 방식과 결과", len(pages) + 1)
+        bullets(d, 110, 220, [
+            "영상 길이와 화면 크기는 그대로 두고, 위험고지 자막만 고친 수정 영상(mp4)을 만듦.",
+            "A5 노출(영상의 1/3 이상)·A6 초당 글자 수: 기존 고지 자막을 앞 장면까지 모자란 만큼만 이어서 표시함.",
+            "A7 글자 크기·A4 헤드라인 대비: 원래 자리·단 폭·정렬·글자색 유지, 기준을 살짝 넘길 크기로 다시 씀. 아래 기준선은 그대로 두고 위로 키움.",
+            "A2 명암비: 글자색은 그대로, 배경과 같은 색조로 밝기만 옮긴 띠를 깔아 해결함.",
+            "배경이 그대로인 엔드 카드는 원래 글자를 지운 뒤 다시 쓰고, 움직이는 장면은 원래 톤의 띠로 덮음.",
+            "수정 영상에서 프레임을 다시 뽑아 같은 식으로 재측정함. 위쪽 글자와 겹치거나 3배 넘게 키워야 하면 디자이너 검토.",
+        ], width=1150)
+        table(d, 1330, 230, [
+            ["결정", "영상 수"],
+            [("원본 유지", GREEN), vdec.get("원본 유지", 0)],
+            [("수정안", BLUE), vdec.get("수정안", 0)],
+            [("디자이너 검토", PURPLE), vdec.get("디자이너 검토", 0)],
+            [("고지 없음", ORANGE), vdec.get("고지 없음", 0)],
+        ], [450, 450])
+        pages.append(im)
+        for title, ad_id, color, lines in VIDEO_CASES:
+            if (VOUT / "viz" / f"{ad_id}.jpg").exists():
+                im, d = page(); header(d, title, len(pages) + 1)
+                video_page(im, d, ad_id, color, lines)
+                pages.append(im)
+
     # 마지막. 기준 이슈와 다음 할 일
-    im, d = page(); header(d, "확인된 문제와 다음 할 일", 4 + len(CASES))
+    im, d = page(); header(d, "확인된 문제와 다음 할 일", len(pages) + 1)
     d.text((110, 210), "A3 글자 크기 기준 보정 필요", font=F("Bold", 40), fill=RED)
     bullets(d, 110, 290, [
         "디자이너 검토가 많은 주된 이유는 레이아웃이 아니라 A3 기준(모바일 390pt 환산 5.9pt)임.",
@@ -312,7 +371,7 @@ def main():
         "표준 추가 문구(rules/phrases.yaml) 준법 검토 후 확정.",
         "OCR로 읽은 글자를 그대로 다시 쓰므로 오타·띄어쓰기 누락이 남음 → 최종본은 원문 문구로 교체 필요.",
         "추가 문구가 원본보다 한 단계 굵게 나오는 경우가 있음 → 굵기 추정 개선.",
-        "영상 광고(노출 시간·자막 크기) 수정안은 아직 미적용.",
+        "영상: 흐르는 자막(crawl) 수정, 음성 고지 확인은 아직 미적용. 수정 영상은 편집 지시와 함께 검토용 시안으로 사용.",
     ], width=2100)
     pages.append(im)
 

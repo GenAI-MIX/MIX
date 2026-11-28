@@ -1,0 +1,284 @@
+{
+  "ad_id": "V155",
+  "checks_before": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 7.95,
+      "threshold": 3.0,
+      "op": ">=",
+      "ok": true
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.098,
+      "threshold": 0.1,
+      "op": ">=",
+      "ok": false
+    },
+    {
+      "id": "A5",
+      "name": "노출 비율",
+      "value": 0.416,
+      "threshold": 0.333,
+      "op": ">=",
+      "ok": true
+    },
+    {
+      "id": "A6",
+      "name": "초당 글자 수",
+      "value": 196.4,
+      "threshold": 197,
+      "op": "<=",
+      "ok": true
+    },
+    {
+      "id": "A7",
+      "name": "글자 크기(pt)",
+      "value": 7.47,
+      "threshold": 5.06,
+      "op": ">=",
+      "ok": true
+    }
+  ],
+  "decision": "수정안",
+  "checks_after": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 9.25,
+      "threshold": 3.0,
+      "op": ">=",
+      "ok": true
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.109,
+      "threshold": 0.1,
+      "op": ">=",
+      "ok": true
+    },
+    {
+      "id": "A5",
+      "name": "노출 비율",
+      "value": 0.416,
+      "threshold": 0.333,
+      "op": ">=",
+      "ok": true
+    },
+    {
+      "id": "A6",
+      "name": "초당 글자 수",
+      "value": 196.4,
+      "threshold": 197,
+      "op": "<=",
+      "ok": true
+    },
+    {
+      "id": "A7",
+      "name": "글자 크기(pt)",
+      "value": 8.35,
+      "threshold": 5.06,
+      "op": ">=",
+      "ok": true
+    }
+  ],
+  "steps": [
+    {
+      "card": 0,
+      "font": "Pretendard-SemiBold",
+      "h_before_px": 17.0,
+      "h_after_px": 18.4,
+      "size_factor": 1.08,
+      "lines": 6,
+      "fg": [
+        255,
+        228,
+        220
+      ],
+      "bg": [
+        84,
+        45,
+        37
+      ],
+      "band": null,
+      "center": false,
+      "static_bg": false,
+      "window_before": [
+        0.0,
+        2.5
+      ],
+      "window_after": [
+        0.0,
+        2.5
+      ],
+      "frame_fix": true,
+      "fail": []
+    }
+  ],
+  "edit_sheet": [
+    "자막 0: 글자 17→18px(×1.08) Pretendard-SemiBold, 글자색 그대로"
+  ],
+  "fails": [],
+  "measured": [
+    {
+      "card": 0,
+      "t": 1.6,
+      "where": "원래 구간",
+      "bbox": [
+        89,
+        885,
+        1808,
+        914
+      ],
+      "ink_h_px": 19,
+      "fg_rgb": [
+        255,
+        226,
+        219
+      ],
+      "bg_rgb": [
+        83,
+        46,
+        40
+      ],
+      "contrast_ratio": 9.59,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 0,
+      "t": 1.6,
+      "where": "원래 구간",
+      "bbox": [
+        89,
+        910,
+        1801,
+        939
+      ],
+      "ink_h_px": 19,
+      "fg_rgb": [
+        255,
+        226,
+        218
+      ],
+      "bg_rgb": [
+        83,
+        47,
+        40
+      ],
+      "contrast_ratio": 9.5,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 0,
+      "t": 1.6,
+      "where": "원래 구간",
+      "bbox": [
+        89,
+        935,
+        1769,
+        964
+      ],
+      "ink_h_px": 19,
+      "fg_rgb": [
+        255,
+        225,
+        218
+      ],
+      "bg_rgb": [
+        85,
+        48,
+        41
+      ],
+      "contrast_ratio": 9.25,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 0,
+      "t": 1.6,
+      "where": "원래 구간",
+      "bbox": [
+        89,
+        960,
+        1810,
+        989
+      ],
+      "ink_h_px": 19,
+      "fg_rgb": [
+        255,
+        226,
+        218
+      ],
+      "bg_rgb": [
+        85,
+        48,
+        41
+      ],
+      "contrast_ratio": 9.31,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 0,
+      "t": 1.6,
+      "where": "원래 구간",
+      "bbox": [
+        89,
+        985,
+        1579,
+        1014
+      ],
+      "ink_h_px": 19,
+      "fg_rgb": [
+        255,
+        226,
+        218
+      ],
+      "bg_rgb": [
+        84,
+        47,
+        40
+      ],
+      "contrast_ratio": 9.45,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 0,
+      "t": 1.6,
+      "where": "원래 구간",
+      "bbox": [
+        89,
+        1010,
+        819,
+        1039
+      ],
+      "ink_h_px": 19,
+      "fg_rgb": [
+        255,
+        226,
+        218
+      ],
+      "bg_rgb": [
+        83,
+        46,
+        39
+      ],
+      "contrast_ratio": 9.59,
+      "contrast_conf": "high"
+    }
+  ],
+  "windows_before": {
+    "0": [
+      0.0,
+      2.5
+    ]
+  },
+  "windows_after": {
+    "0": [
+      0.0,
+      2.5
+    ]
+  },
+  "fixed_video": "data/processed/remediation/video/fixed/V155.mp4"
+}
