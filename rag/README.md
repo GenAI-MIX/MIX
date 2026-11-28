@@ -85,3 +85,50 @@ python run_judge.py --all-images --skip-existing --workers 6   # 광고 6건을 
 `rag/outputs/`의 `.json`(06 수정안 `remediation/`의 입력), `.csv`, 보고서 `.md`는 커밋하고 그 밖의 파일은 커밋하지 않습니다(`rag/.gitignore`).
 
 Google 시트의 ‘검사기준표’를 수정했다면 `rag/data/checks.csv`에서 해당 항목을 업데이트합니다. 노트북이 사용하는 추가 열도 유지합니다.
+
+## 위반 예시 평가 (`eval/`)
+
+심의를 통과한 광고의 전처리 JSON을 일부러 고친 '위반 예시'로 05 판단의 탐지율을 잽니다. 이미지와 영상 파일은 건드리지 않습니다.
+
+```bash
+cd rag
+python eval/make_variants.py                                   # 변형본 + 정답표 만들기 (LLM 호출 없음)
+python eval/evaluate.py --provider openai --model gpt-6-luna   # 판정 + 보고서
+python eval/evaluate.py --model gpt-6-luna --report-only       # 있는 결과로 보고서만 다시
+python eval/evaluate.py --model gpt-6-luna --rejudge --ids AD01__m_B1,V101__m_B3 --baseline eval/runs/gpt-6-luna/results_v1.csv   # 바뀐 변형만 다시 판정 + 이전 대비 표
+python eval/evaluate.py --model gpt-6-luna --runs 3 --single-report eval/runs/gpt-6-luna/report_1run.md   # 3회 반복 판정, 평균·최소~최대 요약
+python run_judge.py --ad-dir eval/variants --ids AD01__m_B3 --out-dir eval/runs/test   # 변형 1건만 판정
+```
+
+| 파일 | 내용 |
+|---|---|
+| `eval/make_variants.py` | 원본 10건(AD01~03, V101~V126 중 7건)에 변형 9종을 적용 |
+| `eval/variants/{image,video}/json/` | 변형 JSON `{원본}__{변형}.json`, 원본 `{원본}__original.json`. 상품유형은 `product_override`로 원본 판정값에 고정 |
+| `eval/variants/skipped.csv` | 적용하지 않은 조합과 이유 (원본 판정에서 target 항목이 적합이 아니면 건너뜀) |
+| `eval/labels.csv` | 정답표: `variant_id`, `base_id`, `mutation`, `target_check`, `expected_verdicts`, `collateral_removed`(다른 필수 문구까지 지워졌으면 기록), `delete_mode`(구간 통째 삭제 · 부분 삭제 수), `note` |
+| `eval/evaluate.py` | 변형 판정 후 지표 계산. `--workers`, `--rejudge`, `--ids`(재판정할 변형), `--no-repeat`, `--report-only`, `--baseline`(이전 results.csv), `--note`(이전 대비 바뀐 점), `--runs N`(N회 반복 판정, `runs/{model}/xN/r1..rN`), `--single-report`(반복 평가 보고서 아래에 붙일 1회 실행 보고서) |
+| `eval/runs/{model}/` | 판정 결과, `results.csv`(변형별 정확 판정·검토 전달·재확인 낮춤·판정·이유·부작용), `results_v1.csv`(첫 실행), `repeat/`(원본 반복 판정) |
+| `eval/runs/{model}/x3/r1..r3/` | 3회 반복 판정 결과와 회차별 `results.csv`. `report_1run.md`는 B1 기준 보완 전 1회 실행 보고서 |
+| `eval/report_{model}.md` | 보고서 |
+
+**변형 9종**
+- **표시 방법(측정값 변경):** `m_A2` 명암비 1.5 · `m_A3` 위험고지 글자와 헤드라인 비율 ×0.5(이미지) · `m_A5` 노출 시간 = 영상 길이×0.2(영상)
+- **필수 문구 삭제:** `m_B1` 설명서·약관 권유 · `m_B3` 원금손실·투자자 귀속 · `m_B6` 예금자보호 · `m_D1` 심사필 문구와 `review_no`
+- **금지 표현 추가(맨 앞 헤드라인):** `m_C2` "목표수익률 연 15%" · `m_C3` "국내 유일 최고 수익 ETF"
+
+영상(`tv_cf`)의 `m_D1` 기대 판정은 `해당없음`입니다. 방송 광고는 공간 제약 시 심사필 표시를 생략할 수 있기 때문입니다(K-2-47-3). 05 규칙도 같습니다.
+
+**문구 삭제 방법.** `paragraphs`, `ocr_blocks`, 영상 `cards`(crawl 포함), `risk_exposures`, `review_no`, `csv.review_no`에서 지웁니다.
+- 글을 구간으로 나눕니다. 구분 기준은 `※`·`•`·`*`·`|`, OCR이 글머리를 숫자로 읽은 `1`, 문장 끝('다.', '니다' 뒤)입니다. `·`는 '투자설명서·집합투자규약'처럼 조항 안에서도 쓰여 구분자로 보지 않습니다.
+- 해당 문구가 든 구간은 통째로 지웁니다.
+- 같은 구간에 다른 필수 문구(B1·B3·B5·B6·B8·D1)가 함께 있으면 해당 조항만 지우고, 남는 이음말('및', 쉼표 등)과 지운 자리 앞뒤 3글자 이하 조각을 정리합니다. 이 정리 때문에 다른 필수 문구가 사라지면 조각 정리는 하지 않습니다.
+- 대상 단어가 하나라도 남으면 멈춥니다. 다른 필수 문구가 같이 지워졌는지는 필드별로 검사해 `collateral_removed`에 남깁니다.
+
+**지표**
+- (가) 변형 종류별·전체 탐지율
+  - 정확 판정률: target 판정이 기대 판정과 정확히 일치한 비율입니다.
+  - 검토 전달률: target이 `위반`이나 `확인필요`로 나와 사람의 검토 목록에 오른 비율입니다. 기대가 `해당없음`이면 `해당없음`일 때 성공입니다.
+  - 재확인으로 낮춤: 위반 재확인에서 `위반`이 `확인필요`로 낮아진 target 수입니다.
+- (나) 원본 오탐: 원본에서 나온 `위반` 수입니다.
+- (다) 부작용: target 외 항목이 원본과 달라진 수입니다. 연관 항목(C5, D2 등 코드로 따라 바뀌는 항목)은 따로 셉니다. 원본 반복 판정에서 달라지는 수를 기준선으로 함께 보여 줍니다.
+- (라) 근거 검증 통과율, 위반 재확인 횟수, 비용.
