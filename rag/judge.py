@@ -56,7 +56,7 @@ checks = pd.read_csv(DATA_DIR / 'checks.csv', encoding='utf-8-sig').fillna('')
 
 TH = {
     'contrast': 3.0,          # A2 명암비
-    'image_pt': 5.9,          # A3 인쇄형 글자 크기 (폭 390 기준, 9pt 샘플로 보정 예정)
+    'image_pt': 5.9,          # A3 인쇄형 글자 크기 — 확정: A4 폭 비례 환산 (A4 9pt를 폭 390 기준으로 환산)
     'ratio_image': 0.075,     # A4 이미지: 실제 광고 하위 10%
     'ratio_video': 0.10,      # A4 영상: 실제 광고 하위 10%
     'exposure_frac': 1/3,     # A5 영상 노출 비율 (법 기준)

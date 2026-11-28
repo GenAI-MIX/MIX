@@ -44,6 +44,10 @@ def parse_args():
     ap.add_argument('--ids', help='쉼표로 구분한 variant_id. --rejudge와 함께 쓰면 이 변형만 다시 판정')
     ap.add_argument('--baseline', help='이전 실행의 results.csv. 주면 보고서 맨 위에 이전 대비 변화 표')
     ap.add_argument('--note', action='append', default=[], help='이전 대비 바뀐 점 (보고서 맨 위에 한 줄씩, 여러 번 사용)')
+    ap.add_argument('--runs', type=int, default=1, help='반복 판정 횟수. 2 이상이면 runs/{model}/x{N}/r1..rN에 판정하고 평균·최소~최대로 요약')
+    ap.add_argument('--single-report', help='--runs와 함께: 보고서 아래에 붙일 1회 실행 보고서(md) 경로')
+    ap.add_argument('--runs-label', default='', help='반복 평가 제목 옆에 붙일 설명 (예: B1 기준 보완 후)')
+    ap.add_argument('--single-label', default='', help='붙이는 1회 실행 보고서 제목 옆 설명')
     return ap.parse_args()
 
 
@@ -58,15 +62,15 @@ def judge_all(J, provider, model, jobs, workers):
         return
     print(f'판정 {len(jobs)}건 (동시 {workers})', flush=True)
     with ThreadPoolExecutor(workers) as ex:
-        futs = {ex.submit(J.judge_ad, a, provider, model, False, d, True): a for a, d in jobs}
+        futs = {ex.submit(J.judge_ad, a, provider, model, False, d, True): f'{d.name}/{a}' for a, d in jobs}
         for f in as_completed(futs):
             done += 1
             try:
                 _, rec = f.result()
                 vc = Counter(it['verdict'] for it in rec['items'])
-                print(f"[{done:>3}/{len(jobs)}] {futs[f]:<14} 위반 {vc['위반']} 확인필요 {vc['확인필요']} | {(time.time() - t0) / 60:.1f}분", flush=True)
+                print(f"[{done:>3}/{len(jobs)}] {futs[f]:<18} 위반 {vc['위반']} 확인필요 {vc['확인필요']} | {(time.time() - t0) / 60:.1f}분", flush=True)
             except Exception as e:
-                print(f'[{done:>3}/{len(jobs)}] {futs[f]:<14} 실패: {type(e).__name__}: {e}', flush=True)
+                print(f'[{done:>3}/{len(jobs)}] {futs[f]:<18} 실패: {type(e).__name__}: {e}', flush=True)
 
 
 def load_rec(d, vid, model):
@@ -85,6 +89,7 @@ def main():
     rep_dir = run_dir / 'repeat'
     labels = load_labels()
     origs = [r for r in labels if r['mutation'] == 'original']
+    multi_dirs = [run_dir / f'x{args.runs}' / f'r{i}' for i in range(1, args.runs + 1)]
 
     if not args.report_only:
         print('판정 모듈 불러오는 중…', flush=True)
@@ -98,12 +103,35 @@ def main():
         if unknown:
             sys.exit(f'labels.csv에 없는 variant_id: {", ".join(sorted(unknown))}')
         redo = lambda vid: args.rejudge and (ids is None or vid in ids)
-        jobs = [(r['variant_id'], run_dir) for r in labels
-                if redo(r['variant_id']) or load_rec(run_dir, r['variant_id'], model) is None]
-        if not args.no_repeat:
+        if args.runs > 1:
+            jobs = [(r['variant_id'], d) for d in multi_dirs for r in labels
+                    if redo(r['variant_id']) or load_rec(d, r['variant_id'], model) is None]
+        else:
+            jobs = [(r['variant_id'], run_dir) for r in labels
+                    if redo(r['variant_id']) or load_rec(run_dir, r['variant_id'], model) is None]
+        if not args.no_repeat and args.runs == 1:
             jobs += [(r['variant_id'], rep_dir) for r in origs
                      if redo(r['variant_id']) or load_rec(rep_dir, r['variant_id'], model) is None]
         judge_all(J, args.provider, model, jobs, args.workers)
+
+    out = EVAL_DIR / f'report_{model}.md'
+    if args.runs > 1:
+        all_recs = []
+        for d in multi_dirs:
+            recs = {r['variant_id']: load_rec(d, r['variant_id'], model) for r in labels}
+            missing = [v for v, x in recs.items() if x is None]
+            if missing:
+                sys.exit(f'{d.name}: 판정 결과가 없는 변형 {len(missing)}건 ({", ".join(missing[:5])} …)')
+            all_recs.append(recs)
+        L = multi_report(labels, all_recs, model, multi_dirs, args.runs_label)
+        if args.single_report:
+            single = Path(args.single_report).read_text(encoding='utf-8').split('\n')
+            title = '## 참고: 1회 실행 결과' + (f' ({args.single_label})' if args.single_label else '')
+            L += ['', '---', '', title, '', f'`{Path(args.single_report).as_posix()}`의 내용입니다. 아래 수치는 반복 평가와 별개인 1회 실행 결과입니다.', '']
+            L += [('#' + x if x.startswith('## ') else x) for x in single if not x.startswith('# ')]
+        out.write_text('\n'.join(L), encoding='utf-8')
+        print(f'\n보고서: {out}')
+        return
 
     recs = {r['variant_id']: load_rec(run_dir, r['variant_id'], model) for r in labels}
     missing = [v for v, x in recs.items() if x is None]
@@ -111,7 +139,10 @@ def main():
         sys.exit(f'판정 결과가 없는 변형: {", ".join(missing)}')
     reps = {r['base_id']: load_rec(rep_dir, r['variant_id'], model) for r in origs}
     base_rows = list(csv.DictReader(open(args.baseline, encoding='utf-8-sig'))) if args.baseline else None
-    write_outputs(labels, recs, reps, model, run_dir, base_rows, args.baseline, args.note)
+    L = write_outputs(labels, recs, reps, model, run_dir, base_rows, args.baseline, args.note)
+    out.write_text('\n'.join(L), encoding='utf-8')
+    print(f'\n보고서: {out}')
+    print('\n'.join(L[7:14]))
 
 
 def flagged(expected, got):
@@ -153,7 +184,8 @@ def compare_block(rows, base_rows, base_path, notes):
     return L + ['']
 
 
-def write_outputs(labels, recs, reps, model, run_dir, base_rows=None, base_path=None, notes=()):
+def build_rows(labels, recs):
+    """변형별 결과 행. 부작용은 같은 실행의 원본 판정과 비교."""
     base_v = {r['base_id']: verdicts(recs[r['variant_id']]) for r in labels if r['mutation'] == 'original'}
     rows = []
     for r in labels:
@@ -177,6 +209,115 @@ def write_outputs(labels, recs, reps, model, run_dir, base_rows=None, base_path=
             'reason': t.get('reason', ''), 'measure': t.get('measure', ''), 'issues': t.get('issues', ''),
             'recheck': t.get('recheck', ''),
         })
+    return rows
+
+
+def run_summary(labels, recs, model):
+    """회차 하나의 지표."""
+    rows = build_rows(labels, recs)
+    origs = [r for r in labels if r['mutation'] == 'original']
+    fp = [(r['base_id'], c, it) for r in origs for c, it in verdicts(recs[r['variant_id']]).items() if it['verdict'] == '위반']
+    items = [it for x in recs.values() for it in x['items'] if it['verdict'] != '해당없음']
+    tin, tout = sum(x['tokens'][0] for x in recs.values()), sum(x['tokens'][1] for x in recs.values())
+    price = PRICES.get(model)
+    return {
+        'rows': rows, 'n': len(rows),
+        'exact': sum(x['detected'] for x in rows), 'flag': sum(x['flagged'] for x in rows),
+        'down': sum(x['downgraded'] for x in rows), 'fp': fp,
+        'side': sum(x['n_side_other'] for x in rows) / len(rows),
+        'pass': sum(not it['issues'] for it in items) / len(items),
+        'cost': (tin * price[0] + tout * price[1]) / 1e6 if price else None,
+    }
+
+
+def multi_report(labels, all_recs, model, dirs, label=''):
+    """반복 판정 요약: 회차별·평균·최소~최대, 변형 종류별, 회차마다 달라진 변형."""
+    S = [run_summary(labels, recs, model) for recs in all_recs]
+    N, n = len(S), S[0]['n']
+    avg = lambda xs: sum(xs) / len(xs)
+    def row(name, vals, fmt):
+        return f"| {name} | " + ' | '.join(fmt(v) for v in vals) + f" | **{fmt(avg(vals))}** | {fmt(min(vals))} ~ {fmt(max(vals))} |"
+    pct = lambda k: [s[k] / n for s in S]
+    L = [f'# 위반 예시 탐지율 평가 — {model}', '',
+         f'- 실행일: {datetime.date.today()} · 원본 {sum(r["mutation"] == "original" for r in labels)}건 + 변형 {n}건을 **{N}회 반복 판정**'
+         + (f' ({label})' if label else ''),
+         f'- 입력: `rag/eval/variants/` (전처리 JSON 변형, `make_variants.py`), 정답표 `rag/eval/labels.csv`',
+         f'- 판정 결과: ' + ', '.join(f'`{d.relative_to(EVAL_DIR).as_posix()}/`' for d in dirs) + ' (회차마다 원본도 다시 판정, 부작용은 같은 회차의 원본과 비교)',
+         '- 정확 판정: target 판정이 기대 판정과 정확히 일치 · 검토 전달: target이 위반·확인필요로 나와 검토 목록에 오름 (기대가 해당없음이면 해당없음일 때 성공)', '',
+         f'## {N}회 평균 요약', '',
+         f'- **정확 판정률 평균 {avg(pct("exact")):.1%}** (최소 {min(pct("exact")):.1%} ~ 최대 {max(pct("exact")):.1%})',
+         f'- **검토 전달률 평균 {avg(pct("flag")):.1%}** (최소 {min(pct("flag")):.1%} ~ 최대 {max(pct("flag")):.1%})',
+         f'- 원본 오탐(심의 통과 광고에서 위반): 회차별 {" · ".join(str(len(s["fp"])) for s in S)}건 (평균 {avg([len(s["fp"]) for s in S]):.1f}건)',
+         f'- 위반 재확인에서 위반→확인필요로 낮아진 target: 회차별 {" · ".join(str(s["down"]) for s in S)}건',
+         f'- 부작용(target·연관 항목 외 변화) 변형 1건당 평균 {avg([s["side"] for s in S]):.2f}개 · 근거 검증 통과율 평균 {avg([s["pass"] for s in S]):.1%}',
+         (f'- 비용: 회차당 약 ${avg([s["cost"] for s in S]):.2f}, {N}회 합계 ${sum(s["cost"] for s in S):.2f} (정가, 캐시 할인 미반영)' if S[0]['cost'] is not None else ''),
+         '', '## 회차별 결과', '',
+         '| 지표 | ' + ' | '.join(f'{i + 1}회' for i in range(N)) + ' | 평균 | 최소 ~ 최대 |', '|---|' + '---|' * (N + 2),
+         row('정확 판정률', pct('exact'), lambda v: f'{v:.1%}'),
+         row('검토 전달률', pct('flag'), lambda v: f'{v:.1%}'),
+         row('원본 오탐 (건)', [len(s['fp']) for s in S], lambda v: f'{v:g}' if v == int(v) else f'{v:.1f}'),
+         row('재확인으로 낮춤 (건)', [s['down'] for s in S], lambda v: f'{v:g}' if v == int(v) else f'{v:.1f}'),
+         row('부작용 / 변형 1건', [s['side'] for s in S], lambda v: f'{v:.2f}'),
+         row('근거 검증 통과율', [s['pass'] for s in S], lambda v: f'{v:.1%}')]
+    if S[0]['cost'] is not None:
+        L.append(row('비용 ($)', [s['cost'] for s in S], lambda v: f'{v:.3f}'))
+
+    L += ['', '## 변형 종류별 (회차별 성공 건수)', '',
+          '| 변형 | 내용 | target | 건수 | 판정 주체 | 정확 판정 (회차별) | 정확 판정 평균 | 검토 전달 (회차별) | 검토 전달 평균 |', '|---|---|---|---|---|---|---|---|---|']
+    for m in list(MUT_DESC) + ['전체']:
+        per = [[x for x in s['rows'] if m == '전체' or x['mutation'] == m] for s in S]
+        if not per[0]:
+            continue
+        k = len(per[0])
+        ex = [sum(x['detected'] for x in p) for p in per]
+        fl = [sum(x['flagged'] for x in p) for p in per]
+        src = '/'.join(sorted({x['source'] for p in per for x in p})) if m != '전체' else ''
+        name, desc = (f'**{m}**', '') if m == '전체' else (m, MUT_DESC[m])
+        tgt = '' if m == '전체' else per[0][0]['target_check']
+        L.append(f"| {name} | {desc} | {tgt} | {k} | {src} | {' · '.join(map(str, ex))} | {avg(ex) / k:.0%} | {' · '.join(map(str, fl))} | {avg(fl) / k:.0%} |")
+
+    # 회차마다 target 판정이 달라진 변형 / 모든 회차에서 놓친 변형
+    by_id = defaultdict(list)
+    for s in S:
+        for x in s['rows']:
+            by_id[x['variant_id']].append(x)
+    unstable = [xs for xs in by_id.values() if len({x['got'] for x in xs}) > 1]
+    always = [xs for xs in by_id.values() if not any(x['detected'] for x in xs)]
+    head = '| 변형 | target | 기대 | ' + ' | '.join(f'{i + 1}회' for i in range(N)) + ' | 정확 판정 | 검토 전달 |'
+    sep = '|---|---|---|' + '---|' * N + '---|---|'
+    def line(xs):
+        return (f"| {xs[0]['variant_id']} | {xs[0]['target_check']} | {xs[0]['expected'].replace('|', '·')} | "
+                + ' | '.join(x['got'] for x in xs) + f" | {sum(x['detected'] for x in xs)}/{N} | {sum(x['flagged'] for x in xs)}/{N} |")
+    L += ['', f'## 회차마다 target 판정이 달라진 변형 ({len(unstable)}건)', '']
+    L += ([head, sep] + [line(xs) for xs in unstable]) if unstable else ['없음']
+    L += ['', f'## 모든 회차에서 정확 판정을 놓친 변형 ({len(always)}건)', '']
+    if always:
+        L += [head, sep] + [line(xs) for xs in always]
+        L += ['', '이유 (마지막 회차의 05 reason):', '']
+        L += [f"- {xs[-1]['variant_id']}: {xs[-1]['reason'] or xs[-1]['measure']}" for xs in always]
+    else:
+        L.append('없음')
+
+    fps = [(i + 1, b, c, it) for i, s in enumerate(S) for b, c, it in s['fp']]
+    L += ['', f'## 원본 오탐 ({len(fps)}건, {N}회 합계)', '']
+    if fps:
+        L += ['| 회차 | 원본 | 항목 | 이유 |', '|---|---|---|---|']
+        L += [f"| {i} | {b} | {c} {it['item']} | {it['reason'].replace('|', '/')} |" for i, b, c, it in fps]
+    else:
+        L.append('없음')
+
+    # 회차별 results.csv
+    for d, s in zip(dirs, S):
+        with open(d / 'results.csv', 'w', newline='', encoding='utf-8-sig') as f:
+            w = csv.DictWriter(f, fieldnames=list(s['rows'][0]))
+            w.writeheader(); w.writerows(s['rows'])
+    return [x for x in L if x is not None]
+
+
+def write_outputs(labels, recs, reps, model, run_dir, base_rows=None, base_path=None, notes=()):
+    """1회 실행 보고서 줄 목록을 돌려주고 results.csv를 씀."""
+    base_v = {r['base_id']: verdicts(recs[r['variant_id']]) for r in labels if r['mutation'] == 'original'}
+    rows = build_rows(labels, recs)
     with open(run_dir / 'results.csv', 'w', newline='', encoding='utf-8-sig') as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]))
         w.writeheader(); w.writerows(rows)
@@ -298,10 +439,7 @@ def write_outputs(labels, recs, reps, model, run_dir, base_rows=None, base_path=
           '', '## 파일', '',
           f'- 변형별 결과: `rag/eval/runs/{model}/results.csv` (탐지 여부, 판정, 이유, 부작용 항목)',
           f'- 판정 원본: `rag/eval/runs/{model}/{{variant_id}}__{model}.json` · `.csv`', '']
-    out = EVAL_DIR / f'report_{model}.md'
-    out.write_text('\n'.join(L), encoding='utf-8')
-    print(f'\n보고서: {out}')
-    print('\n'.join(L[7:14]))
+    return L
 
 
 if __name__ == '__main__':

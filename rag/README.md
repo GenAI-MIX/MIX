@@ -96,6 +96,7 @@ python eval/make_variants.py                                   # 변형본 + 정
 python eval/evaluate.py --provider openai --model gpt-6-luna   # 판정 + 보고서
 python eval/evaluate.py --model gpt-6-luna --report-only       # 있는 결과로 보고서만 다시
 python eval/evaluate.py --model gpt-6-luna --rejudge --ids AD01__m_B1,V101__m_B3 --baseline eval/runs/gpt-6-luna/results_v1.csv   # 바뀐 변형만 다시 판정 + 이전 대비 표
+python eval/evaluate.py --model gpt-6-luna --runs 3 --single-report eval/runs/gpt-6-luna/report_1run.md   # 3회 반복 판정, 평균·최소~최대 요약
 python run_judge.py --ad-dir eval/variants --ids AD01__m_B3 --out-dir eval/runs/test   # 변형 1건만 판정
 ```
 
@@ -105,8 +106,9 @@ python run_judge.py --ad-dir eval/variants --ids AD01__m_B3 --out-dir eval/runs/
 | `eval/variants/{image,video}/json/` | 변형 JSON `{원본}__{변형}.json`, 원본 `{원본}__original.json`. 상품유형은 `product_override`로 원본 판정값에 고정 |
 | `eval/variants/skipped.csv` | 적용하지 않은 조합과 이유 (원본 판정에서 target 항목이 적합이 아니면 건너뜀) |
 | `eval/labels.csv` | 정답표: `variant_id`, `base_id`, `mutation`, `target_check`, `expected_verdicts`, `collateral_removed`(다른 필수 문구까지 지워졌으면 기록), `delete_mode`(구간 통째 삭제 · 부분 삭제 수), `note` |
-| `eval/evaluate.py` | 변형 판정 후 지표 계산. `--workers`, `--rejudge`, `--ids`(재판정할 변형), `--no-repeat`, `--report-only`, `--baseline`(이전 results.csv), `--note`(이전 대비 바뀐 점) |
+| `eval/evaluate.py` | 변형 판정 후 지표 계산. `--workers`, `--rejudge`, `--ids`(재판정할 변형), `--no-repeat`, `--report-only`, `--baseline`(이전 results.csv), `--note`(이전 대비 바뀐 점), `--runs N`(N회 반복 판정, `runs/{model}/xN/r1..rN`), `--single-report`(반복 평가 보고서 아래에 붙일 1회 실행 보고서) |
 | `eval/runs/{model}/` | 판정 결과, `results.csv`(변형별 정확 판정·검토 전달·재확인 낮춤·판정·이유·부작용), `results_v1.csv`(첫 실행), `repeat/`(원본 반복 판정) |
+| `eval/runs/{model}/x3/r1..r3/` | 3회 반복 판정 결과와 회차별 `results.csv`. `report_1run.md`는 B1 기준 보완 전 1회 실행 보고서 |
 | `eval/report_{model}.md` | 보고서 |
 
 **변형 9종**
