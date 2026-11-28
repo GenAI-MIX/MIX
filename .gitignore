@@ -218,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# 06 수정안: 후보안 원본 크기 이미지 (용량 큼, 실행하면 다시 생성)
+data/processed/remediation/**/fixed/
