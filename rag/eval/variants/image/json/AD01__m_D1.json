@@ -11,20 +11,6 @@
  "image": "data/raw/images/02_광고물 데이터셋(53)/01_ETF_NH-Amundi자산운용 (9)/01_NH-Amundi자산운용_HANARO K휴머노이드테마TOP10.png",
  "ocr_blocks": [
   {
-   "id": 0,
-   "text": "NH-Amund자산운용",
-   "bbox": [
-    277,
-    20,
-    642,
-    34
-   ],
-   "conf": 0.99,
-   "type": "other",
-   "h_px": 8.0,
-   "contrast": 7.7
-  },
-  {
    "id": 1,
    "text": "HANARO K휴머노이드테마TOP1O 정기 변경 안내",
    "bbox": [
@@ -978,20 +964,6 @@
   }
  ],
  "paragraphs": [
-  {
-   "id": 0,
-   "type": "other",
-   "text": "NH-Amund자산운용",
-   "bbox": [
-    277,
-    20,
-    642,
-    34
-   ],
-   "block_ids": [
-    0
-   ]
-  },
   {
    "id": 1,
    "type": "headline",

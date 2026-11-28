@@ -23,7 +23,7 @@ OUT_DIR = EVAL_DIR / 'variants'
 JUDGE_MODEL = 'gpt-6-luna'          # 원본 판정(상품유형·적용 여부 확인용)
 BASES = ['AD01', 'AD02', 'AD03', 'V101', 'V102', 'V103', 'V113', 'V114', 'V122', 'V126']
 
-C2_TEXT = '목표수익률 연 15% 달성!'
+C2_TEXT = '목표수익률 연 15%'
 C3_TEXT = '국내 유일 최고 수익 ETF'
 SEP = r'※*.。|'                      # 고지문 조항 구분에 쓰이는 기호
 
@@ -49,8 +49,9 @@ DELETE = {
             r'\(?\s*간\s*이\s*\)?\s*' + alt('투자설명서', '설명서') + gap(40) + alt('필독', '질독', '읽어보시기바랍니다', '읽어보시기', '읽어'),
             alt('설명서', '약관') + gap(40) + alt('필독', '질독', '읽어보시기바랍니다', '읽어보시기', '읽어'),
         ],
-        'residue': r'(?:\(?\s*간\s*이\s*\)?\s*)?(?:투\s*자\s*)?' + alt('설명서', '약관', '필독', '질독', '읽어보') + rf'[^\s{SEP}]{{0,8}}',
-        'forbid': ['설명서', '약관', '필독', '읽어보'],
+        'residue': r'(?:\(?\s*간\s*이\s*\)?\s*)?(?:투\s*자\s*)?' + alt('설명서', '약관', '필독', '질독', '읽어보') + rf'[^\s{SEP}]{{0,8}}'
+                   + r'|(?:\(?\s*간\s*이\s*\)?\s*)?투\s*자\s*설(?!\s*명\s*청|\s*정)',   # OCR이 끊긴 '(간이)투자설'
+        'forbid': ['설명서', '약관', '필독', '읽어보', '투자설명', '(간이)투자설'],
     },
     'm_B3': {
         'spans': [
@@ -82,6 +83,7 @@ PRESENT = {
     'B3': lambda t: '원금손실' in t or ('손실' in t and '투자자' in t),
     'B5': lambda t: '충분한설명' in t or '설명청취' in t,
     'B6': lambda t: '예금자보호' in t,
+    'B8': lambda t: '수수료' in t or '총보수' in t,       # 보수·수수료 안내 (문장째 지울 때 같이 사라지지 않게)
     'D1': lambda t: bool(re.search(r'(심사필|심의필)제?[\d\-]+호', t)),
 }
 
@@ -117,20 +119,69 @@ def all_text(ad):
     return norm('\n'.join(parts))
 
 
-def scrub(text, rule):
+# 문장(구간) 단위 삭제 ------------------------------------------------------------
+# 구간 구분: ※ • * | , 문장 끝('다.' / '니다' 뒤 공백 또는 바로 이어지는 한글), 글머리 '1'(OCR이 가운뎃점·세로줄을 1로 읽은 것)
+# '·'는 '투자설명서·집합투자규약'처럼 조항 안에서도 쓰여서 구분자로 보지 않음
+BOUNDARY = re.compile(r'(※|•|\*|\||(?<=다)\.|(?<=니다)\s+|(?<=니다)(?=[가-힣])|(?<![\dA-Za-z.,~%(\-])1(?![\d.,%년등개억만천위인회차일주월호)])(?=\s|[가-힣]))')
+SEG_KW = {   # 이 단어가 들어 있는 구간을 지움 (공백 제거 후 비교)
+    'm_B1': ['설명서', '약관', '필독', '질독', '읽어보', '투자설', '규약필'],
+    'm_B3': ['손실', '귀속', '자산가격변동', '신용등급하락'],   # 앞부분만 남은 B3 문장('자산가격 변동… 등에 따른')도 지움
+    'm_B6': ['예금자보호', '예금보험', '보호되지않', '호되지않', '보호하지않'],
+    'm_D1': ['심사필', '심의필', '협회심사'],
+}
+DANGLING = r'(?:및|또는|그리고|와|과|,|·|/)'
+MARK = '\x00'
+
+
+def partial(seg, rule, target):
+    """같은 구간에 다른 필수 문구가 있을 때: 해당 조항만 지우고 이음말·짧은 조각 정리.
+    짧은 조각 정리 때문에 다른 필수 문구(예: '설명 청취')가 사라지면 조각 정리는 하지 않음."""
+    others = [f for c, f in PRESENT.items() if c != target and f(norm(seg))]
     for pat in rule['spans']:
-        text = re.sub(pat, ' ', text)
-    text = re.sub(rule['residue'], ' ', text)
-    text = re.sub(r'(\s*※\s*){2,}', ' ※ ', text)          # 지운 자리에 남은 기호 정리
-    return re.sub(r'[ \t]{2,}', ' ', text).strip()
+        seg = re.sub(pat, MARK, seg)
+    seg = re.sub(rule['residue'], MARK, seg)
+    tidy = seg
+    for _ in range(2):           # 지운 자리 바로 앞뒤의 3글자 이하 조각 (숫자 없는 것)
+        tidy = re.sub(rf'(?:(?<=\s)|^)[^\s\d{MARK}]{{1,3}}\s*(?={MARK})', '', tidy)
+        tidy = re.sub(rf'(?<={MARK})\s*[^\s\d{MARK}]{{1,3}}(?=\s|$)', '', tidy)
+    for cand in (tidy, seg):
+        out = re.sub(rf'\s*{DANGLING}?\s*(?:{MARK}\s*)+{DANGLING}?\s*', ' ', cand)
+        out = re.sub(r'[ \t]{2,}', ' ', out).strip()
+        if all(f(norm(out)) for f in others):
+            return out
+    return out
+
+
+def delete_field(text, mut, target):
+    """반환: (새 문구, 구간 통째 삭제 수, 부분 삭제 수)."""
+    parts = BOUNDARY.split(text)
+    segs, seps = parts[0::2], parts[1::2] + ['']
+    hit = [any(w in norm(x) for w in SEG_KW[mut]) for x in segs]
+    gone, n_seg, n_part = [False] * len(segs), 0, 0
+    for i, x in enumerate(segs):
+        if not hit[i]:
+            continue
+        if any(f(norm(x)) for c, f in PRESENT.items() if c != target):
+            segs[i] = partial(x, DELETE[mut], target); n_part += 1
+            gone[i] = not norm(segs[i])
+        else:
+            segs[i] = ''; gone[i] = True; n_seg += 1
+    for i in range(len(segs)):     # 지운 구간 바로 앞뒤의 3글자 이하 조각도 지움
+        if not gone[i] and 0 < len(norm(segs[i])) <= 3 and ((i > 0 and gone[i - 1]) or (i + 1 < len(segs) and gone[i + 1])):
+            segs[i] = ''; gone[i] = True
+    out = ''.join(x + sep for x, sep, g in zip(segs, seps, gone) if not g)
+    out = re.sub(r'^[\s※•*|.]+|[\s※•*|]+$', '', out)
+    return re.sub(r'[ \t]{2,}', ' ', out), n_seg, n_part
 
 
 def delete_text(ad, mut):
-    """반환: (남은 금지어, 함께 지워진 다른 필수 문구). 부수 삭제는 필드(문단·블록·카드)마다 전후를 비교."""
+    """반환: (남은 금지어, 함께 지워진 다른 필수 문구, 삭제 방식). 부수 삭제는 필드(문단·블록·카드)마다 전후를 비교."""
     rule, target = DELETE[mut], MUTATIONS[mut][0]
-    collateral = set()
+    collateral, n_seg, n_part = set(), 0, 0
     for d, k in text_fields(ad):
-        before, d[k] = d[k], scrub(d[k], rule)
+        before = d[k]
+        d[k], a, b = delete_field(before, mut, target)
+        n_seg, n_part = n_seg + a, n_part + b
         collateral |= {c for c, f in PRESENT.items() if c != target and f(norm(before)) and not f(norm(d[k]))}
     # 빈 문단·블록·카드 문구는 지움 (측정값 metrics는 그대로 두어 A 항목에 영향 없게)
     ad['paragraphs'] = [p for p in ad.get('paragraphs', []) if norm(p['text'])]
@@ -146,7 +197,7 @@ def delete_text(ad, mut):
     left = [w for w in rule['forbid'] if w in all_text(ad)]
     if mut == 'm_D1' and (ad.get('review_no') or PRESENT['D1'](all_text(ad))):
         left.append('review_no')
-    return left, sorted(collateral)
+    return left, sorted(collateral), f'구간 {n_seg} · 부분 {n_part}'
 
 
 def add_headline(ad, text):
@@ -180,10 +231,10 @@ def mutate(ad, mut):
     elif mut in DELETE:
         return delete_text(ad, mut)
     elif mut == 'm_C2':
-        return add_headline(ad, C2_TEXT), []
+        return add_headline(ad, C2_TEXT), [], ''
     elif mut == 'm_C3':
-        return add_headline(ad, C3_TEXT), []
-    return [], []
+        return add_headline(ad, C3_TEXT), [], ''
+    return [], [], ''
 
 
 def main():
@@ -197,14 +248,14 @@ def main():
         verdict = {it['check_id']: it['verdict'] for it in judged['items']}
         before = {c: f(all_text(src)) for c, f in PRESENT.items()}
 
-        def write(vid, ad, mutation, target='', expected=(), collateral=(), note=''):
+        def write(vid, ad, mutation, target='', expected=(), collateral=(), note='', mode=''):
             ad['ad_id'], ad['base_id'], ad['eval_mutation'] = vid, base, mutation
             ad['product_override'] = judged['product']
             (OUT_DIR / kind / 'json' / f'{vid}.json').write_text(json.dumps(ad, ensure_ascii=False, indent=1), encoding='utf-8')
             labels.append({'variant_id': vid, 'base_id': base, 'mutation': mutation, 'target_check': target,
                            'expected_verdicts': '|'.join(expected), 'original_verdict': verdict.get(target, ''),
                            'product': judged['product'], 'media': kind,
-                           'collateral_removed': '|'.join(collateral), 'note': note})
+                           'collateral_removed': '|'.join(collateral), 'delete_mode': mode, 'note': note})
 
         write(f'{base}__original', copy.deepcopy(src), 'original')
         for mut, (target, expected, media) in MUTATIONS.items():
@@ -215,12 +266,15 @@ def main():
                                 'reason': f'원본 판정이 {verdict.get(target, "항목 없음")} (적합일 때만 적용)'})
                 continue
             ad = copy.deepcopy(src)
-            left, collateral = mutate(ad, mut)
+            left, collateral, mode = mutate(ad, mut)
             if left:
                 raise SystemExit(f'{base} {mut}: 지운 뒤에도 남음 → {left}')
             after = {c: f(all_text(ad)) for c, f in PRESENT.items()}
             collateral = sorted(set(collateral) | {c for c in PRESENT if before[c] and not after[c] and c != target})
-            write(f'{base}__{mut}', ad, mut, target, expected, collateral)
+            note = ''
+            if mut == 'm_D1' and src.get('media') == 'tv_cf':     # 방송 광고는 심사필 생략 가능 (05 규칙과 같음)
+                expected, note = ['해당없음'], 'K-2-47-3: 방송 광고는 공간 제약 시 심사필 표시 생략 가능'
+            write(f'{base}__{mut}', ad, mut, target, expected, collateral, note, mode)
 
     with open(EVAL_DIR / 'labels.csv', 'w', newline='', encoding='utf-8-sig') as f:
         w = csv.DictWriter(f, fieldnames=list(labels[0]))
