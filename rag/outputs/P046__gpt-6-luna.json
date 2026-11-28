@@ -1,7 +1,12 @@
 {
  "ad_id": "P046",
  "product": "예금성",
- "product_by": "text",
+ "product_by": "llm",
+ "product_reason": "신한 운동화 적금의 금리와 가입 혜택을 광고하는 적금 상품입니다.",
+ "product_keywords": [
+  "예금성",
+  "범위밖"
+ ],
  "media": "image",
  "model": "gpt-6-luna",
  "tokens": [

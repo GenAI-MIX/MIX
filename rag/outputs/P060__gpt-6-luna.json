@@ -1,7 +1,12 @@
 {
  "ad_id": "P060",
  "product": "예금성",
- "product_by": "text",
+ "product_by": "llm",
+ "product_reason": "IBK장병내일준비적금의 금리와 만기 수령액을 광고하는 적금 상품입니다.",
+ "product_keywords": [
+  "예금성",
+  "범위밖"
+ ],
  "media": "image",
  "model": "gpt-6-luna",
  "tokens": [

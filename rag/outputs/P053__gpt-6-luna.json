@@ -1,7 +1,11 @@
 {
  "ad_id": "P053",
  "product": "예금성",
- "product_by": "text",
+ "product_by": "keyword",
+ "product_reason": "키워드: 예금성만 검출",
+ "product_keywords": [
+  "예금성"
+ ],
  "media": "image",
  "model": "gpt-6-luna",
  "tokens": [

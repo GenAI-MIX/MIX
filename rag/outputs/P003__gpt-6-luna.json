@@ -1,7 +1,12 @@
 {
  "ad_id": "P003",
  "product": "투자성",
- "product_by": "text",
+ "product_by": "llm",
+ "product_reason": "퇴직연금 DC·IRP의 디폴트옵션 운용을 광고하며, 원금 손실 가능성이 있는 금융투자상품으로 명시되어 있습니다.",
+ "product_keywords": [
+  "투자성",
+  "예금성"
+ ],
  "media": "image",
  "model": "gpt-6-luna",
  "tokens": [

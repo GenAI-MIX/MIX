@@ -1,7 +1,11 @@
 {
  "ad_id": "V126",
  "product": "투자성",
- "product_by": "brand/title",
+ "product_by": "llm",
+ "product_reason": "TIGER ETF는 자산가격 변동에 따라 원금 손실이 발생할 수 있는 상장지수펀드입니다.",
+ "product_keywords": [
+  "투자성"
+ ],
  "media": "tv_cf",
  "model": "gpt-6-luna",
  "tokens": [

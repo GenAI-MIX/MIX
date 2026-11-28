@@ -1,7 +1,11 @@
 {
  "ad_id": "V101",
  "product": "투자성",
- "product_by": "brand/title",
+ "product_by": "keyword",
+ "product_reason": "키워드: 투자성만 검출",
+ "product_keywords": [
+  "투자성"
+ ],
  "media": "tv_cf",
  "model": "gpt-6-luna",
  "tokens": [

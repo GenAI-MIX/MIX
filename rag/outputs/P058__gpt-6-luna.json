@@ -1,7 +1,11 @@
 {
  "ad_id": "P058",
  "product": "범위밖",
- "product_by": "text",
+ "product_by": "keyword",
+ "product_reason": "키워드: 범위밖만 검출",
+ "product_keywords": [
+  "범위밖"
+ ],
  "media": "image",
  "model": "gpt-6-luna",
  "tokens": [

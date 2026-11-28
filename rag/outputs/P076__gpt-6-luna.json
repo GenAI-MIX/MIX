@@ -1,7 +1,12 @@
 {
  "ad_id": "P076",
  "product": "예금성",
- "product_by": "text",
+ "product_by": "llm",
+ "product_reason": "나라사랑 하나통장과 장병내일준비적금은 각각 저축예금과 적립식예금 상품입니다.",
+ "product_keywords": [
+  "예금성",
+  "범위밖"
+ ],
  "media": "image",
  "model": "gpt-6-luna",
  "tokens": [

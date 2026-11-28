@@ -2,6 +2,10 @@
  "ad_id": "AD01",
  "product": "투자성",
  "product_by": "json",
+ "product_reason": "전처리 JSON product=ETF",
+ "product_keywords": [
+  "투자성"
+ ],
  "media": "poster",
  "model": "gpt-6-luna",
  "tokens": [

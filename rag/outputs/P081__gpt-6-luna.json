@@ -1,7 +1,12 @@
 {
  "ad_id": "P081",
  "product": "투자성",
- "product_by": "text",
+ "product_by": "llm",
+ "product_reason": "하나골드신탁(운용)은 금을 운용해 수익을 추구하며 투자원본 손실 가능성이 명시된 금융투자상품입니다.",
+ "product_keywords": [
+  "투자성",
+  "보장성"
+ ],
  "media": "image",
  "model": "gpt-6-luna",
  "tokens": [

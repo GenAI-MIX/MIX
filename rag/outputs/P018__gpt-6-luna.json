@@ -1,7 +1,12 @@
 {
  "ad_id": "P018",
  "product": "투자성",
- "product_by": "text",
+ "product_by": "llm",
+ "product_reason": "개인형 IRP 퇴직연금과 펀드·ETF 등 실적배당형 투자상품을 광고하며 원금 손실 가능성이 있습니다.",
+ "product_keywords": [
+  "투자성",
+  "예금성"
+ ],
  "media": "image",
  "model": "gpt-6-luna",
  "tokens": [

@@ -1,7 +1,12 @@
 {
  "ad_id": "P059",
  "product": "투자성",
- "product_by": "text",
+ "product_by": "llm",
+ "product_reason": "개인형 IRP의 맞춤형 자산운용 및 포트폴리오 서비스를 광고하고 있습니다.",
+ "product_keywords": [
+  "투자성",
+  "예금성"
+ ],
  "media": "image",
  "model": "gpt-6-luna",
  "tokens": [

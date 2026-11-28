@@ -2,6 +2,11 @@
  "ad_id": "AD41",
  "product": "투자성",
  "product_by": "json",
+ "product_reason": "전처리 JSON product=증권",
+ "product_keywords": [
+  "투자성",
+  "예금성"
+ ],
  "media": "poster",
  "model": "gpt-6-luna",
  "tokens": [

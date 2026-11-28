@@ -1,7 +1,13 @@
 {
  "ad_id": "P006",
  "product": "대출성",
- "product_by": "text",
+ "product_by": "llm",
+ "product_reason": "소상공인 정책자금대출을 비대면으로 신청·실행하는 상품을 광고합니다.",
+ "product_keywords": [
+  "예금성",
+  "대출성",
+  "범위밖"
+ ],
  "media": "image",
  "model": "gpt-6-luna",
  "tokens": [

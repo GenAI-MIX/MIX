@@ -8,6 +8,7 @@
 처음 import할 때 rag_search(BGE-M3 + 리랭커)를 불러오므로 30초~1분 걸립니다.
 """
 import datetime
+import hashlib
 import json
 import os
 import re
@@ -69,23 +70,36 @@ PRODUCT_OVERRIDE = {
     # 'V112': '투자성',
 }
 
-# '연금' 광고는 함께 나오는 단어로 정합니다 (브랜드·제목·광고 문구 전체에서 찾음)
-#   보험·생명·화재·연금저축보험 → 보장성 / 펀드·ETF·IRP·퇴직연금·TDF → 투자성 / 둘 다 아니면 전체
+# 상품유형은 2단계로 정합니다.
+#   0) PRODUCT_OVERRIDE → JSON의 product('ETF', '증권') 순으로 우선
+#   1) 키워드: 유형별 키워드를 모두 찾아서, 한 유형만 나오고 '연금'이 없으면 그 유형으로 확정
+#   2) LLM: 여러 유형이 섞이거나, '연금'이 있거나, 아무 유형도 안 나오면 광고 문구 앞부분과 브랜드로 LLM에 묻기
+#      (결과는 rag/cache/product_cache.json에 저장해 재사용)
+PRODUCT_TYPES = ['투자성', '예금성', '대출성', '보장성', '범위밖']
+KEYWORDS = {
+    '투자성': r'ETF|펀드|자산운용|ISA|주식|투자|증권|ETN|ELS|채권|IRP|퇴직연금|(?<![A-Za-z])DC(?![A-Za-z])|TDF|실적배당|금융투자상품',
+    '보장성': r'보험|생명|화재|해상|손해',
+    '대출성': r'대출|중금리|신용대출|카드론|담보',
+    '예금성': r'적금|예금|통장|파킹|정기예',
+    '범위밖': r'카드|요금제|통신|모바일\s*요금',
+}
 PENSION_RE = r'연금'
-# 상품이 아닌 '보험' 문구는 보장성 판단에서 뺍니다 (예금자보호 고지문의 예금보험공사, 세금 안내의 건강·연금보험료)
-NOT_INSURANCE_RE = r'예금보험공사|예금보험|국민건강보험료?|건강보험료?|연금보험료'
-PENSION_RULES = [
-    (r'보험|생명|화재|연금저축보험', '보장성'),
-    (r'펀드|ETF|IRP|퇴직연금|TDF', '투자성'),
-]
-
-RULES = [   # (키워드 정규식, 상품유형) — 위에서부터 먼저 맞는 것 ('연금' 광고는 위 PENSION_RULES가 먼저)
-    (r'ETF|펀드|자산운용|ISA|주식|투자|증권|ETN|ELS|채권', '투자성'),
-    (r'보험|생명|화재|해상|손해', '보장성'),
-    (r'대출|중금리|신용대출|카드론|담보', '대출성'),
-    (r'적금|예금|통장|파킹|정기예', '예금성'),
-    (r'카드', '범위밖'),
-]
+# 상품이 아니라 고지문·세금 안내에 늘 나오는 문구는 키워드 검색 전에 뺍니다
+# (예금자보호 고지문의 '예금'·'예금보험공사', 세금 안내의 건강·연금보험료)
+NOT_PRODUCT_RE = r'예금자\s*보호법?|예금보험공사|예금보험|국민건강보험료?|건강보험료?|연금보험료'
+PRODUCT_MODEL = 'gpt-6-luna'
+PRODUCT_TEXT_LIMIT = 1500
+PRODUCT_CACHE_PATH = RAG_DIR / 'cache' / 'product_cache.json'
+PRODUCT_SYSTEM = """당신은 한국 금융광고의 금융상품 유형을 분류합니다.
+금융소비자보호법의 유형 중 하나를 고릅니다.
+- 투자성: 펀드, ETF, 주식·증권 계좌, IRP·퇴직연금(DC 등), TDF, 실적배당형 상품, 연금저축펀드 등 원금 손실 가능성이 있는 금융투자상품
+- 예금성: 예금, 적금, 통장, 파킹통장 등
+- 대출성: 대출, 카드론, 담보대출 등
+- 보장성: 보험 (종신·건강·연금저축보험 등)
+- 범위밖: 금융상품이 아닌 광고 또는 위 유형으로 보기 어려운 광고 (신용카드, 통신 요금제 등)
+광고한 회사(보험사·은행·증권사)의 업종이 아니라 광고가 파는 상품으로 판단합니다.
+JSON으로만 답합니다: {"product": "투자성|예금성|대출성|보장성|범위밖 중 하나", "reason": "이유 한 줄"}"""
+_product_lock = threading.Lock()
 
 
 def ad_text(ad, limit=None):
@@ -95,26 +109,68 @@ def ad_text(ad, limit=None):
     return s[:limit] if limit else s
 
 
-def infer_product(ad):
-    if ad['ad_id'] in PRODUCT_OVERRIDE:
-        return PRODUCT_OVERRIDE[ad['ad_id']], 'override'
-    p = ad.get('product')
-    if p in ('ETF', '증권'):
-        return '투자성', 'json'
+def keyword_types(ad):
+    """1단계: 브랜드·제목·광고 문구(앞 3000자)에서 찾은 유형 목록과 '연금' 여부."""
     head = ' '.join(str(ad.get(k) or '') for k in ('brand', 'title'))
-    body = ad_text(ad, 3000)
-    both = head + '\n' + body
-    if re.search(PENSION_RE, both):
-        clean = re.sub(NOT_INSURANCE_RE, '', both)
-        for pat, ptype in PENSION_RULES:
-            if re.search(pat, clean):
-                return ptype, 'pension'
-        return '전체', 'pension'
-    for src, text in (('brand/title', head), ('text', body)):
-        for pat, ptype in RULES:
-            if re.search(pat, text):
-                return ptype, src
-    return '전체', 'none'
+    text = re.sub(NOT_PRODUCT_RE, '', head + '\n' + ad_text(ad, 3000))
+    found = [t for t in PRODUCT_TYPES if re.search(KEYWORDS[t], text)]
+    return found, bool(re.search(PENSION_RE, text))
+
+
+def _load_product_cache():
+    try:
+        return json.loads(PRODUCT_CACHE_PATH.read_text(encoding='utf-8'))
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+
+_product_cache = None
+
+
+def llm_product(ad):
+    """2단계: LLM 분류. 같은 광고 문구·모델·프롬프트면 캐시를 씀. 반환 (유형, 이유)."""
+    global _product_cache
+    text = ad_text(ad, PRODUCT_TEXT_LIMIT)
+    user = f"브랜드: {ad.get('brand') or '(없음)'}\n\n광고 문구 (앞부분 {PRODUCT_TEXT_LIMIT}자):\n{text}"
+    key = ad['ad_id'] + ':' + hashlib.sha256((PRODUCT_MODEL + PRODUCT_SYSTEM + user).encode()).hexdigest()[:16]
+    with _product_lock:
+        if _product_cache is None:
+            _product_cache = _load_product_cache()
+        if key in _product_cache:
+            c = _product_cache[key]
+            return c['product'], c['reason']
+    out, _ = call_llm('openai', PRODUCT_SYSTEM, user, PRODUCT_MODEL)
+    ptype, reason = out.get('product'), str(out.get('reason', '')).strip()
+    if ptype not in PRODUCT_TYPES:
+        reason = f'LLM 답이 유형 목록에 없음({ptype}) — 전체로 처리. {reason}'
+        ptype = '전체'
+    with _product_lock:
+        _product_cache = {**_load_product_cache(), **_product_cache}   # 다른 프로세스가 저장한 것도 합침
+        _product_cache[key] = {'ad_id': ad['ad_id'], 'product': ptype, 'reason': reason, 'model': PRODUCT_MODEL}
+        PRODUCT_CACHE_PATH.parent.mkdir(exist_ok=True)
+        tmp = PRODUCT_CACHE_PATH.with_suffix(f'.tmp{os.getpid()}')
+        tmp.write_text(json.dumps(_product_cache, ensure_ascii=False, indent=1), encoding='utf-8')
+        os.replace(tmp, PRODUCT_CACHE_PATH)
+    return ptype, reason
+
+
+def infer_product_detail(ad):
+    """{'product', 'by'(override/json/keyword/llm), 'reason', 'keywords'(1단계에서 찾은 유형), 'pension'}"""
+    found, pension = keyword_types(ad)
+    base = {'keywords': found, 'pension': pension}
+    if ad['ad_id'] in PRODUCT_OVERRIDE:
+        return {'product': PRODUCT_OVERRIDE[ad['ad_id']], 'by': 'override', 'reason': 'PRODUCT_OVERRIDE', **base}
+    if ad.get('product') in ('ETF', '증권'):
+        return {'product': '투자성', 'by': 'json', 'reason': f"전처리 JSON product={ad.get('product')}", **base}
+    if len(found) == 1 and not pension:
+        return {'product': found[0], 'by': 'keyword', 'reason': f'키워드: {found[0]}만 검출', **base}
+    ptype, reason = llm_product(ad)
+    return {'product': ptype, 'by': 'llm', 'reason': reason, **base}
+
+
+def infer_product(ad):
+    d = infer_product_detail(ad)
+    return d['product'], d['by']
 
 
 def load_ad(ad_id):
@@ -394,7 +450,8 @@ def judge_ad(ad_id, provider='openai', model=None, verbose=True, out_dir=None, r
     out_dir = Path(out_dir) if out_dir else OUT_DIR
     out_dir.mkdir(parents=True, exist_ok=True)
     ad = load_ad(ad_id)
-    ptype, by = infer_product(ad)
+    pinfo = infer_product_detail(ad)
+    ptype, by = pinfo['product'], pinfo['by']
     media = media_of(ad)
     info = summarize_ad(ad, ptype)
     ad_norm = ad_text_norm(ad, info)
@@ -454,7 +511,8 @@ def judge_ad(ad_id, provider='openai', model=None, verbose=True, out_dir=None, r
     res = pd.DataFrame(results).merge(checks[['check_id', 'item']], on='check_id')
     res = res.reindex(columns=['check_id', 'item', 'verdict', 'source', 'measure', 'ad_quote', 'reason', 'card_ids', 'quote', 'issues', 'recheck']).fillna('')
     tok = (sum(u['input_tokens'] for u in usage), sum(u['output_tokens'] for u in usage))
-    record = {'ad_id': ad_id, 'product': ptype, 'product_by': by, 'media': media,
+    record = {'ad_id': ad_id, 'product': ptype, 'product_by': by, 'product_reason': pinfo['reason'],
+              'product_keywords': pinfo['keywords'], 'media': media,
               'model': usage[0]['model'] if usage else (model or MODELS[provider]), 'tokens': tok, 'llm_calls': len(usage),
               'recheck_calls': len({r['group'] for r in rechecks}),
               'rechecks': rechecks, 'summaries': summaries, 'retrieved_cards': retrieved,

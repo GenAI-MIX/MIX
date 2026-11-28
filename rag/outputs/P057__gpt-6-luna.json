@@ -1,7 +1,11 @@
 {
  "ad_id": "P057",
  "product": "대출성",
- "product_by": "text",
+ "product_by": "keyword",
+ "product_reason": "키워드: 대출성만 검출",
+ "product_keywords": [
+  "대출성"
+ ],
  "media": "image",
  "model": "gpt-6-luna",
  "tokens": [

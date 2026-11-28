@@ -1,7 +1,13 @@
 {
  "ad_id": "P014",
  "product": "대출성",
- "product_by": "text",
+ "product_by": "llm",
+ "product_reason": "다른 금융기관의 신용대출을 우리은행 대출로 갈아타는 신용대출 상품을 광고합니다.",
+ "product_keywords": [
+  "예금성",
+  "대출성",
+  "범위밖"
+ ],
  "media": "image",
  "model": "gpt-6-luna",
  "tokens": [

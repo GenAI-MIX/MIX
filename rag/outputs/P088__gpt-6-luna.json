@@ -1,7 +1,12 @@
 {
  "ad_id": "P088",
  "product": "투자성",
- "product_by": "text",
+ "product_by": "llm",
+ "product_reason": "주식 거래, 퇴직연금·IRP 및 펀드 등 원금 손실 가능성이 있는 투자상품을 광고합니다.",
+ "product_keywords": [
+  "투자성",
+  "예금성"
+ ],
  "media": "image",
  "model": "gpt-6-luna",
  "tokens": [
