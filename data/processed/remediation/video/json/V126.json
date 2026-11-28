@@ -1,5 +1,7 @@
 {
   "ad_id": "V126",
+  "decision": "디자이너 검토",
+  "note": "처리 오류: 'NoneType' object is not subscriptable",
   "checks_before": [
     {
       "id": "A2",
@@ -41,8 +43,5 @@
       "op": ">=",
       "ok": true
     }
-  ],
-  "decision": "디자이너 검토",
-  "note": "고칠 수 있는 정지 자막이 없음 (흐르는 자막 등)",
-  "steps": []
+  ]
 }

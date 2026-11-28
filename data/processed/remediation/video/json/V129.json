@@ -47,15 +47,15 @@
     {
       "id": "A2",
       "name": "명암비",
-      "value": 5.92,
+      "value": 1.73,
       "threshold": 3.0,
       "op": ">=",
-      "ok": true
+      "ok": false
     },
     {
       "id": "A4",
       "name": "헤드라인 대비",
-      "value": 3.036,
+      "value": 1.786,
       "threshold": 0.1,
       "op": ">=",
       "ok": true
@@ -63,23 +63,23 @@
     {
       "id": "A5",
       "name": "노출 비율",
-      "value": 0.353,
+      "value": 0.081,
       "threshold": 0.333,
       "op": ">=",
-      "ok": true
+      "ok": false
     },
     {
       "id": "A6",
       "name": "초당 글자 수",
-      "value": 55.5,
+      "value": 242.4,
       "threshold": 197,
       "op": "<=",
-      "ok": true
+      "ok": false
     },
     {
       "id": "A7",
       "name": "글자 크기(pt)",
-      "value": 31.65,
+      "value": 6.15,
       "threshold": 5.06,
       "op": ">=",
       "ok": true
@@ -88,49 +88,44 @@
   "steps": [
     {
       "card": 7,
-      "font": "Pretendard-SemiBold",
+      "font": "나눔고딕 Bold (클래식 고딕)",
       "h_before_px": 21.0,
       "h_after_px": 85.3,
       "size_factor": 4.06,
-      "lines": 34,
+      "lines": 132,
       "fg": [
         230,
         237,
         242
       ],
-      "bg": [
-        79,
-        84,
-        85
+      "ink": [
+        94,
+        115,
+        124
       ],
-      "band": null,
+      "ink_how": "광고에 쓰인 색으로 글자색 변경",
       "center": true,
       "static_bg": false,
+      "ext_ink_how": [],
       "window_before": [
         27.6,
         30.03
       ],
-      "window_after": [
-        19.42,
-        30.03
-      ],
+      "windows_added": [],
       "frame_fix": true,
       "fail": [
         "화면 위쪽까지 넘침",
-        "위쪽 다른 글자와 겹침",
         "글자를 ×4.1 키워야 함"
       ]
     }
   ],
   "edit_sheet": [
-    "A6: 자막 589자를 읽을 시간 확보 → 27.6초가 아니라 26.9초부터 표시",
-    "A5: 노출 3.2초 → 영상 30.0초의 1/3(10.0초) 이상이 되도록 고지 자막을 19.4~30.0초로 유지 (원래 27.6~30.0초)",
-    "자막 7: 글자 21→85px(×4.06) Pretendard-SemiBold, 글자색 그대로 · 표시 27.6~30.0초 → 19.4~30.0초"
+    "자막 7: 글자 21→85px(×4.06) 나눔고딕 Bold (클래식 고딕), 광고에 쓰인 색으로 글자색 변경, 움직이는 배경이라 원래 작은 글자 자리는 블러로 지움"
   ],
   "fails": [
     "자막 7: 화면 위쪽까지 넘침",
-    "자막 7: 위쪽 다른 글자와 겹침",
-    "자막 7: 글자를 ×4.1 키워야 함"
+    "자막 7: 글자를 ×4.1 키워야 함",
+    "자막 7: 고지 자리에 다른 글자가 없는 장면이 0.0초뿐 (필요 8.2초)"
   ],
   "measured": [
     {
@@ -138,10 +133,1578 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        192,
+        827,
+        -15597,
+        1089,
+        -15503
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        -15471,
+        1089,
+        -15376
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        870,
+        -15345,
+        1046,
+        -15251
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        -15220,
+        1089,
+        -15126
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        870,
+        -15094,
+        1046,
+        -15000
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        -14968,
+        1089,
+        -14873
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        -14842,
+        1089,
+        -14748
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        -14716,
+        1089,
+        -14622
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        813,
+        -14590,
+        1103,
+        -14493
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        784,
+        -14464,
+        1132,
+        -14370
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        -14338,
+        1089,
+        -14244
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        870,
+        -14212,
+        1046,
+        -14118
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        870,
+        -14086,
+        1046,
+        -13992
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        870,
+        -13960,
+        1046,
+        -13866
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        -13834,
+        1089,
+        -13739
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        -13708,
+        1089,
+        -13614
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        784,
+        -13582,
+        1132,
+        -13488
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        713,
+        -13457,
+        1202,
+        -13362
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        741,
+        -13330,
+        1175,
+        -13235
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        655,
+        -13204,
+        1261,
+        -13109
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        870,
+        -13078,
+        1046,
+        -12984
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        638,
+        -12952,
+        1277,
+        -12855
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        870,
+        -12826,
+        1046,
+        -12732
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        913,
+        -12699,
+        1003,
+        -12606
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        767,
+        -12574,
+        1148,
+        -12477
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        698,
+        -12448,
+        1218,
+        -12354
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        741,
+        -12322,
+        1175,
+        -12227
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        842,
+        -12196,
+        1074,
+        -12102
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        865,
+        -12070,
+        1051,
+        -11976
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        747,
+        -11944,
+        1168,
+        -11847
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        741,
+        -11819,
+        1175,
+        -11725
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        870,
+        -11694,
+        1046,
+        -11599
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        741,
+        -11567,
+        1175,
+        -11473
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        834,
+        -11441,
+        1082,
+        -11344
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        727,
+        -11315,
+        1189,
+        -11221
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        870,
+        -11189,
+        1046,
+        -11094
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        -11063,
+        1089,
+        -10970
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        913,
+        -10935,
+        1003,
+        -10845
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        784,
+        -10811,
+        1132,
+        -10717
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        870,
+        -10683,
+        1046,
+        -10601
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        -10559,
+        1089,
+        -10465
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        698,
+        -10433,
+        1218,
+        -10339
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        -10307,
+        1089,
+        -10214
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        -10181,
+        1089,
+        -10086
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        751,
+        -10055,
+        1165,
+        -9961
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        811,
+        -9929,
+        1105,
+        -9835
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        412,
+        -9803,
+        1504,
+        -9706
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        913,
+        -9677,
+        1003,
+        -9582
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        -9551,
+        1089,
+        -9459
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        784,
+        -9425,
+        1132,
+        -9331
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        -9299,
+        1089,
+        -9206
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        741,
+        -9173,
+        1175,
+        -9078
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        784,
+        -9047,
+        1132,
+        -8953
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        784,
+        -8921,
+        1132,
+        -8826
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        637,
+        -8795,
+        1278,
+        -8698
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        698,
+        -8669,
+        1218,
+        -8575
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        813,
+        -8543,
+        1103,
+        -8449
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        728,
+        -8418,
+        1188,
+        -8323
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        870,
+        -8292,
+        1046,
+        -8198
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        813,
+        -8166,
+        1103,
+        -8072
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        -8040,
+        1089,
+        -7946
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        -7914,
+        1089,
+        -7820
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        727,
+        -7788,
+        1189,
+        -7693
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        856,
+        -7662,
+        1059,
+        -7568
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        -7536,
+        1089,
+        -7441
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        784,
+        -7410,
+        1132,
+        -7316
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        784,
+        -7284,
+        1132,
+        -7189
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        -7158,
+        1089,
+        -7063
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        -7032,
+        1089,
+        -6938
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        741,
+        -6906,
+        1175,
+        -6812
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        741,
+        -6781,
+        1175,
+        -6685
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        784,
+        -6654,
+        1132,
+        -6560
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        -6528,
+        1089,
+        -6434
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        913,
+        -6402,
+        1003,
+        -6308
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        -6276,
+        1089,
+        -6181
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        741,
+        -6150,
+        1175,
+        -6056
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        -6025,
+        1089,
+        -5930
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        913,
+        -5898,
+        1003,
+        -5804
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        627,
+        -5772,
+        1288,
+        -5677
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        784,
+        -5646,
+        1132,
+        -5552
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        612,
+        -5520,
+        1304,
+        -5425
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        913,
+        -5386,
+        1003,
+        -5310
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        870,
+        -5268,
+        1046,
+        -5175
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        784,
+        -5143,
+        1132,
+        -5048
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        814,
+        -5017,
+        1102,
+        -4923
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        870,
+        -4891,
+        1046,
+        -4796
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        870,
+        -4765,
+        1046,
+        -4671
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        913,
+        -4639,
+        1003,
+        -4545
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        710,
+        -4513,
+        1205,
+        -4416
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        784,
+        -4387,
+        1132,
+        -4293
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        741,
+        -4261,
+        1175,
+        -4167
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        857,
+        -4135,
+        1059,
+        -4040
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        -4009,
+        1089,
+        -3915
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        784,
+        -3883,
+        1132,
+        -3789
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        681,
+        -3757,
+        1234,
+        -3660
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        813,
+        -3631,
+        1103,
+        -3537
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        856,
+        -3505,
+        1060,
+        -3408
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        536,
+        -3379,
+        1380,
+        -3282
+      ],
+      "ink_h_px": null,
+      "fg_rgb": null,
+      "bg_rgb": null,
+      "contrast_ratio": null,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        784,
         -3253,
-        1724,
-        -3156
+        1132,
+        -3159
       ],
       "ink_h_px": null,
       "fg_rgb": null,
@@ -154,10 +1717,10 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        190,
+        536,
         -3127,
-        1726,
-        -3018
+        1380,
+        -3030
       ],
       "ink_h_px": null,
       "fg_rgb": null,
@@ -170,9 +1733,9 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        192,
+        579,
         -3001,
-        1724,
+        1337,
         -2904
       ],
       "ink_h_px": null,
@@ -186,10 +1749,10 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        156,
-        -2875,
-        1760,
-        -2778
+        784,
+        -2876,
+        1132,
+        -2781
       ],
       "ink_h_px": null,
       "fg_rgb": null,
@@ -202,10 +1765,10 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        166,
+        814,
         -2749,
-        1750,
-        -2640
+        1102,
+        -2655
       ],
       "ink_h_px": null,
       "fg_rgb": null,
@@ -218,10 +1781,10 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        238,
+        870,
         -2623,
-        1678,
-        -2526
+        1046,
+        -2528
       ],
       "ink_h_px": null,
       "fg_rgb": null,
@@ -234,10 +1797,10 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        178,
+        870,
         -2497,
-        1738,
-        -2388
+        1046,
+        -2403
       ],
       "ink_h_px": null,
       "fg_rgb": null,
@@ -250,10 +1813,10 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        100,
+        710,
         -2371,
-        1816,
-        -2262
+        1205,
+        -2274
       ],
       "ink_h_px": null,
       "fg_rgb": null,
@@ -266,10 +1829,10 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        160,
+        784,
         -2245,
-        1756,
-        -2148
+        1132,
+        -2151
       ],
       "ink_h_px": null,
       "fg_rgb": null,
@@ -282,10 +1845,10 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        590,
+        741,
         -2119,
-        1326,
-        -2022
+        1175,
+        -2025
       ],
       "ink_h_px": null,
       "fg_rgb": null,
@@ -298,10 +1861,10 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        200,
+        857,
         -1993,
-        1716,
-        -1884
+        1059,
+        -1898
       ],
       "ink_h_px": null,
       "fg_rgb": null,
@@ -314,10 +1877,10 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        216,
+        827,
         -1867,
-        1700,
-        -1770
+        1089,
+        -1773
       ],
       "ink_h_px": null,
       "fg_rgb": null,
@@ -330,10 +1893,10 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        162,
+        784,
         -1741,
-        1754,
-        -1632
+        1132,
+        -1647
       ],
       "ink_h_px": null,
       "fg_rgb": null,
@@ -346,9 +1909,9 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        177,
+        665,
         -1615,
-        1738,
+        1251,
         -1518
       ],
       "ink_h_px": null,
@@ -362,9 +1925,9 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        132,
+        654,
         -1490,
-        1784,
+        1262,
         -1393
       ],
       "ink_h_px": null,
@@ -378,10 +1941,10 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        260,
+        870,
         -1364,
-        1656,
-        -1267
+        1046,
+        -1269
       ],
       "ink_h_px": null,
       "fg_rgb": null,
@@ -394,10 +1957,10 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        204,
+        870,
         -1238,
-        1712,
-        -1141
+        1046,
+        -1143
       ],
       "ink_h_px": null,
       "fg_rgb": null,
@@ -410,10 +1973,10 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        188,
+        913,
         -1112,
-        1728,
-        -1015
+        1003,
+        -1020
       ],
       "ink_h_px": null,
       "fg_rgb": null,
@@ -426,10 +1989,10 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        260,
+        827,
         -986,
-        1656,
-        -889
+        1089,
+        -892
       ],
       "ink_h_px": null,
       "fg_rgb": null,
@@ -442,10 +2005,10 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        94,
+        827,
         -860,
-        1822,
-        -751
+        1089,
+        -765
       ],
       "ink_h_px": null,
       "fg_rgb": null,
@@ -458,10 +2021,10 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        105,
+        827,
         -734,
-        1811,
-        -637
+        1089,
+        -640
       ],
       "ink_h_px": null,
       "fg_rgb": null,
@@ -474,10 +2037,10 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        401,
+        741,
         -608,
-        1515,
-        -499
+        1175,
+        -514
       ],
       "ink_h_px": null,
       "fg_rgb": null,
@@ -490,10 +2053,10 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        334,
+        913,
         -482,
-        1582,
-        -373
+        1003,
+        -387
       ],
       "ink_h_px": null,
       "fg_rgb": null,
@@ -506,10 +2069,10 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        120,
+        827,
         -356,
-        1796,
-        -247
+        1089,
+        -262
       ],
       "ink_h_px": null,
       "fg_rgb": null,
@@ -522,10 +2085,10 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        150,
+        741,
         -230,
-        1766,
-        -121
+        1175,
+        -135
       ],
       "ink_h_px": null,
       "fg_rgb": null,
@@ -538,10 +2101,10 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        105,
-        -104,
-        1811,
-        -7
+        770,
+        -105,
+        1146,
+        -10
       ],
       "ink_h_px": null,
       "fg_rgb": null,
@@ -554,23 +2117,23 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        131,
+        398,
         21,
-        1785,
-        130
+        1518,
+        115
       ],
-      "ink_h_px": 87,
+      "ink_h_px": null,
       "fg_rgb": [
-        232,
-        238,
-        242
+        115,
+        142,
+        151
       ],
       "bg_rgb": [
-        78,
-        83,
-        85
+        58,
+        63,
+        48
       ],
-      "contrast_ratio": 6.66,
+      "contrast_ratio": 3.13,
       "contrast_conf": "high"
     },
     {
@@ -578,775 +2141,167 @@
       "t": 28.0,
       "where": "원래 구간",
       "bbox": [
-        192,
+        457,
         147,
-        1724,
+        1458,
         244
       ],
-      "ink_h_px": 87,
+      "ink_h_px": null,
       "fg_rgb": [
-        232,
-        238,
-        242
+        140,
+        154,
+        153
       ],
       "bg_rgb": [
+        64,
+        70,
+        52
+      ],
+      "contrast_ratio": 3.36,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        427,
+        273,
+        1488,
+        370
+      ],
+      "ink_h_px": null,
+      "fg_rgb": [
+        195,
+        210,
+        212
+      ],
+      "bg_rgb": [
+        94,
+        93,
+        70
+      ],
+      "contrast_ratio": 4.31,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        827,
+        399,
+        1089,
+        493
+      ],
+      "ink_h_px": 50,
+      "fg_rgb": [
+        179,
+        184,
+        193
+      ],
+      "bg_rgb": [
+        112,
+        115,
+        121
+      ],
+      "contrast_ratio": 2.39,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        601,
+        525,
+        1314,
+        620
+      ],
+      "ink_h_px": null,
+      "fg_rgb": [
+        208,
+        219,
+        224
+      ],
+      "bg_rgb": [
+        94,
+        100,
+        105
+      ],
+      "contrast_ratio": 4.25,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        682,
+        652,
+        1233,
+        748
+      ],
+      "ink_h_px": null,
+      "fg_rgb": [
+        55,
+        43,
+        39
+      ],
+      "bg_rgb": [
+        101,
+        115,
+        124
+      ],
+      "contrast_ratio": 2.79,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        926,
+        812,
+        990,
+        861
+      ],
+      "ink_h_px": 14,
+      "fg_rgb": [
+        229,
+        241,
+        253
+      ],
+      "bg_rgb": [
+        93,
+        111,
+        124
+      ],
+      "contrast_ratio": 4.55,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 7,
+      "t": 28.0,
+      "where": "원래 구간",
+      "bbox": [
+        682,
+        904,
+        1233,
+        1000
+      ],
+      "ink_h_px": 50,
+      "fg_rgb": [
+        66,
         79,
-        83,
-        85
-      ],
-      "contrast_ratio": 6.64,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 7,
-      "t": 28.0,
-      "where": "원래 구간",
-      "bbox": [
-        390,
-        273,
-        1526,
-        370
-      ],
-      "ink_h_px": null,
-      "fg_rgb": [
-        232,
-        237,
-        242
+        89
       ],
       "bg_rgb": [
-        80,
-        84,
-        86
-      ],
-      "contrast_ratio": 6.5,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 7,
-      "t": 28.0,
-      "where": "원래 구간",
-      "bbox": [
-        375,
-        399,
-        1540,
-        496
-      ],
-      "ink_h_px": 85,
-      "fg_rgb": [
-        232,
-        238,
-        242
-      ],
-      "bg_rgb": [
-        81,
-        84,
-        87
-      ],
-      "contrast_ratio": 6.51,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 7,
-      "t": 28.0,
-      "where": "원래 구간",
-      "bbox": [
-        427,
-        525,
-        1489,
-        634
-      ],
-      "ink_h_px": 86,
-      "fg_rgb": [
-        232,
-        238,
-        242
-      ],
-      "bg_rgb": [
-        80,
-        84,
-        87
-      ],
-      "contrast_ratio": 6.53,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 7,
-      "t": 28.0,
-      "where": "원래 구간",
-      "bbox": [
-        256,
-        651,
-        1660,
-        760
-      ],
-      "ink_h_px": 83,
-      "fg_rgb": [
-        232,
-        238,
-        242
-      ],
-      "bg_rgb": [
-        80,
-        84,
-        87
-      ],
-      "contrast_ratio": 6.53,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 7,
-      "t": 28.0,
-      "where": "원래 구간",
-      "bbox": [
-        202,
-        777,
-        1713,
-        886
-      ],
-      "ink_h_px": 72,
-      "fg_rgb": [
-        232,
-        238,
-        242
-      ],
-      "bg_rgb": [
-        80,
-        84,
-        86
-      ],
-      "contrast_ratio": 6.54,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 7,
-      "t": 28.0,
-      "where": "원래 구간",
-      "bbox": [
-        638,
-        909,
-        1278,
-        1012
-      ],
-      "ink_h_px": 73,
-      "fg_rgb": [
-        232,
-        238,
-        242
-      ],
-      "bg_rgb": [
-        80,
-        84,
-        87
-      ],
-      "contrast_ratio": 6.53,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        192,
-        -3253,
-        1724,
-        -3156
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        190,
-        -3127,
-        1726,
-        -3018
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        192,
-        -3001,
-        1724,
-        -2904
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        156,
-        -2875,
-        1760,
-        -2778
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        166,
-        -2749,
-        1750,
-        -2640
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        238,
-        -2623,
-        1678,
-        -2526
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        178,
-        -2497,
-        1738,
-        -2388
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        100,
-        -2371,
-        1816,
-        -2262
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        160,
-        -2245,
-        1756,
-        -2148
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        590,
-        -2119,
-        1326,
-        -2022
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        200,
-        -1993,
-        1716,
-        -1884
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        216,
-        -1867,
-        1700,
-        -1770
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        162,
-        -1741,
-        1754,
-        -1632
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        177,
-        -1615,
-        1738,
-        -1518
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        132,
-        -1490,
-        1784,
-        -1393
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        260,
-        -1364,
-        1656,
-        -1267
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        204,
-        -1238,
-        1712,
-        -1141
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        188,
-        -1112,
-        1728,
-        -1015
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        260,
-        -986,
-        1656,
-        -889
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        94,
-        -860,
-        1822,
-        -751
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        105,
-        -734,
-        1811,
-        -637
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        401,
-        -608,
-        1515,
-        -499
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        334,
-        -482,
-        1582,
-        -373
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        120,
-        -356,
-        1796,
-        -247
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        150,
-        -230,
-        1766,
-        -121
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        105,
-        -104,
-        1811,
-        -7
-      ],
-      "ink_h_px": null,
-      "fg_rgb": null,
-      "bg_rgb": null,
-      "contrast_ratio": null,
-      "contrast_conf": "low"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        131,
-        21,
-        1785,
-        130
-      ],
-      "ink_h_px": 87,
-      "fg_rgb": [
-        232,
-        238,
-        242
-      ],
-      "bg_rgb": [
-        80,
-        83,
-        84
-      ],
-      "contrast_ratio": 6.63,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        192,
-        147,
-        1724,
-        244
-      ],
-      "ink_h_px": 87,
-      "fg_rgb": [
-        234,
-        238,
-        242
-      ],
-      "bg_rgb": [
-        85,
-        91,
-        94
-      ],
-      "contrast_ratio": 5.92,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        390,
-        273,
-        1526,
-        370
-      ],
-      "ink_h_px": null,
-      "fg_rgb": [
-        234,
-        238,
-        242
-      ],
-      "bg_rgb": [
-        76,
-        80,
-        81
-      ],
-      "contrast_ratio": 7.0,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        375,
-        399,
-        1540,
-        496
-      ],
-      "ink_h_px": 85,
-      "fg_rgb": [
-        234,
-        238,
-        242
-      ],
-      "bg_rgb": [
-        76,
-        80,
-        81
-      ],
-      "contrast_ratio": 7.0,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        427,
-        525,
-        1489,
-        634
-      ],
-      "ink_h_px": 86,
-      "fg_rgb": [
-        234,
-        238,
-        242
-      ],
-      "bg_rgb": [
-        78,
-        83,
-        85
-      ],
-      "contrast_ratio": 6.69,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        256,
-        651,
-        1660,
-        760
-      ],
-      "ink_h_px": 83,
-      "fg_rgb": [
-        234,
-        238,
-        242
-      ],
-      "bg_rgb": [
-        77,
-        81,
-        84
-      ],
-      "contrast_ratio": 6.87,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        202,
-        777,
-        1713,
-        886
-      ],
-      "ink_h_px": 72,
-      "fg_rgb": [
-        234,
-        238,
-        242
-      ],
-      "bg_rgb": [
-        80,
-        84,
-        86
-      ],
-      "contrast_ratio": 6.56,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 7,
-      "t": 23.51,
-      "where": "늘린 구간",
-      "bbox": [
-        638,
-        909,
-        1278,
-        1012
-      ],
-      "ink_h_px": 73,
-      "fg_rgb": [
-        234,
-        238,
-        242
-      ],
-      "bg_rgb": [
-        84,
-        91,
-        93
-      ],
-      "contrast_ratio": 5.94,
+        103,
+        115,
+        124
+      ],
+      "contrast_ratio": 1.73,
       "contrast_conf": "high"
     }
   ],
@@ -1356,11 +2311,21 @@
       30.03
     ]
   },
-  "windows_after": {
-    "0": [
-      19.42046106,
+  "windows_after": [
+    [
+      27.6,
       30.03
     ]
-  },
-  "fixed_video": "data/processed/remediation/video/fixed/V129.mp4"
+  ],
+  "frames": [
+    {
+      "card": 7,
+      "where": "원래 구간",
+      "t": 28.0,
+      "before": "data/processed/remediation/video/frames/V129_c7_orig_28.0s_before.jpg",
+      "after": "data/processed/remediation/video/frames/V129_c7_orig_28.0s_after.jpg"
+    }
+  ],
+  "hold": null,
+  "fixed_video": null
 }

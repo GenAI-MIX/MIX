@@ -11,7 +11,7 @@ import numpy as np
 def ad_checks(m, th):
     mf = m.get("mobile_feed", {})
     rows = [("A2", "명암비", m.get("risk_contrast_min"), th["contrast"], ""),
-            ("A3", "글자 크기(pt)", mf.get("risk_median_pt"), th["image_pt"], "pt"),
+            ("A3", th.get("size_label", "글자 크기(pt)"), mf.get("risk_median_pt"), th["image_pt"], "pt"),
             ("A4", "헤드라인 대비", m.get("risk_headline_ratio"), th["ratio_image"], "")]
     return [{"id": i, "name": n, "value": v, "threshold": t,
              "ok": None if v is None else bool(v >= t)} for i, n, v, t, _ in rows]
@@ -24,11 +24,21 @@ def is_logo(b, ad):
     return len(t) <= 14 and bool(brand) and brand[:2] in t and "※" not in t
 
 
+def profile_metrics(m, th):
+    """전처리 JSON의 모바일(390pt) 값을 현재 판형 단위(pt 또는 mm)로 바꿈."""
+    m = dict(m)
+    mf = dict(m.get("mobile_feed") or {})
+    if mf.get("risk_median_pt") is not None:
+        mf["risk_median_pt"] = round(mf["risk_median_pt"] * th["display_width_pt"] / 390, 2)
+    m["mobile_feed"] = mf
+    return m
+
+
 def diagnose(ad, th, ladder):
     W = ad["size"][0]
     px_per_pt = W / th["display_width_pt"]
     blocks = {b["id"]: b for b in ad["ocr_blocks"]}
-    checks = ad_checks(ad["metrics"], th)
+    checks = ad_checks(profile_metrics(ad["metrics"], th), th)
     bad = {c["id"] for c in checks if c["ok"] is False}
     risk_paras = [p for p in ad["paragraphs"] if p["type"] == "risk_notice"]
     if not risk_paras:

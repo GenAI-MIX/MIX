@@ -50,7 +50,8 @@ def panel(path, font_path, ad, decision, orig, fixed=None, before_boxes=(), afte
     W = max(len(cols) * (cw + 24) + 24, 1000)
     sheet = Image.new("RGB", (W, head_h + body_h + 44 + foot_h), BG)
     d = ImageDraw.Draw(sheet)
-    title = "  ".join([ad["ad_id"], " · ".join(str(ad[k]) for k in ("brand", "product", "media") if ad.get(k))])
+    title = "  ".join([ad["ad_id"], " · ".join(str(ad[k]) for k in ("brand", "product", "media") if ad.get(k))]
+                      + ([f"[{ad['_profile']}]"] if ad.get("_profile") else []))
     d.text((24, 22), title, font=f_t, fill=INK)
     lab = decision
     tw = d.textlength(lab, font=f_b) + 32
@@ -133,7 +134,7 @@ def panel_candidates(path, font_path, ad, decision, orig, before_boxes, cands, n
     tw = d.textlength(decision, font=f_b) + 32
     d.rounded_rectangle((W - tw - 24, 24, W - 24, 62), 12, fill=BADGE.get(decision, SUB))
     d.text((W - tw - 8, 30), decision, font=f_b, fill="white")
-    d.text((24, 70), f"모든 안은 원본과 같은 규격 {orig.width}×{orig.height}px · 초록=고친 줄 · 파랑=추가 문구 · 빨강=원본 문제 위치 · 주황=표현 검토",
+    d.text((24, 70), (f"[{ad.get('_profile')}] " if ad.get("_profile") else "") + (f"상황: {ad.get('_situation')} · " if ad.get("_situation") else "") + f"모든 안은 원본과 같은 규격 {orig.width}×{orig.height}px · 초록=고친 줄 · 파랑=추가 문구 · 빨강=원본 문제 위치 · 주황=표현 검토",
            font=f_x, fill=SUB)
     for k, (name, im, c) in enumerate(tiles):
         x, y = 24 + k * (cw + 20), 100
@@ -152,6 +153,13 @@ def panel_candidates(path, font_path, ad, decision, orig, before_boxes, cands, n
                 info.append(f"배경 줄 {c['rows_removed']}px를 여러 곳에서 나눠 회수")
             if c.get("visual_scale"):
                 info.append(f"위쪽 비주얼 {c['visual_scale']:.0%}로 축소")
+            if c.get("rows_trimmed"):
+                info.append(f"사진 아래쪽 {c['rows_trimmed']}px 다듬음")
+            if c.get("height_added"):
+                info.append(f"높이 +{c['height_added']}px (상세페이지)")
+            tr = next((s.get("contrast_treatment") for s in c.get("steps", []) if s.get("contrast_treatment")), None)
+            if tr:
+                info.append(tr[:34])
             pr = next((s.get("pitch_ratio") for s in c.get("steps", []) if s.get("pitch_ratio")), None)
             if pr:
                 info.append(f"줄 간격 {pr[0]} → {pr[1]} (글자 높이 배수)")

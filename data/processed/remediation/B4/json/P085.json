@@ -1,0 +1,135 @@
+{
+  "ad_id": "P085",
+  "situation": "세로 · 브랜드 푸터 패널 · 그라데이션 배경",
+  "font": "IBM Plex Sans KR Bold (기업형 고딕 (좁은 폭))",
+  "decision": "수정안",
+  "checks_before": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 2.68,
+      "threshold": 3.0,
+      "ok": false
+    },
+    {
+      "id": "A3",
+      "name": "글자 높이(mm)",
+      "value": 4.1,
+      "threshold": 2.13,
+      "ok": true
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.12,
+      "threshold": 0.075,
+      "ok": true
+    }
+  ],
+  "note": null,
+  "judge_model": null,
+  "content_add": [],
+  "content_flag": [],
+  "recommended": "A",
+  "brief": null,
+  "candidates": [
+    {
+      "name": "A",
+      "label": "제자리 수정 (규격·배치 그대로)",
+      "steps": [
+        {
+          "paragraph": 12,
+          "level": "L1",
+          "block": 16,
+          "fg_before": [
+            250,
+            223,
+            184
+          ],
+          "fg_after": [
+            251,
+            251,
+            251
+          ],
+          "ink_delta_e": 24.3
+        }
+      ],
+      "passed": true,
+      "checks_after": [
+        {
+          "id": "A2",
+          "name": "명암비",
+          "value": 3.1,
+          "threshold": 3.0,
+          "ok": true
+        },
+        {
+          "id": "A3",
+          "name": "글자 높이(mm)",
+          "value": 4.1,
+          "threshold": 2.13,
+          "ok": true
+        },
+        {
+          "id": "A4",
+          "name": "헤드라인 대비",
+          "value": 0.121,
+          "threshold": 0.075,
+          "ok": true
+        }
+      ],
+      "measured": [
+        {
+          "bbox": [
+            20,
+            1148,
+            319,
+            1165
+          ],
+          "kind": "recolor",
+          "ink_h_px": null,
+          "fg_rgb": [
+            250,
+            250,
+            250
+          ],
+          "bg_rgb": [
+            176,
+            128,
+            77
+          ],
+          "contrast_ratio": 3.33,
+          "contrast_conf": "high"
+        }
+      ],
+      "why": [],
+      "changed_pct": 0.3,
+      "ink_delta_e": 24.3,
+      "size_factor": 1.0,
+      "recommended": true
+    }
+  ],
+  "checks_after": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 3.1,
+      "threshold": 3.0,
+      "ok": true
+    },
+    {
+      "id": "A3",
+      "name": "글자 높이(mm)",
+      "value": 4.1,
+      "threshold": 2.13,
+      "ok": true
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.121,
+      "threshold": 0.075,
+      "ok": true
+    }
+  ]
+}

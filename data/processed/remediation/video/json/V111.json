@@ -47,7 +47,7 @@
     {
       "id": "A2",
       "name": "명암비",
-      "value": 7.08,
+      "value": 5.54,
       "threshold": 3.0,
       "op": ">=",
       "ok": true
@@ -55,7 +55,7 @@
     {
       "id": "A4",
       "name": "헤드라인 대비",
-      "value": 0.548,
+      "value": 0.516,
       "threshold": 0.1,
       "op": ">=",
       "ok": true
@@ -79,7 +79,7 @@
     {
       "id": "A7",
       "name": "글자 크기(pt)",
-      "value": 5.71,
+      "value": 6.59,
       "threshold": 5.06,
       "op": ">=",
       "ok": true
@@ -88,174 +88,60 @@
   "steps": [
     {
       "card": 0,
-      "font": "Pretendard-SemiBold",
+      "font": "IBM Plex Sans KR Medium (기업형 고딕 (좁은 폭))",
       "h_before_px": 16.0,
       "h_after_px": 16.0,
       "size_factor": 1.0,
-      "lines": 5,
+      "lines": 4,
       "fg": [
         157,
         157,
         157
       ],
-      "bg": [
-        0,
-        0,
-        0
+      "ink": [
+        157,
+        157,
+        157
       ],
-      "band": null,
+      "ink_how": "원래 글자색 그대로",
       "center": true,
       "static_bg": true,
+      "ext_ink_how": [],
       "window_before": [
-        11.9,
-        15.02
-      ],
-      "window_after": [
         9.72,
         15.02
       ],
+      "windows_added": [],
       "frame_fix": false,
       "fail": []
     }
   ],
   "edit_sheet": [
-    "A5: 노출 3.1초 → 영상 15.0초의 1/3(5.0초) 이상이 되도록 고지 자막을 9.7~15.0초로 유지 (원래 11.9~15.0초)",
-    "자막 0: 원래 크기·색 그대로 · 표시 11.9~15.0초 → 9.7~15.0초"
+    "자막 0: 앞 컷 끝을 2.2초 다듬고 고지 화면을 9.7초부터 시작 (음성·전체 길이 그대로)",
+    "자막 0: 원래 크기·색 그대로"
   ],
   "fails": [],
-  "measured": [
-    {
-      "card": 0,
-      "t": 10.81,
-      "where": "늘린 구간",
-      "bbox": [
-        143,
-        933,
-        1744,
-        959
-      ],
-      "ink_h_px": 17,
-      "fg_rgb": [
-        156,
-        158,
-        157
-      ],
-      "bg_rgb": [
-        14,
-        16,
-        15
-      ],
-      "contrast_ratio": 7.08,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 0,
-      "t": 10.81,
-      "where": "늘린 구간",
-      "bbox": [
-        124,
-        956,
-        1763,
-        982
-      ],
-      "ink_h_px": 17,
-      "fg_rgb": [
-        156,
-        158,
-        157
-      ],
-      "bg_rgb": [
-        14,
-        16,
-        15
-      ],
-      "contrast_ratio": 7.08,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 0,
-      "t": 10.81,
-      "where": "늘린 구간",
-      "bbox": [
-        112,
-        979,
-        1776,
-        1005
-      ],
-      "ink_h_px": 17,
-      "fg_rgb": [
-        156,
-        158,
-        157
-      ],
-      "bg_rgb": [
-        13,
-        14,
-        14
-      ],
-      "contrast_ratio": 7.17,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 0,
-      "t": 10.81,
-      "where": "늘린 구간",
-      "bbox": [
-        280,
-        1002,
-        1608,
-        1028
-      ],
-      "ink_h_px": 17,
-      "fg_rgb": [
-        156,
-        158,
-        157
-      ],
-      "bg_rgb": [
-        14,
-        15,
-        14
-      ],
-      "contrast_ratio": 7.13,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 0,
-      "t": 10.81,
-      "where": "늘린 구간",
-      "bbox": [
-        736,
-        1025,
-        1152,
-        1051
-      ],
-      "ink_h_px": 13,
-      "fg_rgb": [
-        156,
-        158,
-        158
-      ],
-      "bg_rgb": [
-        10,
-        12,
-        12
-      ],
-      "contrast_ratio": 7.28,
-      "contrast_conf": "high"
-    }
-  ],
+  "measured": [],
   "windows_before": {
     "0": [
       11.9,
       15.02
     ]
   },
-  "windows_after": {
-    "0": [
-      9.71523053,
-      15.015
+  "windows_after": [
+    [
+      11.9,
+      15.02
+    ],
+    [
+      9.72,
+      11.9
     ]
-  },
-  "fixed_video": "data/processed/remediation/video/fixed/V111.mp4"
+  ],
+  "frames": [],
+  "hold": [
+    9.72,
+    2.18
+  ],
+  "fixed_video": null
 }

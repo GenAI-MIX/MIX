@@ -47,7 +47,7 @@
     {
       "id": "A2",
       "name": "명암비",
-      "value": 3.1,
+      "value": 4.24,
       "threshold": 3.0,
       "op": ">=",
       "ok": true
@@ -79,7 +79,7 @@
     {
       "id": "A7",
       "name": "글자 크기(pt)",
-      "value": 18.46,
+      "value": 15.82,
       "threshold": 5.06,
       "op": ">=",
       "ok": true
@@ -88,43 +88,46 @@
   "steps": [
     {
       "card": 8,
-      "font": "Pretendard-Regular",
+      "font": "Noto Sans KR Bold (표준 고딕)",
       "h_before_px": 12.0,
       "h_after_px": 12.0,
       "size_factor": 1.0,
-      "lines": 4,
+      "lines": 3,
       "fg": [
         163,
         168,
         169
       ],
-      "bg": [
-        79,
-        90,
-        97
+      "ink": [
+        163,
+        168,
+        169
       ],
-      "band": [
-        73,
-        81,
-        87
-      ],
+      "ink_how": "배경이 얼룩져 글자색만으로는 대비 부족",
       "center": false,
       "static_bg": false,
+      "ext_ink_how": [
+        "글자 바로 뒤만 원래 톤으로 부드럽게 가라앉힘"
+      ],
       "window_before": [
         9.0,
         13.8
       ],
-      "window_after": [
-        6.74,
-        13.8
+      "windows_added": [
+        [
+          6.64,
+          8.9,
+          0,
+          -353
+        ]
       ],
       "frame_fix": true,
       "fail": []
     }
   ],
   "edit_sheet": [
-    "A5: 노출 4.8초 → 영상 20.0초의 1/3(6.7초) 이상이 되도록 고지 자막을 6.7~13.8초로 유지 (원래 9.0~13.8초)",
-    "자막 8: 글자 12→12px(×1.0) Pretendard-Regular, 글자색 그대로, 배경 같은 색조 띠 RGB(73, 81, 87) · 표시 9.0~13.8초 → 6.7~13.8초"
+    "자막 8: 고지 자리가 비어 있는 장면(6.6~8.9초(자리 옮김))에 같은 자막을 이어서 표시 → +2.3초",
+    "자막 8: 글자 12→12px(×1.0) Noto Sans KR Bold (표준 고딕), 배경이 얼룩져 글자색만으로는 대비 부족, 움직이는 배경이라 원래 작은 글자 자리는 블러로 지움 · 원래 9.0~13.8초 + 추가 6.6~8.9초"
   ],
   "fails": [],
   "measured": [
@@ -133,191 +136,143 @@
       "t": 13.1,
       "where": "원래 구간",
       "bbox": [
-        38,
-        372,
-        284,
-        395
+        33,
+        387,
+        315,
+        407
       ],
-      "ink_h_px": 15,
+      "ink_h_px": 12,
       "fg_rgb": [
-        158,
-        165,
-        170
+        163,
+        168,
+        169
       ],
       "bg_rgb": [
-        74,
-        81,
+        60,
+        63,
+        65
+      ],
+      "contrast_ratio": 4.41,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 8,
+      "t": 13.1,
+      "where": "원래 구간",
+      "bbox": [
+        33,
+        404,
+        299,
+        425
+      ],
+      "ink_h_px": 12,
+      "fg_rgb": [
+        163,
+        168,
+        169
+      ],
+      "bg_rgb": [
+        60,
+        64,
+        65
+      ],
+      "contrast_ratio": 4.36,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 8,
+      "t": 13.1,
+      "where": "원래 구간",
+      "bbox": [
+        33,
+        419,
+        229,
+        439
+      ],
+      "ink_h_px": 12,
+      "fg_rgb": [
+        163,
+        168,
+        169
+      ],
+      "bg_rgb": [
+        61,
+        64,
+        66
+      ],
+      "contrast_ratio": 4.34,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 8,
+      "t": 7.77,
+      "where": "늘린 구간",
+      "bbox": [
+        33,
+        34,
+        315,
+        54
+      ],
+      "ink_h_px": 12,
+      "fg_rgb": [
+        163,
+        168,
+        169
+      ],
+      "bg_rgb": [
+        58,
+        68,
+        54
+      ],
+      "contrast_ratio": 4.24,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 8,
+      "t": 7.77,
+      "where": "늘린 구간",
+      "bbox": [
+        33,
+        51,
+        299,
+        72
+      ],
+      "ink_h_px": 12,
+      "fg_rgb": [
+        163,
+        168,
+        169
+      ],
+      "bg_rgb": [
+        58,
+        66,
+        52
+      ],
+      "contrast_ratio": 4.35,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 8,
+      "t": 7.77,
+      "where": "늘린 구간",
+      "bbox": [
+        33,
+        66,
+        229,
         86
       ],
-      "contrast_ratio": 3.23,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 8,
-      "t": 13.1,
-      "where": "원래 구간",
-      "bbox": [
-        38,
-        388,
-        305,
-        413
-      ],
-      "ink_h_px": 15,
+      "ink_h_px": 12,
       "fg_rgb": [
-        158,
-        165,
-        170
-      ],
-      "bg_rgb": [
-        74,
-        81,
-        86
-      ],
-      "contrast_ratio": 3.23,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 8,
-      "t": 13.1,
-      "where": "원래 구간",
-      "bbox": [
-        38,
-        404,
-        244,
-        427
-      ],
-      "ink_h_px": 15,
-      "fg_rgb": [
-        158,
-        165,
-        170
-      ],
-      "bg_rgb": [
-        75,
-        82,
-        88
-      ],
-      "contrast_ratio": 3.18,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 8,
-      "t": 13.1,
-      "where": "원래 구간",
-      "bbox": [
-        38,
-        420,
-        244,
-        443
-      ],
-      "ink_h_px": 15,
-      "fg_rgb": [
-        156,
         163,
-        168
+        168,
+        169
       ],
       "bg_rgb": [
-        75,
-        82,
-        88
+        59,
+        67,
+        52
       ],
-      "contrast_ratio": 3.1,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 8,
-      "t": 7.87,
-      "where": "늘린 구간",
-      "bbox": [
-        38,
-        372,
-        284,
-        395
-      ],
-      "ink_h_px": 15,
-      "fg_rgb": [
-        157,
-        165,
-        168
-      ],
-      "bg_rgb": [
-        69,
-        78,
-        84
-      ],
-      "contrast_ratio": 3.39,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 8,
-      "t": 7.87,
-      "where": "늘린 구간",
-      "bbox": [
-        38,
-        388,
-        305,
-        413
-      ],
-      "ink_h_px": 15,
-      "fg_rgb": [
-        158,
-        165,
-        170
-      ],
-      "bg_rgb": [
-        70,
-        77,
-        83
-      ],
-      "contrast_ratio": 3.44,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 8,
-      "t": 7.87,
-      "where": "늘린 구간",
-      "bbox": [
-        38,
-        404,
-        244,
-        427
-      ],
-      "ink_h_px": 15,
-      "fg_rgb": [
-        158,
-        165,
-        170
-      ],
-      "bg_rgb": [
-        71,
-        79,
-        84
-      ],
-      "contrast_ratio": 3.35,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 8,
-      "t": 7.87,
-      "where": "늘린 구간",
-      "bbox": [
-        38,
-        420,
-        244,
-        443
-      ],
-      "ink_h_px": 14,
-      "fg_rgb": [
-        156,
-        163,
-        168
-      ],
-      "bg_rgb": [
-        72,
-        80,
-        85
-      ],
-      "contrast_ratio": 3.22,
+      "contrast_ratio": 4.28,
       "contrast_conf": "high"
     }
   ],
@@ -327,11 +282,32 @@
       13.8
     ]
   },
-  "windows_after": {
-    "0": [
-      6.738632874000001,
+  "windows_after": [
+    [
+      9.0,
       13.8
+    ],
+    [
+      6.64,
+      8.9
     ]
-  },
-  "fixed_video": "data/processed/remediation/video/fixed/V105.mp4"
+  ],
+  "frames": [
+    {
+      "card": 8,
+      "where": "원래 구간",
+      "t": 13.1,
+      "before": "data/processed/remediation/video/frames/V105_c8_orig_13.1s_before.jpg",
+      "after": "data/processed/remediation/video/frames/V105_c8_orig_13.1s_after.jpg"
+    },
+    {
+      "card": 8,
+      "where": "늘린 구간",
+      "t": 7.77,
+      "before": "data/processed/remediation/video/frames/V105_c8_ext_7.8s_before.jpg",
+      "after": "data/processed/remediation/video/frames/V105_c8_ext_7.8s_after.jpg"
+    }
+  ],
+  "hold": null,
+  "fixed_video": null
 }

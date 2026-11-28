@@ -12,64 +12,13 @@ from PIL import Image, ImageDraw, ImageFont
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 OUT = ROOT / "data" / "processed" / "remediation"
-FD = Path("~/Library/Fonts").expanduser()
+FD = HERE.parent / "fonts"            # 레포에 포함된 Pretendard
 F = lambda w, s: ImageFont.truetype(str(FD / f"Pretendard-{w}.otf"), s)
 W, H = 2339, 1654                      # A4 가로, 200dpi
 INK, SUB, LINE, BG = (24, 24, 27), (95, 99, 110), (220, 223, 230), (255, 255, 255)
 BLUE, GREEN, RED, ORANGE, PURPLE = (37, 99, 235), (22, 163, 74), (220, 38, 38), (234, 88, 12), (109, 40, 217)
 
-# 보여줄 사례: (페이지 제목, 패널 경로, 설명 줄들)
-CASES = [
-    ("사례 1 · 원본 유지", OUT / "AD03", GREEN,
-     ["A2 명암비·A3 글자 크기·A4 헤드라인 대비 모두 기준 통과함.",
-      "수정안을 만들지 않고 원본 디자인 그대로 진행하도록 안내함."]),
-    ("사례 2 · B안 추천 (배경 여백 회수)", OUT / "AD01", BLUE,
-     ["위험고지 글자 크기가 5.58pt로 기준(5.9pt) 미달.",
-      "A안(줄 간격만 정리)은 34px 모자라 통과 못 함 → 불가 안으로 함께 표시함.",
-      "B안: 표·문단 사이 여백 줄을 여러 곳에서 조금씩 회수해 공간 확보함. 테두리·표·로고 위치 그대로.",
-      "C안도 통과했지만 원본을 덜 건드리는 B안을 추천함."]),
-    ("사례 3 · C안 추천 (비주얼 살짝 축소)", OUT / "P007", BLUE,
-     ["위험고지 3.94pt → 6.34pt로 키움. 인물 사진이 화면 대부분이라 뺄 수 있는 여백 줄이 부족해 B안은 불가.",
-      "C안: 고지 위쪽 내용을 95%로 같은 비율 축소. 금색 테두리는 세로로만 눌러 선이 끊기지 않게 함.",
-      "광고 규격(1783×2553px)은 원본과 동일함."]),
-    ("사례 4 · B+C안 추천 (두 방법을 조금씩)", OUT / "P009", BLUE,
-     ["B안만으로는 여백 줄 124px 부족, C안만으로는 비주얼을 90% 아래로 줄여야 해서 각각 불가.",
-      "B+C안: 여백 86px 회수 + 비주얼 93% 축소로 나눠서 해결함.",
-      "인물·헤드라인·KB Star FX 로고 비율은 유지됨."]),
-    ("사례 5 · 통과 못 함 → 디자이너 브리프", OUT / "P021", PURPLE,
-     ["고지문이 길어 기준 크기로 키우면 원본 높이의 약 14%가 더 필요함.",
-      "A안: 330px 부족 / B안: 평평한 배경 줄 부족 / C안: 비주얼을 70%까지 줄여야 해서 한도(90%) 초과.",
-      "억지로 맞춘 안을 내지 않고, 필요한 공간과 각 안이 안 된 이유를 디자이너 브리프로 넘김."]),
-    ("사례 6 · 통과 못 함 (글자를 너무 크게 키워야 함)", OUT / "P030", PURPLE,
-     ["가로형 배너에서 위험고지가 1.51pt로 매우 작음 → 기준까지 약 4배 확대 필요.",
-      "원본 레이아웃이 감당할 수 없는 확대라 자동안은 참고용으로만 두고 디자이너 검토로 넘김."]),
-    ("사례 7 · ① 내용 수정 (05 판정 연동, 샘플)", OUT / "content_sample" / "AD07", BLUE,
-     ["05 LLM 판정에서 B8(보수·환매 안내) '확인필요'로 나온 경우를 샘플 판정 파일로 시험함.",
-      "표준 문구를 본 고지문 아래에 같은 폰트·색·정렬로 추가함(파란 상자). 원본 글머리표 목록은 그대로 둠.",
-      "【 】 자리는 광고마다 다른 값이라 담당자가 채우도록 비워 둠.",
-      "C3(과장 표현) 지적 문구는 자동으로 바꾸지 않고 주황 상자로 위치 표시 + 고칠 방향만 제안함."]),
-    ("사례 8 · ① 내용 수정 · 고지 문단이 없는 광고 (샘플)", OUT / "content_sample" / "P046", PURPLE,
-     ["위험고지 문단이 검출되지 않은 광고에 B1·B6 문구 추가를 시험함 (맨 아래 띠, 파란 문구).",
-      "문구는 규격 안에 넣었지만, 사진 위 깨알 글씨 블록의 A2 명암비·A3 글자 크기 미달이 그대로 남음.",
-      "이 블록은 문단으로 묶이지 않아 자동 재조판 대상이 아님 → 디자이너 검토로 넘김."]),
-]
-
-
 VOUT = OUT / "video"
-# 영상 사례: (제목, ad_id, 색, 설명)
-VIDEO_CASES = [
-    ("영상 사례 1 · 수정안 (명암비·크기·노출 시간)", "V110", BLUE,
-     ["주황 배경 위 흰 고지 자막: 명암비 1.57, 노출 2.6초(영상의 17%), 헤드라인 대비 0.093으로 미달.",
-      "글자색(흰색)은 그대로 두고, 배경과 같은 주황 색조로 어둡게 한 띠를 깔아 명암비 3.1 확보함.",
-      "원래 자리(전화번호와 로고 사이)·아래 기준선 유지, 글자 14→16px.",
-      "자막을 앞 장면까지 이어서 7.7~13.0초 표시 → 노출 35%. 영상 길이 15초 그대로."]),
-    ("영상 사례 2 · 통과 못 함 → 디자이너 검토", "V108", PURPLE,
-     ["화면 맨 아래 깨알 자막: 명암비 1.80, 헤드라인 대비 0.065로 미달.",
-      "기준 크기로 키우면 위쪽 손글씨 그래픽·카피와 겹침 → 자동안은 참고용으로 두고 디자이너 검토로 넘김.",
-      "배경이 계속 움직이는 장면이라 원래 글자를 지울 수 없어 원래 톤의 띠로 덮는 방식으로 시험함."]),
-]
-
-
 def video_page(im, d, ad_id, color, lines):
     rec = json.loads((VOUT / "json" / f"{ad_id}.json").read_text(encoding="utf-8"))
     pan = Image.open(VOUT / "viz" / f"{ad_id}.jpg").convert("RGB")
@@ -258,8 +207,92 @@ def case_page(im, d, base, color, lines):
         d.text((1250, H - 200 + i * 40), e[:62], font=F("Regular", 25), fill=BLUE if e.startswith("[추가") else ORANGE)
 
 
+METHOD_NAME = {"A": "고지 영역 안에서 줄 간격 정리", "B": "배경 여백 회수", "T": "사진 아래쪽 다듬기",
+               "C": "비주얼 살짝 축소", "D": "여러 방법 조합", "H": "상세페이지 높이 확장"}
+
+
+def load_json(p):
+    return json.loads(p.read_text(encoding="utf-8"))
+
+
+def fmtv(c):
+    v = c.get("value")
+    return "-" if v is None else (f"{v:.3f}" if c["id"] == "A4" else f"{v:.2f}")
+
+
+def image_lines(rec, prof_label):
+    out = [f"상황: {rec.get('situation')}  ·  판형: {prof_label}"]
+    after = {c["id"]: c for c in rec.get("checks_after") or []}
+    bad = [c for c in rec["checks_before"] if c["ok"] is False]
+    if bad:
+        out.append("미달: " + ", ".join(f"{c['id']} {c['name']} {fmtv(c)} (기준 {c['threshold']})"
+                                       + (f" → {fmtv(after[c['id']])}" if c["id"] in after else "") for c in bad))
+    best = next((c for c in rec.get("candidates", []) if c.get("recommended")), None)
+    if rec["decision"] == "원본 유지":
+        out.append("A2·A3·A4 모두 기준 통과함 → 수정하지 않고 원본 디자인 그대로 진행.")
+    elif best:
+        det = []
+        if best.get("rows_removed"):
+            det.append(f"여백 {best['rows_removed']}px 회수")
+        if best.get("rows_trimmed"):
+            det.append(f"사진 아래쪽 {best['rows_trimmed']}px 다듬음")
+        if best.get("visual_scale"):
+            det.append(f"위쪽 비주얼 {best['visual_scale']:.0%}")
+        if best.get("height_added"):
+            det.append(f"높이 +{best['height_added']}px")
+        tr = next((s_.get("contrast_treatment") for s_ in best.get("steps", []) if s_.get("contrast_treatment")), None)
+        if tr:
+            det.append(tr)
+        out.append(f"추천: {best['label']}" + (f" — {', '.join(det)}" if det else ""))
+        fails = [c for c in rec["candidates"] if not c.get("passed")]
+        if fails:
+            out.append("통과 못 한 안: " + " / ".join(f"{c['name']} {(c.get('why') or ['-'])[0]}" for c in fails[:3]))
+    elif rec.get("brief"):
+        out.append(rec["brief"][:150])
+    return out
+
+
+def pick_image_cases():
+    """판형·방법별 대표 사례를 자동으로 고름."""
+    cases, used = [], set()
+    for prof in ["A4", "mobile"]:
+        jd = OUT / prof / "json"
+        if not jd.exists():
+            continue
+        recs = [load_json(p) for p in sorted(jd.glob("*.json"))]
+        want = ["H", "A", "B", "T", "C", "D"] if prof == "A4" else ["D", "C"]
+        for m in want:
+            r = next((r for r in recs if r.get("recommended") == m and r["ad_id"] not in used), None)
+            if r:
+                used.add(r["ad_id"])
+                cases.append((prof, r, f"{METHOD_NAME[m]}", BLUE))
+        if prof == "A4":
+            r = next((r for r in recs if r["decision"] == "원본 유지" and r["ad_id"] not in used), None)
+            if r:
+                used.add(r["ad_id"]); cases.insert(0, (prof, r, "원본 유지", GREEN))
+        r = next((r for r in recs if r["decision"] == "디자이너 검토" and r.get("candidates") and r["ad_id"] not in used), None)
+        if r:
+            used.add(r["ad_id"]); cases.append((prof, r, "통과 못 함 → 디자이너 브리프", PURPLE))
+    return cases
+
+
+def pick_video_cases():
+    jd = VOUT / "json"
+    recs = [load_json(p) for p in sorted(jd.glob("*.json"))] if jd.exists() else []
+    out, used = [], set()
+    rules = [("엔드 카드를 일찍 시작 (앞 컷 다듬기)", lambda r: r["decision"] == "수정안" and any("앞 컷" in e for e in r.get("edit_sheet", []))),
+             ("빈 장면에 같은 자막 이어서 표시", lambda r: r["decision"] == "수정안" and any("비어 있는 장면" in e for e in r.get("edit_sheet", []))),
+             ("글자 크기·색만 조정", lambda r: r["decision"] == "수정안"),
+             ("통과 못 함 → 디자이너 검토", lambda r: r["decision"] == "디자이너 검토" and r.get("fails"))]
+    for title, f in rules:
+        r = next((r for r in recs if f(r) and r["ad_id"] not in used), None)
+        if r:
+            used.add(r["ad_id"]); out.append((title, r))
+    return out
+
+
 def main():
-    rows = list(csv.DictReader(open(OUT / "summary.csv", encoding="utf-8-sig")))
+    rows = list(csv.DictReader(open(OUT / "A4" / "summary.csv", encoding="utf-8-sig")))
     dec = collections.Counter(r["decision"] for r in rows)
     rec = collections.Counter(r["recommended"] for r in rows if r["recommended"])
     n_fix = sum(v for k, v in dec.items() if k.startswith("수정안"))
@@ -278,14 +311,16 @@ def main():
     # 2. 한눈에 보기
     im, d = page(); header(d, "한눈에 보기", 2)
     bullets(d, 110, 220, [
-        "05 판정과 같은 기준(A2 명암비 3.0 · A3 글자 크기 5.9pt · A4 헤드라인 대비 0.075)으로 진단함.",
+        "05 판정과 같은 기준(A2 명암비 3.0 · A3 글자 크기 · A4 헤드라인 대비 0.075)으로 진단함. A3은 출력 판형별로 따로 판단함.",
+        "광고마다 상황(매체·고지 컨테이너·배경)을 먼저 분류하고, 상황에 맞는 디자인 방법을 조합함.",
         "기준을 이미 통과한 광고는 손대지 않음 → 원본 유지.",
         "미달인 광고만 고침. '무조건 크게·흰 바탕 검정 글씨'가 아니라 원본의 색·정렬·굵기·배경을 그대로 살림.",
         "광고 규격(가로×세로 px)은 절대 바꾸지 않음. 필요한 공간은 광고 안에서 찾음.",
         "여러 후보안을 만들고 다시 재서, 통과한 안 중 원본을 가장 덜 건드리는 안을 추천함.",
         "어떤 안으로도 안 되면 억지로 맞추지 않고 '얼마나 공간이 더 필요한지'를 디자이너 브리프로 넘김.",
     ], width=1150)
-    y = table(d, 1330, 230, [
+    d.text((1330, 200), "A4 인쇄 기준 결과", font=F("SemiBold", 30), fill=INK)
+    y = table(d, 1330, 250, [
         ["결정", "광고 수", "뜻"],
         [("원본 유지", GREEN), dec.get("원본 유지", 0), "기준 모두 통과"],
         [("수정안", BLUE), n_fix, "같은 규격에서 기준 통과"],
@@ -293,15 +328,15 @@ def main():
         [("고지 없음", ORANGE), dec.get("고지 없음", 0), "① 내용(문구 추가) 대상"],
     ], [330, 190, 380])
     d.text((1330, y + 40), "수정안 추천 내역", font=F("SemiBold", 32), fill=INK)
-    table(d, 1330, y + 100, [["A안", "B안", "C안", "B+C안"],
-                             [rec.get("A", 0), rec.get("B", 0), rec.get("C", 0), rec.get("D", 0)]], [225] * 4)
+    table(d, 1330, y + 100, [["줄간격", "여백", "다듬기", "축소", "조합", "높이"],
+                             [rec.get(k, 0) for k in "ABTCDH"]], [150] * 6)
     pages.append(im)
 
     # 3. 작동 방식
     im, d = page(); header(d, "작동 방식", 3)
     steps = [("① 진단", ["전처리 JSON의 측정값으로", "A2·A3·A4 판정", "+ 05 LLM 판정(B·C·D·E)"], INK),
              ("② 통과면 원본 유지", ["고칠 필요 없음", "디자인 그대로 진행"], GREEN),
-             ("③ 미달이면 후보안", ["A · B · C · B+C안 생성", "모두 원본과 같은 규격"], BLUE),
+             ("③ 상황 분류 + 후보안", ["띠·박스·사진·문서형 등", "상황별 방법 조합, 같은 규격"], BLUE),
              ("④ 다시 재서 확인", ["전처리와 같은 계산식으로", "재측정 → 통과 여부"], BLUE),
              ("⑤ 추천 / 브리프", ["통과한 안 중 최소 변경 추천", "없으면 디자이너 브리프"], PURPLE)]
     bw, gap = 380, 40
@@ -312,21 +347,54 @@ def main():
             d.text((x + bw + 6, 320), "→", font=F("Bold", 40), fill=SUB)
     table(d, 110, 540, [
         ["후보안", "공간을 만드는 방법", "디자인에 주는 영향"],
-        ["색만 고침", "명암비만 부족할 때 글자색의 밝기만 조정 (색상 유지)", "원본 글자 모양 그대로"],
-        ["A안", "고지 영역 안에서 줄 간격만 정리 (글자 높이의 1.25배까지)", "고지 영역만 바뀜"],
-        ["B안", "A안 + 위아래와 거의 같은 '평평한 배경 줄'을 여러 곳에서 조금씩 회수", "글자·인물·로고 그대로, 여백만 조금 줄어듦"],
-        ["C안", "A안 + 고지 위쪽 내용을 같은 비율로 축소 (90%까지), 테두리는 세로로만", "비주얼이 조금 작아짐"],
-        ["B+C안", "B·C 각각으로 안 될 때 둘을 조금씩", "둘의 영향을 나눠 가짐"],
+        ["대비 처리", "단색: 글자 밝기 / 띠·박스: 글자·띠 중 덜 바뀌는 쪽 / 사진: 아래쪽 톤 페이드 (새 박스 없음)", "원래 색 체계 유지"],
+        ["A 줄 간격", "고지 영역 안에서 줄 간격만 정리 (글자 높이의 1.25배까지)", "고지 영역만 바뀜"],
+        ["B 여백 회수", "A + 위아래와 거의 같은 '평평한 배경 줄'을 여러 곳에서 조금씩 회수", "글자·인물·로고 그대로"],
+        ["T 사진 다듬기", "A + 고지 바로 위 사진의 아래쪽을 조금 잘라냄 (높이의 6%까지, 글자 없는 줄만)", "사진 아래 끝만 조금 줄어듦"],
+        ["C 비주얼 축소", "A + 고지 위쪽 내용을 같은 비율로 축소 (90%까지), 테두리는 세로로만", "비주얼이 조금 작아짐"],
+        ["D 조합", "B → T → C를 조금씩 나눠 씀 (축소는 86%까지)", "영향을 나눠 가짐"],
+        ["H 높이 확장", "상세페이지는 폭만 고정이라 높이를 늘림", "폭·여백 그대로"],
         ["디자이너 검토", "모든 안이 불가할 때", "필요한 공간(px·%)과 안 된 이유 전달"],
-    ], [300, 1180, 640], size=29)
-    d.text((110, 1500), "재조판 시 원본 획 굵기에 가장 가까운 폰트를 고르고, 정렬·줄바꿈·글자색은 원본 기준으로 맞춤. 로고는 글자로 다시 쓰지 않음.",
+    ], [300, 1280, 540], size=27)
+    d.text((110, 1560), "재조판 시 원본 획 굵기에 가장 가까운 폰트를 고르고, 정렬·줄바꿈·글자색은 원본 기준으로 맞춤. 로고는 글자로 다시 쓰지 않음.",
            font=F("Regular", 27), fill=SUB)
     pages.append(im)
 
-    # 4. 사례들: 원본과 후보안을 크게 나란히 + 후보마다 통과/불가 한 줄 + 추천안 확대
-    for k, (title, base, color, lines) in enumerate(CASES):
-        im, d = page(); header(d, title, 4 + k)
-        case_page(im, d, base, color, lines)
+    # 4. 상황 분류 결과
+    a4 = OUT / "A4" / "json"
+    if a4.exists():
+        sits = collections.Counter(load_json(p).get("situation") for p in a4.glob("*.json"))
+        im, d = page(); header(d, "상황 분류 결과 (이미지 126개)", len(pages) + 1)
+        d.text((110, 200), "고지 영역 안의 글자 아닌 픽셀로 배경을 판단하고, 띠·박스 경계를 따라가 컨테이너 종류를 정함.",
+               font=F("Regular", 28), fill=SUB)
+        table(d, 110, 260, [["상황 (매체 · 컨테이너 · 배경)", "광고 수"]] + [[k or "-", v] for k, v in sits.most_common(14)],
+              [1500, 300], size=27)
+        pages.append(im)
+
+    # 5. 판형별 결과
+    ps = OUT / "profiles_summary.csv"
+    if ps.exists():
+        pr = list(csv.reader(open(ps, encoding="utf-8-sig")))
+        head_ = pr[0][1:]
+        im, d = page(); header(d, "판형별 결과 (같은 광고 126개를 판형마다 판정·수정)", len(pages) + 1)
+        rows_ = [["결정"] + head_]
+        for dec_ in ["원본 유지", "수정안", "수정안 + 표현 검토", "디자이너 검토", "고지 없음"]:
+            cnt = [sum(1 for r in pr[1:] if r[i + 1] == dec_) for i in range(len(head_))]
+            if any(cnt):
+                rows_.append([(dec_, {"원본 유지": GREEN, "디자이너 검토": PURPLE, "고지 없음": ORANGE}.get(dec_, BLUE))] + cnt)
+        y = table(d, 110, 220, rows_, [330] + [270] * len(head_), size=28)
+        bullets(d, 110, y + 50, [
+            "같은 포스터라도 출력 판형이 클수록 실제 글자가 커져 원본 유지가 늘어남.",
+            "인쇄 기준: 9pt(신문 전면 10pt)를 실제 글자 높이(mm)로 바꿔 판단. 모바일은 05 노트북 기준(390pt 화면에서 5.9pt).",
+            "광고마다 판형별 결과는 profiles_summary.csv, 판형별 비교 패널은 data/processed/remediation/<판형>/viz.",
+        ], width=2100)
+        pages.append(im)
+
+    # 6. 이미지 사례 (자동 선택)
+    for prof, rec, what, color in pick_image_cases():
+        label_ = {"A4": "A4 인쇄", "mobile": "모바일 피드"}.get(prof, prof)
+        im, d = page(); header(d, f"이미지 · {label_} · {what} — {rec['ad_id']}", len(pages) + 1)
+        case_page(im, d, OUT / prof / rec["ad_id"], color, image_lines(rec, label_))
         pages.append(im)
 
     # 영상
@@ -336,11 +404,11 @@ def main():
         im, d = page(); header(d, "영상 광고 · 작동 방식과 결과", len(pages) + 1)
         bullets(d, 110, 220, [
             "영상 길이와 화면 크기는 그대로 두고, 위험고지 자막만 고친 수정 영상(mp4)을 만듦.",
-            "A5 노출(영상의 1/3 이상)·A6 초당 글자 수: 기존 고지 자막을 앞 장면까지 모자란 만큼만 이어서 표시함.",
-            "A7 글자 크기·A4 헤드라인 대비: 원래 자리·단 폭·정렬·글자색 유지, 기준을 살짝 넘길 크기로 다시 씀. 아래 기준선은 그대로 두고 위로 키움.",
-            "A2 명암비: 글자색은 그대로, 배경과 같은 색조로 밝기만 옮긴 띠를 깔아 해결함.",
-            "배경이 그대로인 엔드 카드는 원래 글자를 지운 뒤 다시 쓰고, 움직이는 장면은 원래 톤의 띠로 덮음.",
-            "수정 영상에서 프레임을 다시 뽑아 같은 식으로 재측정함. 위쪽 글자와 겹치거나 3배 넘게 키워야 하면 디자이너 검토.",
+            "A5 노출·A6 초당 글자 수: ① 앞 컷 끝을 다듬어 엔드 카드를 일찍 시작(음성·길이 그대로) ② 고지 자리가 빈 장면에 같은 자막을 이어서 표시(빈 자리가 없으면 그 장면의 다른 빈 자리로).",
+            "A7 글자 크기·A4 헤드라인 대비: 원래 자리·단 폭·정렬 유지, 기준을 살짝 넘길 크기로 다시 씀. 겹치면 아래 안전선 → 전폭 → 위쪽 순으로 자리 조정.",
+            "A2 명암비: 박스·띠 없이 글자색으로 해결 — 원래 색 → 광고에 이미 쓰인 색 → 원래 색의 밝기 조정 순. 마지막 수단으로만 글자 바로 뒤를 국소적으로 톤다운.",
+            "배경이 그대로인 엔드 카드는 원래 글자를 지운 뒤 다시 쓰고, 움직이는 장면은 원래 작은 글자 자리를 영상 블러로 지움.",
+            "수정 영상에서 프레임을 다시 뽑아 같은 식으로 재측정함.",
         ], width=1150)
         table(d, 1330, 230, [
             ["결정", "영상 수"],
@@ -350,11 +418,13 @@ def main():
             [("고지 없음", ORANGE), vdec.get("고지 없음", 0)],
         ], [450, 450])
         pages.append(im)
-        for title, ad_id, color, lines in VIDEO_CASES:
-            if (VOUT / "viz" / f"{ad_id}.jpg").exists():
-                im, d = page(); header(d, title, len(pages) + 1)
-                video_page(im, d, ad_id, color, lines)
-                pages.append(im)
+        for title, rec in pick_video_cases():
+            im, d = page(); header(d, f"영상 · {title} — {rec['ad_id']}", len(pages) + 1)
+            after = {c["id"]: c for c in rec.get("checks_after") or []}
+            lines = [f"{c['id']} {c['name']}: {fmtv(c)} → {fmtv(after[c['id']]) if c['id'] in after else '-'}"
+                     for c in rec["checks_before"] if c["ok"] is False]
+            video_page(im, d, rec["ad_id"], PURPLE if rec["decision"] != "수정안" else BLUE, lines or ["기준 미달 항목 없음"])
+            pages.append(im)
 
     # 마지막. 기준 이슈와 다음 할 일
     im, d = page(); header(d, "확인된 문제와 다음 할 일", len(pages) + 1)

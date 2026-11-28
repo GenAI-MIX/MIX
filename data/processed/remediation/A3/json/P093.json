@@ -1,0 +1,33 @@
+{
+  "ad_id": "P093",
+  "situation": "세로 · 브랜드 푸터 패널 · 단색 배경",
+  "font": "Noto Sans KR Bold (표준 고딕)",
+  "decision": "원본 유지",
+  "checks_before": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 4.02,
+      "threshold": 3.0,
+      "ok": true
+    },
+    {
+      "id": "A3",
+      "name": "글자 높이(mm)",
+      "value": 2.99,
+      "threshold": 2.13,
+      "ok": true
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.094,
+      "threshold": 0.075,
+      "ok": true
+    }
+  ],
+  "note": "A2·A3·A4 모두 기준 통과 — 원본 디자인 그대로 진행",
+  "judge_model": null,
+  "content_add": [],
+  "content_flag": []
+}

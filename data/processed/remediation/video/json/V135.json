@@ -47,7 +47,7 @@
     {
       "id": "A2",
       "name": "명암비",
-      "value": 3.27,
+      "value": 4.27,
       "threshold": 3.0,
       "op": ">=",
       "ok": true
@@ -55,7 +55,7 @@
     {
       "id": "A4",
       "name": "헤드라인 대비",
-      "value": 0.439,
+      "value": 0.409,
       "threshold": 0.1,
       "op": ">=",
       "ok": true
@@ -88,7 +88,7 @@
   "steps": [
     {
       "card": 3,
-      "font": "Pretendard-Medium",
+      "font": "Noto Sans KR Regular (표준 고딕)",
       "h_before_px": 23.5,
       "h_after_px": 23.5,
       "size_factor": 1.0,
@@ -98,32 +98,26 @@
         251,
         220
       ],
-      "bg": [
-        241,
-        172,
-        108
+      "ink": [
+        61,
+        60,
+        35
       ],
-      "band": [
-        185,
-        122,
-        61
-      ],
+      "ink_how": "글자색 명도만 조정",
       "center": true,
       "static_bg": false,
+      "ext_ink_how": [],
       "window_before": [
         7.3,
         9.6
       ],
-      "window_after": [
-        7.3,
-        9.6
-      ],
+      "windows_added": [],
       "frame_fix": true,
       "fail": []
     }
   ],
   "edit_sheet": [
-    "자막 3: 글자 24→24px(×1.0) Pretendard-Medium, 글자색 그대로, 배경 같은 색조 띠 RGB(185, 122, 61)"
+    "자막 3: 글자 24→24px(×1.0) Noto Sans KR Regular (표준 고딕), 글자색 명도만 조정, 움직이는 배경이라 원래 작은 글자 자리는 블러로 지움"
   ],
   "fails": [],
   "measured": [
@@ -132,23 +126,23 @@
       "t": 8.4,
       "where": "원래 구간",
       "bbox": [
-        526,
+        529,
         917,
-        1398,
-        954
+        1394,
+        952
       ],
-      "ink_h_px": 29,
+      "ink_h_px": 27,
       "fg_rgb": [
-        255,
-        250,
-        215
+        61,
+        60,
+        35
       ],
       "bg_rgb": [
-        188,
-        124,
+        241,
+        146,
         63
       ],
-      "contrast_ratio": 3.27,
+      "contrast_ratio": 4.77,
       "contrast_conf": "high"
     }
   ],
@@ -162,15 +156,25 @@
       13.3
     ]
   },
-  "windows_after": {
-    "0": [
+  "windows_after": [
+    [
       7.3,
       9.6
     ],
-    "1": [
+    [
       7.3,
       13.3
     ]
-  },
-  "fixed_video": "data/processed/remediation/video/fixed/V135.mp4"
+  ],
+  "frames": [
+    {
+      "card": 3,
+      "where": "원래 구간",
+      "t": 8.4,
+      "before": "data/processed/remediation/video/frames/V135_c3_orig_8.4s_before.jpg",
+      "after": "data/processed/remediation/video/frames/V135_c3_orig_8.4s_after.jpg"
+    }
+  ],
+  "hold": null,
+  "fixed_video": null
 }

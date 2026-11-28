@@ -1,0 +1,135 @@
+{
+  "ad_id": "P038",
+  "situation": "세로 · 사진 위 직접 · 사진 배경",
+  "font": "Noto Sans KR Bold (표준 고딕)",
+  "decision": "수정안",
+  "checks_before": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 2.91,
+      "threshold": 3.0,
+      "ok": false
+    },
+    {
+      "id": "A3",
+      "name": "글자 높이(mm)",
+      "value": 3.14,
+      "threshold": 2.13,
+      "ok": true
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.101,
+      "threshold": 0.075,
+      "ok": true
+    }
+  ],
+  "note": null,
+  "judge_model": null,
+  "content_add": [],
+  "content_flag": [],
+  "recommended": "A",
+  "brief": null,
+  "candidates": [
+    {
+      "name": "A",
+      "label": "제자리 수정 (규격·배치 그대로)",
+      "steps": [
+        {
+          "paragraph": 28,
+          "level": "L1",
+          "block": 50,
+          "fg_before": [
+            200,
+            176,
+            152
+          ],
+          "fg_after": [
+            211,
+            187,
+            163
+          ],
+          "ink_delta_e": 4.0
+        }
+      ],
+      "passed": true,
+      "checks_after": [
+        {
+          "id": "A2",
+          "name": "명암비",
+          "value": 3.38,
+          "threshold": 3.0,
+          "ok": true
+        },
+        {
+          "id": "A3",
+          "name": "글자 높이(mm)",
+          "value": 3.14,
+          "threshold": 2.13,
+          "ok": true
+        },
+        {
+          "id": "A4",
+          "name": "헤드라인 대비",
+          "value": 0.101,
+          "threshold": 0.075,
+          "ok": true
+        }
+      ],
+      "measured": [
+        {
+          "bbox": [
+            412,
+            1470,
+            440,
+            1478
+          ],
+          "kind": "recolor",
+          "ink_h_px": null,
+          "fg_rgb": [
+            210,
+            187,
+            163
+          ],
+          "bg_rgb": [
+            117,
+            92,
+            66
+          ],
+          "contrast_ratio": 3.38,
+          "contrast_conf": "high"
+        }
+      ],
+      "why": [],
+      "changed_pct": 0.0,
+      "ink_delta_e": 4.0,
+      "size_factor": 1.0,
+      "recommended": true
+    }
+  ],
+  "checks_after": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 3.38,
+      "threshold": 3.0,
+      "ok": true
+    },
+    {
+      "id": "A3",
+      "name": "글자 높이(mm)",
+      "value": 3.14,
+      "threshold": 2.13,
+      "ok": true
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.101,
+      "threshold": 0.075,
+      "ok": true
+    }
+  ]
+}

@@ -47,7 +47,7 @@
     {
       "id": "A2",
       "name": "명암비",
-      "value": 14.91,
+      "value": 15.96,
       "threshold": 3.0,
       "op": ">=",
       "ok": true
@@ -55,7 +55,7 @@
     {
       "id": "A4",
       "name": "헤드라인 대비",
-      "value": 0.375,
+      "value": 0.384,
       "threshold": 0.1,
       "op": ">=",
       "ok": true
@@ -88,112 +88,107 @@
   "steps": [
     {
       "card": 7,
-      "font": "Pretendard-SemiBold",
+      "font": "Noto Sans KR Medium (표준 고딕)",
       "h_before_px": 21.0,
       "h_after_px": 21.0,
       "size_factor": 1.0,
-      "lines": 3,
+      "lines": 2,
       "fg": [
         255,
         255,
         255
       ],
-      "bg": [
-        26,
-        41,
-        48
+      "ink": [
+        114,
+        101,
+        79
       ],
-      "band": null,
+      "ink_how": "광고에 쓰인 색으로 글자색 변경",
       "center": false,
       "static_bg": false,
+      "ext_ink_how": [
+        "글자 바로 뒤만 원래 톤으로 부드럽게 가라앉힘"
+      ],
       "window_before": [
         11.2,
         13.0
       ],
-      "window_after": [
-        7.7,
-        13.0
+      "windows_added": [
+        [
+          0.6,
+          1.0,
+          0,
+          0
+        ],
+        [
+          4.2,
+          6.4,
+          0,
+          0
+        ],
+        [
+          14.1,
+          15.0,
+          0,
+          -891
+        ]
       ],
       "frame_fix": false,
       "fail": []
     }
   ],
   "edit_sheet": [
-    "A5: 노출 1.8초 → 영상 15.0초의 1/3(5.0초) 이상이 되도록 고지 자막을 7.7~13.0초로 유지 (원래 11.2~13.0초)",
-    "자막 7: 원래 크기·색 그대로 · 표시 11.2~13.0초 → 7.7~13.0초"
+    "자막 7: 고지 자리가 비어 있는 장면(0.6~1.0초, 4.2~6.4초, 14.1~15.0초(자리 옮김))에 같은 자막을 이어서 표시 → +3.5초",
+    "자막 7: 원래 크기·색 그대로 · 원래 11.2~13.0초 + 추가 0.6~1.0초, 4.2~6.4초, 14.1~15.0초"
   ],
   "fails": [],
   "measured": [
     {
       "card": 7,
-      "t": 9.45,
+      "t": 0.8,
       "where": "늘린 구간",
       "bbox": [
-        244,
-        936,
-        1662,
-        966
-      ],
-      "ink_h_px": 21,
-      "fg_rgb": [
-        249,
-        255,
-        255
-      ],
-      "bg_rgb": [
-        27,
-        40,
-        47
-      ],
-      "contrast_ratio": 14.93,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 7,
-      "t": 9.45,
-      "where": "늘린 구간",
-      "bbox": [
-        244,
+        98,
         965,
-        1444,
-        997
+        1787,
+        995
       ],
-      "ink_h_px": 21,
+      "ink_h_px": 22,
       "fg_rgb": [
-        248,
+        255,
         255,
         255
       ],
       "bg_rgb": [
-        27,
-        40,
-        47
+        23,
+        36,
+        37
       ],
-      "contrast_ratio": 14.91,
+      "contrast_ratio": 15.96,
       "contrast_conf": "high"
     },
     {
       "card": 7,
-      "t": 9.45,
+      "t": 0.8,
       "where": "늘린 구간",
       "bbox": [
-        244,
-        995,
-        963,
+        98,
+        994,
+        1701,
         1026
       ],
       "ink_h_px": 21,
       "fg_rgb": [
-        248,
+        255,
         255,
         255
       ],
       "bg_rgb": [
-        26,
-        40,
-        46
+        23,
+        36,
+        37
       ],
-      "contrast_ratio": 14.95,
+      "contrast_ratio": 15.96,
       "contrast_conf": "high"
     }
   ],
@@ -203,11 +198,33 @@
       13.0
     ]
   },
-  "windows_after": {
-    "0": [
-      7.69523053,
+  "windows_after": [
+    [
+      11.2,
       13.0
+    ],
+    [
+      0.6,
+      1.0
+    ],
+    [
+      4.2,
+      6.4
+    ],
+    [
+      14.1,
+      15.0
     ]
-  },
-  "fixed_video": "data/processed/remediation/video/fixed/V118.mp4"
+  ],
+  "frames": [
+    {
+      "card": 7,
+      "where": "늘린 구간",
+      "t": 0.8,
+      "before": "data/processed/remediation/video/frames/V118_c7_ext_0.8s_before.jpg",
+      "after": "data/processed/remediation/video/frames/V118_c7_ext_0.8s_after.jpg"
+    }
+  ],
+  "hold": null,
+  "fixed_video": null
 }

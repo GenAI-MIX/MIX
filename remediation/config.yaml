@@ -20,17 +20,45 @@ thresholds:
   video_pt: 5.06       # A7 가로 화면(844pt) 기준 최소 글자 크기
   video_width_pt: 844
 
+# 판형 프로필: 같은 광고를 판형마다 판정·수정 (A3 글자 크기 기준만 달라짐)
+# 인쇄: 글자 높이(mm) = 기준 pt × 25.4/72 × ink_ratio (한글 글자 실제 높이 / 글꼴 크기, Pretendard 실측 ≈ 0.67)
+ink_ratio: 0.67
+profiles:
+  mobile: {label: 모바일 피드, width: 390, unit: pt, min: 5.9}       # 05 노트북 현재 기준
+  B5:     {label: B5 인쇄, width_mm: 182, font_pt: 9}
+  A4:     {label: A4 인쇄, width_mm: 210, font_pt: 9}
+  B4:     {label: B4 인쇄, width_mm: 257, font_pt: 9}
+  A3:     {label: A3 인쇄, width_mm: 297, font_pt: 9}
+  news:   {label: 신문 전면, width_mm: 330, font_pt: 10}
+  A2:     {label: A2 인쇄, width_mm: 420, font_pt: 9}
+
 # 최소 개입 단계 — 위에서부터 시도하고, 기준을 넘는 순간 멈춘다
 ladder:
   margin: 1.06              # 목표값 = 기준 × 이 값 (기준을 '살짝' 넘기는 만큼만)
   contrast_margin: 1.12
   max_size_factor: 3.0      # 글자를 이 배 이상 키워야 하면 L4
   redistribute_max_diff: 2.5  # B안: 위아래 줄과 평균 색 차이가 이 이하인 '평평한 배경 줄'만 뺌
+  max_trim: 0.06            # T안: 사진 아래쪽은 원본 높이의 이 비율까지만 다듬음
+  min_visual_scale_combo: 0.86  # 조합안: 다른 방법과 나눠 쓸 때 비주얼 축소 한도
   min_visual_scale: 0.9     # C안: 위쪽 비주얼은 이 배율까지만 줄임
   video_static_diff: 8      # 영상: 고지 구간 처음·끝 프레임의 평균 색 차이가 이 미만이면 정지 배경
   seam_max_diff: 5          # 늘릴 줄과 위아래 줄의 평균 색 차이가 이보다 크면(옆 단 글자가 걸림) L4
 
-fonts:                      # 원본 굵기에 가장 가까운 것을 고름
-  dir: ~/Library/Fonts
-  weights: [Pretendard-Regular.otf, Pretendard-Medium.otf, Pretendard-SemiBold.otf, Pretendard-Bold.otf]
-  fallback: /System/Library/Fonts/AppleSDGothicNeo.ttc
+fonts:
+  # 레포에 포함된 무료 글꼴만 사용 (모두 OFL, fonts/OFL.txt). 개발 환경과 상관없이 같은 결과.
+  # 원본 고지 글자의 '글자 폭 비율'과 '획 굵기'에 가장 가까운 글꼴·굵기를 고름.
+  # prior: 고지문은 가독성이 우선이라 명조·손글씨·제목용은 확실히 더 비슷할 때만 고르도록 벌점
+  dir: fonts
+  ui: Pretendard-Regular.otf          # 패널·보고서 글꼴
+  families:
+    Pretendard:      {concept: 모던 고딕, prior: 0.0,  files: {Regular: Pretendard-Regular.otf, Medium: Pretendard-Medium.otf, SemiBold: Pretendard-SemiBold.otf, Bold: Pretendard-Bold.otf}}
+    Noto Sans KR:    {concept: 표준 고딕, prior: 0.0,  variable: "NotoSansKR[wght].ttf", weights: [Regular, Medium, Bold]}
+    IBM Plex Sans KR: {concept: 기업형 고딕 (좁은 폭), prior: 0.0, files: {Regular: IBMPlexSansKR-Regular.ttf, Medium: IBMPlexSansKR-Medium.ttf, Bold: IBMPlexSansKR-Bold.ttf}}
+    Gothic A1:       {concept: 정갈한 고딕, prior: 0.0, files: {Regular: GothicA1-Regular.ttf, Medium: GothicA1-Medium.ttf, Bold: GothicA1-Bold.ttf}}
+    나눔고딕:         {concept: 클래식 고딕, prior: 0.02, files: {Regular: NanumGothic-Regular.ttf, Bold: NanumGothic-Bold.ttf}}
+    고운돋움:         {concept: 부드러운 둥근 고딕, prior: 0.05, files: {Regular: GowunDodum-Regular.ttf}}
+    Noto Serif KR:   {concept: 표준 명조, prior: 0.12, variable: "NotoSerifKR[wght].ttf", weights: [Regular, Medium, Bold]}
+    나눔명조:         {concept: 클래식 명조, prior: 0.12, files: {Regular: NanumMyeongjo-Regular.ttf, Bold: NanumMyeongjo-Bold.ttf}}
+    고운바탕:         {concept: 부드러운 명조, prior: 0.12, files: {Regular: GowunBatang-Regular.ttf, Bold: GowunBatang-Bold.ttf}}
+    나눔손글씨 펜:     {concept: 손글씨, prior: 0.3, files: {Regular: NanumPenScript-Regular.ttf}}
+    도현:             {concept: 굵은 제목용 고딕, prior: 0.3, files: {Regular: DoHyeon-Regular.ttf}}

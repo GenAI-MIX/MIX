@@ -223,3 +223,9 @@ __marimo__/
 data/processed/remediation/**/fixed/
 
 .DS_Store
+# 06 수정안: 비교 패널은 A4·모바일만 올림 (나머지 판형은 실행하면 생성)
+data/processed/remediation/B5/viz/
+data/processed/remediation/B4/viz/
+data/processed/remediation/A3/viz/
+data/processed/remediation/news/viz/
+data/processed/remediation/A2/viz/

@@ -42,20 +42,20 @@
       "ok": true
     }
   ],
-  "decision": "수정안",
+  "decision": "디자이너 검토",
   "checks_after": [
     {
       "id": "A2",
       "name": "명암비",
-      "value": 9.25,
+      "value": 1.78,
       "threshold": 3.0,
       "op": ">=",
-      "ok": true
+      "ok": false
     },
     {
       "id": "A4",
       "name": "헤드라인 대비",
-      "value": 0.109,
+      "value": 0.132,
       "threshold": 0.1,
       "op": ">=",
       "ok": true
@@ -79,7 +79,7 @@
     {
       "id": "A7",
       "name": "글자 크기(pt)",
-      "value": 8.35,
+      "value": 10.11,
       "threshold": 5.06,
       "op": ">=",
       "ok": true
@@ -88,7 +88,7 @@
   "steps": [
     {
       "card": 0,
-      "font": "Pretendard-SemiBold",
+      "font": "나눔고딕 Bold (클래식 고딕)",
       "h_before_px": 17.0,
       "h_after_px": 18.4,
       "size_factor": 1.08,
@@ -98,28 +98,26 @@
         228,
         220
       ],
-      "bg": [
-        84,
-        45,
-        37
+      "ink": [
+        151,
+        95,
+        85
       ],
-      "band": null,
+      "ink_how": "광고에 쓰인 색으로 글자색 변경",
       "center": false,
       "static_bg": false,
+      "ext_ink_how": [],
       "window_before": [
         0.0,
         2.5
       ],
-      "window_after": [
-        0.0,
-        2.5
-      ],
+      "windows_added": [],
       "frame_fix": true,
       "fail": []
     }
   ],
   "edit_sheet": [
-    "자막 0: 글자 17→18px(×1.08) Pretendard-SemiBold, 글자색 그대로"
+    "자막 0: 글자 17→18px(×1.08) 나눔고딕 Bold (클래식 고딕), 광고에 쓰인 색으로 글자색 변경, 움직이는 배경이라 원래 작은 글자 자리는 블러로 지움"
   ],
   "fails": [],
   "measured": [
@@ -128,23 +126,23 @@
       "t": 1.6,
       "where": "원래 구간",
       "bbox": [
-        89,
+        95,
         885,
-        1808,
-        914
+        1778,
+        912
       ],
-      "ink_h_px": 19,
+      "ink_h_px": null,
       "fg_rgb": [
-        255,
-        226,
-        219
+        14,
+        14,
+        14
       ],
       "bg_rgb": [
-        83,
-        46,
-        40
+        118,
+        66,
+        56
       ],
-      "contrast_ratio": 9.59,
+      "contrast_ratio": 2.4,
       "contrast_conf": "high"
     },
     {
@@ -152,71 +150,23 @@
       "t": 1.6,
       "where": "원래 구간",
       "bbox": [
-        89,
+        95,
         910,
-        1801,
-        939
-      ],
-      "ink_h_px": 19,
-      "fg_rgb": [
-        255,
-        226,
-        218
-      ],
-      "bg_rgb": [
-        83,
-        47,
-        40
-      ],
-      "contrast_ratio": 9.5,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 0,
-      "t": 1.6,
-      "where": "원래 구간",
-      "bbox": [
-        89,
-        935,
-        1769,
-        964
-      ],
-      "ink_h_px": 19,
-      "fg_rgb": [
-        255,
-        225,
-        218
-      ],
-      "bg_rgb": [
-        85,
-        48,
-        41
-      ],
-      "contrast_ratio": 9.25,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 0,
-      "t": 1.6,
-      "where": "원래 구간",
-      "bbox": [
-        89,
-        960,
         1810,
-        989
+        937
       ],
-      "ink_h_px": 19,
+      "ink_h_px": null,
       "fg_rgb": [
-        255,
-        226,
-        218
+        32,
+        33,
+        31
       ],
       "bg_rgb": [
-        85,
-        48,
-        41
+        126,
+        79,
+        69
       ],
-      "contrast_ratio": 9.31,
+      "contrast_ratio": 2.38,
       "contrast_conf": "high"
     },
     {
@@ -224,23 +174,71 @@
       "t": 1.6,
       "where": "원래 구간",
       "bbox": [
+        95,
+        935,
+        1702,
+        962
+      ],
+      "ink_h_px": null,
+      "fg_rgb": [
+        52,
+        53,
+        52
+      ],
+      "bg_rgb": [
+        131,
+        87,
+        77
+      ],
+      "contrast_ratio": 2.02,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 0,
+      "t": 1.6,
+      "where": "원래 구간",
+      "bbox": [
+        95,
+        960,
+        1711,
+        987
+      ],
+      "ink_h_px": null,
+      "fg_rgb": [
+        59,
+        59,
+        58
+      ],
+      "bg_rgb": [
+        133,
         89,
+        79
+      ],
+      "contrast_ratio": 1.89,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 0,
+      "t": 1.6,
+      "where": "원래 구간",
+      "bbox": [
+        95,
         985,
-        1579,
-        1014
+        1766,
+        1012
       ],
-      "ink_h_px": 19,
+      "ink_h_px": null,
       "fg_rgb": [
-        255,
-        226,
-        218
+        58,
+        59,
+        58
       ],
       "bg_rgb": [
-        84,
-        47,
-        40
+        129,
+        85,
+        74
       ],
-      "contrast_ratio": 9.45,
+      "contrast_ratio": 1.78,
       "contrast_conf": "high"
     },
     {
@@ -248,23 +246,23 @@
       "t": 1.6,
       "where": "원래 구간",
       "bbox": [
-        89,
+        95,
         1010,
-        819,
-        1039
+        919,
+        1037
       ],
-      "ink_h_px": 19,
+      "ink_h_px": 23,
       "fg_rgb": [
-        255,
-        226,
-        218
+        151,
+        95,
+        85
       ],
       "bg_rgb": [
-        83,
-        46,
-        39
+        61,
+        61,
+        58
       ],
-      "contrast_ratio": 9.59,
+      "contrast_ratio": 2.12,
       "contrast_conf": "high"
     }
   ],
@@ -274,11 +272,21 @@
       2.5
     ]
   },
-  "windows_after": {
-    "0": [
+  "windows_after": [
+    [
       0.0,
       2.5
     ]
-  },
-  "fixed_video": "data/processed/remediation/video/fixed/V155.mp4"
+  ],
+  "frames": [
+    {
+      "card": 0,
+      "where": "원래 구간",
+      "t": 1.6,
+      "before": "data/processed/remediation/video/frames/V155_c0_orig_1.6s_before.jpg",
+      "after": "data/processed/remediation/video/frames/V155_c0_orig_1.6s_after.jpg"
+    }
+  ],
+  "hold": null,
+  "fixed_video": null
 }

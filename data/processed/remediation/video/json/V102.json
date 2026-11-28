@@ -88,7 +88,7 @@
   "steps": [
     {
       "card": 8,
-      "font": "Pretendard-Bold",
+      "font": "Noto Sans KR Bold (표준 고딕)",
       "h_before_px": 17.0,
       "h_after_px": 25.8,
       "size_factor": 1.52,
@@ -98,28 +98,26 @@
         255,
         255
       ],
-      "bg": [
-        22,
-        73,
-        61
+      "ink": [
+        255,
+        255,
+        255
       ],
-      "band": null,
+      "ink_how": "배경이 얼룩져 글자색만으로는 대비 부족",
       "center": true,
       "static_bg": false,
+      "ext_ink_how": [],
       "window_before": [
         7.1,
         11.0
       ],
-      "window_after": [
-        7.1,
-        11.0
-      ],
+      "windows_added": [],
       "frame_fix": true,
       "fail": []
     }
   ],
   "edit_sheet": [
-    "자막 8: 글자 17→26px(×1.52) Pretendard-Bold, 글자색 그대로"
+    "자막 8: 글자 17→26px(×1.52) Noto Sans KR Bold (표준 고딕), 배경이 얼룩져 글자색만으로는 대비 부족, 움직이는 배경이라 원래 작은 글자 자리는 블러로 지움"
   ],
   "fails": [],
   "measured": [
@@ -128,23 +126,23 @@
       "t": 9.0,
       "where": "원래 구간",
       "bbox": [
-        164,
+        115,
         925,
-        1754,
+        1802,
         963
       ],
       "ink_h_px": 25,
       "fg_rgb": [
-        253,
+        255,
         255,
         255
       ],
       "bg_rgb": [
-        28,
-        75,
-        63
+        34,
+        84,
+        72
       ],
-      "contrast_ratio": 9.83,
+      "contrast_ratio": 8.64,
       "contrast_conf": "high"
     },
     {
@@ -152,23 +150,23 @@
       "t": 9.0,
       "where": "원래 구간",
       "bbox": [
-        422,
-        964,
-        1496,
+        482,
+        963,
+        1435,
         1001
       ],
       "ink_h_px": 25,
       "fg_rgb": [
-        252,
+        255,
         255,
         255
       ],
       "bg_rgb": [
-        25,
-        71,
-        61
+        30,
+        81,
+        69
       ],
-      "contrast_ratio": 10.39,
+      "contrast_ratio": 9.06,
       "contrast_conf": "high"
     }
   ],
@@ -182,15 +180,25 @@
       11.0
     ]
   },
-  "windows_after": {
-    "0": [
+  "windows_after": [
+    [
       0.0,
       14.6
     ],
-    "1": [
+    [
       2.0,
       11.0
     ]
-  },
-  "fixed_video": "data/processed/remediation/video/fixed/V102.mp4"
+  ],
+  "frames": [
+    {
+      "card": 8,
+      "where": "원래 구간",
+      "t": 9.0,
+      "before": "data/processed/remediation/video/frames/V102_c8_orig_9.0s_before.jpg",
+      "after": "data/processed/remediation/video/frames/V102_c8_orig_9.0s_after.jpg"
+    }
+  ],
+  "hold": null,
+  "fixed_video": null
 }

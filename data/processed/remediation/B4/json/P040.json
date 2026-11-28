@@ -1,0 +1,211 @@
+{
+  "ad_id": "P040",
+  "situation": "세로 · 단색·그라데이션 배경 위 · 그라데이션 배경",
+  "font": "IBM Plex Sans KR Bold (기업형 고딕 (좁은 폭))",
+  "decision": "수정안",
+  "checks_before": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 2.47,
+      "threshold": 3.0,
+      "ok": false
+    },
+    {
+      "id": "A3",
+      "name": "글자 높이(mm)",
+      "value": 2.52,
+      "threshold": 2.13,
+      "ok": true
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.124,
+      "threshold": 0.075,
+      "ok": true
+    }
+  ],
+  "note": null,
+  "judge_model": null,
+  "content_add": [],
+  "content_flag": [],
+  "recommended": "A",
+  "brief": null,
+  "candidates": [
+    {
+      "name": "A",
+      "label": "제자리 수정 (규격·배치 그대로)",
+      "steps": [
+        {
+          "paragraph": 26,
+          "level": "L1",
+          "block": 35,
+          "fg_before": [
+            91,
+            91,
+            94
+          ],
+          "fg_after": [
+            71,
+            71,
+            74
+          ],
+          "ink_delta_e": 8.5
+        },
+        {
+          "paragraph": 26,
+          "level": "L1",
+          "block": 36,
+          "fg_before": [
+            88,
+            88,
+            91
+          ],
+          "fg_after": [
+            70,
+            70,
+            73
+          ],
+          "ink_delta_e": 7.7
+        },
+        {
+          "paragraph": 26,
+          "level": "L1",
+          "block": 37,
+          "fg_before": [
+            88,
+            88,
+            91
+          ],
+          "fg_after": [
+            70,
+            70,
+            73
+          ],
+          "ink_delta_e": 7.7
+        }
+      ],
+      "passed": true,
+      "checks_after": [
+        {
+          "id": "A2",
+          "name": "명암비",
+          "value": 3.38,
+          "threshold": 3.0,
+          "ok": true
+        },
+        {
+          "id": "A3",
+          "name": "글자 높이(mm)",
+          "value": 3.11,
+          "threshold": 2.13,
+          "ok": true
+        },
+        {
+          "id": "A4",
+          "name": "헤드라인 대비",
+          "value": 0.154,
+          "threshold": 0.075,
+          "ok": true
+        }
+      ],
+      "measured": [
+        {
+          "bbox": [
+            97,
+            2611,
+            2049,
+            2643
+          ],
+          "kind": "recolor",
+          "ink_h_px": 25,
+          "fg_rgb": [
+            69,
+            70,
+            72
+          ],
+          "bg_rgb": [
+            155,
+            156,
+            160
+          ],
+          "contrast_ratio": 3.44,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            98,
+            2636,
+            2051,
+            2667
+          ],
+          "kind": "recolor",
+          "ink_h_px": 26,
+          "fg_rgb": [
+            69,
+            69,
+            72
+          ],
+          "bg_rgb": [
+            155,
+            156,
+            159
+          ],
+          "contrast_ratio": 3.48,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            100,
+            2661,
+            2050,
+            2693
+          ],
+          "kind": "recolor",
+          "ink_h_px": 27,
+          "fg_rgb": [
+            70,
+            70,
+            73
+          ],
+          "bg_rgb": [
+            153,
+            155,
+            158
+          ],
+          "contrast_ratio": 3.38,
+          "contrast_conf": "high"
+        }
+      ],
+      "why": [],
+      "changed_pct": 0.3,
+      "ink_delta_e": 8.5,
+      "size_factor": 1.0,
+      "recommended": true
+    }
+  ],
+  "checks_after": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 3.38,
+      "threshold": 3.0,
+      "ok": true
+    },
+    {
+      "id": "A3",
+      "name": "글자 높이(mm)",
+      "value": 3.11,
+      "threshold": 2.13,
+      "ok": true
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.154,
+      "threshold": 0.075,
+      "ok": true
+    }
+  ]
+}

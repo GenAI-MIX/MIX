@@ -47,7 +47,7 @@
     {
       "id": "A2",
       "name": "명암비",
-      "value": 3.29,
+      "value": 3.39,
       "threshold": 3.0,
       "op": ">=",
       "ok": true
@@ -55,7 +55,7 @@
     {
       "id": "A4",
       "name": "헤드라인 대비",
-      "value": 0.463,
+      "value": 0.481,
       "threshold": 0.1,
       "op": ">=",
       "ok": true
@@ -79,7 +79,7 @@
     {
       "id": "A7",
       "name": "글자 크기(pt)",
-      "value": 9.23,
+      "value": 10.99,
       "threshold": 5.06,
       "op": ">=",
       "ok": true
@@ -88,42 +88,36 @@
   "steps": [
     {
       "card": 7,
-      "font": "Pretendard-SemiBold",
+      "font": "Gothic A1 Regular (정갈한 고딕)",
       "h_before_px": 25.0,
       "h_after_px": 25.0,
       "size_factor": 1.0,
-      "lines": 4,
+      "lines": 3,
       "fg": [
         255,
         249,
         214
       ],
-      "bg": [
-        244,
-        130,
-        31
+      "ink": [
+        79,
+        75,
+        47
       ],
-      "band": [
-        214,
-        105,
-        0
-      ],
+      "ink_how": "글자색 명도만 조정",
       "center": true,
       "static_bg": true,
+      "ext_ink_how": [],
       "window_before": [
         7.8,
         15.02
       ],
-      "window_after": [
-        7.8,
-        15.02
-      ],
+      "windows_added": [],
       "frame_fix": true,
       "fail": []
     }
   ],
   "edit_sheet": [
-    "자막 7: 글자 25→25px(×1.0) Pretendard-SemiBold, 글자색 그대로, 배경 같은 색조 띠 RGB(214, 105, 0)"
+    "자막 7: 글자 25→25px(×1.0) Gothic A1 Regular (정갈한 고딕), 글자색 명도만 조정"
   ],
   "fails": [],
   "measured": [
@@ -132,23 +126,23 @@
       "t": 11.7,
       "where": "원래 구간",
       "bbox": [
-        426,
-        859,
-        1495,
-        896
+        128,
+        899,
+        1793,
+        935
       ],
       "ink_h_px": 25,
       "fg_rgb": [
-        255,
-        249,
-        209
+        79,
+        75,
+        47
       ],
       "bg_rgb": [
-        215,
-        106,
-        2
+        244,
+        130,
+        31
       ],
-      "contrast_ratio": 3.31,
+      "contrast_ratio": 3.39,
       "contrast_conf": "high"
     },
     {
@@ -156,23 +150,23 @@
       "t": 11.7,
       "where": "원래 구간",
       "bbox": [
-        405,
-        900,
-        1517,
-        938
+        143,
+        940,
+        1779,
+        977
       ],
-      "ink_h_px": 25,
+      "ink_h_px": 26,
       "fg_rgb": [
-        255,
-        248,
-        208
+        79,
+        75,
+        47
       ],
       "bg_rgb": [
-        215,
-        106,
-        2
+        244,
+        130,
+        31
       ],
-      "contrast_ratio": 3.29,
+      "contrast_ratio": 3.39,
       "contrast_conf": "high"
     },
     {
@@ -180,47 +174,23 @@
       "t": 11.7,
       "where": "원래 구간",
       "bbox": [
-        399,
-        941,
-        1523,
-        978
-      ],
-      "ink_h_px": 25,
-      "fg_rgb": [
-        255,
-        248,
-        207
-      ],
-      "bg_rgb": [
-        215,
-        106,
-        2
-      ],
-      "contrast_ratio": 3.29,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 7,
-      "t": 11.7,
-      "where": "원래 구간",
-      "bbox": [
-        877,
+        709,
         982,
-        1044,
-        1016
+        1212,
+        1017
       ],
-      "ink_h_px": 21,
+      "ink_h_px": 26,
       "fg_rgb": [
-        255,
-        248,
-        210
+        79,
+        75,
+        47
       ],
       "bg_rgb": [
-        215,
-        106,
-        2
+        244,
+        130,
+        31
       ],
-      "contrast_ratio": 3.29,
+      "contrast_ratio": 3.39,
       "contrast_conf": "high"
     }
   ],
@@ -230,11 +200,21 @@
       15.02
     ]
   },
-  "windows_after": {
-    "0": [
+  "windows_after": [
+    [
       7.8,
       15.02
     ]
-  },
-  "fixed_video": "data/processed/remediation/video/fixed/V127.mp4"
+  ],
+  "frames": [
+    {
+      "card": 7,
+      "where": "원래 구간",
+      "t": 11.7,
+      "before": "data/processed/remediation/video/frames/V127_c7_orig_11.7s_before.jpg",
+      "after": "data/processed/remediation/video/frames/V127_c7_orig_11.7s_after.jpg"
+    }
+  ],
+  "hold": null,
+  "fixed_video": null
 }

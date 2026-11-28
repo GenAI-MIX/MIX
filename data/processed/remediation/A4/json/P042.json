@@ -1,0 +1,741 @@
+{
+  "ad_id": "P042",
+  "situation": "세로 · 단색·그라데이션 배경 위 · 단색 배경",
+  "font": "IBM Plex Sans KR Bold (기업형 고딕 (좁은 폭))",
+  "decision": "수정안",
+  "checks_before": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 2.56,
+      "threshold": 3.0,
+      "ok": false
+    },
+    {
+      "id": "A3",
+      "name": "글자 높이(mm)",
+      "value": 2.04,
+      "threshold": 2.13,
+      "ok": false
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.141,
+      "threshold": 0.075,
+      "ok": true
+    }
+  ],
+  "note": null,
+  "judge_model": null,
+  "content_add": [],
+  "content_flag": [],
+  "recommended": "C",
+  "brief": null,
+  "candidates": [
+    {
+      "name": "A",
+      "label": "A안 · 고지 영역 안에서 줄 간격 정리",
+      "steps": [
+        {
+          "paragraph": 13,
+          "font": "IBM Plex Sans KR Bold (기업형 고딕 (좁은 폭))",
+          "align": "left",
+          "lines": 12,
+          "orig_lines": 6,
+          "size_factor": 1.11,
+          "level": "L2",
+          "pitch_ratio": [
+            1.33,
+            1.28
+          ],
+          "short_px": 120,
+          "contrast_treatment": "글자색 명도만 조정 (색상 유지)",
+          "fg_before": [
+            123,
+            140,
+            150
+          ],
+          "fg_after": [
+            178,
+            192,
+            200
+          ],
+          "ink_delta_e": 19.7,
+          "scrim_lines": 0,
+          "added_lines": 0
+        }
+      ],
+      "passed": false,
+      "checks_after": [
+        {
+          "id": "A2",
+          "name": "명암비",
+          "value": 3.25,
+          "threshold": 3.0,
+          "ok": true
+        },
+        {
+          "id": "A3",
+          "name": "글자 높이(mm)",
+          "value": 2.32,
+          "threshold": 2.13,
+          "ok": true
+        },
+        {
+          "id": "A4",
+          "name": "헤드라인 대비",
+          "value": 0.161,
+          "threshold": 0.075,
+          "ok": true
+        }
+      ],
+      "measured": [
+        {
+          "bbox": [
+            128,
+            2527,
+            2038,
+            2557
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 24,
+          "fg_rgb": [
+            105,
+            122,
+            132
+          ],
+          "bg_rgb": [
+            199,
+            227,
+            241
+          ],
+          "contrast_ratio": 3.33,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            128,
+            2556,
+            569,
+            2586
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 24,
+          "fg_rgb": [
+            104,
+            121,
+            131
+          ],
+          "bg_rgb": [
+            199,
+            227,
+            241
+          ],
+          "contrast_ratio": 3.37,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            128,
+            2586,
+            2034,
+            2616
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 24,
+          "fg_rgb": [
+            105,
+            122,
+            132
+          ],
+          "bg_rgb": [
+            199,
+            227,
+            241
+          ],
+          "contrast_ratio": 3.33,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            128,
+            2616,
+            558,
+            2646
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 24,
+          "fg_rgb": [
+            105,
+            122,
+            132
+          ],
+          "bg_rgb": [
+            199,
+            227,
+            241
+          ],
+          "contrast_ratio": 3.33,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            128,
+            2646,
+            2001,
+            2676
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 24,
+          "fg_rgb": [
+            105,
+            122,
+            132
+          ],
+          "bg_rgb": [
+            199,
+            227,
+            241
+          ],
+          "contrast_ratio": 3.33,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            128,
+            2676,
+            639,
+            2706
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 24,
+          "fg_rgb": [
+            105,
+            122,
+            132
+          ],
+          "bg_rgb": [
+            199,
+            227,
+            241
+          ],
+          "contrast_ratio": 3.33,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            128,
+            2706,
+            1926,
+            2736
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 9,
+          "fg_rgb": [
+            20,
+            98,
+            171
+          ],
+          "bg_rgb": [
+            194,
+            222,
+            237
+          ],
+          "contrast_ratio": 4.45,
+          "contrast_conf": "low"
+        },
+        {
+          "bbox": [
+            128,
+            2736,
+            657,
+            2766
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 24,
+          "fg_rgb": [
+            173,
+            191,
+            201
+          ],
+          "bg_rgb": [
+            19,
+            99,
+            172
+          ],
+          "contrast_ratio": 3.25,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            128,
+            2765,
+            2012,
+            2796
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 24,
+          "fg_rgb": [
+            173,
+            191,
+            201
+          ],
+          "bg_rgb": [
+            19,
+            99,
+            172
+          ],
+          "contrast_ratio": 3.25,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            128,
+            2796,
+            523,
+            2826
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 24,
+          "fg_rgb": [
+            173,
+            191,
+            201
+          ],
+          "bg_rgb": [
+            19,
+            99,
+            172
+          ],
+          "contrast_ratio": 3.25,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            128,
+            2826,
+            2013,
+            2856
+          ],
+          "kind": "retypeset",
+          "ink_h_px": null,
+          "fg_rgb": [
+            227,
+            238,
+            245
+          ],
+          "bg_rgb": [
+            19,
+            99,
+            172
+          ],
+          "contrast_ratio": 5.23,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            128,
+            2855,
+            697,
+            2885
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 18,
+          "fg_rgb": [
+            173,
+            191,
+            201
+          ],
+          "bg_rgb": [
+            19,
+            99,
+            172
+          ],
+          "contrast_ratio": 3.25,
+          "contrast_conf": "high"
+        }
+      ],
+      "why": [
+        "고지 영역에 120px 부족"
+      ],
+      "changed_pct": 3.6,
+      "ink_delta_e": 19.7,
+      "size_factor": 1.11,
+      "recommended": false
+    },
+    {
+      "name": "B",
+      "label": "B안 · 배경 여백을 나눠 고지 공간 확보",
+      "passed": false,
+      "why": [
+        "평평한 배경 줄이 36px 모자람"
+      ],
+      "recommended": false
+    },
+    {
+      "name": "C",
+      "label": "C안 · 위쪽 비주얼을 살짝 줄여 공간 확보",
+      "steps": [
+        {
+          "paragraph": 13,
+          "font": "IBM Plex Sans KR Bold (기업형 고딕 (좁은 폭))",
+          "align": "left",
+          "lines": 12,
+          "orig_lines": 6,
+          "size_factor": 1.11,
+          "level": "L3",
+          "pitch_ratio": [
+            1.33,
+            1.28
+          ],
+          "seam_score": 0.44,
+          "seam_y": 2568,
+          "grow_px": 127,
+          "contrast_treatment": "글자색 명도만 조정 (색상 유지)",
+          "fg_before": [
+            123,
+            140,
+            150
+          ],
+          "fg_after": [
+            173,
+            191,
+            201
+          ],
+          "ink_delta_e": 19.1,
+          "scrim_lines": 0,
+          "added_lines": 0
+        }
+      ],
+      "passed": true,
+      "checks_after": [
+        {
+          "id": "A2",
+          "name": "명암비",
+          "value": 3.16,
+          "threshold": 3.0,
+          "ok": true
+        },
+        {
+          "id": "A3",
+          "name": "글자 높이(mm)",
+          "value": 2.32,
+          "threshold": 2.13,
+          "ok": true
+        },
+        {
+          "id": "A4",
+          "name": "헤드라인 대비",
+          "value": 0.161,
+          "threshold": 0.075,
+          "ok": true
+        }
+      ],
+      "measured": [
+        {
+          "bbox": [
+            128,
+            2400,
+            2038,
+            2430
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 24,
+          "fg_rgb": [
+            105,
+            122,
+            132
+          ],
+          "bg_rgb": [
+            199,
+            227,
+            241
+          ],
+          "contrast_ratio": 3.33,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            128,
+            2429,
+            569,
+            2459
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 24,
+          "fg_rgb": [
+            104,
+            121,
+            131
+          ],
+          "bg_rgb": [
+            199,
+            227,
+            241
+          ],
+          "contrast_ratio": 3.37,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            128,
+            2459,
+            2034,
+            2489
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 24,
+          "fg_rgb": [
+            104,
+            121,
+            131
+          ],
+          "bg_rgb": [
+            199,
+            227,
+            241
+          ],
+          "contrast_ratio": 3.37,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            128,
+            2489,
+            558,
+            2519
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 24,
+          "fg_rgb": [
+            104,
+            121,
+            131
+          ],
+          "bg_rgb": [
+            199,
+            227,
+            241
+          ],
+          "contrast_ratio": 3.37,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            128,
+            2519,
+            2001,
+            2549
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 24,
+          "fg_rgb": [
+            104,
+            121,
+            131
+          ],
+          "bg_rgb": [
+            199,
+            227,
+            241
+          ],
+          "contrast_ratio": 3.37,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            128,
+            2549,
+            639,
+            2579
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 24,
+          "fg_rgb": [
+            104,
+            121,
+            131
+          ],
+          "bg_rgb": [
+            199,
+            227,
+            241
+          ],
+          "contrast_ratio": 3.37,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            128,
+            2579,
+            1926,
+            2609
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 24,
+          "fg_rgb": [
+            105,
+            122,
+            132
+          ],
+          "bg_rgb": [
+            199,
+            227,
+            241
+          ],
+          "contrast_ratio": 3.33,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            128,
+            2609,
+            657,
+            2639
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 24,
+          "fg_rgb": [
+            104,
+            121,
+            131
+          ],
+          "bg_rgb": [
+            199,
+            227,
+            241
+          ],
+          "contrast_ratio": 3.37,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            128,
+            2638,
+            2012,
+            2669
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 24,
+          "fg_rgb": [
+            105,
+            122,
+            132
+          ],
+          "bg_rgb": [
+            199,
+            227,
+            241
+          ],
+          "contrast_ratio": 3.33,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            128,
+            2669,
+            523,
+            2699
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 24,
+          "fg_rgb": [
+            105,
+            122,
+            132
+          ],
+          "bg_rgb": [
+            199,
+            227,
+            241
+          ],
+          "contrast_ratio": 3.33,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            128,
+            2699,
+            2013,
+            2729
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 24,
+          "fg_rgb": [
+            112,
+            125,
+            133
+          ],
+          "bg_rgb": [
+            199,
+            227,
+            241
+          ],
+          "contrast_ratio": 3.16,
+          "contrast_conf": "high"
+        },
+        {
+          "bbox": [
+            128,
+            2728,
+            697,
+            2758
+          ],
+          "kind": "retypeset",
+          "ink_h_px": 18,
+          "fg_rgb": [
+            173,
+            191,
+            201
+          ],
+          "bg_rgb": [
+            19,
+            99,
+            172
+          ],
+          "contrast_ratio": 3.25,
+          "contrast_conf": "high"
+        }
+      ],
+      "why": [],
+      "changed_pct": 32.1,
+      "ink_delta_e": 19.1,
+      "size_factor": 1.11,
+      "visual_scale": 0.949,
+      "recommended": true
+    },
+    {
+      "name": "T",
+      "label": "T안 · 사진 아래쪽을 조금 다듬어 공간 확보",
+      "passed": false,
+      "why": [
+        "고지 바로 위 글자 없는 구간 48px < 필요 127px"
+      ],
+      "recommended": false
+    }
+  ],
+  "checks_after": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 3.16,
+      "threshold": 3.0,
+      "ok": true
+    },
+    {
+      "id": "A3",
+      "name": "글자 높이(mm)",
+      "value": 2.32,
+      "threshold": 2.13,
+      "ok": true
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.161,
+      "threshold": 0.075,
+      "ok": true
+    }
+  ]
+}

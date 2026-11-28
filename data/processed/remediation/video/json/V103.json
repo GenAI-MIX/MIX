@@ -42,12 +42,12 @@
       "ok": true
     }
   ],
-  "decision": "디자이너 검토",
+  "decision": "수정안",
   "checks_after": [
     {
       "id": "A2",
       "name": "명암비",
-      "value": 3.33,
+      "value": 3.88,
       "threshold": 3.0,
       "op": ">=",
       "ok": true
@@ -88,71 +88,61 @@
   "steps": [
     {
       "card": 4,
-      "font": "Pretendard-Regular",
+      "font": "Pretendard Bold (모던 고딕)",
       "h_before_px": 24.0,
       "h_after_px": 24.0,
       "size_factor": 1.0,
-      "lines": 3,
+      "lines": 4,
       "fg": [
         255,
         244,
         235
       ],
-      "bg": [
-        166,
-        136,
-        116
+      "ink": [
+        255,
+        244,
+        235
       ],
-      "band": [
-        158,
-        128,
-        109
-      ],
+      "ink_how": "배경이 얼룩져 글자색만으로는 대비 부족",
       "center": true,
       "static_bg": false,
+      "ext_ink_how": [],
       "window_before": [
         2.1,
         5.4
       ],
-      "window_after": [
-        2.1,
-        5.4
-      ],
+      "windows_added": [],
       "frame_fix": true,
-      "fail": [
-        "위쪽 다른 글자와 겹침"
-      ]
+      "fail": []
     }
   ],
   "edit_sheet": [
-    "자막 4: 글자 24→24px(×1.0) Pretendard-Regular, 글자색 그대로, 배경 같은 색조 띠 RGB(158, 128, 109)"
+    "자막 4: 글자 24→24px(×1.0) Pretendard Bold (모던 고딕), 배경이 얼룩져 글자색만으로는 대비 부족, 움직이는 배경이라 원래 작은 글자 자리는 블러로 지움"
   ],
-  "fails": [
-    "자막 4: 위쪽 다른 글자와 겹침"
-  ],
+  "fails": [],
   "measured": [
     {
       "card": 4,
       "t": 2.6,
       "where": "원래 구간",
       "bbox": [
-        246,
-        910,
-        1672,
-        953
+        589,
+        51,
+        1329,
+        86
       ],
-      "ink_h_px": 38,
+      "ink_h_px": 23,
       "fg_rgb": [
         255,
-        243,
-        229
+        244,
+        235
       ],
       "bg_rgb": [
-        157,
-        127,
-        109
+        136,
+        111,
+        88
       ],
-      "contrast_ratio": 3.37,
+      "contrast_ratio": 4.35,
       "contrast_conf": "high"
     },
     {
@@ -160,23 +150,23 @@
       "t": 2.6,
       "where": "원래 구간",
       "bbox": [
-        117,
-        940,
-        1801,
-        983
+        583,
+        81,
+        1335,
+        116
       ],
-      "ink_h_px": null,
+      "ink_h_px": 23,
       "fg_rgb": [
         255,
-        243,
-        229
+        244,
+        235
       ],
       "bg_rgb": [
-        158,
-        128,
-        111
+        136,
+        111,
+        88
       ],
-      "contrast_ratio": 3.33,
+      "contrast_ratio": 4.35,
       "contrast_conf": "high"
     },
     {
@@ -184,23 +174,47 @@
       "t": 2.6,
       "where": "원래 구간",
       "bbox": [
-        644,
-        970,
-        1273,
-        1008
+        470,
+        111,
+        1448,
+        146
       ],
-      "ink_h_px": 32,
+      "ink_h_px": 23,
       "fg_rgb": [
         255,
-        243,
-        229
+        244,
+        235
       ],
       "bg_rgb": [
-        157,
-        128,
-        112
+        136,
+        112,
+        89
       ],
-      "contrast_ratio": 3.34,
+      "contrast_ratio": 4.3,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 4,
+      "t": 2.6,
+      "where": "원래 구간",
+      "bbox": [
+        717,
+        141,
+        1201,
+        173
+      ],
+      "ink_h_px": 24,
+      "fg_rgb": [
+        255,
+        244,
+        235
+      ],
+      "bg_rgb": [
+        138,
+        114,
+        91
+      ],
+      "contrast_ratio": 4.18,
       "contrast_conf": "high"
     }
   ],
@@ -218,19 +232,29 @@
       9.8
     ]
   },
-  "windows_after": {
-    "0": [
+  "windows_after": [
+    [
       0.0,
       14.3
     ],
-    "1": [
+    [
       2.1,
       9.8
     ],
-    "2": [
+    [
       6.6,
       9.8
     ]
-  },
-  "fixed_video": "data/processed/remediation/video/fixed/V103.mp4"
+  ],
+  "frames": [
+    {
+      "card": 4,
+      "where": "원래 구간",
+      "t": 2.6,
+      "before": "data/processed/remediation/video/frames/V103_c4_orig_2.6s_before.jpg",
+      "after": "data/processed/remediation/video/frames/V103_c4_orig_2.6s_after.jpg"
+    }
+  ],
+  "hold": null,
+  "fixed_video": null
 }

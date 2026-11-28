@@ -1,0 +1,33 @@
+{
+  "ad_id": "P072",
+  "situation": "세로 · 사진 위 직접 · 사진 배경",
+  "font": "Noto Sans KR Bold (표준 고딕)",
+  "decision": "원본 유지",
+  "checks_before": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": null,
+      "threshold": 3.0,
+      "ok": null
+    },
+    {
+      "id": "A3",
+      "name": "글자 높이(mm)",
+      "value": 2.59,
+      "threshold": 2.13,
+      "ok": true
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.183,
+      "threshold": 0.075,
+      "ok": true
+    }
+  ],
+  "note": "A2·A3·A4 모두 기준 통과 — 원본 디자인 그대로 진행",
+  "judge_model": null,
+  "content_add": [],
+  "content_flag": []
+}

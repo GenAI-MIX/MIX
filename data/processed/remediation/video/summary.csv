@@ -1,12 +1,12 @@
 ﻿ad_id,decision,A2_before,A4_before,A5_before,A6_before,A7_before,A2_after,A4_after,A5_after,A6_after,A7_after
 V101,원본 유지,True,True,True,True,True,,,,,
 V102,수정안,True,False,True,True,True,True,True,True,True,True
-V103,디자이너 검토,False,True,True,True,True,True,True,True,True,True
+V103,수정안,False,True,True,True,True,True,True,True,True,True
 V104,원본 유지,True,True,True,True,True,,,,,
 V105,수정안,False,,False,True,True,True,,True,True,True
 V106,원본 유지,True,,True,True,True,,,,,
 V107,원본 유지,True,True,True,True,True,,,,,
-V108,디자이너 검토,False,False,True,True,True,True,True,True,True,True
+V108,디자이너 검토,False,False,True,True,True,True,True,True,True,False
 V109,고지 없음,,,False,,,,,,,
 V110,수정안,False,False,False,True,True,True,True,True,True,True
 V111,수정안,True,True,False,True,True,True,True,True,True,True
@@ -22,58 +22,58 @@ V120,원본 유지,True,True,True,True,True,,,,,
 V121,고지 없음,,,False,,,,,,,
 V122,원본 유지,True,True,True,True,True,,,,,
 V123,원본 유지,True,True,True,True,True,,,,,
-V124,디자이너 검토,False,True,False,True,True,True,True,True,True,False
+V124,수정안,False,True,False,True,True,True,True,True,True,True
 V125,수정안,True,True,False,True,True,True,True,True,True,True
 V126,디자이너 검토,False,True,True,True,True,,,,,
 V127,수정안,False,True,True,True,True,True,True,True,True,True
-V128,수정안,True,,False,True,True,True,,True,True,True
-V129,디자이너 검토,True,True,False,False,False,True,True,True,True,True
-V130,디자이너 검토,True,True,False,True,True,True,True,True,True,True
+V128,디자이너 검토,True,,False,True,True,,,,,
+V129,디자이너 검토,True,True,False,False,False,False,True,False,False,True
+V130,수정안,True,True,False,True,True,True,True,True,True,True
 V131,고지 없음,,,False,,,,,,,
 V132,고지 없음,,,False,,,,,,,
-V133,디자이너 검토,False,True,False,True,True,False,True,True,True,True
+V133,수정안,False,True,False,True,True,True,True,True,True,True
 V134,원본 유지,True,True,True,True,True,,,,,
 V135,수정안,False,True,True,True,True,True,True,True,True,True
 V136,원본 유지,True,,True,True,True,,,,,
-V137,디자이너 검토,False,True,False,True,False,True,True,True,True,True
-V138,수정안,True,True,False,True,True,True,True,True,True,True
+V137,디자이너 검토,False,True,False,True,False,True,True,False,True,True
+V138,디자이너 검토,True,True,False,True,True,,,,,
 V139,고지 없음,,,False,,,,,,,
-V140,수정안,True,True,False,True,True,True,True,True,True,True
+V140,디자이너 검토,True,True,False,True,True,True,True,False,True,True
 V141,원본 유지,True,True,True,True,True,,,,,
-V142,수정안,,True,False,False,True,True,True,True,True,True
-V143,디자이너 검토,False,True,False,False,True,False,True,True,True,True
-V144,수정안,False,False,False,True,True,True,True,True,True,True
+V142,디자이너 검토,,True,False,False,True,True,True,False,False,True
+V143,수정안,False,True,False,False,True,True,True,True,True,True
+V144,디자이너 검토,False,False,False,True,True,True,True,False,True,True
 V145,원본 유지,True,True,True,True,True,,,,,
-V146,수정안,True,True,False,True,True,True,True,True,True,True
+V146,디자이너 검토,True,True,False,True,True,,,,,
 V147,수정안,True,True,False,False,True,True,True,True,True,True
-V148,수정안,True,True,False,True,True,True,True,True,True,True
-V149,수정안,True,True,False,True,True,True,True,True,True,True
+V148,디자이너 검토,True,True,False,True,True,,,,,
+V149,디자이너 검토,True,True,False,True,True,True,True,False,True,True
 V150,원본 유지,True,True,True,True,True,,,,,
 V151,원본 유지,True,True,True,True,True,,,,,
 V152,고지 없음,,,False,,,,,,,
 V153,수정안,True,False,False,False,False,True,True,True,True,True
 V154,고지 없음,,,False,,,,,,,
-V155,수정안,True,False,True,True,True,True,True,True,True,True
-V156,수정안,True,True,False,False,True,True,True,True,True,True
-V157,디자이너 검토,True,True,True,True,False,True,True,True,True,True
+V155,디자이너 검토,True,False,True,True,True,False,True,True,True,True
+V156,디자이너 검토,True,True,False,False,True,True,True,False,True,True
+V157,디자이너 검토,True,True,True,True,False,True,True,True,True,False
 V158,고지 없음,,,False,,,,,,,
 V159,고지 없음,,,False,,,,,,,
-V160,디자이너 검토,False,True,True,True,False,True,True,True,True,True
-V161,수정안,True,True,False,True,True,True,True,True,True,True
+V160,디자이너 검토,False,True,True,True,False,True,True,True,True,False
+V161,디자이너 검토,True,True,False,True,True,True,True,False,True,True
 V162,원본 유지,,True,True,True,True,,,,,
-V163,디자이너 검토,True,True,False,True,True,True,True,True,True,True
-V164,수정안,False,True,False,True,True,True,True,True,True,True
-V165,수정안,False,True,False,True,True,True,True,True,True,True
-V166,수정안,True,True,False,True,True,True,True,True,True,True
+V163,수정안,True,True,False,True,True,True,True,True,True,True
+V164,디자이너 검토,False,True,False,True,True,True,True,False,True,True
+V165,디자이너 검토,False,True,False,True,True,False,True,True,True,True
+V166,디자이너 검토,True,True,False,True,True,True,True,False,True,True
 V167,고지 없음,,,False,,,,,,,
-V169,디자이너 검토,True,True,False,True,True,True,True,False,True,True
+V169,디자이너 검토,True,True,False,True,True,,,,,
 V170,고지 없음,,,False,,,,,,,
 V171,원본 유지,True,True,True,True,True,,,,,
-V172,수정안,True,True,False,True,True,True,True,True,True,True
+V172,디자이너 검토,True,True,False,True,True,True,True,False,True,True
 V173,수정안,True,True,False,True,True,True,True,True,True,True
-V174,디자이너 검토,True,True,False,True,True,True,True,True,True,True
+V174,디자이너 검토,True,True,False,True,True,True,True,False,True,True
 V175,수정안,True,True,False,True,False,True,True,True,True,True
-V176,디자이너 검토,True,True,False,False,True,True,True,True,True,True
+V176,디자이너 검토,True,True,False,False,True,True,True,False,True,True
 V177,원본 유지,True,True,True,True,True,,,,,
 V178,고지 없음,,,False,,,,,,,
 V179,디자이너 검토,True,True,True,True,False,True,True,True,True,True

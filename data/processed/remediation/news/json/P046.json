@@ -1,0 +1,33 @@
+{
+  "ad_id": "P046",
+  "situation": "고지 없음",
+  "font": "Noto Sans KR Medium (표준 고딕)",
+  "decision": "고지 없음",
+  "checks_before": [
+    {
+      "id": "A2",
+      "name": "명암비",
+      "value": 2.56,
+      "threshold": 3.0,
+      "ok": false
+    },
+    {
+      "id": "A3",
+      "name": "글자 높이(mm)",
+      "value": 3.21,
+      "threshold": 2.36,
+      "ok": true
+    },
+    {
+      "id": "A4",
+      "name": "헤드라인 대비",
+      "value": 0.179,
+      "threshold": 0.075,
+      "ok": true
+    }
+  ],
+  "note": "화면에서 위험고지 문단을 찾지 못함 — 문구 추가는 B항목(LLM 판정)·디자이너 검토",
+  "judge_model": null,
+  "content_add": [],
+  "content_flag": []
+}

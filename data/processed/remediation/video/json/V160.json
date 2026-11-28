@@ -47,7 +47,7 @@
     {
       "id": "A2",
       "name": "명암비",
-      "value": 3.38,
+      "value": 3.79,
       "threshold": 3.0,
       "op": ">=",
       "ok": true
@@ -79,123 +79,110 @@
     {
       "id": "A7",
       "name": "글자 크기(pt)",
-      "value": 6.59,
+      "value": 4.4,
       "threshold": 5.06,
       "op": ">=",
-      "ok": true
+      "ok": false
     }
   ],
   "steps": [
     {
       "card": 1,
-      "font": "Pretendard-Medium",
+      "font": "Pretendard Bold (모던 고딕)",
       "h_before_px": 18.0,
       "h_after_px": 27.4,
       "size_factor": 1.52,
-      "lines": 13,
+      "lines": 10,
       "fg": [
         20,
         47,
         36
       ],
-      "bg": [
-        112,
-        117,
-        108
+      "ink": [
+        20,
+        47,
+        36
       ],
-      "band": [
-        120,
-        125,
-        115
-      ],
+      "ink_how": "배경이 얼룩져 글자색만으로는 대비 부족",
       "center": true,
       "static_bg": false,
+      "ext_ink_how": [],
       "window_before": [
         8.6,
         11.35
       ],
-      "window_after": [
-        8.6,
-        11.35
-      ],
+      "windows_added": [],
       "frame_fix": true,
       "fail": [
-        "위쪽 다른 글자와 겹침"
+        "어느 자리에 두어도 다른 글자와 겹침"
       ]
     },
     {
       "card": 12,
-      "font": "Pretendard-SemiBold",
+      "font": "Gothic A1 Regular (정갈한 고딕)",
       "h_before_px": 18.0,
       "h_after_px": 18.0,
       "size_factor": 1.0,
-      "lines": 7,
+      "lines": 37,
       "fg": [
         206,
         208,
         204
       ],
-      "bg": [
-        29,
-        67,
-        60
+      "ink": [
+        206,
+        208,
+        204
       ],
-      "band": null,
+      "ink_how": "배경이 얼룩져 글자색만으로는 대비 부족",
       "center": true,
       "static_bg": false,
+      "ext_ink_how": [],
       "window_before": [
         11.4,
         11.85
       ],
-      "window_after": [
-        11.4,
-        11.85
-      ],
+      "windows_added": [],
       "frame_fix": true,
-      "fail": [
-        "위쪽 다른 글자와 겹침"
-      ]
+      "fail": []
     },
     {
       "card": 13,
-      "font": "Pretendard-Medium",
+      "font": "Pretendard Bold (모던 고딕)",
       "h_before_px": 18.0,
       "h_after_px": 18.0,
       "size_factor": 1.0,
-      "lines": 9,
+      "lines": 8,
       "fg": [
         12,
         21,
         24
       ],
-      "bg": [
-        134,
-        156,
-        169
+      "ink": [
+        98,
+        103,
+        105
       ],
-      "band": null,
+      "ink_how": "글자색 명도만 조정",
       "center": true,
       "static_bg": false,
+      "ext_ink_how": [],
       "window_before": [
         11.85,
         15.02
       ],
-      "window_after": [
-        11.85,
-        15.02
-      ],
+      "windows_added": [],
       "frame_fix": true,
       "fail": []
     }
   ],
   "edit_sheet": [
-    "자막 1: 글자 18→27px(×1.52) Pretendard-Medium, 글자색 그대로, 배경 같은 색조 띠 RGB(120, 125, 115)",
-    "자막 12: 글자 18→18px(×1.0) Pretendard-SemiBold, 글자색 그대로",
-    "자막 13: 글자 18→18px(×1.0) Pretendard-Medium, 글자색 그대로"
+    "자막 1: 글자 18→27px(×1.52) Pretendard Bold (모던 고딕), 배경이 얼룩져 글자색만으로는 대비 부족, 움직이는 배경이라 원래 작은 글자 자리는 블러로 지움",
+    "자막 12: 글자 18→18px(×1.0) Gothic A1 Regular (정갈한 고딕), 배경이 얼룩져 글자색만으로는 대비 부족, 움직이는 배경이라 원래 작은 글자 자리는 블러로 지움",
+    "자막 13: 글자 18→18px(×1.0) Pretendard Bold (모던 고딕), 글자색 명도만 조정, 움직이는 배경이라 원래 작은 글자 자리는 블러로 지움"
   ],
   "fails": [
-    "자막 1: 위쪽 다른 글자와 겹침",
-    "자막 12: 위쪽 다른 글자와 겹침"
+    "자막 1: 어느 자리에 두어도 다른 글자와 겹침"
   ],
   "measured": [
     {
@@ -203,95 +190,23 @@
       "t": 10.5,
       "where": "원래 구간",
       "bbox": [
-        57,
-        543,
-        1850,
-        585
-      ],
-      "ink_h_px": 34,
-      "fg_rgb": [
-        25,
-        44,
-        32
-      ],
-      "bg_rgb": [
-        120,
-        127,
-        117
-      ],
-      "contrast_ratio": 3.58,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 1,
-      "t": 10.5,
-      "where": "원래 구간",
-      "bbox": [
-        66,
-        581,
-        1841,
-        628
-      ],
-      "ink_h_px": 34,
-      "fg_rgb": [
-        25,
-        44,
-        33
-      ],
-      "bg_rgb": [
-        120,
-        127,
-        118
-      ],
-      "contrast_ratio": 3.58,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 1,
-      "t": 10.5,
-      "where": "원래 구간",
-      "bbox": [
-        150,
-        619,
-        1757,
-        661
-      ],
-      "ink_h_px": 33,
-      "fg_rgb": [
-        25,
-        44,
-        32
-      ],
-      "bg_rgb": [
-        117,
-        125,
-        116
-      ],
-      "contrast_ratio": 3.47,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 1,
-      "t": 10.5,
-      "where": "원래 구간",
-      "bbox": [
-        72,
+        49,
         657,
-        1835,
-        703
+        1858,
+        692
       ],
-      "ink_h_px": 34,
+      "ink_h_px": 28,
       "fg_rgb": [
-        25,
-        44,
-        32
+        20,
+        47,
+        36
       ],
       "bg_rgb": [
-        115,
-        123,
-        115
+        138,
+        137,
+        124
       ],
-      "contrast_ratio": 3.38,
+      "contrast_ratio": 4.07,
       "contrast_conf": "high"
     },
     {
@@ -299,143 +214,23 @@
       "t": 10.5,
       "where": "원래 구간",
       "bbox": [
-        99,
+        61,
         695,
-        1808,
-        737
-      ],
-      "ink_h_px": 33,
-      "fg_rgb": [
-        25,
-        44,
-        32
-      ],
-      "bg_rgb": [
-        116,
-        124,
-        115
-      ],
-      "contrast_ratio": 3.43,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 1,
-      "t": 10.5,
-      "where": "원래 구간",
-      "bbox": [
-        54,
-        733,
-        1853,
-        779
-      ],
-      "ink_h_px": 33,
-      "fg_rgb": [
-        25,
-        44,
-        32
-      ],
-      "bg_rgb": [
-        118,
-        125,
-        116
-      ],
-      "contrast_ratio": 3.48,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 1,
-      "t": 10.5,
-      "where": "원래 구간",
-      "bbox": [
-        253,
-        771,
-        1653,
-        818
-      ],
-      "ink_h_px": 33,
-      "fg_rgb": [
-        25,
-        44,
-        32
-      ],
-      "bg_rgb": [
-        119,
-        126,
-        116
-      ],
-      "contrast_ratio": 3.53,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 1,
-      "t": 10.5,
-      "where": "원래 구간",
-      "bbox": [
-        80,
-        809,
-        1827,
-        856
-      ],
-      "ink_h_px": 34,
-      "fg_rgb": [
-        25,
-        44,
-        32
-      ],
-      "bg_rgb": [
-        119,
-        126,
-        116
-      ],
-      "contrast_ratio": 3.53,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 1,
-      "t": 10.5,
-      "where": "원래 구간",
-      "bbox": [
-        162,
-        847,
-        1745,
-        893
-      ],
-      "ink_h_px": 34,
-      "fg_rgb": [
-        25,
-        44,
-        32
-      ],
-      "bg_rgb": [
-        118,
-        124,
-        115
-      ],
-      "contrast_ratio": 3.45,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 1,
-      "t": 10.5,
-      "where": "원래 구간",
-      "bbox": [
-        62,
-        884,
         1845,
-        932
+        734
       ],
-      "ink_h_px": 32,
+      "ink_h_px": 28,
       "fg_rgb": [
-        25,
-        44,
-        32
+        20,
+        47,
+        36
       ],
       "bg_rgb": [
-        117,
-        124,
-        115
+        145,
+        140,
+        128
       ],
-      "contrast_ratio": 3.44,
+      "contrast_ratio": 4.29,
       "contrast_conf": "high"
     },
     {
@@ -443,23 +238,23 @@
       "t": 10.5,
       "where": "원래 구간",
       "bbox": [
-        162,
-        923,
-        1745,
-        966
+        82,
+        733,
+        1825,
+        772
       ],
-      "ink_h_px": 33,
+      "ink_h_px": 28,
       "fg_rgb": [
-        25,
-        44,
-        33
+        20,
+        47,
+        36
       ],
       "bg_rgb": [
-        118,
-        124,
-        115
+        153,
+        144,
+        133
       ],
-      "contrast_ratio": 3.44,
+      "contrast_ratio": 4.57,
       "contrast_conf": "high"
     },
     {
@@ -467,23 +262,23 @@
       "t": 10.5,
       "where": "원래 구간",
       "bbox": [
-        159,
-        962,
-        1747,
-        1008
+        98,
+        771,
+        1808,
+        810
       ],
-      "ink_h_px": 33,
+      "ink_h_px": 28,
       "fg_rgb": [
-        25,
-        44,
-        32
+        20,
+        47,
+        36
       ],
       "bg_rgb": [
-        118,
-        124,
-        115
+        153,
+        144,
+        133
       ],
-      "contrast_ratio": 3.45,
+      "contrast_ratio": 4.57,
       "contrast_conf": "high"
     },
     {
@@ -491,407 +286,1223 @@
       "t": 10.5,
       "where": "원래 구간",
       "bbox": [
-        505,
-        1000,
-        1402,
-        1046
+        60,
+        809,
+        1847,
+        848
       ],
-      "ink_h_px": 29,
+      "ink_h_px": 28,
       "fg_rgb": [
-        24,
-        44,
-        32
+        20,
+        47,
+        36
       ],
       "bg_rgb": [
-        119,
-        125,
-        116
+        152,
+        143,
+        131
       ],
-      "contrast_ratio": 3.5,
+      "contrast_ratio": 4.51,
       "contrast_conf": "high"
     },
     {
-      "card": 12,
-      "t": 11.5,
+      "card": 1,
+      "t": 10.5,
       "where": "원래 구간",
       "bbox": [
-        69,
-        865,
-        1839,
-        893
+        48,
+        847,
+        1858,
+        886
       ],
-      "ink_h_px": 18,
+      "ink_h_px": 27,
       "fg_rgb": [
-        197,
-        211,
-        208
+        20,
+        47,
+        36
       ],
       "bg_rgb": [
-        32,
-        69,
-        62
+        151,
+        142,
+        130
       ],
-      "contrast_ratio": 6.86,
+      "contrast_ratio": 4.45,
       "contrast_conf": "high"
     },
     {
-      "card": 12,
-      "t": 11.5,
+      "card": 1,
+      "t": 10.5,
       "where": "원래 구간",
       "bbox": [
-        56,
-        889,
-        1851,
-        917
+        213,
+        885,
+        1694,
+        924
       ],
-      "ink_h_px": 18,
+      "ink_h_px": 28,
       "fg_rgb": [
-        197,
-        211,
-        208
+        20,
+        47,
+        36
       ],
       "bg_rgb": [
-        32,
-        68,
-        61
+        151,
+        142,
+        129
       ],
-      "contrast_ratio": 6.96,
+      "contrast_ratio": 4.45,
       "contrast_conf": "high"
     },
     {
-      "card": 12,
-      "t": 11.5,
+      "card": 1,
+      "t": 10.5,
       "where": "원래 구간",
       "bbox": [
-        68,
-        913,
-        1839,
-        941
+        58,
+        924,
+        1849,
+        963
       ],
-      "ink_h_px": 18,
+      "ink_h_px": 27,
       "fg_rgb": [
-        197,
-        211,
-        207
+        20,
+        47,
+        36
       ],
       "bg_rgb": [
-        32,
-        68,
-        61
+        150,
+        142,
+        130
       ],
-      "contrast_ratio": 6.95,
+      "contrast_ratio": 4.44,
       "contrast_conf": "high"
     },
     {
-      "card": 12,
-      "t": 11.5,
-      "where": "원래 구간",
-      "bbox": [
-        66,
-        937,
-        1842,
-        965
-      ],
-      "ink_h_px": 18,
-      "fg_rgb": [
-        197,
-        211,
-        207
-      ],
-      "bg_rgb": [
-        32,
-        67,
-        61
-      ],
-      "contrast_ratio": 7.04,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 12,
-      "t": 11.5,
-      "where": "원래 구간",
-      "bbox": [
-        69,
-        961,
-        1838,
-        989
-      ],
-      "ink_h_px": 18,
-      "fg_rgb": [
-        198,
-        211,
-        208
-      ],
-      "bg_rgb": [
-        30,
-        67,
-        60
-      ],
-      "contrast_ratio": 7.09,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 12,
-      "t": 11.5,
-      "where": "원래 구간",
-      "bbox": [
-        89,
-        985,
-        1819,
-        1013
-      ],
-      "ink_h_px": 18,
-      "fg_rgb": [
-        198,
-        211,
-        208
-      ],
-      "bg_rgb": [
-        30,
-        67,
-        60
-      ],
-      "contrast_ratio": 7.09,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 12,
-      "t": 11.5,
-      "where": "원래 구간",
-      "bbox": [
-        463,
-        1009,
-        1445,
-        1037
-      ],
-      "ink_h_px": 15,
-      "fg_rgb": [
-        199,
-        211,
-        208
-      ],
-      "bg_rgb": [
-        29,
-        68,
-        60
-      ],
-      "contrast_ratio": 7.02,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 13,
-      "t": 13.5,
-      "where": "원래 구간",
-      "bbox": [
-        68,
-        821,
-        1842,
-        851
-      ],
-      "ink_h_px": 22,
-      "fg_rgb": [
-        6,
-        21,
-        30
-      ],
-      "bg_rgb": [
-        135,
-        156,
-        166
-      ],
-      "contrast_ratio": 6.47,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 13,
-      "t": 13.5,
-      "where": "원래 구간",
-      "bbox": [
-        83,
-        845,
-        1827,
-        878
-      ],
-      "ink_h_px": 22,
-      "fg_rgb": [
-        5,
-        21,
-        30
-      ],
-      "bg_rgb": [
-        135,
-        155,
-        165
-      ],
-      "contrast_ratio": 6.41,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 13,
-      "t": 13.5,
+      "card": 1,
+      "t": 10.5,
       "where": "원래 구간",
       "bbox": [
         63,
-        869,
-        1847,
-        902
+        962,
+        1844,
+        1001
       ],
-      "ink_h_px": 22,
+      "ink_h_px": 27,
       "fg_rgb": [
-        6,
-        21,
-        30
-      ],
-      "bg_rgb": [
-        134,
-        153,
-        164
-      ],
-      "contrast_ratio": 6.27,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 13,
-      "t": 13.5,
-      "where": "원래 구간",
-      "bbox": [
-        101,
-        893,
-        1809,
-        926
-      ],
-      "ink_h_px": 22,
-      "fg_rgb": [
-        6,
-        21,
-        30
-      ],
-      "bg_rgb": [
-        134,
-        153,
-        164
-      ],
-      "contrast_ratio": 6.27,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 13,
-      "t": 13.5,
-      "where": "원래 구간",
-      "bbox": [
+        20,
         47,
-        917,
-        1863,
-        950
-      ],
-      "ink_h_px": 22,
-      "fg_rgb": [
-        6,
-        21,
-        30
+        36
       ],
       "bg_rgb": [
-        134,
-        154,
-        165
+        151,
+        142,
+        130
       ],
-      "contrast_ratio": 6.33,
+      "contrast_ratio": 4.45,
       "contrast_conf": "high"
     },
     {
-      "card": 13,
-      "t": 13.5,
+      "card": 1,
+      "t": 10.5,
       "where": "원래 구간",
       "bbox": [
-        71,
-        941,
-        1839,
-        974
+        362,
+        1000,
+        1544,
+        1039
       ],
-      "ink_h_px": 22,
+      "ink_h_px": 23,
       "fg_rgb": [
-        6,
-        21,
-        30
+        20,
+        47,
+        36
       ],
       "bg_rgb": [
-        134,
-        154,
-        165
+        151,
+        143,
+        132
       ],
-      "contrast_ratio": 6.33,
+      "contrast_ratio": 4.5,
       "contrast_conf": "high"
     },
     {
-      "card": 13,
-      "t": 13.5,
+      "card": 12,
+      "t": 11.5,
       "where": "원래 구간",
       "bbox": [
-        70,
-        965,
-        1841,
-        998
-      ],
-      "ink_h_px": 22,
-      "fg_rgb": [
-        5,
-        21,
-        30
-      ],
-      "bg_rgb": [
-        134,
-        154,
-        165
-      ],
-      "contrast_ratio": 6.34,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 13,
-      "t": 13.5,
-      "where": "원래 구간",
-      "bbox": [
-        176,
-        989,
-        1735,
-        1022
-      ],
-      "ink_h_px": 22,
-      "fg_rgb": [
-        5,
-        21,
-        30
-      ],
-      "bg_rgb": [
-        133,
-        153,
-        164
-      ],
-      "contrast_ratio": 6.26,
-      "contrast_conf": "high"
-    },
-    {
-      "card": 13,
-      "t": 13.5,
-      "where": "원래 구간",
-      "bbox": [
-        558,
-        1013,
-        1352,
-        1046
+        798,
+        144,
+        1110,
+        172
       ],
       "ink_h_px": 19,
       "fg_rgb": [
-        5,
-        20,
-        29
+        206,
+        208,
+        204
       ],
       "bg_rgb": [
-        135,
-        154,
+        91,
+        100,
+        96
+      ],
+      "contrast_ratio": 3.93,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        791,
+        168,
+        1116,
+        196
+      ],
+      "ink_h_px": 18,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        95,
+        102,
+        99
+      ],
+      "contrast_ratio": 3.79,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        770,
+        192,
+        1137,
+        220
+      ],
+      "ink_h_px": 11,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        93,
+        101,
+        98
+      ],
+      "contrast_ratio": 3.86,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        746,
+        216,
+        1162,
+        244
+      ],
+      "ink_h_px": 18,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        94,
+        102,
+        98
+      ],
+      "contrast_ratio": 3.81,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        745,
+        240,
+        1163,
+        268
+      ],
+      "ink_h_px": 19,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        95,
+        101,
+        98
+      ],
+      "contrast_ratio": 3.84,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        749,
+        264,
+        1159,
+        293
+      ],
+      "ink_h_px": 18,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        95,
+        101,
+        98
+      ],
+      "contrast_ratio": 3.84,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        758,
+        288,
+        1150,
+        316
+      ],
+      "ink_h_px": 18,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        94,
+        100,
+        97
+      ],
+      "contrast_ratio": 3.89,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        753,
+        312,
+        1155,
+        340
+      ],
+      "ink_h_px": 18,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        94,
+        100,
+        97
+      ],
+      "contrast_ratio": 3.89,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        766,
+        336,
+        1142,
+        364
+      ],
+      "ink_h_px": 10,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        92,
+        98,
+        95
+      ],
+      "contrast_ratio": 4.01,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        761,
+        360,
+        1146,
+        388
+      ],
+      "ink_h_px": 18,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        92,
+        98,
+        95
+      ],
+      "contrast_ratio": 4.01,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        753,
+        384,
+        1155,
+        412
+      ],
+      "ink_h_px": 18,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        91,
+        98,
+        95
+      ],
+      "contrast_ratio": 4.03,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        754,
+        408,
+        1154,
+        436
+      ],
+      "ink_h_px": 18,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        90,
+        98,
+        95
+      ],
+      "contrast_ratio": 4.04,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        761,
+        432,
+        1147,
+        460
+      ],
+      "ink_h_px": 19,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        92,
+        98,
+        95
+      ],
+      "contrast_ratio": 4.01,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        750,
+        457,
+        1157,
+        484
+      ],
+      "ink_h_px": 18,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        93,
+        99,
+        96
+      ],
+      "contrast_ratio": 3.95,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        768,
+        480,
+        1139,
+        508
+      ],
+      "ink_h_px": 18,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        92,
+        98,
+        95
+      ],
+      "contrast_ratio": 4.01,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        760,
+        504,
+        1147,
+        532
+      ],
+      "ink_h_px": 18,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        92,
+        99,
+        96
+      ],
+      "contrast_ratio": 3.97,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        767,
+        528,
+        1140,
+        556
+      ],
+      "ink_h_px": 19,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        92,
+        99,
+        96
+      ],
+      "contrast_ratio": 3.97,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        763,
+        552,
+        1145,
+        581
+      ],
+      "ink_h_px": 18,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        91,
+        99,
+        95
+      ],
+      "contrast_ratio": 3.98,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        767,
+        574,
+        1140,
+        604
+      ],
+      "ink_h_px": 18,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        91,
+        99,
+        96
+      ],
+      "contrast_ratio": 3.98,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        808,
+        600,
+        1099,
+        627
+      ],
+      "ink_h_px": 18,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        85,
+        96,
+        91
+      ],
+      "contrast_ratio": 4.21,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        815,
+        624,
+        1092,
+        652
+      ],
+      "ink_h_px": 19,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        85,
+        96,
+        92
+      ],
+      "contrast_ratio": 4.21,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        759,
+        648,
+        1148,
+        677
+      ],
+      "ink_h_px": 19,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        93,
+        101,
+        97
+      ],
+      "contrast_ratio": 3.86,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        766,
+        672,
+        1141,
+        700
+      ],
+      "ink_h_px": 11,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        93,
+        101,
+        98
+      ],
+      "contrast_ratio": 3.86,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        787,
+        696,
+        1121,
+        724
+      ],
+      "ink_h_px": 18,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        92,
+        100,
+        97
+      ],
+      "contrast_ratio": 3.92,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        774,
+        720,
+        1134,
+        748
+      ],
+      "ink_h_px": 18,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        92,
+        100,
+        98
+      ],
+      "contrast_ratio": 3.91,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        852,
+        744,
+        1056,
+        772
+      ],
+      "ink_h_px": 19,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        90,
+        98,
+        95
+      ],
+      "contrast_ratio": 4.04,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        731,
+        768,
+        1176,
+        798
+      ],
+      "ink_h_px": 18,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        90,
+        100,
+        97
+      ],
+      "contrast_ratio": 3.94,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        781,
+        792,
+        1126,
+        821
+      ],
+      "ink_h_px": 18,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        83,
+        95,
+        92
+      ],
+      "contrast_ratio": 4.28,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        801,
+        816,
+        1107,
+        844
+      ],
+      "ink_h_px": 17,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        82,
+        94,
+        90
+      ],
+      "contrast_ratio": 4.35,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        793,
+        840,
+        1114,
+        868
+      ],
+      "ink_h_px": 18,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        81,
+        93,
+        89
+      ],
+      "contrast_ratio": 4.42,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        771,
+        864,
+        1137,
+        892
+      ],
+      "ink_h_px": 19,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        80,
+        92,
+        89
+      ],
+      "contrast_ratio": 4.48,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        795,
+        888,
+        1113,
+        916
+      ],
+      "ink_h_px": 18,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        79,
+        91,
+        88
+      ],
+      "contrast_ratio": 4.55,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        777,
+        912,
+        1131,
+        940
+      ],
+      "ink_h_px": 19,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        79,
+        91,
+        88
+      ],
+      "contrast_ratio": 4.55,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        883,
+        937,
+        1025,
+        963
+      ],
+      "ink_h_px": 16,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        79,
+        90,
+        87
+      ],
+      "contrast_ratio": 4.61,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        766,
+        960,
+        1142,
+        988
+      ],
+      "ink_h_px": 18,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        77,
+        90,
+        86
+      ],
+      "contrast_ratio": 4.64,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        778,
+        984,
+        1129,
+        1012
+      ],
+      "ink_h_px": 16,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        77,
+        90,
+        86
+      ],
+      "contrast_ratio": 4.64,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 12,
+      "t": 11.5,
+      "where": "원래 구간",
+      "bbox": [
+        805,
+        1009,
+        1103,
+        1035
+      ],
+      "ink_h_px": 16,
+      "fg_rgb": [
+        206,
+        208,
+        204
+      ],
+      "bg_rgb": [
+        77,
+        89,
+        86
+      ],
+      "contrast_ratio": 4.7,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 13,
+      "t": 13.5,
+      "where": "원래 구간",
+      "bbox": [
+        145,
+        845,
+        1765,
+        870
+      ],
+      "ink_h_px": null,
+      "fg_rgb": [
+        37,
+        47,
+        51
+      ],
+      "bg_rgb": [
+        141,
+        165,
+        179
+      ],
+      "contrast_ratio": 5.33,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 13,
+      "t": 13.5,
+      "where": "원래 구간",
+      "bbox": [
+        143,
+        869,
+        1768,
+        897
+      ],
+      "ink_h_px": null,
+      "fg_rgb": [
+        34,
+        43,
+        47
+      ],
+      "bg_rgb": [
+        136,
+        160,
+        174
+      ],
+      "contrast_ratio": 5.28,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 13,
+      "t": 13.5,
+      "where": "원래 구간",
+      "bbox": [
+        141,
+        893,
+        1769,
+        921
+      ],
+      "ink_h_px": null,
+      "fg_rgb": [
+        32,
+        41,
+        45
+      ],
+      "bg_rgb": [
+        144,
+        163,
+        173
+      ],
+      "contrast_ratio": 5.67,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 13,
+      "t": 13.5,
+      "where": "원래 구간",
+      "bbox": [
+        98,
+        917,
+        1813,
+        945
+      ],
+      "ink_h_px": null,
+      "fg_rgb": [
+        31,
+        41,
+        44
+      ],
+      "bg_rgb": [
+        153,
+        164,
+        171
+      ],
+      "contrast_ratio": 5.85,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 13,
+      "t": 13.5,
+      "where": "원래 구간",
+      "bbox": [
+        94,
+        941,
+        1816,
+        969
+      ],
+      "ink_h_px": null,
+      "fg_rgb": [
+        30,
+        41,
+        44
+      ],
+      "bg_rgb": [
+        155,
+        163,
+        171
+      ],
+      "contrast_ratio": 5.84,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 13,
+      "t": 13.5,
+      "where": "원래 구간",
+      "bbox": [
+        105,
+        965,
+        1806,
+        993
+      ],
+      "ink_h_px": null,
+      "fg_rgb": [
+        27,
+        37,
+        40
+      ],
+      "bg_rgb": [
+        156,
+        166,
+        174
+      ],
+      "contrast_ratio": 6.32,
+      "contrast_conf": "high"
+    },
+    {
+      "card": 13,
+      "t": 13.5,
+      "where": "원래 구간",
+      "bbox": [
+        204,
+        989,
+        1707,
+        1017
+      ],
+      "ink_h_px": null,
+      "fg_rgb": [
+        23,
+        29,
+        32
+      ],
+      "bg_rgb": [
+        147,
+        157,
         166
       ],
-      "contrast_ratio": 6.41,
+      "contrast_ratio": 6.18,
+      "contrast_conf": "low"
+    },
+    {
+      "card": 13,
+      "t": 13.5,
+      "where": "원래 구간",
+      "bbox": [
+        618,
+        1013,
+        1292,
+        1041
+      ],
+      "ink_h_px": null,
+      "fg_rgb": [
+        20,
+        25,
+        28
+      ],
+      "bg_rgb": [
+        164,
+        172,
+        179
+      ],
+      "contrast_ratio": 7.7,
       "contrast_conf": "high"
     }
   ],
@@ -901,11 +1512,35 @@
       15.02
     ]
   },
-  "windows_after": {
-    "0": [
+  "windows_after": [
+    [
       8.6,
       15.02
     ]
-  },
-  "fixed_video": "data/processed/remediation/video/fixed/V160.mp4"
+  ],
+  "frames": [
+    {
+      "card": 1,
+      "where": "원래 구간",
+      "t": 10.5,
+      "before": "data/processed/remediation/video/frames/V160_c1_orig_10.5s_before.jpg",
+      "after": "data/processed/remediation/video/frames/V160_c1_orig_10.5s_after.jpg"
+    },
+    {
+      "card": 12,
+      "where": "원래 구간",
+      "t": 11.5,
+      "before": "data/processed/remediation/video/frames/V160_c12_orig_11.5s_before.jpg",
+      "after": "data/processed/remediation/video/frames/V160_c12_orig_11.5s_after.jpg"
+    },
+    {
+      "card": 13,
+      "where": "원래 구간",
+      "t": 13.5,
+      "before": "data/processed/remediation/video/frames/V160_c13_orig_13.5s_before.jpg",
+      "after": "data/processed/remediation/video/frames/V160_c13_orig_13.5s_after.jpg"
+    }
+  ],
+  "hold": null,
+  "fixed_video": null
 }
