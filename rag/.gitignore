@@ -2,3 +2,9 @@ cache/
 .env
 __pycache__/
 *.code-workspace
+
+# 05 판정 결과: .json(06 remediation 입력)·.csv·보고서 .md만 커밋, 그 밖의 파일은 제외
+outputs/*
+!outputs/*.json
+!outputs/*.csv
+!outputs/*.md
